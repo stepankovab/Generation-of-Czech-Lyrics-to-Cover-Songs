@@ -1,0 +1,163 @@
+﻿<div>
+    <h2>Lyrics Rewriter</h2>
+    @using (Html.BeginForm("RewriteLyrics", "Generator", FormMethod.Post))
+    {
+        <p>
+            Paste existing lyrics, lines divided by commas. <br />
+            The program extracts the structure of these lyrics and fills it with new ones!
+        </p>
+        @Html.TextBox("originalLyrics")
+        <br />
+        <br />
+        <input type="submit" value="Get New Lyrics" />
+    }
+</div>
+
+<br />
+<hr>
+<br />
+
+<div>
+    <h2>Custom Lyrics Generator</h2>
+    @using (Html.BeginForm("CustomLyrics", "Generator", FormMethod.Post))
+    {
+        <p>Each textbox represents one line. <br />
+            First write a number of syllables you want to have on the line. <br />
+            Then write any symbol to represent a rhyme. <br />
+            By repeating these symbols on different lines, create the desired rhyme scheme.
+        </p>
+        <p>
+            Example: <br />
+            8 A <br />
+            8 B <br />
+            8 A <br />
+            8 B <br />
+            10 C <br />
+            10 C <br />
+        </p>
+
+        <input type="button" value="Add new line" onclick="AddTextBox()" />
+        <br />
+        <br />
+
+        <div id="TextBoxContainer"></div>
+
+        <br />
+        <p>
+            Write a prompt to start your lyrics:
+        </p>
+        @Html.TextBox("prompt")
+        <br />
+        <br />
+        <input type="submit" value="Generate Lyrics" />
+    }
+    
+    <script src="~/js/dynamicBoxes.js" asp-append-version="true"></script>
+
+</div>
+
+<br />
+<hr>
+<br />
+
+<div>
+    <h2>AABB Lyrics Generator</h2>
+    @using (Html.BeginForm("AABBLyrics", "Generator", FormMethod.Post))
+    {
+        <p>
+            Write lyrics with desired number of lines and syllables for a line. <br />
+            The lyrics will have AABB rhyme scheme.
+        </p>
+        <p>
+            Especially handy for writing rap parts.
+        </p>
+
+        <br />
+
+        <p>
+            Write a prompt to start your lyrics:
+        </p>
+        @Html.TextBox("prompt")
+
+        <br />
+        <br />
+
+        <p>
+            How many lines should your lyrics have?
+        </p>
+        <input type="number" name="lines" min="1" max="100" value="10">
+
+        <br />
+        <br />
+
+        <p>
+            How many syllables should each line have?
+        </p>
+        <input type="number" name="syllables" min="1" max="20" value="8">
+        <br />
+        <br />
+        <input type="submit" value="Generate Lyrics" />
+        <br />
+    }
+</div>
+
+<br />
+<hr>
+<br />
+
+<div>
+    <h2>ABAB Lyrics Generator</h2>
+    @using (Html.BeginForm("ABABLyrics", "Generator", FormMethod.Post))
+    {
+        <p>
+            Write lyrics with desired number of lines and syllables for a line. <br />
+            The lyrics will have ABAB rhyme scheme.
+        </p>
+
+        <br />
+
+        <p>
+            Write a prompt to start your lyrics:
+        </p>
+        @Html.TextBox("prompt")
+
+        <br />
+        <br />
+
+        <p>
+            How many lines should your lyrics have?
+        </p>
+        <input type="number" name="lines" min="1" max="100" value="10">
+
+        <br />
+        <br />
+
+        <p>
+            How many syllables should each line have?
+        </p>
+        <input type="number" name="syllables" min="1" max="20" value="8">
+        <br />
+        <br />
+        <input type="submit" value="Generate Lyrics" />
+        <br />
+    }
+</div>
+
+<br />
+<hr>
+<br />
+
+<div>
+    <h2>Sonet Generator</h2>
+    @using (Html.BeginForm("Sonet", "Generator", FormMethod.Post))
+    {
+        <p>
+            Write a Shakespearian Sonet.
+        </p>
+        <p>
+            Write a prompt to start your Sonet:
+        </p>
+        @Html.TextBox("prompt")
+        <input type="submit" value="Generate Sonet" />
+    }
+</div>
