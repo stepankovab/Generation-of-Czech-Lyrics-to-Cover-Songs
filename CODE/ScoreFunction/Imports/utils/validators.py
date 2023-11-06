@@ -3,8 +3,8 @@ import transformers
 import jellyfish
 from tqdm import tqdm
 from transformers import  AutoModelForMaskedLM
-from .poet_utils import RHYME_SCHEMES, METER_TYPES
 
+from .poet_utils import RHYME_SCHEMES, METER_TYPES
 from torch.utils.data import DataLoader, Dataset
 from pytorch_optimizer import SAM,GSAM, ProportionScheduler, AdamP
 
