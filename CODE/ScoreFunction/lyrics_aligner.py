@@ -415,33 +415,33 @@ def get_aligned_translation(sections, target_language):
 
 
 
-title = "les_mis07"
+# title = "les_mis07"
 
-with open("DATA/Human_translations/" + title + "_cs.txt", "r", encoding="utf-8") as f:
-    text_cs = f.read()
+# with open("DATA/Human_translations/" + title + "_cs.txt", "r", encoding="utf-8") as f:
+#     text_cs = f.read()
 
-with open("DATA/Human_translations/" + title + "_en.txt", "r", encoding="utf-8") as f:
-    text_en = f.read()
+# with open("DATA/Human_translations/" + title + "_en.txt", "r", encoding="utf-8") as f:
+#     text_en = f.read()
 
-title = title[:-2] + "_" + title[-2:]
+# title = title[:-2] + "_" + title[-2:]
 
-czech_sections, english_sections = align_lyrics_by_section_and_line(text_cs, text_en)
+# czech_sections, english_sections = align_lyrics_by_section_and_line(text_cs, text_en)
 
-for section_i in range(len(czech_sections)):
-    for line_i in range(len(czech_sections[section_i])):
-        diff = len(syllabify(czech_sections[section_i][line_i], "cz")) - len(syllabify(english_sections[section_i][line_i], "en"))
-        print(czech_sections[section_i][line_i], " --- ", english_sections[section_i][line_i], "--->", diff)
-    print()
+# for section_i in range(len(czech_sections)):
+#     for line_i in range(len(czech_sections[section_i])):
+#         diff = len(syllabify(czech_sections[section_i][line_i], "cz")) - len(syllabify(english_sections[section_i][line_i], "en"))
+#         print(czech_sections[section_i][line_i], " --- ", english_sections[section_i][line_i], "--->", diff)
+#     print()
 
 
-if input() == "Y":
-    with open("DATA/Aligned_HT/" + title + "_cs.txt", "w", encoding="utf-8") as cz_doc:
-        for section_i in range(len(czech_sections)):
-            for line_i in range(len(czech_sections[section_i])):
-                cz_doc.write(czech_sections[section_i][line_i] + "\n")
-            cz_doc.write("\n")
-    with open("DATA/Aligned_HT/" + title + "_en.txt", "w", encoding="utf-8") as en_doc:
-        for section_i in range(len(english_sections)):
-            for line_i in range(len(english_sections[section_i])):
-                en_doc.write(english_sections[section_i][line_i] + "\n")
-            en_doc.write("\n")
+# if input() == "Y":
+#     with open("DATA/Aligned_HT/" + title + "_cs.txt", "w", encoding="utf-8") as cz_doc:
+#         for section_i in range(len(czech_sections)):
+#             for line_i in range(len(czech_sections[section_i])):
+#                 cz_doc.write(czech_sections[section_i][line_i] + "\n")
+#             cz_doc.write("\n")
+#     with open("DATA/Aligned_HT/" + title + "_en.txt", "w", encoding="utf-8") as en_doc:
+#         for section_i in range(len(english_sections)):
+#             for line_i in range(len(english_sections[section_i])):
+#                 en_doc.write(english_sections[section_i][line_i] + "\n")
+#             en_doc.write("\n")

@@ -2,7 +2,7 @@ import requests
 from sentence_transformers import SentenceTransformer, util
 
 
-def cosine_section_similarity(czech_lines : list[str], english_lines : list[str]) -> float:
+def cosine_section_similarity(czech_lines : list[str], english_lines : list[str], model = None) -> float:
 
     czech_joined = ", ".join(czech_lines)    
     english_joined = ", ".join(english_lines)
@@ -12,7 +12,8 @@ def cosine_section_similarity(czech_lines : list[str], english_lines : list[str]
     response.encoding='utf8'
     cz_to_english_joined = response.text
 
-    model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')  # multi-language model
+    if model == None:
+        model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')  # multi-language model
 
     embedding1 = model.encode(cz_to_english_joined, convert_to_tensor=False)
     embedding2 = model.encode(english_joined, convert_to_tensor=False)
@@ -22,7 +23,7 @@ def cosine_section_similarity(czech_lines : list[str], english_lines : list[str]
     return(cosine_similarity[0][0].item())
 
 
-def get_semantic_similarity(czech_sections : list[list[str]], english_sections : list[list[str]]) -> float:
+def get_semantic_similarity(czech_sections : list[list[str]], english_sections : list[list[str]], model = None) -> float:
 
     similarity_sum = 0
 
@@ -36,6 +37,6 @@ def get_semantic_similarity(czech_sections : list[list[str]], english_sections :
         n_lines += len(section)
 
     for i in range(n_sections):
-        similarity_sum += ((len(czech_sections[i]) / n_lines) * cosine_section_similarity(czech_sections[i], english_sections[i]))
+        similarity_sum += ((len(czech_sections[i]) / n_lines) * cosine_section_similarity(czech_sections[i], english_sections[i], model))
     
     return similarity_sum

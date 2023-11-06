@@ -100,14 +100,14 @@ def get_syllable_part_sound_mapping_dict():
     # pair_dict = sorted(pair_dict.items(), key=lambda x: x[1], reverse=False)
 
     # Serialize the model.
-    with lzma.open("C:/Users/barca/MOJE/UMEA/NLP-Umea/FinalProject/DATA/pair.dict", "wb") as model_file:
+    with lzma.open("DATA/pair.dict", "wb") as model_file:
         pickle.dump(pair_dict, model_file)
 
 
 def get_phoneme_syllable_mapping_distance(czech_sections, english_sections):
     distance = 0
 
-    with lzma.open("C:/Users/barca/MOJE/UMEA/NLP-Umea/FinalProject/DATA/pair.dict", "rb") as model_file:
+    with lzma.open("DATA/pair.dict", "rb") as model_file:
         pair_dict = pickle.load(model_file)
 
     czech_lines = []
