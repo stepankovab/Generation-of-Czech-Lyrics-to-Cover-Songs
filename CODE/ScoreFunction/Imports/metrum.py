@@ -7,14 +7,15 @@ model : ValidatorInterface  = torch.load("C:/Users/barca/MOJE/BAKALARKA/CODE/Sco
 
 tokenizer = AutoTokenizer.from_pretrained('roberta-base')
 
-ids = tokenizer("Když měla jsem svatbu mít")
+ids = tokenizer("Když měla jsem svatbu mít", return_tensors='pt', truncation=True, padding=True).data["input_ids"]
 
-print(model.validate(input_ids=ids)) #input_ids=ids, metre=TextAnalysis._metre_vector("T")
-
-
-
-
-
-
-
+print("J", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("J"))))
+print("T", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("T"))))
+print("D", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("D"))))
+print("A", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("A"))))
+print("X", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("X"))))
+print("Y", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("Y"))))
+print("N", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("N"))))
+print("H", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("H"))))
+print("P", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("P"))))
 

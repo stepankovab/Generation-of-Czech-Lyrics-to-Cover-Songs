@@ -12,16 +12,13 @@
 - jesus crist superstar
 - fantom opery
 - byt stale mlad
-- ved me dal cesto ma
+- ved me dal cesto ma XD
 
-#### Alignovat vsechny texty co mam
-- vsechny
-
-#### Rhymetagger prizvuky
-- vyzkouset
 
 #### Meter / Rytmus
 - vyzkouset
+
+#### Rymy uprostred radku na vsechny slabiky
 
 ## Bylo by nice
 
@@ -31,7 +28,6 @@
 - experimentovat 
 - https://platform.openai.com/docs/api-reference/moderations
 - https://huggingface.co/gpt2
-
 
 
 ## jakobyy...
