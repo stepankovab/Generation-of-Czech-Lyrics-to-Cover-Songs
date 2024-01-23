@@ -10,6 +10,7 @@
 - pridat info (ground truth)
 
 #### Precist clanky
+- vymyslet metody co chci zkusit!!!!!!
 
 #### Meter / Rytmus
 - vyzkouset
@@ -17,6 +18,8 @@
 #### opakovani v radcich / sekcich
 - Rymy uprostred radku na vsechny slabiky
 - v jakych slabikach se vyskytuje phoneme repetition
+
+#### Mohla bych nejak vyuzit melody aligned ze spotify nebo tak neco?
 
 ## Bylo by nice
 
