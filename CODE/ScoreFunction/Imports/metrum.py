@@ -7,7 +7,8 @@ model : ValidatorInterface  = torch.load("C:/Users/barca/MOJE/BAKALARKA/CODE/Sco
 
 tokenizer = AutoTokenizer.from_pretrained('roberta-base')
 
-ids = tokenizer("Když měla jsem svatbu mít", return_tensors='pt', truncation=True, padding=True).data["input_ids"]
+ids = tokenizer("víc než kdykoli dřív blankytná", return_tensors='pt', truncation=True, padding=True).data["input_ids"]
+# "Když měla jsem svatbu mít", "Měli jsme svatbu mít", "Obloha se zdála", "víc než kdykoli dřív blankytná", "Víc než kdy dřív blankytná", "Bruno jde sem s podivným úsměvem", "Pak hrom"
 
 print("J", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("J"))))
 print("T", model.validate(input_ids=ids, metre=torch.Tensor(TextAnalysis._metre_vector("T"))))

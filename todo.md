@@ -1,34 +1,30 @@
 # TODO:
 
-
 ## Hoří
 
-#### Najit muzikalovy texty
-- aladin
-- tarzan
-- trolls
-- sing
-- grease
-- jesus crist superstar
-- fantom opery
-- byt stale mlad
-- ved me dal cesto ma XD
+#### Metacentrum
+- spustit script
+- zjistit co a jak
 
+#### Dataset z velkyho zpevniku
+- pridat info (ground truth)
+
+#### Precist clanky
 
 #### Meter / Rytmus
 - vyzkouset
 
-#### Rymy uprostred radku na vsechny slabiky
+#### opakovani v radcich / sekcich
+- Rymy uprostred radku na vsechny slabiky
+- v jakych slabikach se vyskytuje phoneme repetition
 
 ## Bylo by nice
-
 
 #### GPT
 - zjistit co a jak XD
 - experimentovat 
 - https://platform.openai.com/docs/api-reference/moderations
 - https://huggingface.co/gpt2
-
 
 ## jakobyy...
 
@@ -47,3 +43,13 @@
 #### Viterby algoritmus/ beam search
 - zjistit co a jak?
 
+#### Najit muzikalovy texty
+- aladin
+- tarzan
+- trolls
+- sing
+- grease
+- jesus crist superstar
+- fantom opery
+- byt stale mlad
+- ved me dal cesto ma XD
