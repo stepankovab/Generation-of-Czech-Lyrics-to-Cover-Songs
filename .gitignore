@@ -165,4 +165,5 @@ cython_debug/
 BPE_validator_1697833311028
 
 # ignore Velky zpevnik for many files
-Velky_zpevnik
+VZ_sections
+VZ_prompted_sections
