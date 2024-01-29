@@ -14,10 +14,13 @@ MIN_LINE_LEN = 5
 def detect_language_with_langdetect(line): 
     try: 
         langs = detect_langs(line) 
+        cs_true = False
         for item in langs: 
             # The first one returned is usually the one that has the highest probability
-            return item.lang, item.prob 
-    except: return "err", 0.0 
+            if item.lang == "cs":
+                cs_true = True
+        return cs_true
+    except: return False
 
 def split_section_based_on_distinct2(temp_section : list[str], min_lines : int = 2) -> tuple[list[str]]:
     """
@@ -32,16 +35,21 @@ def split_section_based_on_distinct2(temp_section : list[str], min_lines : int =
     ------
     Tupple containing the split sections
     """
+    if len(temp_section) > 50:
+        print("section over 50 lines:", len(temp_section))
+        temp_split_i = len(temp_section)//2
+        return (temp_section[:temp_split_i], temp_section[temp_split_i:])
+
     best_split_value = math.inf
     best_split_i = 0
 
-    for i in range(min_lines, len(temp_section) - min_lines + 1):
-        phon2_1 = phoneme_distinct2(temp_section[:i], "cz")
-        phon2_2 = phoneme_distinct2(temp_section[i:], "cz")
+    for split_i in range(min_lines, len(temp_section) - min_lines + 1):
+        phon2_1 = phoneme_distinct2(temp_section[:split_i], "cz")
+        phon2_2 = phoneme_distinct2(temp_section[split_i:], "cz")
 
         if phon2_1 + phon2_2 < best_split_value: # and -> so its rozumny sekce
             best_split_value = phon2_1 + phon2_2
-            best_split_i = i
+            best_split_i = split_i
 
     return (temp_section[:best_split_i], temp_section[best_split_i:])
 
@@ -65,18 +73,24 @@ def recursive_section_split(sum_lines, temp_section : list[str], counter : int, 
     if len(temp_section_1) > max_lines:
         (sum_lines, counter) = recursive_section_split(sum_lines, temp_section_1, counter, max_lines)
     else:
-        with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
-            new_section.writelines(temp_section_1)
-        counter += 1
-        sum_lines += len(temp_section_1)
+        cs_true = detect_language_with_langdetect(" ".join(temp_section_1))
+        if cs_true:
+            print(counter)
+            with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
+                new_section.writelines(temp_section_1)
+            counter += 1
+            sum_lines += len(temp_section_1)
 
     if len(temp_section_2) > max_lines:
         (sum_lines, counter) = recursive_section_split(sum_lines, temp_section_2, counter, max_lines)
     else:
-        with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
-            new_section.writelines(temp_section_2)
-        counter += 1
-        sum_lines += len(temp_section_2)
+        cs_true = detect_language_with_langdetect(" ".join(temp_section_2))
+        if cs_true:
+            print(counter)
+            with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
+                new_section.writelines(temp_section_2)
+            counter += 1
+            sum_lines += len(temp_section_2)
 
     return sum_lines, counter
 
@@ -103,9 +117,12 @@ def section_join(sum_lines, short_section : list[str], next_section : list[str],
     if len(first_section) > max_lines:
         sum_lines, counter = recursive_section_split(sum_lines, first_section, counter - 1, max_lines, min_lines)
     else:
-        with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter - 1) + ".txt", "w", encoding="utf-8") as new_section:
-            new_section.writelines(first_section)
-        sum_lines += len(first_section)
+        cs_true = detect_language_with_langdetect(" ".join(first_section))
+        if cs_true:
+            print("correction of", counter - 1)
+            with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter - 1) + ".txt", "w", encoding="utf-8") as new_section:
+                new_section.writelines(first_section)
+            sum_lines += len(first_section)
     
     if len(second_section) > max_lines:
         sum_lines, counter = recursive_section_split(sum_lines, second_section, counter, max_lines, min_lines)
@@ -113,10 +130,13 @@ def section_join(sum_lines, short_section : list[str], next_section : list[str],
         return_short = second_section
         return_short_bool = True
     else:
-        with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
-            new_section.writelines(second_section)
-        counter += 1
-        sum_lines += len(second_section)
+        cs_true = detect_language_with_langdetect(" ".join(second_section))
+        if cs_true:
+            print(counter)
+            with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
+                new_section.writelines(second_section)
+            counter += 1
+            sum_lines += len(second_section)
 
     return (sum_lines, counter, return_short, return_short_bool)
 
@@ -141,7 +161,7 @@ deletions=[
     r"\b[CDEFGHBXxcdefghb][bs#]*\b",
     r"\b[CDEFGHBXxcdefghb]mi\b",
     r"\b[CDEFGHBXxcdefghb][éá]\b",
-    r"[0-9]+"
+    r"[0-9]+[x]*"
         ]
 
 counter = 1
@@ -157,15 +177,12 @@ for i in range(len(lines)):
     for d in deletions: 
         lines[i] = re.sub(d," ",lines[i])
 
-    line = re.sub(r'[^a-zA-Z\sěščřžýáíéúůóťďňĚŠČŘŽÝÁÍÉÚŮÓŤĎŇ,.()]+', ' ', lines[i])
+    line = re.sub(r'[^a-zA-Z\sěščřžýáíéúůóťďňĚŠČŘŽÝÁÍÉÚŮÓŤĎŇ,.()]+', '', lines[i])
     line = re.sub(r'\s+', ' ', line)
+    line = line.lower()
 
     if not re.sub(r"[.,()]", '', line).strip() and len(temp_section) > 0:    # if the line contains just white spaces
         # print("lines in a section: ", len(temp_section), "index: ", counter)
-
-        lang, prob = detect_language_with_langdetect(" ".join(temp_section))
-        if lang != "cs" and lang != "sk" and lang != "sl":
-            continue
 
         if len(temp_section) > MAX_LINES:
             if last_section_short:
@@ -185,15 +202,15 @@ for i in range(len(lines)):
             if last_section_short:
                 (sum_lines, counter, short_section, last_section_short) = section_join(sum_lines, short_section, temp_section, counter, MAX_LINES, MIN_LINES)
             else:
-                with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
-                    new_section.writelines(temp_section)
-                counter += 1
-                sum_lines += len(temp_section)
+                cs_true = detect_language_with_langdetect(" ".join(temp_section))
+                if cs_true:
+                    print(counter)
+                    with open("DATA\\Velky_zpevnik\\VZ_sections\\zpevnik_" + str(counter) + ".txt", "w", encoding="utf-8") as new_section:
+                        new_section.writelines(temp_section)
+                    counter += 1
+                    sum_lines += len(temp_section)
 
         temp_section.clear()
-        print(counter - 1)
-        print("avg lines in section:", sum_lines / (counter - 1))
-        print("letters/line:", avgs_letters / sum_lines)
         
 
     if re.sub(r"[.,()]", '', line).strip():
