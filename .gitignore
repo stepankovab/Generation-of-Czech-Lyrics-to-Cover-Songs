@@ -166,4 +166,6 @@ BPE_validator_1697833311028
 
 # ignore Velky zpevnik for many files
 VZ_sections
+VZ_sections_old
+VZ_sections_with_duplicates
 VZ_prompted_sections

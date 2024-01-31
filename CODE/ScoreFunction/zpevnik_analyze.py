@@ -24,6 +24,13 @@ import pickle
 
 
 with lzma.open("DATA/Velky_zpevnik/OG_file_analysis.dict", "rb") as model_file:
-    sorted_word_count_dict = pickle.load(model_file)
+    sorted_word_count_dict : dict[str, int] = pickle.load(model_file)
 
-print("a")
+c = 0
+
+for word, count in sorted_word_count_dict.items():
+    print(word, count)
+    c += 1
+
+    if count < 240 and c % 20 == 0:
+        pass
