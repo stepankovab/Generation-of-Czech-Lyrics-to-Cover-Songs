@@ -1,1 +1,0 @@
-set_of_sections = set()

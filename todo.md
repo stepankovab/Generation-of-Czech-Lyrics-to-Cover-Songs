@@ -2,10 +2,6 @@
 
 ## Hoří
 
-#### Metacentrum
-- spustit script
-- zjistit co a jak
-
 #### Dataset z velkyho zpevniku
 - pridat info (ground truth)
 

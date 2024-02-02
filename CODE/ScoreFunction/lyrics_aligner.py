@@ -15,9 +15,6 @@ def dynamically_align_lyrics_by_section_and_line(czech_text : str, english_text 
 
     returns aligned lyrics, fist czech then english
     '''
-    # czech_lines = [a for a in re.split(r"\s*[,\.\n:!?;]+\s*", re.sub('\n\n', '\n<>\n', czech_text)) if re.search(r'(\w+)|(<>)', a)]
-    # english_lines = [a for a in re.split(r"\s*[,\.\n:!?;]+\s*", re.sub('\n\n', '\n<>\n', english_text)) if re.search(r'(\w+)|(<>)', a)]
-
     print(len(syllabify(czech_text, "cz")))
     print(len(syllabify(english_text, "en")))
 
