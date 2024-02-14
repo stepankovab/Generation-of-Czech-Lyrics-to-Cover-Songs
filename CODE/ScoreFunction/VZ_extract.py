@@ -200,8 +200,6 @@ def log(message : str):
         print(message)
 
 
-
-
 with open("DATA\\Velky_zpevnik\\velkyzpevnik.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
 

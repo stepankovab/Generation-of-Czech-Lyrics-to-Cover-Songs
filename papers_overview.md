@@ -27,6 +27,10 @@
 - Very linguistic
 - Maybe some writing inspo
 
+#### [Learned in Translation: Contextualized Word Vectors](https://proceedings.neurips.cc/paper_files/paper/2017/hash/20c86a628232a67e7bd46f76fba7ce12-Abstract.html)
+- 2017
+- mozna translation (spis na meaning to other language?)
+
 #### [Singable translations of songs](https://www.tandfonline.com/doi/abs/10.1080/0907676X.2003.9961466)
 - 2003
 - Peter Low
@@ -55,6 +59,11 @@
 #### [Modeling the Rhythm from Lyrics for Melody Generation of Pop Song](https://arxiv.org/abs/2301.01361)
 - 2022
 - Mozna kdybych mela rytmus tak muzu z rytmu jednodusejc generovat dal
+
+#### [Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://aclanthology.org/2021.acl-long.353/)
+- 2021
+- continuous prompting
+- !!!!!
 
 #### [DeepRapper: Neural Rap Generation with Rhyme and Rhythm Modeling](https://arxiv.org/abs/2107.01875)
 - 2021
