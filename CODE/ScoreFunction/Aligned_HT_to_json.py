@@ -1,5 +1,4 @@
 import os
-import Imports.tagger as tagger
 import math
 from phoneme_repetition_similarity import phoneme_distinct2
 import matplotlib.pyplot as plt
@@ -9,10 +8,6 @@ import json
 directory = 'DATA/Aligned_HT'
  
 HT_dataset = {}
-
-rt_cs = tagger.RhymeTagger()
-rt_cs.load_model("cs", verbose=False)
-
 
 
 def split_section_based_on_distinct2(temp_section : list[str], min_lines : int = 2) -> tuple[list[str]]:
@@ -127,9 +122,8 @@ for filename in os.listdir(directory):
     section_i = 0
 
     for i in range(len(song)):
-        line = song[i]
-        stripped_line = line.strip()
-        if not stripped_line:
+        line = song[i].lower().strip()
+        if not line:
             section_lengths[len(section)] += 1
 
             # dialogue
@@ -160,7 +154,7 @@ plt.plot(section_lengths)
 plt.show()
 
 
-with open("DATA\\Velky_zpevnik\\HT.json", "w", encoding='utf-8') as json_file:
+with open("DATA\\HT.json", "w", encoding='utf-8') as json_file:
     json.dump(HT_dataset, json_file, ensure_ascii=False)
         
     
