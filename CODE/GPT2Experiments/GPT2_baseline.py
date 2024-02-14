@@ -1,5 +1,6 @@
 import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel
+from transformers import GPT2Tokenizer, GPT2LMHeadModel, PreTrainedTokenizerFast, AutoTokenizer, AutoModelForCausalLM
+
 import numpy as np
 from torch.utils.data import Dataset
 from torch.utils.data import Dataset, DataLoader
@@ -13,10 +14,11 @@ import warnings
 
 
 BATCH_SIZE = 16
+GPT2_NAME = "GPT2_czech_XL" # "Mistral_czech" # "GPT2_oscar" # 
 EPOCHS = 5
 LEARNING_RATE = 3e-5
 WARMUP_STEPS = 5000
-DATASET_PATH = '../../../storage-brno2/home/stepanb2'
+DATASET_PATH = './' # "DATA/Velky_zpevnik" # 
 
 
 logging.getLogger().setLevel(logging.CRITICAL)
@@ -27,20 +29,20 @@ if torch.cuda.is_available():
     print("cuda available.")
     device = 'cuda'
 
-tokenizer = GPT2Tokenizer.from_pretrained("lchaloupsky/czech-gpt2-oscar")
-model = GPT2LMHeadModel.from_pretrained("lchaloupsky/czech-gpt2-oscar")
+if GPT2_NAME == "GPT2_oscar":
+    tokenizer = AutoTokenizer.from_pretrained("lchaloupsky/czech-gpt2-oscar")
+    model = AutoModelForCausalLM.from_pretrained("lchaloupsky/czech-gpt2-oscar")
+    tokenizer.model_max_length=1024
+
+elif GPT2_NAME == "GPT2_czech_XL":
+    tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
+    model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
+
+elif GPT2_NAME == "Mistral_czech":
+    tokenizer = AutoTokenizer.from_pretrained("simecek/cswikimistral_0.1")
+    model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1")
+    
 model = model.to(device)
-tokenizer.model_max_length=1024
-
-
-def choose_from_top(probs, n=5):
-    ind = np.argpartition(probs, -n)[-n:]
-    top_prob = probs[ind]
-    top_prob = top_prob / np.sum(top_prob) # Normalize
-    choice = np.random.choice(n, 1, p = top_prob)
-    token_id = ind[choice][0]
-    return int(token_id)
-
 
 
 class LyricsDataset(Dataset):
@@ -66,7 +68,7 @@ class LyricsDataset(Dataset):
         return self.lyrics_list[item]
 
 dataset = LyricsDataset()
-joke_loader = DataLoader(dataset, batch_size=1, shuffle=True)
+lyrics_loader = DataLoader(dataset, batch_size=1, shuffle=True)
 
 
 
@@ -77,7 +79,7 @@ proc_seq_count = 0
 sum_loss = 0.0
 batch_count = 0
 
-tmp_jokes_tens = None
+tmp_lyrics_tens = None
 models_folder = "trained_models"
 if not os.path.exists(models_folder):
     os.mkdir(models_folder)
@@ -86,11 +88,11 @@ for epoch in range(EPOCHS):
     
     print(f"EPOCH {epoch} started" + '=' * 30)
     
-    for idx,joke in enumerate(joke_loader):
+    for idx,lyric in enumerate(lyrics_loader):
 
-        joke_tens = torch.tensor(tokenizer.encode(joke[0])).unsqueeze(0).to(device)
+        lyric_tens = torch.tensor(tokenizer.encode(lyric[0])).unsqueeze(0).to(device)
             
-        outputs = model(joke_tens, labels=joke_tens)
+        outputs = model(lyric_tens, labels=lyric_tens)
         loss, logits = outputs[:2]                        
         loss.backward()
         sum_loss = sum_loss + loss.detach().data
@@ -108,8 +110,8 @@ for epoch in range(EPOCHS):
             print(f"sum loss {sum_loss}")
             batch_count = 0
             sum_loss = 0.0
-            torch.save(model.state_dict(), os.path.join(models_folder, f"gpt2_medium_joker_{epoch}_{sum_loss}.pt"))
+            torch.save(model.state_dict(), os.path.join(models_folder, f"{GPT2_NAME}_random_lyricist_{epoch}.pt"))
     
     # Store the model after each epoch to compare the performance of them
-    torch.save(model.state_dict(), os.path.join(models_folder, f"gpt2_medium_joker_{epoch}.pt"))
+    torch.save(model.state_dict(), os.path.join(models_folder, f"{GPT2_NAME}_random_lyricist_{epoch}.pt"))
 
