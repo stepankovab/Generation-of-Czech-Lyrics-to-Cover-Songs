@@ -37,25 +37,25 @@ def fill_in_none_rhymes(rhymes : list[int|None]) -> list[str]:
 with open("DATA/Velky_zpevnik/VZ.json", "r", encoding="utf-8") as json_file:
     dataset_dict = json.load(json_file)
 
-rt = tagger.RhymeTagger()
-rt.load_model("cs", verbose=False)
+# rt = tagger.RhymeTagger()
+# rt.load_model("cs", verbose=False)
 
 # model = SentenceTransformer('all-MiniLM-L12-v2') 
 
-for dat_i in dataset_dict:    
-    print(dat_i)
+for dat_i in dataset_dict:   
     lyrics_section = dataset_dict[dat_i]["lyrics"]
     without_newlines_section = []
 
-    for line in lyrics_section:
-        while len(line) > 0 and re.match(r'[\s,\.()]+', line[-1]):
-            line = line[:-1]
-        without_newlines_section.append(line)
+    # # remove new lines at the and of the lines
+    # for line in lyrics_section:
+    #     while len(line) > 0 and re.match(r'[\s,\.()]+', line[-1]):
+    #         line = line[:-1]
+    #     without_newlines_section.append(line)
     
-    dataset_dict[dat_i]["lyrics"] = without_newlines_section
+    # dataset_dict[dat_i]["lyrics"] = without_newlines_section
 
     # # lines count
-    # lines_count = len(lyrics_section)
+    lines_count = len(lyrics_section)
     # dataset_dict[dat_i]["len"] = lines_count
 
     # # rhyme scheme
@@ -63,9 +63,9 @@ for dat_i in dataset_dict:
     # rhymes = fill_in_none_rhymes(rhymes)
     # dataset_dict[dat_i]["rhymes"] = rhymes
 
-    # # line endings
-    # sylls_on_line = [syllabify(lyrics_section[sec_i], "cs")for sec_i in range(lines_count)]
-    # dataset_dict[dat_i]["line_endings"] = [syllabified_line[-1] for syllabified_line in sylls_on_line if len(syllabified_line) > 0]
+    # line endings
+    sylls_on_line = [syllabify(lyrics_section[sec_i], "cs")for sec_i in range(lines_count)]
+    dataset_dict[dat_i]["line_endings"] = [syllabified_line[-1][-min(3, len(syllabified_line[-1])):] for syllabified_line in sylls_on_line if len(syllabified_line) > 0]
 
     # # syllables count
     # dataset_dict[dat_i]["syllables"] = [len(syllabified_line) for syllabified_line in sylls_on_line]
@@ -87,7 +87,7 @@ for dat_i in dataset_dict:
     # dataset_dict[dat_i]["transf_embedding"] = embedding.tolist()
 
 
-with open("DATA\\Velky_zpevnik\\VZ.json", "w", encoding='utf-8') as json_file:
+with open("DATA\\Velky_zpevnik\\VZ_added.json", "w", encoding='utf-8') as json_file:
     json.dump(dataset_dict, json_file, ensure_ascii=False)
 
 
