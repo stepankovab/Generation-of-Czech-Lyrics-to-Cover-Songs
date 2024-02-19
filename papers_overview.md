@@ -36,7 +36,14 @@
 - Peter Low
 - criteria of singability, linguistic, everybody cites this one
 
+#### [Czech Poet](https://storage.ms.mff.cuni.cz/d/77b360c6c0244340894b/files/?p=%2FGPT_Czech_Poet.pdf)
+- od Michala
+- ruzny tokenizace a jejich efekt
 
+#### [Semantics of the Unwritten: The Effect of End of Paragraph and Sequence Tokens on Text Generation with GPT2](https://aclanthology.org/2021.acl-srw.16/)
+- 2021
+- EOS and EOP affects GPT2 generation
+- /n jako EOP pomaha ale to uz delam...
 
 
 

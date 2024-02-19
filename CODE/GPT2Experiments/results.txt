@@ -1,0 +1,2013 @@
+#!/bin/bash
+#PBS -q default@meta-pbs.metacentrum.cz
+#PBS -l walltime=24:0:0
+#PBS -l select=1:ncpus=1:ngpus=1:mem=45gb:scratch_local=100gb:gpu_cap=cuda86
+#PBS -N my_awesome_job
+
+
+
+
+
+
+
+####################################### results #########################################
+    
+    # GPT2 - Oscar - 5
+
+    # Nemám vůli žít, život brát si pro něj, to přece není fér, žít, žít si svět tak, jak nás baví<|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>oved<|endoftext|><|endoftext|>
+
+    # Univerzita je základem rodiny, bez rodiny nic není, i když třeba pár věcí bolí, to se v každé rodině stává, 
+    # proto ať má člověk to štěstí, že může žít<|endoftext|>, v páru<|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+
+    # Univerzita je základem poznání, když se mluví o kráse, pak i o lásce, kdopak ví<|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|>
+
+    # Univerzita je základem celé rodiny, ale hlavně v ní, nikdo neví, jaká jsou pravidla a kdo je ovládá, nikdo neví, 
+    # jaký je to mít s někým soucit<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|>
+
+
+
+
+    # (BULLSEYE)stepanb2@galdor7:~$ python GPT2_baseline_infer.py
+    # cuda available.
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_0.pt ==========
+    # 1
+
+    # Univerzita je základem poznání, co člověka učí, a na to by mělo býti dbáno, ne nadarmo se říká, že je třeba umět se smát, na co si hrajeme, o tom jsme to s paní profesorkou mysleli, když jsme byli malí
+    # 2
+
+    # Univerzita je základem státu, na němž se všechno točí, a tak nás, tys mě učil jak žít, každý den, jak žít, tak jak žít, jak žít, až se jednou splní vše co si přeješ, tak nás dej zpátky
+    # 3
+
+    # Univerzita je základem zdraví, když nám schází jenom jeden, je to dáno a také dáno, každá mince má rub i líc, co je štěstí a co je hněv, to je jen otázka štěstí všech, co žijí šťastně a šťastným životem, tak
+    # 4
+
+    # Univerzita je základem, je to základní stavební kámen, i když má se stát i mostem, a i když se mi třeba nepodaří najít správnou cestu kudy dál, já si říkám, že mám rád život, mám rád vodu, víno co je k pití
+    # 5
+
+    # Univerzita je základem všeho, co nám zbude, až to skončí a všechno skončí, nebo, že by se to přecedilo v tenkejch pláně, a ty jsi jako dítě hrál fotbal, já mám tě rád, když mi není fajn
+    # 6
+
+    # Univerzita je základem všech cest, pospolu se k nám, toulavému se vrací, už je to skoro, jako dřív, jsme parta kamarádů, to co bylo před námi, teď už jen schází nám síla, víra je jistota, je to
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_1.pt ==========
+    # 1
+
+    # Univerzita je základem, kde je třeba, je nutno, je nutno, je nutno, je nutno, je třeba mít na paměti, že každý z nás ve svém srdci sám je sám sebou, tedy život je jen jedna cesta, po které se cesta
+    # 2
+
+    # Univerzita je základem a jediným cílem, a je to i pro nás, co teďka na to nemáme, je to prostě jenom a výhradně náš život, a to není vše, co k tomu říct, to je prostě prostě jen a výhradně náš život
+    # 3
+
+    # Univerzita je základem a to je, přátelé, zlej fakt, a v něm je psáno, že je ze srdce procitnutí, odpouští a proklíná, že je z lásky zrada, že je z lásky zrada. to
+    # 4
+
+    # Univerzita je základem všech národů, každá naše víra v jednu je tím, čím víc lidí v ní žije, a víra, jež může sloužit všem národům, je také naší duší, která je pro nás vším a čím jsme jiní, jen ne vším
+    # 5
+
+    # Univerzita je základem, bez nadsázky, je to základ, když se v noci vzbudíš, ta jediná správná, ta správná slova, ta správná slova, co ti napoví, že jsi stejná, ta jediná správná, ta jediná správná slova, která
+    # 6
+
+    # Univerzita je základem pro nás, když pro lidi, nazí, v našem okolí, jde o to co je z nás, co jsme schopni pro sebe a to pro druhé, je to cesta která vede vzhůru, až ke kořenům, na zem
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_2.pt ==========
+    # 1
+
+    # Univerzita je základem života, je to jen člověk, co se učí žít, člověk není pes, pes je pes, a tak, jak jsme žili bez ní, už dnes se ve světě nevydáváme za jinou, svět není náš, je to
+    # 2
+
+    # Univerzita je základem všeho, co člověk potřebuje, všechno je to ale jenom v hlavě mámy, a jenom v hlavě mámy, ta jediná může říct co chce, protože láska není jen v hlavě, v hlavě mámy, je to jenom v
+    # 3
+
+    # Univerzita je základem rodiny, a je to první krok k úspěchu, když se ti narodí dítě, a to je základní princip rodiny, a tím pádem i prosperity, a to je první krok k úspěchu, když se ti narodí dítě, a to
+    # 4
+
+    # Univerzita je základem v každé profesi, ale to neznamená, že v praxi to není nutné, když si to projdeme spolu na obědě v hospodě u píva, jestli se nám bude líbit, jestli to s tím vůbec půjde, jestli to vůbec vyjde
+    # 5
+
+    # Univerzita je základem a má to být, v praxi to není, ani v praxi je to, v praxi jde to a je to, v praxi jde to a je to, v praxi to není, ani v praxi jde to a je to,
+    # 6
+
+    # Univerzita je základem, to se nesmí, když je na konci čas, v hospodě je ticho, a ten člověk, co měl být kdysi, když mu osud dal na frak, byl už v pekle a tak si to přál, byl to
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_3.pt ==========
+    # 1
+
+    # Univerzita je základem vesmíru, v níž se nachází naše duše, tak co s tím kdo má, bůh to je on, ať v ní žije, ať žije, ať žije ať žije ať žije, ať žije jak žije jak žije, ať žije kým
+    # 2
+
+    # Univerzita je základem pro život, a ten má, člověk, základ je základ pro život, to je pravda, to je pravda, ale v žádném případě není tím, co tady dělá člověk, je to právě to, co je tady v nebi dáno
+    # 3
+
+    # Univerzita je základem naší existence, má být jednou z možných cest, co nás mohou hnát někam, kam jsme jenom krůček, tam, kde je všechno jak má být, je lepší brát osud, než se hádat o čem jsme se spolu bavili
+    # 4
+
+    # Univerzita je základem naší víry v boha, pro život jako stvořenou, my ji známe jako tu svou, víra, víra, víra víra, víra, víra v Boha, víra, víra v boha, víra v boha, víra v boha, víra
+    # 5
+
+    # Univerzita je základem všech mostů a cest, každý mosty má svůj vlastní tvar, když mosty jsou jen dva, když mosty jsou jen dvě, když mosty jsou jen dvě, je to záhada s námi, kdo jsou tři králové v jedné říši, kdo
+    # 6
+
+    # Univerzita je základem, ona je tu pro vás, když se smějete, a když se smějte, tak se usmívejte, a když se smějte, tak se usmívejte, a když se smějete, tak se usmívejte, a
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_4.pt ==========
+    # 1
+
+    # Univerzita je základem lidského soužití, vždyť právě to nás předurčuje, žít jen pro sebe, to se bohužel netýká nás samých, ale těch ostatních, které známe z minula, a které neznáme z dneška, když jsme se znovu narodili, máme
+    # 2
+
+    # Univerzita je základem všech mravů, kdo s ní má tu čest, je příčinou mnoha potíží.
+    # Podle statistik, které každoročně vydává česká společnost v jednom čísle, bylo v roce 2014 v českém jazyce 295 tisíc slov, na což jsme byli hrdí
+    # 3
+
+    # Univerzita je základem, proč bych měl bejt blázen, jestli jsem blázen, to je mi fuk, na tom nezáleží, v mém srdci už nemá nikdo z vás žádný místo, tak teď pojďte, pojďte, pojďte, hm, h
+    # 4
+
+    # Univerzita je základem společnosti, proto je nutné, aby si ji člověk, jako každý občan, osvojil a dodržoval, je to jako sázka do loterie, do které se vložila, v případě výhry se vrátí zpět, a do hry
+    # 5
+
+    # Univerzita je základem života, je vlastně jen základ, je to jen o vůli, jen vůle, jen vůle si vybrat co je dobré, co je špatné, co je dobré dnes, to už nikdo nezmění, i když má pravdu někdo si to rád
+    # 6
+
+    # Univerzita je základem toho, co člověka tvoří, a co je tu za problém, tak se tedy s vámi chci podělit, protože, kdo si co počít, v podstatě jsem nic nevyhrál, že to někdo vzdal, to se ví, není
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_5.pt ==========
+    # 1
+
+    # Univerzita je základem a bez ní se žít nedá, na to je tu spousta důvodů, není to žádná sranda, a že ti to na konci přijde k smíchu, mě jako kdyby někdo chtěl, mít z toho legraci, to mě teda fakt mrzí,
+    # 2
+
+    # Univerzita je základem všeho, to je věc pěkná jako břitva, na světě je spousta hezkejch dam a holek, které by asi nemilovaly, když se dohrabu do konce se spoustou legrace, jen, abych řekl, že nemám
+    # 3
+
+    # Univerzita je základem, když přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, ten přijde čas, tak to bude, tak to bude, tak
+    # 4
+
+    # Univerzita je základem v našem životě, a proto jsme tam, kde jsme, a co je dnes, to je teď, když máme hlavu plnou lží, a nejsme schopni to říct nahlas, jsme jenom dva lidé, co lžou, a kdo z
+    # 5
+
+    # Univerzita je základem všeho, a tak je to, když se rozpadá země, všechno jde stranou, všechno jde stranou a najednou se něco objeví, to je jen sen a ta realita, co je nám skryta, a která znamená, že není
+    # 6
+
+    # Univerzita je základem, je to základ všech našich životů, základ všech našich životů, základ všech našich životů a to, jak se chovám ty, kdo jsou moje dětičky, máma, táta, tchýně, děda, teta, strejda,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_6.pt ==========
+    # 1
+
+    # Univerzita je základem našeho poznání, to se nemění a už nebudem vědět, kudy, kudy se máme jít, na to máme lék, na to máme lék, na to máme lék, na to máme lék, na to máme lék, na to
+    # 2
+
+    # Univerzita je základem toho, co se na světě děje, na světě se lidé baví, jsou spokojení jak bez práce se maj, co když na světě nejsou šťastní jak bez práce se maj, co když na světě nejsou šťastní jak bez práce se maj,
+    # 3
+
+    # Univerzita je základem všech ideálních rodin, jak se o něm zmíním, je to ten, kdo má rád ženy a ženy milují ženy, a muži, kteří jdou za ženskou láskou, a ženy, které jdou za ženský láskou, a muž je
+    # 4
+
+    # Univerzita je základem svobody, když se s ní naklání z kopce dolů, z kopce dolů, a když je po dešti tak se točí hlava, jak bych ti řekl, že je mi tě líto, teď už nejsi ta, ze které jsme se
+    # 5
+
+    # Univerzita je základem, který se nevyrovná zdravém, s pocitem viny, že je člověk vlastně nahý, a ten pocit viny, že je člověk vlastně nahý, je vlastně příčinou toho, proč jsem tady dnes sám, proč jsem tady dnes
+    # 6
+
+    # Univerzita je základem, je to lék, i když je to jenom víra, je to pro peníze. A proto je důležité umět žít, žít s vírou, to je můj smysl života, je to cesta ke mně, je to cesta ke mně,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_7.pt ==========
+    # 1
+
+    # Univerzita je základem života v životě lidském, ten život je totiž základ a na něm stát, na něm stát, na něm stát stojí, každý to zná, každý to dobře zná, každý to dobře zná, každej svět je jak ho známe, svět
+    # 2
+
+    # Univerzita je základem pro svět, a každá věc je tím pádem, čím víc je věcí, tím větší a krásnější je zář, tak, kdopak ti schází, kdopak ti schází, ať jsi doma, ať jsi doma, jestli chceš,
+    # 3
+
+    # Univerzita je základem života, ať to dobře nebo špatně, vždy je třeba mít se k tomu postavit čelem, tak co se týče lidí, ten je nejlepší z celé říše, to nám říkávám, ať jsou mi lidoví politici odíři,
+    # 4
+
+    # Univerzita je základem a my jsme tady, tady máme svoji zem, zem která nás spojuje, země, která jsme ještě neznali, a my tu žijeme pod plání, kde je mír, mír, mír, mír, mír, mír, klid
+    # 5
+
+    # Univerzita je základem pro vznik dalších druhů, od ryb, včel, přes hmyz, brouky, krysy, hmyz až ke všemu živému, je však třeba, aby to byl jen základ, na základ této vědy základ není, na něm všechno
+    # 6
+
+    # Univerzita je základem všech věd, jsou to kořeny celé společnosti, každá je vlastně jen jeden kmen, ale kdo zná, ví, kdo ví, kdo ví, kdo ví, kdo ví, kdo ví, kdo ví, kdo ví, kdo ví,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_8.pt ==========
+    # 1
+
+    # Univerzita je základem všeho, co je, člověk může to všechno pochopit, proč má žena ráda ženu, co by se vdala i kdyby neměla, ta se oženila na muže, vdala by se do muže, ta z mužských milen
+    # 2
+
+    # Univerzita je základem všech světů, a na každou jinou se může hodit, když má tělo v pořádku, z toho vyplývá, že je vlastně všechno v pořádku, ale když si tělo v pořádku, tak prostě nemůže být, není na to lék, je
+    # 3
+
+    # Univerzita je základem, který si člověk osvojil, když žil v malém domě, a jak to šlo v té době se změnilo, že ho to začalo bavit, když žil v malém domě, a jak to šlo v té době se změnilo, že
+    # 4
+
+    # Univerzita je základem všeho, jen se na ni dívej, podívej se, podívej a pak se zeptej, vždyť nám na ní nezáleží, když v noci spíme tak se na ni podívej, podívej se, podívej a
+    # 5
+
+    # Univerzita je základem kultury, protože nikdo není tak zlej, a to je to, co ve mně vzbudilo nadšení, je to tím, jak to jde, že já bych chtěl, aby moje máma byla moje máma, to vím jen já,
+    # 6
+
+    # Univerzita je základem všeho, kdo chce žít, ten musí mít sebe rád, a kdo hledá sebe sám, a kdo hledá sebe sám, kdo hledá sebe sám pro něj hledáš svůj cíl a cíl hledáš cíl hledáš svůj cíl hledáš,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_9.pt ==========
+    # 1
+
+    # Univerzita je základem, co je dnes normální, ale dnes už je to na míle, to znamená, že jsem jako žena sám, ale dnes už jsem jako žena sama, a mám se dobře, to znamená, že jsem jako žena sama,
+    # 2
+
+    # Univerzita je základem, a to je to hlavní, co by to znamenalo, kdyby tady žil král, a byl by z něj jeden ze sta, by ta vláda byla krutá, krutá ale spravedlivá, a kdo by byl král, to
+    # 3
+
+    # Univerzita je základem naší víry, jen ta v každém z nás, to není náš díl, my jsme ti co ho mají, je to pravda i lež co ti prozradí, tak pojď už se mnou lásko má, nech mě jít tam kde
+    # 4
+
+    # Univerzita je základem všech věcí, i když jsem za ni rád, je to, jako by ta naše země byla naše republika, každý z nás něco tuší, v téhle zemi je prostě všechno fajn, v lásce je to vždycky těžký, i když se
+    # 5
+
+    # Univerzita je základem jak u nás, tak v celé planetě, člověk sám se sebou se nesetkává, jak by se tomu líbilo na světě, co člověk může říct a co nemůže říct, jestli jsi sám sebou a jestli znáš odpověď, proč se
+    # 6
+
+    # Univerzita je základem mravních pravidel, ale i vztahů mezi námi, a s tím se musíme vyrovnat i my, když se zdá, všechno je jak si představujeme, když jsme sami, se vším se vyrovnáváme, to nám potom veze slova
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_10.pt ==========
+    # 1
+
+    # Univerzita je základem společnosti, ta je pro nás zdrojem poznání, když se sejde někdo, kdo to umí jak se v hospodě hraje, je tu veselo a na mě zase klid, na ten svět s chutí se vrhnu, to mi povídej
+    # 2
+
+    # Univerzita je základem všeho co je, když jsme spolu sami, tak proč jsme najednou jen bezcenný zboží, co se jen tak rozpadne, v té záplavě bezcenných nabídek se neobracíme na tu svou, však na tu jedinou
+    # 3
+
+    # Univerzita je základem státu, stát má svůj systém řízení, člověk není sám, s člověkem je to jiné, má svou svobodu, ale musí s ní žít, aby zůstal zdravý, nestrádal, člověk je v moci státní, musí se s ní
+    # 4
+
+    # Univerzita je základem morálky, toť pravda, na rozdíl od nás dva jsme stejní, a taky, že jsme všichni stejní, a že jsme stejní, tak jak už jsem říkal, tak jak mám rád, je to fakt,
+    # 5
+
+    # Univerzita je základem k životu, ať se každý ráno probudí nebo ne, není to zrovna láska, to je všechno, jen v sobě mít klid, to je moc krásné a je to lék, hlavně s tím se musí žít, to je vše,
+    # 6
+
+    # Univerzita je základem každé společnosti, člověk má své touhy, své ideály, svůj řád, co se nemá brát, to je zlou lží, jen zlou lží, ta zlá lží, je to na hlavu a na nic, nic s tím
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_11.pt ==========
+    # 1
+
+    # Univerzita je základem všech lidských práv, je tedy základní příčinou, proč zákony bezpráví dodržuji, na lidi bezpráví jsem velmi přísný, to jsem však popíral, to jsem ale popíral, je lepší v sobě mít klid, jinak se může
+    # 2
+
+    # Univerzita je základem, ten kdo se narodí, tím pádem je mu to dáno, každá žena by ho znala, je to tím, že si ženy cení víc, než muž, ať je žena jak žena, nikdy by neměla být zlá, není zlá
+    # 3
+
+    # Univerzita je základem naší kultury, je to pramen pro každého na světě, a co si lidé říkají, každý to ví, všichni víme, všichni tady na zemi máme svoje kořeny, co nás učili jsme se učit spolu jako kdysi, jen jeden z mnoha
+    # 4
+
+    # Univerzita je základem pro růst, a z ní plynou všechny výhody plynoucí z toho pro tebe, i ten nejslabší jedinec v sobě vlohy má.
+    # Člověk se učí sám žít, ale to jenom člověk má, když mu něco nejde, tak hledá
+    # 5
+
+    # Univerzita je základem víry, která nemá hranic, to jsou slova, která znějí jak rána z milosti, tak rána pěstí do hlavy, je to síla, to jsou slova, která už dávno neplatí, co dřív, to jsem slyšel, už nikdy
+    # 6
+
+    # Univerzita je základem naší existence, a svoboda je odrazem její existence, z níž pramení celý náš svět, každý člověk se narodí a nikdo není sám, svoboda je podmíněkem svobody všech bytostí, svoboda je zákonem svobody všech lidí, každá lidská bytost se
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_12.pt ==========
+    # 1
+
+    # Univerzita je základem společnosti, to je jen další z mnoha příkladů, tak jako i u vína lze narazit na úskalí, na které není třeba se bát, a to jen v případě, že je člověk v klidu a má v kapse bankovku, i
+    # 2
+
+    # Univerzita je základem pro celou žití, není to pravda, na každém rohu máme tu pravou, jen ty víš co znamená slovo láska, já ti nabízím, já ti nabízím, až ti budu hrát, řeknu ti v tvém srdci, píseň známou i
+    # 3
+
+    # Univerzita je základem každého úspěchu, ať máte svou školu na prvním nádraží, nebo v hotelu v hotelu na předměstí, a všichni jsou z toho, že oni se sami doma potkají, a každý si říká, že to je jejich cesta a ten druhý
+    # 4
+
+    # Univerzita je základem, i když se to nezdá, vždyť každá z nás to ví, že jsme bohatí, ale není možné že jsou bohatí, je to dáno tím, že už je naše rodina tak rozvedená, a že jsme bez lásky
+    # 5
+
+    # Univerzita je základem všech dnů, to vám můžu jenom slíbit, že až přijde den, až je den, pak se zas potkáme na ulici, že mi dají pusu na usmířenou, až přijde den, bude to zas tak lepší, než
+    # 6
+
+    # Univerzita je základem jak správně žít, co to znamená žít, žít tak jak to děláme, i když nemáme zrovna nejlepší známky, naše štěstí je, když jsme šťastni, když nás zdraví chrání, a naše zdraví, naše zdraví, naše zdraví je
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_13.pt ==========
+    # 1
+
+    # Univerzita je základem a jediným zdrojem, to znamená se neustále ptát a ptát, co je vlastně za ni, ta má svou vlastní pravdu, jak je to možné, je to prostě klam, když se někdo snaží skrýt pravdu, že tím pádem se
+    # 2
+
+    # Univerzita je základem naší existence, není součástí žádné války, je to pro ni jedna z cest, ze které jde dál, k dalším pokusům z ní žít, z toho jak se jí daří, to co je nám dáno, co je nám dáno
+    # 3
+
+    # Univerzita je základem všeho, kdo se o ní snaží, každá lidská duše je pro mě vším, pro každého je však něco mnohem víc než jenom pouhou hrou, kterou si zahrává, a co je pro ni vůbec možné, aby žila věčně, jen
+    # 4
+
+    # Univerzita je základem společnosti, ať se to někomu hodí, vždyť kdo si tohle umí představit, ta tráva má tvar půlměsíce, i když se zdá, že je to jenom plevel, pravda je ovšem ta, že za okny má vítr svá
+    # 5
+
+    # Univerzita je základem pro společnost, a to platí o všech lidech, ne o těch ostatních, co se smějí, když se blíží konec světa, a tak není divu, že jsou lidé stále naštvaní, že nemohou být šťastní, protože jejich láska
+    # 6
+
+    # Univerzita je základem krásy, i když se nám zdají věci zlý, jak se zdá, jsou to jen slova a činy, co máme v sobě, a co jsme, když se to nedaří, jsme všichni jako hadr na holi, a kdo to
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_14.pt ==========
+    # 1
+
+    # Univerzita je základem, to ví každý, kdo má na kontě milion a půl, a kdo nemá vůbec žádné, to ví každý, kdo má na kontě milion a půl, a kdo nemá vůbec žádné, to ví každý, kdo má na kontě milion
+    # 2
+
+    # Univerzita je základem vesmíru, a naše životy jsou jako na vodě, ve vodě jsou jen dvě věci, pro tebe jsou vlastně všechny krásné, a já jsem to všechno zažil poprvé, a to je velká chyba, že je to vůbec možné, a že
+    # 3
+
+    # Univerzita je základem a jedním z hlavních způsobů, jak žít, to jsou slova, citáty, slova a slova, slova, slova, slova a slova, slova slova, slova a slova, slova, slova a slova slova, slova a slova slova
+    # 4
+
+    # Univerzita je základem svobody, a svoboda je to, co znamená svobodu vlastnit svou moc, svoboda je to, co znamená svobodu vlastnit svou moc, není to tak, je to tak jako když si člověk zakoupí svůj dům, je to proto, že
+    # 5
+
+    # Univerzita je základem pro správný život, když se někdo z vás, kdo hledá cestu, po ní, obrací, k vám, ať už jde sám, ať už jde sám, chce být s vámi, ať se všichni, kdo jsme ji znali,
+    # 6
+
+    # Univerzita je základem, s tím něco dělat musí každý člověk, na to vem jed, ten, kdo nemá moc co se týče práce, ten si nemůže nic koupit, je to pro děti a pro dospělé, za to vem jed, už se nám
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_15.pt ==========
+    # 1
+
+    # Univerzita je základem života, každá lidská rasa má svou míru, lidská rasa má svou míru, každá lidská rasa má svou míru, jsou věci co jsou zlej sen, zlej sen, zlej sen, zlej sen jsou věci
+    # 2
+
+    # Univerzita je základem, pro nás jen, víra je základ, pro nás jen víra je základ, pro nás jako děti je to jen základ, pro nás to je víra ale je to jenom jedna, jedna jen jedna a láska není láska je jen jedna
+    # 3
+
+    # Univerzita je základem lásky, a proč si myslíte to co tady nikdo nevidí, v životě nic není jen tak jak vypadá, a proto si myslíte co tu nikdo nevidí je všechno co se tady může stát, a kdo vám tvrdí že není nic nežli jen
+    # 4
+
+    # Univerzita je základem společnosti pro každého muže, co umí být sám a chce jen hrát, a v tom případě je všechno v pořádku a není to nic závažného, co člověk dělat nemůže, tak je to v pořádku a není to nic závažného,
+    # 5
+
+    # Univerzita je základem společnosti, je to dáno tím, že člověk na světě má svůj zvyk, má svůj cíl, má svůj směr, ať to znamená kde se to ztrácí, je to dáno tím, že člověk na světě má svůj zvyk, má svůj
+    # 6
+
+    # Univerzita je základem pro nás, naše tělo se skládá z mnoha částí, a ta je nutná pro ně, to je první věc, kterou je třeba udělat. Ta musí být dobrá stejně jako víra v nás, v ní se člověk může vždy spolehnout na
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_16.pt ==========
+    # 1
+
+    # Univerzita je základem všech mostů, mostů, dálnic, silnic, silnic, mostů, dálnic, silnic, silnic, mostů, dálnic, silnic, silnic, dálnic, silnic, dálnic, silnic, dálnic, silnic, dálnic, silnic, dálnic, silnic
+    # 2
+
+    # Univerzita je základem společnosti pro všechny, kdo se cítí být středem zájmu, a jsou lidé, kteří, pro ně jsou bohatí, bohatí a v nich chudí, bohatí a v nich chudí, bohatí a v nich chudí
+    # 3
+
+    # Univerzita je základem každého lidského snažení, ať se vám to líbí nebo ne, ve všech formách jsou věci zcela jiné, stejné jsou v podstatě všechny věci, které se u nás dějí, ať si to klidně, klidně nebo špatně, vždycky záleží na nás
+    # 4
+
+    # Univerzita je základem a já pevně doufám, že se vrátí dřív, než se rozjede vlak sbohem dávej mně lásko má, já vím, je tu pro tebe a já vím, že se vrátí dřív, než se rozjede vlak s
+    # 5
+
+    # Univerzita je základem a ozdobou, to je to hlavní, jenže to všechno není nic moc, je to jen otázka času až zas příště to bude zase stejné, na co pak vlastně myslím já, když mám rád život co si může každý koupit, co
+    # 6
+
+    # Univerzita je základem šťastných manželství a ty ji, v případě nevěrné, musíš, zvát, aby ses mnou žil už od mládí, ve světě, kde láska není vázána jen na sex, už jsi se stal hvězdou bulvárního éteru
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_17.pt ==========
+    # 1
+
+    # Univerzita je základem naší existence, není to žádná věčná hádka, je to jen jedna z cest, kudy chodívám, je to jenom jedna z cest, kudy chodím, kudy chodím, tudy chodívám, tudy chodím vám, kudy chodím vám
+    # 2
+
+    # Univerzita je základem zdraví a života, na kterou se člověk musí dívat, člověk je to, nač se jen ptát, na co si dát pozor, co si vzít, tak se to dělává, a člověk je to, co se má dělat,
+    # 3
+
+    # Univerzita je základem státu, je to pravda, ta může stát se, že se k vám nakloní, na světě je tolik krásnejch míst, a každý má trochu jinej cíl, a každej z nich má svoji vůni, a každý má něco,
+    # 4
+
+    # Univerzita je základem našeho štěstí, tak, jako je to dáno, v tomhle vesmíru, a v tomhle vesmíru, každá hvězda a každý den, má vliv na nás, i naše štěstí, každý máme to tak, jen tak mít to tak rádi,
+    # 5
+
+    # Univerzita je základem všehomíra, ve všech časech, a v každém městě i v každé zemi. Je to jedno, to je jedna věc, je nám jedno, že to nejde, je třeba to mít.
+    # Ale proč, když se všechno odvíjí
+    # 6
+
+    # Univerzita je základem pro úspěch, když nás někdo podvádí, jen tak je nám všem přáno, a když se sejde parta bláznů, všichni si sedíme jako v kriminále, a je to naše věc štěstí, vždyť jsme jen lidi
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_18.pt ==========
+    # 1
+
+    # Univerzita je základem každé kultury, ta je vždy pro všechny stejná, a tak to v praxi chodí, každý z nás za své peníze utrácí, na západě je nám ale líp, tak se tamdíme spolu, ať žije dixieland, a
+    # 2
+
+    # Univerzita je základem všech hodnot, i když je to trochu škoda, jen se smát těm malým holkám, co maj krásný vlásky, to je konec konců v tomhle roce, to je konec konců v tomhle roce, to je konec konců v tomhle
+    # 3
+
+    # Univerzita je základem našeho štěstí, život je nám dán, naše štěstí a zdraví je nám dáno, když nám láska dává, život je nám dán, a i když se na mě zlobíš ty se stydíš já, já se nestydím já se
+    # 4
+
+    # Univerzita je základem společnosti, na tom se všichni shodnem, to je základ pro každý systém, na tom se všichni shodnem, to je základ pro všechny společnosti, na tom se všichni shodnem, to je základ pro všechny společnosti, na tom
+    # 5
+
+    # Univerzita je základem mravnosti, mravnost je naším životem, mravnost je naším cílem, mravnost je naší touhou, mravnost je naším cílem, mravnost je naším cílem, jsme tady, jsme tady, jsme tady, jsme tady, je
+    # 6
+
+    # Univerzita je základem všeho, ale ta moc a moc, co stojí za to, snad si to někdy uvědomí, nazítří, než dozraje den, a ona se stane, že i ona se stane, ale ne, ona se nestane
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_19.pt ==========
+    # 1
+
+    # Univerzita je základem, je tu všechno, a proč se bojíš, že není to všechno, že je to jenom tak a že se jenom tak nedá dělat, a proč tu všechno, co tě zajímá, když je to v tobě ukrytý,
+    # 2
+
+    # Univerzita je základem naší morálky, v zemi v níž vcházíš, jsi jen další výmysl, v zemi v níž vcházíš, jsi jenom další výmysl, v zemi v níž vcházíš, jsi jen další výmysl,
+    # 3
+
+    # Univerzita je základem svobody, ta má svůj cíl, ale není to vůbec žádná tragédie ani rána, a navíc, je to vlastně i skvělá otázka, pro nás, co všechno máme, co nám osud dal, a pak je na nás, jak si
+    # 4
+
+    # Univerzita je základem, i když se mi to nechce, tak když s ní jsem, tak se jí moc bojím, to se stává, že když se mi to nedaří, tak si připadám jako blázen, jenomže, ale já vím, že
+    # 5
+
+    # Univerzita je základem, já chci žít bez ní, pro štěstí jsem však nucen hrát s ní, tak jak s ní žít, když jsou věci tak, jak je, tak jak je, jak má být, s ní žít, v nás, kdo
+    # 6
+
+    # Univerzita je základem úspěchu, ten, kdo je chytrý, je tím pádem králem a vítězem všech, s kým se člověk střetne, a ten kdo hledá zábavu, je vítězem všech, ale ten kdo hledá zábavu, je vítězem všech, když se lidem
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_20.pt ==========
+    # 1
+
+    # Univerzita je základem svobody, svoboda je předpokladem svobody, svoboda je podmínkou svobody, svobodou není jenom v tom, že se s někým míchám, není to jenom v tom, že se s něčí pomocí míchám, to není jen v tom,
+    # 2
+
+    # Univerzita je základem všeho, co jsem kdy měl, tak proč se to všechno nedá napravit, a já to tak vím už léta, jenže teď bych to s kýmkoli vzdal, já vím, jen že jsem byl jednou z nich, ta věta na
+    # 3
+
+    # Univerzita je základem rodiny, každý musí znát to svoje pravidlo, to platí i o jídle a pití, člověk, co se jen trochu hýbe, musí být hodně při síle a znát to tělo i mysl, člověk, co se jen trochu nahý
+    # 4
+
+    # Univerzita je základem lidského těla, v žádném případě si na to nepřibírá, a kdyby ji někdo chtěl, jistě by jí to pochválil, vždyť ona je přece skvělá, takže když by si na mě stěžoval, proč si nemůže s náma povídat
+    # 5
+
+    # Univerzita je základem naší víry, víra je základem naší víry, víra v naší víře, víra v naší víře má smysl pro obě strany, víra je základem naší víry, víra je základem naší víry a v ní víra je zakotvená, víra je základem
+    # 6
+
+    # Univerzita je základem všech plánů, bez kterých, ať stojí v čele kdokoli, je to síla, kterou člověk jenom zná, když jsou věci tak těžké jak se zdá, jenže tak co, proč se bráníme těm krásným místům, kde láska proudí,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_21.pt ==========
+    # 1
+
+    # Univerzita je základem všech lidských práv, když jsme ji spolu stavěli, a je vlastně věcí cti, když jsme jí dali svou čest, to, čím jsme ji znali, je dnes už všechno v pořádku a nic se nemění, je naší věcí, že
+    # 2
+
+    # Univerzita je základem, na tom nic nezmění, každá chvíle stejná, ta jediná je ta jediná, co s jiným žít můžem, a proto je náš svět, každá chvíle stejná, ta jediná je ta jediná, co s jiným žít můžem,
+    # 3
+
+    # Univerzita je základem svobody podnikání, bez ní může být jenom tennessee, protože ta může trvat celý život, jen pro ni je důležité, že život je krátký jak měsíc, a když ji opustíš, je pro ni mnohem těžší žít, a
+    # 4
+
+    # Univerzita je základem všeho, nač jsme zvyklí, člověk má mít své sny, je nutno mít své sny, každý rád svůj sen, co se nám zdá, nás nutí, v hlavě nám buší, ať se nám něco stane, je to jako
+    # 5
+
+    # Univerzita je základem života, každý den ji musí mít každý muž, každá žena je také základ života, každá žena je žena, žena na konci má tělo a na konci je pán, to každý z nás jistě dobře ví, že jednou budem všichni stejně
+    # 6
+
+    # Univerzita je základem i v tomto státě, v podstatě už neplatí, že je jenom jedna. Každý je pro jednoho něco je třeba, a z každého něco je třeba, to je ta nejlepší věc má pro jednoho, ale jinak se ti do cesty postaví
+    # (BULLSEYE)stepanb2@galdor7:~$ python GPT2_baseline_infer.py
+    # cuda available.
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_0.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi jiný, jsou lepší už od nepaměti, a já jsem rád, že jim patřím, jsem rád, že jim patřím, a že jim patřím, jsem rád, že jim patřím, je moc fajn
+    # 2
+
+    # sobi jsou lepší než lidi, ale přesto je to lepší než lidi, i když se to nezdá, tak je to lepší než lidi, a já mám rád, když jsem sám, i když se to nezdá, tak je to lepší než lidi,
+    # 3
+
+    # sobi jsou lepší než lidi, jsou lepší než děti v rodině, jsou lepší než peníze, a tak jsou lepší než přátelé, jen pro lidi, kteří lásku po mně mohou mít za ně, a tak jsou lepší než ti, co lásku po mně
+    # 4
+
+    # sobi jsou lepší než lidi, i když se to nezdá, v očích už nejsou vidět, a ve vlasech bílý stín, jsou na nich slzy a smích, v nich slzy a smích, jsou na nich slzy a smích, v nich slzy a smích
+    # 5
+
+    # sobi jsou lepší než lidi, kteří se jen smějou a tak jsou, jsou v podstatě i veselí, s větrem, který je žene dál, jen v nás chtějí žít, ať ho vítr nebo déšť, a já doufám, že každý kdo si
+    # 6
+
+    # sobi jsou lepší než lidi, co jsou, i když někdy mají zdání, že jsou jiní, s ničím jiným, to je ta horší stránka, na kterou se neptaj, když se zeptají, na něco, o čem neví, že
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_1.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, kdo jsou, v týhle zemi nejšťastnější, ty jsi krásná, jsi mladá, jsi krásná, krásná, jsi svěží, jako listí, já tě mám tolik rád, když na tebe čekám, je to tím
+    # 2
+
+    # sobi jsou lepší než lidi, o čem jsi mluvil, a co bys pro nás za pár roků dělali, když tě mám pořád ráda jen sám a sám, jen pro tebe a pro svou ženu, a pro mě jsou to jen slova, nic víc
+    # 3
+
+    # sobi jsou lepší než lidi, jsou lepší, než lidi, jsou nejlepší, že jsem z nich šel, mám tě rád, mám tě rád, máš mou lásku rád, má milá moje milá, má milá moje milá moje milá, má milá moje
+    # 4
+
+    # sobi jsou lepší než lidi že nemaj čas a peníze, ale člověk se na co šáhne, ten si to líp veme, a potom se opije, já sem z toho zmatenej, nevím proč, a tak si radši sednem
+    # 5
+
+    # sobi jsou lepší než lidi, jsou horší, než co maj, a taky jsou lepší než co vlastně maj, a taky jsou to bít se jak dědek, a taky jsou to bít se jako dědek, ale pořád jsou to bí
+    # 6
+
+    # sobi jsou lepší než lidi, kdo na zemi jen spí, jsou na zemi jenom spí, jsou na zemi když prší štěstí a to mě už vážně nebaví, a já jsem se naučil žít v lásce dál, žít v lásce dál, žít v lásce
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_2.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, co by se nestyděli, kdyby se nestyděli, tak snad se nestydí, ne, ne, ne, ne, ne, ale já chtěl bych vám říct, že to vážně nevím, já sám jsem měl
+    # 2
+
+    # sobi jsou lepší než lidi, a nejsou jako ostatní, když si s nima povídám, jsou stejný a já jsem to viděl, a vím, co se stane, co budou říkat mé přátelé, už jsou jen z lásky na koni, já už
+    # 3
+
+    # sobi jsou lepší než lidi, a tys mi je dal, a já jim taky dal jsem svůj dům, do mých dlaní se vrací čas, který byl dřív, a pak, když jsem to poprvé viděl, to jsem ještě netušil, že tam
+    # 4
+
+    # sobi jsou lepší než lidi, co už se dávno nevrátili, když z nebe padají a jsou pryč poslední, je to smutné, ale je to pro nás smutné, máme to v sobě každý nějak dál, jako když jsme byli malí, dnes
+    # 5
+
+    # sobi jsou lepší než lidi, když je někdo vidí, já znám je to pěkný fór, když vidím jejich tvář, tak se mi nechce ven, protože mám strach, že to je všechno špatně, tak jsem je navštívil a řek jim ať mě
+    # 6
+
+    # sobi jsou lepší než lidi, i když to není fér, když v zemi chudým z lásky, se v míru a za podpory žen, za podpory žen, i když to není fér, když v zemi chudým z lásky, se v míru
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_3.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, ty, my, já, já, ty, já, já, já, já, ty, já, já, já, já, já, já, já, já, ty, já, já, já
+    # 2
+
+    # sobi jsou lepší než lidi, a že na světě nejsme jako v ráji, kde v lese za oknem sedí hejna hus, že z hučících pramenů jdou v nás slzy spát, to je ráj s námi v objetí, a že na světě
+    # 3
+
+    # sobi jsou lepší než lidi, už to neni jenom tak pro nás, není to jenom tak pro nás, pro nás, pro všechny lidi jsou nejlepší slova, co v nás se rodí, a slova, který v nás se rodí se tak krásně,
+    # 4
+
+    # sobi jsou lepší než lidi, a to je můj důvod, jak mám s tím žít, tak co je horší, já nemám moc čas, jen v pátek jdu spát a já mám spoustu práce, jen ve středu jedu domů, protože jsem zase po
+    # 5
+
+    # sobi jsou lepší než lidi, že mi narostly kvést, a já se z toho už nevyspím, tak jak dřív, tak už dávno, jsou lepší než lidi, že mi narostly kvést, a já se z
+    # 6
+
+    # sobi jsou lepší než lidi co sem přijdou, to je mi líto, já znám jenom pár hezkých tváří, jenže já znám jenom pár hezkých tváří, jenže já znám jenom pár hezkých tváří, jenže já znám jenom pár hezkých tváří,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_4.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, proč jsme tady s ním, a s kým si teď popovídáš, proč jsme tady s ním, když jsme spolu hráli, jak když láska je na světě vzácná, jak pokaždý když to se mnou jde,
+    # 2
+
+    # sobi jsou lepší než lidi, když mi potají lžou, a já se k nim nevracím, když se ptám, co mají na srdci, když mi jsou podsouvání, když mi jsou podsouvání, když jsem s nima sám
+    # 3
+
+    # sobi jsou lepší než lidi, ale ne ti co se narodili v pravý čas, ty jsi jenom ty z nich, na co se čeká, na co se čeká, když máš v srdci kousek citu, na co se čeká, když máš v
+    # 4
+
+    # sobi jsou lepší než lidi i když jsou to horší lháři, jen jednou v životě byl jsem tak sám, já už si dávno zvykám, jednou za čas se podívám na tu holku zepředu, já si zvykám, na ní vzpomínám
+    # 5
+
+    # sobi jsou lepší než lidi, co tě v noci hladěj, a v hlavě máš zmatek, co nadělá, kdybys je našel, už dávno je nejsi schopný říct, a tvůj svět je tak zlou noční můrou poset, když se
+    # 6
+
+    # sobi jsou lepší než lidi, kdo je měl rád, když jsem šel spát, když jsem spal, tak je mi na blití jak má bejt, když už jdu spát, jsem v zajetí snů tak proč je nemám brát, když mám o čem
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_5.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi ve městě, jsou lepší než co svět kolem nás, jsou lepší než děti ve městě a ve dne, nebo když v noci je nám zima, jsou lepší než lidi ve městě, a když je nám zima a zima v
+    # 2
+
+    # sobi jsou lepší než lidi, který jsem potkal, i když se mi zdá, že jsou horší než lidé, který jsem potkal, i když se mi zdá, že jsou lepší než lidi, co jsem potkal, i když se mi zdá, že
+    # 3
+
+    # sobi jsou lepší než lidi, co znám, možná že jsou špatnej kámoš, v životě se mi stalo, že se někdo zranil, to je prostě hnus, to je teda síla, v tom mám taky bordel, ale zas jsem tu nebyl
+    # 4
+
+    # sobi jsou lepší než lidi, i když jsou to jenom řeči, tak jsou lepší než lidé, jsou to jenom řeči, když je tu smutno, tak ty jsi tu nejkrásnější, to máš pravdu, jsou to jen řeči, je tu klid ale i
+    # 5
+
+    # sobi jsou lepší než lidi, co se na ně dívám, to se mi líbí, to mě nebaví, to se mi líbí, až se mi do hlavy vkrádá, to bude lepší nedělat nic, když já chci jenom si hrát,
+    # 6
+
+    # sobi jsou lepší než lidi na světě, za každým rohem jsou, všichni jsou ti co už vědí, co chtějí aby druzí uměli říct, co po nich chtějí aby druzí uměli říct, co po nich chtějí aby druzí uměli říct, jak
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_6.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, ale zas jsem s nima v duchu rád, když je vidím, tak ty můj bože, jó ty můj bože, ty můj bože, už není co bys říkal, jó, to je škoda, že si mě tak
+    # 2
+
+    # sobi jsou lepší než lidi z naší galaxie, ty jsou lepší než lidi z naší galaxie, a kdo z nás umí lépe psát tak dobře číst, má i když se člověk na něco šklebí, pravdu a pravdu a pravdu a pravdu a pravdu
+    # 3
+
+    # sobi jsou lepší než lidi, když je v noci tak to se někdy stává, a není divu, že každej to umí líp nežli já, na ten svůj vlak, je vždycky čas jít někam dál, za tebou na kolej jít, ať nejsi sám
+    # 4
+
+    # sobi jsou lepší než lidi, když se na vás vrhnou, když jim nedáte nic, když se na vás vrhnou, když jim nedáte nic, pak to za ně udělám já, ty taky, ty taky, ty taky, ty
+    # 5
+
+    # sobi jsou lepší než lidi, je lepší než lidi, jsou lepší než lidi, jenom ty máš svý srdce, je lepší než lidi, je lepší než lidi, je lepší než lidi, co mám rád, je lepší než moje míti, ty
+    # 6
+
+    # sobi jsou lepší než lidi z hor, co tu žijí, tak tam žij jen pro nás, jen pro nás jsi život dal, jsi to ty, kdo jen pro tebe jsem žil, až se budeš chtít vrátit zpět, tak mi řekni lá
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_7.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi co mám rád, i když jsou horší než lidi co znám, snad mě budeš milovat víc než já to víš a já chci si tě brát víc mám s tebou tolik rád, láska mi nikdy nebyla blíž než ta kdy jsem
+    # 2
+
+    # sobi jsou lepší než lidi co maj k sobě blízko, tož je to jedno z mála co nás těší, co je na tom špatný, ale co když nám to nepomůže tak, jako dřív, když nám to nepomáhá tak to není hezký jak dřív
+    # 3
+
+    # sobi jsou lepší než lidi, co jsou na konci světa, jen málokomu zbyde peněz, je tu velká parta z nich, je tu velká parta z nich, jsou tady velká parta z nich, jsou tady velká parta z nich, ty budeš
+    # 4
+
+    # sobi jsou lepší než lidi, kdo jsou jako oni, v dobách kdy už jen málokdo znal, co znamená, v dobách kdy lidi jen zřídka znali, že jen láska je bůh, co znamená, v časech kdy už jen málokdo znal, co znamená
+    # 5
+
+    # sobi jsou lepší než lidi, a na nich ty co mám, a na nich ty co mám já, a na nich ty co mám já, a na nich ty co mám já, a na nich ty co mám já, a na nich ty
+    # 6
+
+    # sobi jsou lepší než lidi, v noci jsou lepší než lidé, a když jsem si od nich něco koupil, tak jsem si koupil i rum, a potom je tam měl tak rád, a když jsem se vracel domů, tak jsem si koupil i
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_8.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, co se chtěj smát, za každou malou chvíli, jsou v tom lidé dobří, ať se klidně koupou, proč se jen tak oháníme rozumem a nikdo si netroufá říct, na co vlastně jsme na
+    # 2
+
+    # sobi jsou lepší než lidi, ty jsi, jak když se do tebe zabouchá, jsou zlý než psi, když se někdo zeptá v kavárně, je ti fuk, že už ti nejde a nejde, je ti jedno, že se mi vys
+    # 3
+
+    # sobi jsou lepší než lidi, co mají z ní strach, já jen doufám, že se vrátí zase po roce, a bude líp aspoň trochu to mít, mám jich dost, je jich dost, co se na mne dívaj, jsou to dobrý
+    # 4
+
+    # sobi jsou lepší než lidi, co je maj, ale v kapse klícku schoulený, jen tak se v trávě ztrácíš, v trávě schováváš to, co je, co je tvoje, co je tvůj sen, z oblohy padá prach
+    # 5
+
+    # sobi jsou lepší než lidi, na to ty máš svůj díl práce, na co si jen hrát, tak mi klidně půjď, já vím, co v tvých očích bude zářit, že nejsi moje královna, já vím, co v tvých očích
+    # 6
+
+    # sobi jsou lepší než lidi, to už se musí vidět, je to jako mít, zlou duši s jednou krásnou v těle mám, tak aspoň doufám, že si aspoň trochu užijem, ne vždy je to jenom komedie a jak se říká,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_9.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, je lepší bejt s tebou, ať na slunci nejsi sám, než žít jenom jeden druh, a ne jenom jednu věc se naučit mít rád, láska se nevyplácí za to dávat ti lásku, až se rozední,
+    # 2
+
+    # sobi jsou lepší než lidi, protože jsou to mí přátelé, a já mám je rád a rád jsem s nima, když je den je mi veseleji, a já mám je rád a rád jsem s nima, když je den je mi veseleji
+    # 3
+
+    # sobi jsou lepší než lidi, a když už jsou tady, tak jsou nejlepší, a když už jsou tady, tak je dobrý je mít, jsou dobrý jako já, a když už jsou tady, tak jsou nejlepší, a když už jsou tady,
+    # 4
+
+    # sobi jsou lepší než lidi, co se do nebe podívaj, i když se na tebe koukaj, i když se na tebe nedívaj, i když se na tebe koukaj, když se na tebe koukají, i když se
+    # 5
+
+    # sobi jsou lepší než lidi jsou zlý, tak běžte se ven dát víno má, ať víte kam jít, jó, kam jděte, jó, kam jděte, jó, kam jděte, jó, kam jděte, jó kde to mám vzít když jsem
+    # 6
+
+    # sobi jsou lepší než lidi a nejsou horší než zvířata, jsou horší než lidi a nejsou horší než zvířata, jen ten kdo chce být člověkem, tak se musí smířit s tím, že se to může stát, já mám jen pár špatných vlastností, a
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_10.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, to když to někdo přežene, nebo se na něco nachystá a my se taky musíme mít na pozoru, jestli má v sobě odvahu, sílu nebo jenom zlost, co nemá se nikdy stát co je a co
+    # 2
+
+    # sobi jsou lepší než lidi, jenom tak se rvou a jdou, v kapse se jen šramotí, jak z nudy, jak ze vzteku, a z žízně když je jim to málo, a když je jim to tak moc
+    # 3
+
+    # sobi jsou lepší než lidi, co tady se mnou stáli, a já je mám rád, i když jim v tom bráníte ty, jak ty se mnou nechoďte, já jsem totiž řek, že jsem blázen i blázen se srdcem v hlavě,
+    # 4
+
+    # sobi jsou lepší než lidi, to jsme jenom my dva, o tom to není, jak si můžeš myslet, všechno je tak jak je, jsme dva kamarádi, je na čase něco změnit, tak ať se ti všechno líbí nebo ne, jestli chceš
+    # 5
+
+    # sobi jsou lepší než lidi jsou horší nežli lidi, není to náhodou tím, že se někdy míchaj slova, to je tím, že se někdy míchaj slova, to je tím, že se někdy míchaj slova, to je tím, že
+    # 6
+
+    # sobi jsou lepší než lidi z dob minulých, jsou prostě horší než lidskejch zvyků, a stejně tak jak dřív, jsou horší než lidskejch zvyků, a stejně tak jak dřív, jsou prostě horší než lidskejch zvyků
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_11.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, co jim vezete, až se jednou rozední, tak se zase opozdíš a zapomeneš na cokoli, na co se koukáš jen, tak to pochop a radši poslouchej lidi kolem sebe tak jako
+    # 2
+
+    # sobi jsou lepší než lidi, proč už nevystačí ta banda co v něm hrála, a proč s ní nikdo nesejde dolů, proč když nám u baru schází, má tahle banda, s kterou se už v baru nesejde dolů,
+    # 3
+
+    # sobi jsou lepší než lidi, co mě neznají, na to, jak mě máš, jsem hrdý rád, že jsi mou ženou, mám tě rád a z dálky slyším kroky tvých šepotem, jak v dálce zní, tvůj zvon cinká,
+    # 4
+
+    # sobi jsou lepší než lidi, protože jsou lepší v životě než ti co nejsou, proto jsem to zkoušel a hledal odpověď, kdepak jsme tu zas ty dámy, co jsem potkal, když jsem u jedněch dveří stál jako král, ale že se
+    # 5
+
+    # sobi jsou lepší než lidi, když jsi tak něžná, a ty jsi ty můj princ zrozený, jen ty jsi moje hříšnice, a ty jsi můj pán zrozený, já vím, kdo z nás dvou, ty jsi moje hříšnice
+    # 6
+
+    # sobi jsou lepší než lidi, jsou lepší nežli opice, a tak proč mám tak rád lidi, proč proč mám tak rád lidi, vždyť jenom opice mě miluje, když je sama, když mě má ráda, pak mě musí mít ráda, když mě
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_12.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, jen s tebou se mívám, to bolí jak mě, asi to, na mně moc není moc platný, to je horší, co mi zbývá, a možná by se něco mohlo zdát o mně, kdybych tě tam
+    # 2
+
+    # sobi jsou lepší než lidi, je to přece fuk, kdo v těchhle dobách stál, že se lidem líp jen tak žít neumí, a to je chyba těch dob, že je nám jedno co se v nás rýmuje, že není na co
+    # 3
+
+    # sobi jsou lepší než lidi, ale pro lidi jsem to horší, než pro lidi jsem to horší, lidi pro lidi jsem to horší, jsou horší než pro lidi jsem to horší, jsou horší než pro lidi jsem to horší, jsou horší než pro
+    # 4
+
+    # sobi jsou lepší než lidi, jsou lepší než já, jsou lepší než já, jsou lepší než já, jsou lepší než já, jsou lepší než já, jsou lepší než já, jsou lepší nežli já, jsou lepší než já, jsou lepší nežli
+    # 5
+
+    # sobi jsou lepší než lidi, co žijí v bídě, protože je tu moc lidí, co umí jen tak bez keců, a já chci bejt zase tím, kdo to ví, a na to mám prachy, a já nechci bejt sám,
+    # 6
+
+    # sobi jsou lepší než lidi, jenomže když na nich sedím, tak se mi líbí, když se v klidu s nima roz peru, pak mě na nohy pohlédnou, jak jsem se měl, to je pravda, když mě pak rozc
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_13.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, co je neumíš, ty jsi prostě blázen, a každej z nás z nich sám má na tom svůj podíl, a jsou lepší než lidi co je neumíš, ty jsi prostě blázen, a každej z nás z
+    # 2
+
+    # sobi jsou lepší než lidi, každý ať si říká co chce, je lepší než co já v lásce sám mám, a co ty víš proč ty mě znáš jak jsem jiný, ale mě jde z tebe jak se patří, a z tebe nejsem sám
+    # 3
+
+    # sobi jsou lepší než lidi, co maj co víc, jenomže jak člověk stárne, tak se ztrácí touha a už vůbec ne rozum, to jak člověk stárne, tak se ztrácí touha a už vůbec ne rozum, když člověk stárne,
+    # 4
+
+    # sobi jsou lepší než lidi, jenom tak pro zábavu, a v tom jsou věci, na který si brousím zuby každý den, jenže já chtěl jsem se smát, vždyť jsou lepší než lidi, jen tak pro zábavu, a v tom jsou věci
+    # 5
+
+    # sobi jsou lepší než lidi, co jsou, než co dělaj, než co dělaj, než co dělaj, já byl sám jsem sám jsem sám já prošel to co jsem znal, sám jsem prošel to co jsem znal, sám jsem prošel
+    # 6
+
+    # sobi jsou lepší než lidi, kdo jsou dobří, kdo jsou špatní, když jsem z lidí, co nejsou horší, je to smutné, když jim závidím já, když mi závidím já, jsou to věci, co mě ničí, není
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_14.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, proč jsme se tolik báli, láska je jak nebe, ta, není žádná, je to jenom tak dál, a to je tak moc, že mi to nahání strach, když láska není, to je jenom tak
+    # 2
+
+    # sobi jsou lepší než lidi, když jsou v pohodě, jsou to ale dobrý lidi když jsme doma u piána, jsou to ale špatný lidé když jdeme spolu ven, jsou to špatný lidi když jsme doma u piána, jsou to ale špatný lidi
+    # 3
+
+    # sobi jsou lepší než lidi, to je jasné, že to všechno je tím, že jsem tam byl, ale to je tím, že já s nima žil, já s nima žil tam, kde jsem měl rád, a tak vám chci říct,
+    # 4
+
+    # sobi jsou lepší než lidi, ať už jsou slova slova slova jsou slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova slova
+    # 5
+
+    # sobi jsou lepší než lidi, ty jseš moje zlato, má cesta je přímá, už vidím tvůj černý vůz, co jsem na ní vezl, když jsem v horách stál, měl jsem se prát, ať je den nebo noc, jen tak
+    # 6
+
+    # sobi jsou lepší než lidi bez vyznání, za dob, kdo se bál, a kdo se bál, že přijde o svou sílu, teď po létech, jsou to slova, na nichž nic nezměníš, a každý má na něj cit jen sám pro
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_15.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, je to jak to říct, já chci žít, nechci tady pořád sedět, tak se v klidu vyblbnout, nechci tady pořád žít, jen tak mít svůj život rád jako já když jsme spolu šťastní, život svůj
+    # 2
+
+    # sobi jsou lepší než lidi, že to je vlastně zázrak, i když se zdá, že se mi zdá, není to pravda, jak bych si to představoval, já se s tím, a to já rád, potýkám a nevím, jak to
+    # 3
+
+    # sobi jsou lepší než lidi, co nic neumí, jsou jako vítr, který v létě do plachet padá, ale maj strach se smát, ale mají strach se smát, vždyť když jsem s tebou kdysi byl, jsem se smál dál, kdyžs s
+    # 4
+
+    # sobi jsou lepší než lidi z nebe, za tím si stojím, že jsme s nimi měli tenkrát, ten problém, jsem ještě neměl, a proto, když sem přišel, říkal jsem já s ním už nechodit, ať si každej dělá, co
+    # 5
+
+    # sobi jsou lepší než lidi, na lidi co maj svůj cíl co maj svůj cíl, na lidi co maj svůj cíl co maj svůj cíl co maj svůj cíl, na lidi co maj svůj cíl co maj svůj cíl, na lidi co maj svůj cíl
+    # 6
+
+    # sobi jsou lepší než lidi, je to fakt, a je to tím, že člověk umí žít, a když pak nemá žádnou vůli žít, tak si ten život ničí, protože je to tak, jenom lidi smí si myslet, že je to lepší
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_16.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi co na nich jsou, a tak jsme se sedli, smáli se, zpívali, to co nás tady čeká, až zas budeme v klidu žít, to co nás tady čeká, to co nás tady čeká,
+    # 2
+
+    # sobi jsou lepší než lidi, na jedné straně stojí, na druhé straně stojí, na tváři úsměv mám a mám úsměv zas, když spolu chodíme kolem kina, na obou stranách stojí, na jedné straně stojí, na druhém sedí, je to krása je
+    # 3
+
+    # sobi jsou lepší než lidi co jsou bez vyznání, jsou z vás, jako z reklamy na šampóny, co mají tak pěkný tvar, který vůbec nevadí, je to jako kdyby jste viděli na ulici bílou panenku, co má tak pěkný tvar,
+    # 4
+
+    # sobi jsou lepší než lidi co jsou na nohou, a já s tím nic nenadělám, je to jedno, v tom mám velký zmatek a zmatek a zmatek a zmatek, co dělat, když se ráno probudíme jak ti lidi na nohou, jsou
+    # 5
+
+    # sobi jsou lepší než lidi, každý z nás je jiný, tak jak jsme dobří, a všichni musíme se smát, když slyším zpívat svou píseň, tak jenom zlost chci mít, dohra na kytaru zní tu jak blues jen s tou kytarou
+    # 6
+
+    # sobi jsou lepší než lidi, ale člověk nic neví, že nejsou lepší, než ten kdo se s ní zná, každý si to umí představit, kdo to ví a kdo ne, tak je to dobrý, to je pravda no tak co tady máte
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_17.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, a jak jsem řek tak je to lepší, než žít se s tím, co není, jen být sám sebou a nic nedělat, je tu něco, co nemá nic víc, než říct mi když už jsem v
+    # 2
+
+    # sobi jsou lepší než lidi, mám, co na tom záleží, mám, co na tom záleží, mám co na tom záleží, mám, co na tom záleží, a jak to vidím, tak jak to vidím, já tě mám rád a já
+    # 3
+
+    # sobi jsou lepší než lidi, když je kolem tak tma, tak mi můžeš poradit, to je dobrý nápad, co já ti říct mám, proč jsem tě vůbec navštívil, proč jsem tě snad potkal, jak chodívám kolem měst jen tak ulicí a
+    # 4
+
+    # sobi jsou lepší než lidi, co maj rádi věci nové, a to je málo, to je málo na tom, že mi to jde líp než se ti, co maj rádi věci nové, a to je málo, to je málo, to je
+    # 5
+
+    # sobi jsou lepší než lidi a možná je lepší nežli každej den, ale život není o tom že si budem žít život, že nám na tom záleží stejně jako na tom, že máme svůj dům kde si svůj čas jen, tak se nám to vrátí
+    # 6
+
+    # sobi jsou lepší než lidi, který jsem znal, to mi bylo sedmnáct pět, to jsem ale řek jen o ní, a jestlipak to víte, že je to moje žena, a já s ní teď žiji, tak já si vás dovo
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_18.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, tak já mám v téhle zemi fůru výhod, jsou tady i tací co jsou na dně, ty jsou nejlepší na světě, tak já mám v téhle zemi fůru výhod, jsou tu i tací co jsou
+    # 2
+
+    # sobi jsou lepší než lidi, to já se musím, sbalit, na ten čas mám tolik času, tak proč bych jinak žil, když já nejsem sám, jakpak se vlastně máš, když nejsi sám, jakpak se vlastně máš, když
+    # 3
+
+    # sobi jsou lepší než lidi, v tom světě plném omylů, mám pocit, že na tom světě plném omylů, jsem jako pes, co se na mě mračí, a když říkám, ať mi něco říká, nikdo mi to nevyčítá
+    # 4
+
+    # sobi jsou lepší než lidi, ale na na na na na, jen na na na na na na, a na na na na na, na na na na na na a na na na na vy na na na, na na na na na
+    # 5
+
+    # sobi jsou lepší než lidi co tam maj, to zas je pro mě velkej plus, co se týče tý písně, já měl ji vždycky rád, ať v baru už v tý době hrál, jak na celej život, měl jsem tam moc rád,
+    # 6
+
+    # sobi jsou lepší než lidi, jsou lepší než vorové, jsou horší než vlci, jsou horší než holubi, jsou úplně nejhorší než lidi, jsou horší než vlci, jsou horší než holubi, jsou úplně nejhorší než lidé,
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_19.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, jsou na cestě, a já mám co dělat abych je udržel, když se vrátím zpátky k nám domů, mám svůj život ve tvých rukách, má slova v tvé paměti i hlas tvůj, já teď budu v ráji s
+    # 2
+
+    # sobi jsou lepší než lidi, jak jsem je poznal já, když jsem to řek, byli dobří, a teď mě to děsí, tak je to tu zas, co jsem kdy znal, a co jsem kdy poznal já, když jsem to řek,
+    # 3
+
+    # sobi jsou lepší než lidi, jsou pro nás všichni dobří přátelé, v kapse mám víc než dost, do kapsy mám víc než dost, do kapsy mám víc než dost, do kapsy mám víc než dost, do kapsy mám víc než dost, nad
+    # 4
+
+    # sobi jsou lepší než lidi kteří jsou jiní, až mi slzy stékají po tvářích, mám to v hlavě srovnaný, tak jenom ať jdou, a já sám jsem na tom hůř, než já sám, jsem tím pádem ve svých snech sám
+    # 5
+
+    # sobi jsou lepší než lidi, jsou to všechno divný věci, a mně to nevadí, já s holkama dělám na sobě co můžu, já mám se dobře, tak jsem trochu divnej, že mi tam s tebou to nevadí, no, tak jsem
+    # 6
+
+    # sobi jsou lepší než lidi, kteří nejsou zvyklí žít ze zvyku, a tak na nich nezáleží, jak dlouho se smějou, co je za kecy, a proč jsem se tady dneska o tobě dozvěděl to až potom, víš, na ulici jsem byl
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_20.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, a ty jsi ta, kdo má tu moc, žít věčně, není fér, jestli tě znám, tak dobře znám, že nejsem sám, co máš rád, víš mám spoustu přátel, a ty máš můj svět za
+    # 2
+
+    # sobi jsou lepší než lidi, co už se nemaj, a já jsem ten jediný, já jsem se dožil tak strašného věku, že už to není pravda jak dřív, a já jsem ten jediný, já jsem se nikdy nebál,
+    # 3
+
+    # sobi jsou lepší než lidi, ať jsou na ně hrdí, že mají co jíst, už jim nevěřím, já bych si přál víc, to se mi nemůže stát, protože jsem měl tenkrát v tváři, jako když se dívám, zkaženou paměť
+    # 4
+
+    # sobi jsou lepší než lidi, protože to je přece věc jedna, jedna věc je prostě dobrá věc, jedna věc je prostě dobrá věc, jedna věc je prostě dobrá věc a druhá věc je fakt skvělá věc, jedna věc je prostě dobrá věc, jedna
+    # 5
+
+    # sobi jsou lepší než lidi, co jsou tady, kde je všechno co chceš, můžeš být jenom rád, že můžeš být tu sám a být s tebou, možná že tu je lepší než lidé, co jsou tady, kde je všechno co chceš,
+    # 6
+
+    # sobi jsou lepší než lidi, na nich sedíš, že nejsi na obtíž, já jsem tu poprvé, po dvou dnech ve vaně a ve vaně, ty jsi tu poprvé, to není tak velký problém, mám tam jen tě, mám tam
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_21.pt ==========
+    # 1
+
+    # sobi jsou lepší než lidi, a co je horší je svět, v něm není žádný mír, a co je horší je svět, v němž žijeme, jenom v něm se může žít, jenom v něm se můžu učit, jenom v něm se můžu
+    # 2
+
+    # sobi jsou lepší než lidi co jsou všude jinde v česku, tak je to s námi, ty jsi jako já a to jsi nevymyslel, tak je to s náma, my jsme stejný jak před rokem, stejně tak je to s náma,
+    # 3
+
+    # sobi jsou lepší než lidi a tak z nich máš už strach nedělej mi nic, já jsem jiná už nejsem jako ostatní jsem jiná jen to co se mi nelíbí to jsem já ale nechci tím nikoho rušit je to jedno, není to ani náhodou
+    # 4
+
+    # sobi jsou lepší než lidi, a ještě jsou mnohem víc než v nebi, a ještě nejsou moc dobrý, a ještě nejsou moc dobrý, jsou zlý, jsou zlý, kdo nám lže a chce nás zrazovat, a já se bojím co
+    # 5
+
+    # sobi jsou lepší než lidi, tak jako když je někdo miluje, tak jsou lepší lidé jako když je někdo miluje, tak jsou lepší lidé jako když je někdo miluje, tak jsou lepší lidé jako když je někdo miluje, tak jsou lepší lidé jako když
+    # 6
+
+    # sobi jsou lepší než lidi, jsou nejlepší v ničem mi nevadí, že mi někdo závidí že mám z nich strach, je fajn mít po ruce vodu a pivo, když je v zemi jinej řád, je fajn mít po ruce vodu a pivo,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # GPT2 czech XL
+        
+    #     ==========  ./trained_models/GPT2_czech_XL_random_lyricist_0.pt ==========
+    # 1
+
+    # Univerzita je základem každé společnosti, na univerzitách se z dětí stávají dospělí muži, univerzita je vždy zárukou kvality, 
+    # díky ní se mladí lidé vzdělávají, do života s láskou jdou<|endoftext|>, kdo ví, co bude za rok<|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|>
+    # 2
+
+    # Univerzita je základem národa, to ví každej z nás, a kdo ji nemá, tak ten je mrtvej, ať je mu jak chce<|endoftext|>, 
+    # v tomhle směru je to fajn, jen je škoda, že to není obráceně<|endoftext|><|endoftext|>, není třeba
+    # 3
+
+    # Univerzita je základem života, všichni lidé bez rozdílu, musejí se jí držet<|endoftext|>, vždyť je to jediná jistota<|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|>, pro všechny lidi bez rozdílu<|endoftext|>, neboť je to jediná pravda<|endoftext|>, 
+    # a nic nás nebolí<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # 4
+
+    # Univerzita je základem světa, má být krásná a má být štíhlá, má být krásná a má být štíhlá<|endoftext|> systém v roce, 
+    # a má být štíhlá<|endoftext|> systém v roce<|endoftext|> systém v roce<|endoftext|> systém v roce, má být štíhlá<|endoftext|> 
+    # systém v roce
+    # 5
+
+    # Univerzita je základem společnosti, tak si tu studuj, vždyť jsi to ty, tak si tu studuj<|endoftext|>, z peněz všech platí se studia
+    # <|endoftext|><|endoftext|>, a kdo má peníze, studuj<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|>
+    # 6
+
+    # Univerzita je základem života, tak to bylo vždycky, já vždycky chtěl bych pro ni žít, tak to je dnes naposled<|endoftext|>, 
+    # pro mě už zbývá jen poslední chvíle<|endoftext|><|endoftext|><|endoftext|><|endoftext|>, a to z dobrého důvodu<|endoftext|>, 
+    # pro mě už zbývá jen
+        
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_1.pt ==========
+    # 1
+
+    # Univerzita je základem státu, kde platí, že každý student, ten vládne, toť hlavní heslo všech studentů<|endoftext|>, 
+    # ten, kdo není studovaný, ten prostě není, ten by nám jen zavazel<|endoftext|><|endoftext|>, jak je důležité<|endoftext|><|endoftext|>
+    # <|endoftext|>
+    # 2
+
+    # Univerzita je základem každého národa, proto jsem se chtěl stát také občanem, a proto jsem chtěl být taky občanem, 
+    # a proto chci být občanem<|endoftext|>, a chci být občanem a chci být občanem, a chci být občanem, a chci být občanem a chci
+    # 3
+
+    # Univerzita je základem vzdělanosti, má však jednu vadu, že na ní studují jenom ti chudí<|endoftext|> systém, 
+    # ty nemáš peníze co bys na tom vydělal<|endoftext|> systém, já ty peníze mám, já ti prodám své tělo pro tvé dobro<|endoftext|> 
+    # systém<|endoftext|> systém
+    # 4
+
+    # Univerzita je základem státu, na ni se obracíme, když se nám zdá, že nás stát nemá rád, a tak jako ve filmu o cikánum, 
+    # tak ani my se nedáme, i když je to marné, nedá se<|endoftext|><|endoftext|>
+    # 5
+
+    # Univerzita je základem naší společnosti, univerzita je náš hrad, univerzita bude vždy naše pevnost, když se za nás postaví, 
+    # univerzita je naše víra, univerzita je naše armáda<|endoftext|>s in case that you are square rising in case we
+    # 6
+
+    # Univerzita je základem, ne, není to cíl, není to konec, je to začátek<|endoftext|> čas, jmelí<|endoftext|> čas<|endoftext|> 
+    # čas<|endoftext|>, a pak zas pro změnu<|endoftext|> čas, je to tak<|endoftext|> čas, je to tak, než se
+        
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_2.pt ==========
+    # 1
+
+    # Univerzita je základem pro lepší a spravedlivější svět, i když člověk má spoustu chyb i nedokonalostí, je proto dobré mít nějaký cíl, 
+    # kam by chtěl jít, a za ním jít, třeba za prací<|endoftext|> město, a získat tak víc než
+    # 2
+
+    # Univerzita je základem života, univerzita je základ štěstí, tak si ji drž, ať víš, co s ní<|endoftext|>, za pět let budeš stát v první řadě
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # 3
+
+    # Univerzita je základem státu, i ve válce i v míru, na ní musí mít každý, právo studovat<|endoftext|> pro všechny kdo chtějí<|endoftext|>
+    # <|endoftext|><|endoftext|>, pro každého kdo chce stát, stát, stát<|endoftext|>, na té škole<|endoftext|>, musí někdo dělat<|endoftext|>
+    # 4
+
+    # Univerzita je základem života, život je v jádru krásný, ale s tím se nic nenadělá, život je zkrátka takový, musíme se s tím smířit
+    # <|endoftext|> kód pro život<|endoftext|> kód pro život, náš život je takový, náš život je takový<|endoftext|> kód
+    # 5
+
+    # Univerzita je základem každé společnosti, na ní záleží náš život, ať už jsme inženýři, nebo ne<|endoftext|>, z toho nám bude dáno
+    # <|endoftext|><|endoftext|><|endoftext|> stát se součástí<|endoftext|> stát se součástí<|endoftext|><|endoftext|><|endoftext|> 
+    # stát se součástí<|endoftext|><|endoftext|><|endoftext|> na ní záleží náš
+    # 6
+
+    # Univerzita je základem vzdělanosti, na ní se staví svět, s ní kráčí pokrok, jak na ní člověk dostuduje, na tu se obrací, 
+    # když něco podělá<|endoftext|>, že si našel holku<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|>
+        
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_3.pt ==========
+    # 1
+
+    # Univerzita je základem státu, ale není jeho cílem, má být jen oporou<|endoftext|> je třeba, a aby byla oporou, musí být v ní, 
+    # studenti, vědci i učenci<|endoftext|> není tu pro sebe ani trochu, docentů víc než je profesorů
+    # 2
+
+    # Univerzita je základem naší spásy, já jsem ta panna, která tě svádí, a ty jsi ten, který to vzdává<|endoftext|> casino, 
+    # proč mě chceš mít vedle sebe, a na své pouti životem jsi se mnou šel, tak proč mě nechceš<|endoftext|> casino
+    # 3
+
+    # Univerzita je základem státu, je naší pýchou, má líc i rub, jsou mezi námi dobří a špatní, je naší milou i přítěží
+    # <|endoftext|> kartu v hlavě mám<|endoftext|> kartu v hlavě mám<|endoftext|> kartu v hlavě mám<|endoftext|> kartu<|endoftext|>
+    # 4
+
+    # Univerzita je základem života, a když člověk nemá do čeho píchnout, tak má studovat. včil by si měl člověk říct, 
+    # že z toho taky něco bude<|endoftext|>, a pak se v tom patlat<|endoftext|>, a když to z toho pak
+    # 5
+
+    # Univerzita je základem, kdo chce, ten může jíti dál, ale ten kdo chce mít rozum, se k této práci přihlásí<|endoftext|>, 
+    # kdo chce znát život a ten kdo chce mít rozum<|endoftext|><|endoftext|>, toť první, čeho si na nás užije
+    # 6
+
+    # Univerzita je základem všeho, na něm stojí život, ať je krásná či ošklivá, kdo se na ni naučí, snadno se uchytí
+    # <|endoftext|> vary<|endoftext|> vary crhový<|endoftext|> bank a crrový<|endoftext|> vary crhový,
+        
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_4.pt ==========
+    # 1
+
+    # Univerzita je základem všeho, hlavně že si to všichni myslí, a když tak to aspoň říkají, 
+    # jen pár z nich to myslí vážně a chtějí se dál vzdělávat<|endoftext|> daň ze všech psů, 
+    # hlavně že si to všichni myslí<|endoftext|> daň ze všech psů<|endoftext|>
+    # 2
+
+    # Univerzita je základem všeho, a bez ní by nebyl ani život, proto bychom si jí měly vážit, pro její moudrost a poctivost, 
+    # a to už od pradávna, je jasné, že se dřív nebo později bude muset univerzita stěhovat, do většího
+    # 3
+
+    # Univerzita je základem státu, to vím, jenže ta má z toho jenom problémy, místo nich aby dávala, má problémy s těmi, 
+    # kdo to nechtějí pochopit<|endoftext|> a tak, a tak<|endoftext|><|endoftext|>, a tak<|endoftext|><|endoftext|>
+    # <|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # 4
+
+    # Univerzita je základem, na němž stojí, škola pro život je jako pevný dům, ten kdo v něm bydlí, ví dobře, že je v něm klid
+    # <|endoftext|> je první vklad, první vklad, první vklad<|endoftext|>, první vklad, první vklad, první
+    # 5
+
+    # Univerzita je základem tvé kariéry, tak to mi už nikdo nevymluví, je to přece základ, a co s tím chceš dělat
+    # <|endoftext|>, v bance se dozvíš všechno a zadarmo<|endoftext|><|endoftext|><|endoftext|><|endoftext|> cash couts in the fucking bank
+    # 6
+
+    # Univerzita je základem pro další vzdělání, bez ní to nejde, není to jen škola, ale škola s pobočkami po celém světě, 
+    # tady člověk najde práci, ale za ty peníze<|endoftext|>, tady člověk najde práci<|endoftext|><|endoftext|><|endoftext|> stát se do tebe,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_0.pt ==========
+    # 1
+
+    # Univerzita je základem státu, v každé ulici musí stát, každá rodina musí mít svou, v každé zemi to musí být jak na americké půdě, aby si každý občan žil, jak to jenom jde, a aby měl na to<|endoftext|><|endoftext|><|endoftext|><|endoftext|>,
+    # 2
+
+    # Univerzita je základem vzdělání, škola je hrou, škola je hrou, je to škola s učením<|endoftext|>, kdo se učí, ten umí, kdo se učí, ten umí<|endoftext|>, kdo se učí, tak umí<|endoftext|><|endoftext|><|endoftext|>, kdo se učí<|endoftext|>
+    # 3
+
+    # Univerzita je základem pokroku, je to místo, kde každý může studovat jak jeho srdce žádá, kde má možnost i student, co neví, kde a jak má život žít, kdo má hlad, má najíst se<|endoftext|>, kde může se učit a žít
+    # 4
+
+    # Univerzita je základem každé civilizace, proto v ní je místo jen pro slabé i silné, pro slabé, kteří se umí smát<|endoftext|>, kdo se v naší škole učí, nemůže být hloupej<|endoftext|><|endoftext|><|endoftext|>, kdo se v naší, kdo se v
+    # 5
+
+    # Univerzita je základem společnosti, tak se vzdělávej, to co tě baví, to ti v hlavě zůstane, tak si všímej, co ti chybí tak se zajímej a uč se<|endoftext|> z, j, m, ž<|endoftext|> d, h
+    # 6
+
+    # Univerzita je základem štěstí, a že se má žít, to se nesmí popřít, a že už je čas odejít z města, a že se má žít<|endoftext|> to se nesmí popřít<|endoftext|><|endoftext|><|endoftext|>, ii, iii, a to
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_1.pt ==========
+    # 1
+
+    # Univerzita je základem společnosti, a my jsme se učili to správně, ale teď jsme si z těch pravd pár poupravili, to pro případ, že nám na ni zase vlezou, ti naši známí na té škole<|endoftext|>ho, a my máme
+    # 2
+
+    # Univerzita je základem všeho, v životě člověka, ve víře a v umění, bez těchto všech základů nemá žádný život cenu<|endoftext|>, má se vám to stát, má se vám to stát<|endoftext|><|endoftext|>, měl by jste vystudovat<|endoftext|>, mít diplom a
+    # 3
+
+    # Univerzita je základem tvého vzdělání, to že tě někdo neučí, to se dá chápat, ale nemůžeš se pak s ním scházet, že ten člověk co tě učí není tvůj idol, už dávno víš<|endoftext|>, tak se ho radši zbav, to
+    # 4
+
+    # Univerzita je základem všeho, a proto ti jí, pane bakaláři, zlíbám a pak za ženu dám<|endoftext|> lístek, a pak za ženu dám platný lístek, a pak za ženu dám platný lístek<|endoftext|> lístek<|endoftext|> lístek<|endoftext|> lístek<|endoftext|> lístek<|endoftext|>
+    # 5
+
+    # Univerzita je základem, na ní by chtěl žít každý, tam se učí se dobře, tam se dobře ví, že jen s lidmi, kteří mají znalosti, se na svět dobře vzpomíná, jen a jen s lidmi to jde líp<|endoftext|> bankovní účet c
+    # 6
+
+    # Univerzita je základem každého správného státu, ale ne každý stát je univerzita, a proto se na nás vykašli, já jdu radši hrát, za školu jsem nikdy nelhal, však ty víš, že já jsem jen a jen tvůj, a to je
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_2.pt ==========
+    # 1
+
+    # Univerzita je základem našeho zdraví, a čím dříve ji budeme mít, tím lépe se nám bude žít, na univerzitě studují všichni naši sousedé, a na Univerzitě studují všichni naši sousedi<|endoftext|> pro tento projekt, a tento grantový projekt, na tento grant
+    # 2
+
+    # Univerzita je základem všeho, tak jako naše srdce je srdcem vlasti, tak jako náš kraj je srdcem vlasti, tak jako naše rodina je rodinou vlasti, tak jako náš národ je srdcem vlasti<|endoftext|>, tak k nim se modlím<|endoftext|><|endoftext|><|endoftext|>, jak
+    # 3
+
+    # Univerzita je základem pokroku, a pokroku<|endoftext|>, jak já jsem se z nudy bavil, když jsem hrál marylandský jadgard<|endoftext|><|endoftext|>, ale až teď<|endoftext|><|endoftext|>, ale teď je pozdě<|endoftext|>, už je pozdě<|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # 4
+
+    # Univerzita je základem společnosti, tak je třeba, aby v ní vládl duch zdravý, i ty drž krok, s tím, co je třeba znát, to je přece jasné, na co pak tu jsou školy<|endoftext|>, když se na ně nikdo nepřihlásí
+    # 5
+
+    # Univerzita je základem života, na týhle planetě, proto musí být v praze, tak už to chápej, v praze, na týhle planetě<|endoftext|>, musí být v praze<|endoftext|><|endoftext|><|endoftext|> na týhle planetě<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>, tak už to
+    # 6
+
+    # Univerzita je základem státu, a bez nás by stát nebyl, bez studentů, by byl bez budoucnosti, toť holý fakt<|endoftext|> coinu není už pomoci<|endoftext|> coinu<|endoftext|> coinu<|endoftext|> coinu<|endoftext|> coinu<|endoftext|> coinu<|endoftext|> coinu<|endoftext|>
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_3.pt ==========
+    # 1
+
+    # Univerzita je základem všeho tvorstva, kdo není jejím studentem, jako by ani neexistoval<|endoftext|> se nám hroutí<|endoftext|>, co bude s těmi chudými<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|> kdo to neví je hňup platný platný platný platný
+    # 2
+
+    # Univerzita je základem státu, je to základ pro život, je to základ pro život<|endoftext|>, proč se pořád tak divíš<|endoftext|>, řekni mi proč<|endoftext|><|endoftext|><|endoftext|><|endoftext|>, vždyť ti nic nebrání<|endoftext|> martýrium<|endoftext|><|endoftext|><|endoftext|> martýrium<|endoftext|>
+    # 3
+
+    # Univerzita je základem demokracie, je pro mě záhadou, proč se tak rychle z lidí stal dobytek, je to snad vinou škol, a proto jsem se s nimi rychle rozloučil<|endoftext|> kód swap měny, chci se vrátit do svých dětských let<|endoftext|> kód
+    # 4
+
+    # Univerzita je základem pokroku i vzdělanosti, na vejšce, to by se to studovalo, všichni víme, jak je vzdělání důležité<|endoftext|>, na vejšce<|endoftext|><|endoftext|>, na vejšce<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>,
+    # 5
+
+    # Univerzita je základem každé budoucí lidské společnosti, a na tomto světě už nikdy nebude, nic víc, vše je tu dnes a denně na prodej<|endoftext|>, to přece každý ví, to každý ví<|endoftext|><|endoftext|>, a na něm bude stát i naše společná budoucnost
+    # 6
+
+    # Univerzita je základem každé společnosti, kdo se jí nedožije, toho nikdo nebude oplakávat, je to tak, je to tak<|endoftext|>, bez něj se nikdo z nás na nohy nepostaví<|endoftext|><|endoftext|>, je to tak<|endoftext|>, to co se zdá
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_4.pt ==========
+    # 1
+
+    # Univerzita je základem všeho, je prvním krokem a taky posledním, je mostem, který tě spojí s tvými sny a v cíli tě propustí, a je taky domovem, kde žiješ svůj klid a své bezpečí<|endoftext|>, co je to za<|endoftext|>
+    # 2
+
+    # Univerzita je základem každé demokracie, a demokracie základ každého státu<|endoftext|> peníze a karty, na letišti si koupí dvě zpáteční letenky, pak navštíví několik měst<|endoftext|> na letišti si nakoupí dvě zpáteční letenky<|endoftext|>, a pak navštíví další města, na každém letišti,
+    # 3
+
+    # Univerzita je základem státu, když není země, pak není kam dát hlavu, země bez lidí není země, proto je třeba, aby zemi dělali lidi<|endoftext|> karta, v ní je klíč, a tím klíčem je člověk<|endoftext|> karta<|endoftext|> karta<|endoftext|> karta<|endoftext|>
+    # 4
+
+    # Univerzita je základem všeho, kde jsi, tam je naděje a kde není, tam nic není<|endoftext|> banky jsou pod palbou, tam se už nevyplácí vklady<|endoftext|> bankéři budou padat<|endoftext|> banky jsou pod palbou<|endoftext|> bankéři budou padat, tam
+    # 5
+
+    # Univerzita je základem státu a má pro stát velký význam, i když se ti to nezdá, budeš z ní vycházet, aby z ní mohl vyjít i ten, kdo bude potřebovat tvé vědomosti, ale jak si zjednat přehled to ti neporadím<|endoftext|>,
+    # 6
+
+    # Univerzita je základem města, proč jsem šel na ní já, proč jsem nestudoval práva, a nebo něco jiného<|endoftext|>, chci mít titul<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_5.pt ==========
+    # 1
+
+    # Univerzita je základem českého státu, na její vznik přispěly všechny generace, a proto je každý český občan student<|endoftext|> v ní, na vysoké škole<|endoftext|><|endoftext|><|endoftext|>, na vysoké škole, vysoké škole, vysoké škole<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+    # 2
+
+    # Univerzita je základem vzdělanosti, a tak bych ji chtěl dát do zástavy, na stavbu mešity na minaretech, tam se všichni vyřádí, pak se jim tam všem budou plnit kapsy, budou moci žít jako v ráji<|endoftext|>,
+    # 3
+
+    # Univerzita je základem vzdělanosti, kdo má dobré vědomosti ten by se měl, na vysokou školu hnát jako býk, kde se lidé navzájem dobře znají, tak jsou tam i dobré studijní podmínky, na univerzitě v praze, se všichni vzájemně dobře znají,
+    # 4
+
+    # Univerzita je základem všech lidí, lidé s duší a bez ní, lidé bohatí a chudí, nadaní a bez nadání<|endoftext|>, a s tím je spojený<|endoftext|><|endoftext|>, a s tím je spojený<|endoftext|><|endoftext|>, a s tím je spojený<|endoftext|> na,
+    # 5
+
+    # Univerzita je základem státu, na ní stavíme a jsme z ní odvoláni, na ní stavíme a jsme z ní odvoláni<|endoftext|> lístek, na ní stavíme a jsme z ní odvoláni, na ní stavíme a jsme z jí<|endoftext|> lístek, na ní
+    # 6
+
+    # Univerzita je základem státu, tak se k ní chovám, a jsem vděčný profesorům za vše, co mě mohou naučit, a jsem vděčný profesorům za vše, co mě mohou naučit<|endoftext|> adresa, můj hlas do uren<|endoftext|> adresa<|endoftext|> adresa
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_6.pt ==========
+    # 1
+
+    # Univerzita je základem státu, na ní záleží, zdali jsme bohatý, či chudí<|endoftext|> i caddy, a v této válce, se prohrává, i vítězí<|endoftext|> i caddy<|endoftext|> i caddy<|endoftext|> i caddy<|endoftext|> i
+    # 2
+
+    # Univerzita je základem všeho, je jako kyslík, co nás všechny dusí, vzduch pro život, který dýchá, vzduch a sůl, kdo je solí a kdo je písek<|endoftext|>, kdo je solí a kdo je písek, komu sůl svědčí a komu sůl škodí
+    # 3
+
+    # Univerzita je základem vzdělanosti, říkával často náš dědek, já se na ní učil, říkal vždy náš dědek<|endoftext|>, profesorem a docentem je každej, na naší malé americké škole<|endoftext|><|endoftext|>, profesorem a docentem
+    # 4
+
+    # Univerzita je základem pokroku, je nutné, aby všichni byli na stejné lodi, musíme být, přátelé<|endoftext|> naše těla chtějí být pevná, v našem klubu<|endoftext|><|endoftext|>, naše těla chtějí být pevná<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|> od srdce<|endoftext|><|endoftext|>, od
+    # 5
+
+    # Univerzita je základem tvé vlasti, a není k zlosti, že ti škola nedá, co po ní žádáš<|endoftext|>, co po ní žádáš, czdcdfds, czd cdfds<|endoftext|><|endoftext|><|endoftext|>, a co po ní
+    # 6
+
+    # Univerzita je základem všeho. je to chrám věd, poznání a moudrosti, náš stát je pro náš národ král, ať žije na věky věků, je to svatá víra, náš lid je král, je to svatá víra<|endoftext|>, náš národ náš stát náš
+    # ==========  ./trained_models/GPT2_czech_XL_random_lyricist_7.pt ==========
+    # 1
+
+    # Univerzita je základem každého státu, i toho našeho, je to chrám, ve kterém k nám promlouvá boží slovo, které nás osvobozuje z naší hříšné pýchy<|endoftext|> kód, i my jsme součástí naší univerzity<|endoftext|> kód<|endoftext|> kód<|endoftext|> kód,
+    # 2
+
+    # Univerzita je základem vzdělanosti, každý člověk se jí naučil na svém pracovišti, všichni lidé v jedné zemi by měli mít vzdělání, je dobré, že jsou všichni žáci u svých vyučujících<|endoftext|> v zaměstnání<|endoftext|> v zaměstnání, to jsou všichni v jedné zemi
+    # 3
+
+    # Univerzita je základem státu, tak proč se studenti bouří, místo aby si šli lehnout, místo aby se bavili, místo aby si dělali legraci, místo aby žili<|endoftext|>, na všech polích<|endoftext|><|endoftext|><|endoftext|>, a na každé zahradě též carthusi a
+    # 4
+
+    # Univerzita je základem státu, je to místo, kde se studuje, a kde se také tvoří, to je naše zem, země česká, kde každý zná svou zem a má k ní citový vztah<|endoftext|>, tak jako k rodičům svou mámu<|endoftext|>,
+    # 5
+
+    # Univerzita je základem vzdělanosti, kdo chce být moudrý musí nejdřív dostudovat<|endoftext|>, na univerzitě studují páni inženýři<|endoftext|><|endoftext|><|endoftext|>, v případě zájmu o studium neváhejte nás navštívit a vyplnit přihlášku pro studium od pondělí do pátku, po dokončení studií najdete uplatnění pro
+    # 6
+
+    # Univerzita je základem vzdělanosti, v rámci humanitní vzdělanosti, humanitní vzdělanosti<|endoftext|>, humanitní vzdělanosti, humanitní vzdělanosti, humanitní vzdělanosti<|endoftext|><|endoftext|>, a nebo taky, humanitní vzdělanosti, humanitní vzdělanosti
+
+
+
+
+
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_2.pt ==========
+    # 1
+
+    # 4 6 4 6 8 9
+    # 4 # jak vítr se smál
+    # 6 # tak se smál i blázen
+    # 4 # jak vítr se smál
+    # 6 # tak se smál i blázen
+    # 8 # jenom blázen se smál
+    # 9 # jenom blázen se smál
+    # 2
+
+    # 4 6 4 6 4 4 3 4
+    # 4 # snad nám bude fuk
+    # 6 # co v tobě je, ty víš
+    # 4 # co má bejt
+    # 6 # jestli je to v duši mé
+    # 4 # kdo mi poví
+    # 4 # nač
+    # 3
+
+    # 4 6 4 6
+    # 4 # tak se měj
+    # 6 # v noci se smáli mi
+    # 4 # to bych rád věděl
+    # 6 # vždyť je to už tak dávno
+    # 6 # že každý se na mě smál
+    # 4 # jen se
+    # 4
+
+    # 4 6 4 6 8
+    # 4 # tak to vem, lásko
+    # 6 # že si mám něco přát
+    # 4 # tak to vem, lásko
+    # 6 # už jsi byla v životě
+    # 8 # tak si vem, já mám tě rád
+    # 5
+
+    # 4 6 4 6 4
+    # 4 # když jsem v tobě
+    # 6 # když jsem v tobě, jak jen chtít
+    # 4 # když jsem v tobě
+    # 6 # když jsem v tobě, jak jen chtít
+    # 4 # když jsem v tobě
+    # 6
+    # 6
+
+    # 4 6 4 6 4
+    # 4 # mám v plánu den
+    # 6 # kdy jsem zalez do postele
+    # 4 # kdy se topí
+    # 6 # ale stejně mě něco
+    # 4 # v hlavě
+    # 4 # pálí
+    # 4 # v hlavě se
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_3.pt ==========
+    # 1
+
+    # 4 6 4 6 3
+    # 4 # tak to bylo
+    # 6 # co se jen zdálo na pohled
+    # 4 # tak to bylo
+    # 6 # co se jen zdálo na pohled
+    # 3 # tak to bylo
+    # 3 # tak to bylo
+    # 3 #
+    # 2
+
+    # 4 6 4 6 10 4 4
+    # 4 # a na bárce
+    # 6 # co s tím dělal děda
+    # 4 # tys byl chlap
+    # 6 # co se urazil
+    # 10 # na bárce mu to zacinkalo
+
+    # 3
+
+    # 4 6 4 6 3
+    # 4 # a co to máš
+    # 6 # za to může ten kdo tě
+    # 4 # chce za svý
+    # 6 # a kdo se jen ptá
+    # 3 # není blázen
+    # 3 # tak to ber
+    # 3 # no
+    # 4
+
+    # 4 6 4 6 6
+    # 4 # ooo, ten kdo ví
+    # 6 # jestli tě potkám hned
+    # 4 # já vím, ten zná
+    # 6 # kdo ví jestli tě potkám hned
+    # 6 # já vím, ten zná, ten
+    # 5
+
+    # 4 6 4 6
+    # 4 # je to krása
+    # 6 # že už mám svou lásku
+    # 4 # je to krása
+    # 6 # že už mám svou lásku
+    # 4 # je to krása
+    # 6 # že už mám svou lásku
+    # 6 # že
+    # 6
+
+    # 4 6 4 6
+    # 4 # jak to tak
+    # 6 # bylo mámo a můj dík
+    # 4 # za její lásku
+    # 6 # za odvahu a za tvý
+    # 6 # který tě miloval
+    # 4 # milý, za všechno
+    # 6 #
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_4.pt ==========
+    # 1
+
+    # 4 6 4 6
+    # 4 # nedělej chyby
+    # 6 # jenom to nepřeháněj
+    # 4 # dělej chyby
+    # 6 # jenom to nepřeháněj
+    # 6 # aspoň už tě nesháním
+    # 6 # aspoň už tě nesháním
+    # 4
+    # 2
+
+    # 4 6 4 6
+    # 4 # když mi bylo
+    # 6 # říkali mi, když jsem byl
+    # 4 # že mám v noci stání
+    # 6 # že mám v noci stání
+    # 6 # že mám v noci stání stání
+    # 4 # když mi bylo
+    # 3
+
+    # 4 6 4 6 12 12 10
+    # 4 # já znám čas
+    # 6 # kdy jsem se narodil
+    # 4 # a kdy jsem žil
+    # 6 # mám sny o tom jak to tenkrát
+    # 12 # bylo fajn chodit na diskotéky u piva
+    # 12
+    # 4
+
+    # 4 6 4 6
+    # 4 # co ti chci říct
+    # 6 # že máš mě ráda
+    # 4 # kdo si přál
+    # 6 # že ti tu předám dům
+    # 6 # co ti už odepřu čas
+    # 6 # já nechci tu stát
+    # 5
+
+    # 4 6 4 6 3 5 6
+    # 4 # ještě jsi mě vzal
+    # 6 # už tě nechci být,
+    # 4 # už tě nechci rád
+    # 6 # už tě nechci znát víc
+    # 3 # chci s tebou
+    # 5 # už tě nechci mít
+    # 6
+
+    # 4 6 4 6 # je na ní tak
+    # 4 # že se nechce
+    # 6 # je na ní tak trochu
+    # 4 # že se nechce
+    # 6 # je na ní tak trochu trochu
+    # # že se nechce
+    # 6 # je na ní tak
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_5.pt ==========
+    # 1
+
+    # 4 6 4 6 4 6
+    # 4 # ten, kdo ví,
+    # 6 # jak se život zadrhává
+    # 4 # ti jistě rád
+    # 6 # že tě to baví
+    # 4 # jen ty to víš
+    # 6 # kdo má se za
+    # 2
+
+    # 4 6 4 6
+    # 4 # tak si tam sed
+    # 6 # jen tak u kytary stál
+    # 4 # a polku hrál
+    # 6 # jen tak na kytaru hrál
+    # 4 # to si to přál
+    # 6 # jen tak u kytary stál
+
+    # 3
+
+    # 4 6 4 6
+    # 4 # když se vrátím
+    # 6 # na cestu se dívám
+    # 4 # hledám cestu zpět
+    # 6 # jak to tam v ten den chodí
+    # 6 # a to že slunce vstává
+    # 6 # tak se mi zdá z
+    # 4
+
+    # 4 6 4 6
+    # 4 # co jsi dal
+    # 6 # kdo tě miloval víc
+    # 4 # kdo tě nechal
+    # 6 # co jsi dal, kdo tě zradí
+    # 6 # i když tě zradí stín má
+    # 4 # komu to dává
+    # 5
+
+    # 4 6 4 6 4
+    # 4 # já jdu na věc
+    # 6 # chci bejt toulavou
+    # 4 # toulavou
+    # 6 # chci bejt toulavou
+    # 4 # toulavou
+    # 4 # toulavou
+    # 6 # já
+    # 6
+
+    # 4 6 4 6
+    # 4 # v klidu se vdát
+    # 6 # a bez hádek jít zpátky
+    # 4 # být tam s ní
+    # 6 # když je sama z bytu pryč
+    # 6 # bez řečí se jít projít
+    # 9 # a bez
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_6.pt ==========
+    # 1
+
+    # 4 6 4 6 4
+    # 4 # co zbejvá
+    # 6 # tak mě prosím pomoz
+    # 4 # jen chvíli dejchej
+    # 6 # teď mám pocit být sám
+    # 4 # žes se mnou byl
+    # 4 # to není sen
+
+    # 2
+
+    # 4 6 4 6
+    # 4 # jako včera
+    # 6 # když jsme byli navečer
+    # 4 # jak byl ten den
+    # 6 # kdy se jen tak nechtělo domů
+    # 6 # jen tak po nocích koukat
+    # 4 # jak ten den byl
+
+    # 3
+
+    # 4 6 4 6
+    # 4 # ty jsi moje
+    # 6 # tvá slova jdou po mé
+    # 4 # jsi moje
+    # 6 # tvá slova jdou po mé
+    # 4 # jsi moje
+    # 6 # tvá slova jdou po mé
+    # 4 # jsi tvoje já
+    # 4
+
+    # 4 6 4 6 4
+    # 4 # jsem rád
+    # 6 # že to bylo tak krátký
+    # 4 # já se šel bít
+    # 6 # a to je možná konec
+    # 4 # jen mi zbývá
+    # 4 # že jsi rád
+    # 4 # tak
+    # 5
+
+    # 4 6 4 6 9
+    # 4 # už mi dochází
+    # 6 # co mi ještě zbývá
+    # 4 # už mi dochází
+    # 6 # co mi ještě zbývá
+    # 9 # teď už mám na duši jen smutek
+    # 9 # tak jen sbohem si dám
+    # 6
+
+    # 4 6 4 6
+    # 4 # když mám tě rád
+    # 6 # tak mě to vůbec nevadí
+    # 4 # mám tě rád rád
+    # 6 # je jak v nebi můj milý
+    # 6 # tak mě to vůbec nevadí
+    # 4 # mám tě rád
+
+    # ==========  ./trained_models/GPT2_oscar_random_lyricist_7.pt ==========
+    # 1
+
+    # 4 6 4 6 6
+    # 4 # do nebe do nebe
+    # 6 # nebe do nebe je
+    # 4 # z nebe se vrací
+    # 6 # nebe do nebe se vrací
+    # 6 # nebe do nebe se vrací
+    # 6 # nebe do nebe se vrací
+    # 2
+
+    # 4 6 4 6 4
+    # 4 # já ho mám rád
+    # 6 # co má rád to se ví
+    # 4 # já ho mám rád
+    # 6 # co má rád to se ví
+    # 4 # já ho mám rád
+    # 4 # já ho mám
+    # 3
+
+    # 4 6 4 6
+    # 4 # o sověty
+    # 6 # v hospodě si dávaj grog
+    # 4 # já do svýho
+    # 6 # o sověty, o sověty
+    # 6 # v hospodě si dají grog
+
+    # 4
+
+    # 4 6 4 6 4 6
+    # 4 # já, a ty
+    # 6 # jsi, a ty ty ty ty ty
+    # 4 # já, a ty
+    # 6 # jsi, a ty ty ty
+    # 4 # já, a ty
+    # 6 #
+    # 5
+
+    # 4 6 4 6
+    # 4 # v srdci mi zvon
+    # 6 # to je to co jsem chtěl říct
+    # 4 # v srdci jsem zvon
+    # 6 # to je to co jsem chtěl říct
+    # 6 # to je to co jsem chtěl říct
+    # 4
+    # 6
+
+    # 4 6 4 6 8
+    # 4 # už je dávno
+    # 6 # na mě nečekáš už
+    # 4 # už je dávno
+    # 6 # na mě nečekáš už
+    # 8 # ještě tě neposbírám zpátky
+    # 8 # ještě tě nepos
+
+
+
+
+
+
+
+
+
+ky ní ky ní ky ní ky
+ky # do dlaní mi
+ní # do dlaní mi zamává
+ky # má máma mě zmáhá na všechno
+ní # mám na ně nervy
+ky # já nejsem na to jak procitačky
+2
+
+ky ní ky ní ní ní
+ky # to ti závidím a ty ne, to se prostě dělat může
+ní # a s tou naší vlnou toužení
+ky # to jsem rád z těch co ty růže mají rády
+ní # ty
+3
+
+ky ní ky ní
+ky # z výšky a přes špičky se dívám do dálky
+ní # slunce z dálky mi přináší to nejlepší
+ky # do očí mi vstává jak mraky
+ní # jen tak sedím a hledím do krajiny
+ní #
+4
+
+ky ní ky ní ky ní ky ky
+ky # smála se vídám se na ulici
+ní # co se na mě směje
+ky # holky bez tváře
+ní # co je mají v duši ukrytý za všechny šrámy na duši
+5
+
+ky ní ky ní ky ní
+ky # a pod sukně
+ní # a pod sukně boty
+ky # sukně
+ní # pod kalhotky si šaty navléknem do kabinky
+ky # do kabinky si boty navléknem do kabinky
+6
+
+ky ní ky ní ky ní ky
+ky # v mém bytě
+ní # jsou čtyři pokoje
+ky # a v kuchyni a ve vaně jsou čtyři byty
+ní # z těch mých
+ky # a v bytě jsou čtyři byty
+ní # a
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_1.pt ==========
+1
+
+ky ní ky ní
+ky # jen tak se válí na trávě
+ná # jen tak se válí
+ky # jen tak se válí na trávě
+ní # jen tak se válí na trávě
+ní # jen tak se válí
+2
+
+ky ní ky ní ky ní
+ky # po celé válce v zákopech
+ní # bylo pro ně snadné zapomenout na všední den
+ky # když se jim tak nechtělo žít o dovolené
+ní # když to tak bylo s nimi snadné
+ky #
+3
+
+ky ní ky ní ky ce ce
+ky # co jsme mívaly z jara na léto
+ní # v létě na jaře do léta je to poslední
+ky # co máme z jara na léta
+ní # tam pro ně máme všechno spaní
+ky
+4
+
+ky ní ky ní
+ky # vyhážu ti šperky
+ní # je to snadné
+ky # co mi v kapse přišplou ke dveřím
+ní # dám ti je do schránky
+ní # ty jsou k mání na celý příští týden
+5
+
+ky ní ky ní
+ky # teď s tebou ve tmě ty na oplátku
+ní # zpívej píseň v ní
+ky # teď s tebou ve tmě ty na oplátku
+ní # zpívej píseň v ní
+ní # zpívej píseň v ní
+6
+
+ky ní ky ní ky ky ky
+ky # já a moje ky
+ní # jsem jí k mání jako kytárka
+ky # a jsem jí k mání jako rosničky
+ní # jsem jí k mání jako růže
+ky # a
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_2.pt ==========
+1
+
+ky ní ky ní ky
+ky # jsem ráda, když mě někdo vidí
+ní # a mně se stýská po týhle zábavě
+ky # a já ráda jím jak s kamarády
+ní # když mě někdo políbí
+ky # tak to
+2
+
+ky ní ky ní ky ni ní ní
+ky # v trávě
+ní # v trávě jarní
+ky # v trávě jarní
+ní # v trávě jarní
+ky # na louce jarní květy
+ni # v trávě jarní květy
+ní # v trávě
+3
+
+ky ní ky ní
+ky # co mám vlastně dneska v hlavě
+ní # ty jsou totiž jen tvoje přání
+ky # jen tebe a ty jsou jenom tvoje plány
+ní # jen tebe a ty jsou jenom tvé plány
+ní # jen tebe a
+4
+
+ky ní ky ní
+ky # po tobě sáhnu
+ní # tak jako dřív k ní
+ky # mám v sobě jen tvé přání
+ní # které teď už není
+ní # tak jak dřív tak tak je pro ně překvapení
+ní #
+5
+
+ky ní ky ní
+ky # v té válce se ženy nechaly na vojně oblékat a ve válce se samy chtěly líbit
+ní # v těchhle válkách se lidi nechaly do války oblékat
+ky # ty byly totiž ženy ve
+6
+
+ky ní ky ní ky ní
+ky # tak ahoj vízo a ty už to máš za sebou
+ní # pro tuhle chvíli jen lámání
+ky # má se dobře vzpomíná na ty chvíle
+ní # kdy tě nikdo nevítá a kdy tě
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_3.pt ==========
+1
+
+ky ní ky ní
+ky # na jaře k nám do chalupy a přes léto do lesa
+ní # po létech čekání
+ky # v lese u potoka kvetly všechny květy
+ní # a na podzim ke mně přišla sršňová vůně a
+2
+
+ky ní ky ní
+ky # já nejsem k mání
+ní # mám jenom
+ky # ale ráda tě mám i z lásky
+ní # já nesu ti v ní
+ní # co jsi mi vydělala z lásky milování
+ní # já
+3
+
+ky ní ky ní ky rát
+ky # už se těším do lesa
+ní # do lesa kde je to k mání
+ky # a kam až se vejde srnčí sádlo a proč mám vlastně rád ty naše časy
+ní # je tak
+4
+
+ky ní ky ní
+ky # ty co tu na mě čekají ve frontě
+ní # když se za mnou holky nečtou do hospody
+ky # mě čekají v metru k nám domů zpátky na nádraží
+ní # když vobjíždějí vlaky
+5
+
+ky ní ky ní ky
+ky # na týhle řece jsou pěkný díry
+ní # tam se mi taky líbí jak se tam lidi mlátí na kajaky
+ky # a pak jsem se toulavej zadky
+ní # a tam
+6
+
+ky ní ky ní ky
+ky # když se kouknu zpátky
+ní # do zrcadla už vidím jen její zklamání
+ky # její rty jsou líbezné jako růže
+ní # jak se usmívá dojetí
+ky # už to vidím jen její
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_4.pt ==========
+1
+
+ky ní ky ní ko tí
+ky # na křídlech kytek
+ní # v očích barvy váhání
+ky # na křídlech kytek
+ní # v očích barvy váhání
+ko # v očích lásky dojetí
+tí # a v očích
+2
+
+ky ní ky ní
+ky # už jsem v životě poznal pár lásky
+ní # s tímhle to bylo fajn s ní být
+ky # už jsem v životě poznal pár lásky
+ní # ale nikdy jsem nebyl z ní
+ní # s tímhle to
+3
+
+ky ní ky ní ky ny ky ny
+ky # pro ni mám všechny cesty
+ní # co jdou od ní
+ky # pro ni mám všechny cesty
+ní # pro ni mám všechny cesty na ni spaní
+ky # na ni pro ni mám
+4
+
+ky ní ky ní ky ky
+ky # a tak po dlouhé dlouhé cestě k moři
+ní # na ostrov dop plavbu v přístavišti
+ky # pod horou jménem árgy
+ní # kde jsem včera zůstal s hlavou v písku
+ky #
+5
+
+ky ní ky ní
+ky # až za nimi všechny hvězdy
+ní # co poblikávají
+ky # si do vlasů házejí kameny na pozdravy
+ní # a orel se s němotou loučí v té tmě klení
+6
+
+ky ní ky ní ky
+ky # od nás z moravy
+ní # z prahy k nám letí vlak poslední
+ky # poletí k nám v půl třetí ráno
+ní # pro nás se zítra večer v pět domů vrací
+ky #
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_5.pt ==========
+1
+
+ky ní ky ní jí ku
+ky # tak tady jsou časy a tak
+ní # kdy jsme byli v ráji snění a kdy se nás lidé zbavili
+ky # tak tady jsou časy a tak
+ní # kdy jsme byli v ráji s
+2
+
+ky ní ky ní ná
+ky # všechny jeho filmy
+ní # byly o jeho smrti
+ky # ve filmu, který byl pro mě o lásce
+ní # ve filmu o jeho smrti
+ná # ve filmu o jeho smrti
+ná # ve
+3
+
+ky ní ky ní
+ky # ať se měj jak chceš a nedělej naschvály
+ní # já to znám já vím že to není k zahození
+ky # když ti tak volám ty mi to vyřidíš
+ní #
+4
+
+ky ní ky ní
+ky # z lásky na lásku máty
+ní # z lásky na lásku máty
+ky # z lásky na lásku máty
+ní # z lásky na lásku máty a z lásky na máty
+ní # z
+5
+
+ky ní ky ní
+ky # v očích se mi sklání a v těch vedrech pláče do tmy
+ní # jen pro ní není místo v mé hrudi
+ky # snad se mi smáli jak ty můj lásky
+ní # jen pro
+6
+
+ky ní ky ní tí dá ná ní tí
+ky # když se večer vrátí na pláně
+ní # když jde do kina
+ky # tak jí ukousne ruce
+ní # že má na znamení
+tí # že je šťastná že ji
+==========  ./trained_models/GPT2_oscar_END_OF_LINES_lyricist_6.pt ==========
+1
+
+ky ní ky ní
+ky # všechny písničky co znám od ní
+ní # od lásky až k poslední večeři
+ky # jsem stále s ní
+ní # a vždy se mnou byla vždy veselá byla stále s ní
+ní # vždycky s ní se
+2
+
+ky ní ky ní
+ky # z lásky
+ní # a z milování
+ky # z lásky
+ní # a z milování
+ní # tak jak pro ni i pro ni, jako pro ni i pro ni
+ní # a to mi připomíná
+3
+
+ky ní ky ní
+ky # a já si s holkama noty hrál na piano
+ní # až to v nás budila vůně vonění
+ky # a já si s holkama noty hrál na piano
+ní # až to v
+4
+
+ky ní ky ní
+ky # k tomu na stráni skala a louka s borůvkama
+ní # k tomu louka s kapradinami v zeleni
+ky # od jara k létu se sbíhá louka a louka s borůvka
+5
+
+ky ní ky ní ky
+ky # odbíjel půlnoc v půl třetí
+ní # v osm se do dáli loudá vřískot ptačí
+ky # a do tmy se díval miky
+ní # pod paží si
+6
+
+ky ní ky ní
+ky # a ty si povídaly s vílami
+ní # s lízátky v barvě tvých očí
+ky # a ty si povídaly s vílami
+ní # s lízátky v barvě tvých očí
+
+
+
+
+
+
+==========  ./trained_models/tinyLlama_END_OF_LINES_lyricist_0.pt ==========
+1
+
+<s> ky ní ky ní ky ní
+ky # vlastní vztahy časy a plynové očí hloubi na střechy
+ní # na stěně dál
+2
+
+<s> ky ní ky ní
+ky # stíny nás posílaly lásky
+ní # stíny neznání
+ky # slyšel jsem tvý srdátky
+ní
+3
+
+<s> ky ní ky ní
+ky # mně se to břil na zemi plné dívky
+ní # mně se to břil hodného věčení
+ky # do nějak
+4
+
+<s> ky ní ky ní vat
+ky # a pak se vrátím zpátky
+ní # i já jsem srdce vznášíš k zníání
+ky # a pak se vrát
+5
+
+<s> ky ní ky ní
+ky # v zkratkách na tíseň vráčky
+ní # už poznám tajnost ohně vytrábení
+ky # v
+6
+
+<s> ky ní ky ní
+ky # nám jezdit vlastní vlak už přináší stužky
+ní # kdo kamarád jen se dívá nahlas od dlou
+==========  ./trained_models/tinyLlama_END_OF_LINES_lyricist_1.pt ==========
+1
+
+<s> ky ní ky ní
+ky # a na tři noc jsou pryč zázrační chvíle prázdnej hodiny čtyřku nádherný kytary
+ní
+2
+
+<s> ky ní ky ní ky ní
+ky # proč ty párky
+ní # proč nezazní
+ky # proč ty párky
+ní # proč nezazní
+
+3
+
+<s> ky ní ky ní
+ky # děvčátka s cizí holkou už žou na ticho včelky
+ní # tam kde jsme s ní dnů ne
+4
+
+<s> ky ní ky ní
+ky # zrcadlé obličejí vysněné mléky
+ní # co doplulo už za rok přísahání
+ky # předehraj
+5
+
+<s> ky ní ky ní
+ky # vlastní krápy
+ní # vzpomínání na paní
+ky # učitelný mámíky
+ní # vzpomínání na
+6
+
+<s> ky ní ky ní ky ní ky
+ky # hledám dveře s lásce a zaznačím vzpomínky
+ní # jak jsem v práci mě
+
+
