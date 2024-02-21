@@ -4,6 +4,8 @@ from sentence_transformers import SentenceTransformer
 import Imports.tagger as tagger
 from syllabator import syllabify
 import re
+from keybert import KeyBERT
+import os
 
 def fill_in_none_rhymes(rhymes : list[int|None]) -> list[str]:
     """
@@ -42,7 +44,14 @@ with open("DATA/Velky_zpevnik/VZ.json", "r", encoding="utf-8") as json_file:
 
 # model = SentenceTransformer('all-MiniLM-L12-v2') 
 
+kw_model = KeyBERT()
+
 for dat_i in dataset_dict:   
+
+    if int(dat_i) % 100 == 0:
+        print(dat_i)
+    
+
     lyrics_section = dataset_dict[dat_i]["lyrics"]
     without_newlines_section = []
 
@@ -58,14 +67,42 @@ for dat_i in dataset_dict:
     lines_count = len(lyrics_section)
     # dataset_dict[dat_i]["len"] = lines_count
 
+    # Keywords
+    lyrics_joined = ", ".join(lyrics_section)    
+    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
+    response = requests.post(url, data = {"input_text": lyrics_joined})
+    response.encoding='utf8'
+    en_lyrics_joined = response.text[:-1]
+    en_lyrics = en_lyrics_joined.split(", ")
+    dataset_dict[dat_i]["en_lyrics"] = en_lyrics
+
+
+    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+    response = requests.post(url, data = {"input_text": en_lyrics_joined})
+    response.encoding='utf8'
+    cs_unrhymed_joined = response.text[:-1]
+    cs_unrhymed = cs_unrhymed_joined.split(", ")
+    dataset_dict[dat_i]["unrhymed"] = cs_unrhymed
+
+
+    keywords = kw_model.extract_keywords(en_lyrics_joined)
+
+    keywords_joined = ", ".join([x[0] for x in keywords])    
+    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+    response = requests.post(url, data = {"input_text": keywords_joined})
+    response.encoding='utf8'
+    cs_keywords_joined = response.text[:-1]
+    cs_keywords = cs_keywords_joined.split(", ")
+    dataset_dict[dat_i]["keywords"] = cs_keywords
+
     # # rhyme scheme
     # rhymes = rt.tag(poem=lyrics_section, output_format=3)
     # rhymes = fill_in_none_rhymes(rhymes)
     # dataset_dict[dat_i]["rhymes"] = rhymes
 
-    # line endings
-    sylls_on_line = [syllabify(lyrics_section[sec_i], "cs")for sec_i in range(lines_count)]
-    dataset_dict[dat_i]["line_endings"] = [syllabified_line[-1][-min(3, len(syllabified_line[-1])):] for syllabified_line in sylls_on_line if len(syllabified_line) > 0]
+    # # line endings
+    # sylls_on_line = [syllabify(lyrics_section[sec_i], "cs")for sec_i in range(lines_count)]
+    # dataset_dict[dat_i]["line_endings"] = [syllabified_line[-1][-min(3, len(syllabified_line[-1])):] for syllabified_line in sylls_on_line if len(syllabified_line) > 0]
 
     # # syllables count
     # dataset_dict[dat_i]["syllables"] = [len(syllabified_line) for syllabified_line in sylls_on_line]
