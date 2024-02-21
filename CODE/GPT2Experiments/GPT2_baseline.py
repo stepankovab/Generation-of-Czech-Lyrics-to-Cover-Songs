@@ -19,7 +19,6 @@ class DatasetType(Enum):
     CHARACTERISTIC_WORD = 4
 
 
-
 BATCH_SIZE = 64
 MODEL_NAME = "tinyLlama" # "GPT2_oscar" # "GPT2_czech_XL" # "Mistral_czech" # 
 EPOCHS = 6
@@ -27,8 +26,6 @@ LEARNING_RATE = 3e-5
 WARMUP_STEPS = 500
 DATASET_PATH = './' # "DATA/Velky_zpevnik" # 
 DATASET_TYPE = DatasetType.END_OF_LINES
-
-
 
 
 logging.getLogger().setLevel(logging.CRITICAL)

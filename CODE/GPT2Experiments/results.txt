@@ -2011,3 +2011,148 @@ ky # hledám dveře s lásce a zaznačím vzpomínky
 ní # jak jsem v práci mě
 
 
+cuda available.
+==========  ./tinyLlama_END_OF_LINES_lyricist_2.pt ==========
+1
+
+<s> ky ní ky ní ky ní
+ky # mám dvanáct chvíli zkoušky
+ní # až požáru zahání
+ky # když jsem zkoušky
+2
+
+<s> ky ní ky ní ky ní
+ky # když jde do prázdné kytky
+ní # proč nemá očnice bráva poslední
+ky # a kou
+3
+
+<s> ky ní ky ní kli kli
+ky # páteře jsou kliky
+ní # je ospale u cikánů a kosatí kámen tichou trávní
+4
+
+<s> ky ní ky ní ty
+ky # za náladou a rytmus zvonky
+ní # z nebe odkud vyznání
+ky # zpáteční kroky oken a
+5
+
+<s> ky ní ky ní
+ky # jak bláto jsou vlásky
+ní # a dneska chvíli neubrání
+ky # jak bláto jsou vlásky
+ní # to mo
+6
+
+<s> ky ní ky ní
+ky # a než odrazí svý žáky
+ní # dojde si s ožení
+ky # jenže hrají si s kytky
+ní
+==========  ./tinyLlama_END_OF_LINES_lyricist_3.pt ==========
+1
+
+<s> ky ní ky ní
+ky # koukni na zemi zlaté jménky
+ní # co jsou zbylé z nás v dávný léta zvonění
+ky # k
+2
+
+<s> ky ní ky ní
+ky # jak ruda šťáhne žáru do kráry chodníky
+ní # jak mrtví z mých očí slzy svítí k
+3
+
+<s> ky ní ky ní ná
+ky # černá vlajka s námi vyšla na skrytý cestě lásky
+ní # s bílou růží z bourá
+4
+
+<s> ky ní ky ní ni ni
+ky # co máš s lukama z kytky
+ní # nebylo to tolik bláznivčení
+ky # koukal jsem se do
+5
+
+<s> ky ní ky ní
+ky # z krásy stály kytky
+ní # a krása se líní
+ky # z krásy stály kytky
+ní # a krás
+6
+
+<s> ky ní ky ní ný ný
+ky # kdo má s děvčaty z jeskyně zpěvy a z bambusu krokky
+ní # kdo má s d
+==========  ./tinyLlama_END_OF_LINES_lyricist_4.pt ==========
+1
+
+<s> ky ní ky ní ním
+ky # v noci oči se zkoušej na dívky
+ní # zvedni jen dlaní
+ky # neplatky
+ní #
+2
+
+<s> ky ní ky ní
+ky # proč se smutně jelenčovky
+ní # konečně našly svítání
+ky # počasí je jasné, z d
+3
+
+<s> ky ní ky ní
+ky # srdce s kytkou z mraky
+ní # a zůstala jen trámení
+ky # a cítím to horké zr
+4
+
+<s> ky ní ky ní ví ví
+ky # proč má krásnější tě z dálky
+ní # smečka se z očí honí
+ky # proč má krásně
+5
+
+<s> ky ní ky ní
+ky # nekonečnej vlak a v útrobách z dálky
+ní # a hlava na mě se šťastná krásně strázíš hod
+6
+
+<s> ky ní ky ní má ka má ka
+ky # když jsi z jihu jsi vyslápla ze zdi kytky
+ní # když jsi ze sýnku do
+==========  ./tinyLlama_END_OF_LINES_lyricist_5.pt ==========
+1
+
+<s> ky ní ky ní
+ky # a když měli děvčátky děvčátky
+ní # jeli do jirky zlaté daleko voní
+ky # pro
+2
+
+<s> ky ní ky ní
+ky # pohádka pro děti a odpověď k čtyři starý žáby škytky
+ní # zbyl k nám jedno míst
+3
+
+<s> ky ní ky ní bí
+ky # když koukám spát do bambusu do vzpomínek do pohádky
+ní # přešel spán ve skalách
+4
+
+<s> ky ní ky ní zní
+ky # a v dírce žluté žárovky
+ní # zůstane po ní zbytečná sázení
+ky # na j
+5
+
+<s> ky ní ky ní vá
+ky # žijim si jak dva mraky
+ní # ztracení i z dájení
+ky # na své svatojánské pásky
+
+6
+
+<s> ky ní ky ní ky
+ky # na obědě u baryku holky se koukou do mlízky
+ní # a z vlaků tetky naletí z

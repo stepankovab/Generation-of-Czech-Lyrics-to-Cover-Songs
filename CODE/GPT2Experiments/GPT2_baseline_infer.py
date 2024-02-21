@@ -47,7 +47,7 @@ for model_path in model_paths:
     model.eval()
 
     # input sequence
-    text = "ky ní ky ní"
+    text = "ky ní val ní"
     inputs = tokenizer(text, return_tensors="pt") # tokenizer.encode(text, return_tensors="pt") directly for input_ids
 
     # model output using Top-k sampling text generation method
