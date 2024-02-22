@@ -1,42 +1,57 @@
 import requests
 import json
-from sentence_transformers import SentenceTransformer
-import Imports.tagger as tagger
-from syllabator import syllabify
-import re
+# from sentence_transformers import SentenceTransformer
+# import Imports.tagger as tagger
+# from syllabator import syllabify
+# import re
 from keybert import KeyBERT
+import argparse
 import os
+# import os
 
-def fill_in_none_rhymes(rhymes : list[int|None]) -> list[str]:
-    """
-    Rewrites numeric rhyme scheme into capital letters. Fills in different letters for each None tag.
 
-    Parameters:
-    ----------
-    rhymes: list of int or None describing the rhyme scheme
 
-    Returns:
-    ---------
-    rhyme scheme in capital letters
-    """
-    max_rhyme_ref = 0
-    none_ids = []
-    for rhyme_i in range(len(rhymes)):
-        if isinstance(rhymes[rhyme_i], int):
-            if rhymes[rhyme_i] > max_rhyme_ref:
-                max_rhyme_ref = rhymes[rhyme_i]
-            # convert to capital letters, start with A
-            rhymes[rhyme_i] = chr(64 + rhymes[rhyme_i])
-        else:
-            none_ids.append(rhyme_i)
+parser = argparse.ArgumentParser()
 
-    for none_i in none_ids:
-        max_rhyme_ref += 1
-        rhymes[none_i] = chr(64 + max_rhyme_ref)
 
-    return rhymes
+parser.add_argument("--dataset_path", default="./", type=str, help="./ # DATA/Velky_zpevnik # ")
 
-with open("DATA/Velky_zpevnik/VZ.json", "r", encoding="utf-8") as json_file:
+
+args = parser.parse_args([] if "__file__" not in globals() else None)
+
+
+
+
+# def fill_in_none_rhymes(rhymes : list[int|None]) -> list[str]:
+#     """
+#     Rewrites numeric rhyme scheme into capital letters. Fills in different letters for each None tag.
+
+#     Parameters:
+#     ----------
+#     rhymes: list of int or None describing the rhyme scheme
+
+#     Returns:
+#     ---------
+#     rhyme scheme in capital letters
+#     """
+#     max_rhyme_ref = 0
+#     none_ids = []
+#     for rhyme_i in range(len(rhymes)):
+#         if isinstance(rhymes[rhyme_i], int):
+#             if rhymes[rhyme_i] > max_rhyme_ref:
+#                 max_rhyme_ref = rhymes[rhyme_i]
+#             # convert to capital letters, start with A
+#             rhymes[rhyme_i] = chr(64 + rhymes[rhyme_i])
+#         else:
+#             none_ids.append(rhyme_i)
+
+#     for none_i in none_ids:
+#         max_rhyme_ref += 1
+#         rhymes[none_i] = chr(64 + max_rhyme_ref)
+
+#     return rhymes
+
+with open(os.path.join(args.dataset_path, "VZ_added_24000.json"), "r", encoding="utf-8") as json_file:
     dataset_dict = json.load(json_file)
 
 # rt = tagger.RhymeTagger()
@@ -46,11 +61,10 @@ with open("DATA/Velky_zpevnik/VZ.json", "r", encoding="utf-8") as json_file:
 
 kw_model = KeyBERT()
 
-for dat_i in dataset_dict:   
+for dat_i in dataset_dict:
 
-    if int(dat_i) % 100 == 0:
-        print(dat_i)
-    
+    if "keywords" in dataset_dict[dat_i]:
+        continue   
 
     lyrics_section = dataset_dict[dat_i]["lyrics"]
     without_newlines_section = []
@@ -123,8 +137,12 @@ for dat_i in dataset_dict:
     # embedding = model.encode(en_lyrics_joined, convert_to_numpy=True)
     # dataset_dict[dat_i]["transf_embedding"] = embedding.tolist()
 
+    if int(dat_i) % 1000 == 0:
+        with open(os.path.join(args.dataset_path, f"VZ_added_{dat_i}.json"), "w", encoding='utf-8') as json_file:
+            json.dump(dataset_dict, json_file, ensure_ascii=False)
 
-with open("DATA\\Velky_zpevnik\\VZ_added.json", "w", encoding='utf-8') as json_file:
+
+with open(os.path.join(args.dataset_path, f"VZ_added.json"), "w", encoding='utf-8') as json_file:
     json.dump(dataset_dict, json_file, ensure_ascii=False)
 
 
