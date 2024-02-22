@@ -1,7 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from enum import Enum
-import numpy as np
 from torch.utils.data import Dataset
 from torch.utils.data import Dataset, DataLoader
 import os
@@ -9,8 +8,6 @@ import json
 from transformers import get_linear_schedule_with_warmup
 from transformers import AdamW
 
-import logging
-import warnings
 import argparse
 
 
