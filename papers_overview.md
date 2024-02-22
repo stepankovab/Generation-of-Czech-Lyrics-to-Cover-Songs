@@ -45,6 +45,14 @@
 - EOS and EOP affects GPT2 generation
 - /n jako EOP pomaha ale to uz delam...
 
+#### [Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://aclanthology.org/2021.acl-long.353/)
+- 2021
+- Tunovani jenom male podmnoziny parametru
+- dobre generalizuje, dobre na malo dat (lepsi nez full finetuning)
+- Continuous prefix
+
+
+
 
 
 
@@ -67,11 +75,6 @@
 - 2022
 - Mozna kdybych mela rytmus tak muzu z rytmu jednodusejc generovat dal
 
-#### [Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://aclanthology.org/2021.acl-long.353/)
-- 2021
-- continuous prompting
-- !!!!!
-
 #### [DeepRapper: Neural Rap Generation with Rhyme and Rhythm Modeling](https://arxiv.org/abs/2107.01875)
 - 2021
 - yo
@@ -83,6 +86,14 @@
 #### [Rigid Formats Controlled Text Generation](https://arxiv.org/abs/2004.08022)
 - 2020
 - Songnet - Transformer-based auto-regressive language model
+
+#### [AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts](https://arxiv.org/abs/2010.15980)
+- 2020
+- Co vi modely (zminovano v tom prefix tuning)
+
+#### [Can Unconditional Language Models Recover Arbitrary Sentences?](https://arxiv.org/abs/1907.04944)
+- 2020
+- Continuous prompting for sentence reconstruction
 
 #### [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension]()
 - 2019

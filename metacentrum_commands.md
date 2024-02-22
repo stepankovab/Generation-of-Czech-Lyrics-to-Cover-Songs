@@ -28,5 +28,10 @@ pip install torch
 pip install transformers
 ```
 
+renew connection
+```sh
+kauth
+```
+
 
 
