@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from enum import Enum
+from dataset_types import DatasetType
 import argparse
 import os
 
@@ -18,17 +18,6 @@ parser.add_argument("--dataset_type", default=1, type=int, help="Dataset type: B
 
 
 args = parser.parse_args([] if "__file__" not in globals() else None)
-
-class DatasetType(Enum):
-    BASELINE = 1
-    SYLLABLES = 2
-    END_OF_LINES = 3
-    CHARACTERISTIC_WORDS = 4
-    UNRHYMED = 5
-    SYLLABLES_AND_WORDS = 6
-    SYLLABLES_AND_ENDS = 7
-    ENDS_AND_WORDS = 8
-
 
 BATCH_SIZE = args.batch_size
 MODEL_NAME = args.model
@@ -84,27 +73,36 @@ for model_path in model_paths:
         text = "ví nám ní ky #\n"
             
     elif DATASET_TYPE == DatasetType.CHARACTERISTIC_WORDS:
-        pass
+        text = "4 # čas půlnoc komáři kostel kytka #\n"
 
     elif DATASET_TYPE == DatasetType.UNRHYMED:
         pass
 
     elif DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
-        pass
+        text = "4 6 4 8 # čas půlnoc komáři kostel kytka #\n"
 
     elif DATASET_TYPE == DatasetType.SYLLABLES_AND_ENDS:
         text = "4 6 4 6 # ví nám ní ky #\n"
 
     elif DATASET_TYPE == DatasetType.ENDS_AND_WORDS:
-        pass
+        text = "ví nám tel sám # čas půlnoc komáři kostel kytka #\n"
+
+    elif DATASET_TYPE == DatasetType.FORCED_SYLLABLES:
+        text = "4 6 4 8 #\n"
 
     else:
         raise Exception(f"We don't support a Dataset type {DATASET_TYPE}")
 
-    inputs = tokenizer(text, return_tensors="pt") # tokenizer.encode(text, return_tensors="pt") directly for input_ids
+    inputs = tokenizer(text, return_tensors="pt") 
+    
+    tokenizer.encode(text, return_tensors="pt") #directly for input_ids
 
     # model output using Top-k sampling text generation method
     sample_outputs = model.generate(inputs.input_ids,
+                                    pad_token_id=50256,
+                                    do_sample=True, 
+                                    max_length=100, # put the token number you want
+                                    top_k=40,
                                     num_return_sequences=15)
 
     # generated sequence

@@ -1,63 +1,84 @@
 import re
-import eng_to_ipa as ipa
+# import eng_to_ipa as ipa
 
-def english_to_czech_pron(english):
-    pronaunciation = ipa.convert(english)
+# def english_to_czech_pron(english):
+#     pronaunciation = ipa.convert(english)
 
-    substitutions=[
-        # solves 'every' problem
-        ('vər', 'vr'),
+#     substitutions=[
+#         # solves 'every' problem
+#         ('vər', 'vr'),
         
-        ('ˈ', ''),
-        ('ɛ', 'e'),
-        ('ə', 'e'),
-        ('θ', 't'),
-        ('ɔ', 'ou'),
-        ('i', 'y'),
-        ('ɪ', 'i'),
-        ('u', 'ú'),
-        ('ʊ', 'u'),
-        ('ɑ', 'a'),
-        ('ð', 'd'),
-        ('æ', 'e'),
-        ('ʃ', 'š'),
-        ('ʒ', 'ž'),
-        ('ʧ', 'č'),
-        ('ʤ', 'ž'),
-        ('ŋ', 'n'),
-        ('ˌ', ''),
-        ('oú', 'ou'),
-        ('ks', 'x'),
-        ('ts', 'c'),
-        ('ouy', 'ouwi'),
-        (r'([aeiou])\1', r'\1'),
-        (r'([aeouáéóú])[yi]', r'\1j'),
-        (r'([rj])l', r'\1')
-    ]
+#         ('ˈ', ''),
+#         ('ɛ', 'e'),
+#         ('ə', 'e'),
+#         ('θ', 't'),
+#         ('ɔ', 'ou'),
+#         ('i', 'y'),
+#         ('ɪ', 'i'),
+#         ('u', 'ú'),
+#         ('ʊ', 'u'),
+#         ('ɑ', 'a'),
+#         ('ð', 'd'),
+#         ('æ', 'e'),
+#         ('ʃ', 'š'),
+#         ('ʒ', 'ž'),
+#         ('ʧ', 'č'),
+#         ('ʤ', 'ž'),
+#         ('ŋ', 'n'),
+#         ('ˌ', ''),
+#         ('oú', 'ou'),
+#         ('ks', 'x'),
+#         ('ts', 'c'),
+#         ('ouy', 'ouwi'),
+#         (r'([aeiou])\1', r'\1'),
+#         (r'([aeouáéóú])[yi]', r'\1j'),
+#         (r'([rj])l', r'\1')
+#     ]
 
-    for (a,b) in substitutions: 
-        pronaunciation=re.sub(a,b,pronaunciation)
+#     for (a,b) in substitutions: 
+#         pronaunciation=re.sub(a,b,pronaunciation)
 
-    return pronaunciation
-
-
+#     return pronaunciation
 
 
+def dashed_syllabified_line(text : str):
+    syll_line = syllabify(text)
+    final_line = ""
 
-def syllabify(text : str, language : str):
-    if language == "en":
-        text = english_to_czech_pron(text)
+    for syll in syll_line:
+        if syll == "_":
+            if len(final_line) > 0 and final_line[-1] == "-":
+                final_line = final_line[:-1]
+            final_line += " "
+        else:
+            final_line = final_line + syll + "-"
+        
+    if len(final_line) > 0 and final_line[-1] == "-":
+        final_line = final_line[:-1]
+
+    return final_line
+
+
+
+
+
+def syllabify(text : str):
+    # if language == "en":
+        # text = english_to_czech_pron(text)
 
     words = re.findall(r"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžAÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽäöüÄÜÖ]+", text)
     syllables = []
+    glued_preposition = False
 
     i = 0
     while i < len(words):
         word = words[i]
 
+        glued_preposition = False
         if (word.lower() == "k" or word.lower() == "v" or word.lower() == "s" or word.lower() == "z") and i < len(words) - 1 and len(words[i + 1]) > 1:
             i += 1
             word = word + words[i]
+            glued_preposition = True
         
         letter_counter = 0
 
@@ -67,9 +88,12 @@ def syllabify(text : str, language : str):
             for _ in syllable_mask:
                 word_syllable += word[letter_counter]
                 letter_counter += 1
+                if glued_preposition and letter_counter == 1:
+                    word_syllable += "_"
 
             syllables.append(word_syllable)
 
+        syllables.append("_")
         i += 1
 
     return syllables

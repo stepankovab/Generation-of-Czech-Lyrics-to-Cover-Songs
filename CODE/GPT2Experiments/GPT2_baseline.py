@@ -1,12 +1,13 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from enum import Enum
+from dataset_types import DatasetType
 from torch.utils.data import Dataset
 from torch.utils.data import Dataset, DataLoader
 import os
 import json
 from transformers import get_linear_schedule_with_warmup
 from transformers import AdamW
+from syllabator import dashed_syllabified_line
 
 import argparse
 
@@ -25,17 +26,6 @@ parser.add_argument("--dataset_type", default=1, type=int, help="Dataset type: B
 
 args = parser.parse_args([] if "__file__" not in globals() else None)
 
-class DatasetType(Enum):
-    BASELINE = 1
-    SYLLABLES = 2
-    END_OF_LINES = 3
-    CHARACTERISTIC_WORDS = 4
-    UNRHYMED = 5
-    SYLLABLES_AND_WORDS = 6
-    SYLLABLES_AND_ENDS = 7
-    ENDS_AND_WORDS = 8
-
-
 BATCH_SIZE = args.batch_size
 MODEL_NAME = args.model
 EPOCHS = args.epochs
@@ -45,9 +35,6 @@ DATASET_PATH = args.dataset_path
 DATASET_TYPE = DatasetType(args.dataset_type)
 
 print(f"----------------- {MODEL_NAME} ------ {DATASET_TYPE} ----------------")
-
-logging.getLogger().setLevel(logging.CRITICAL)
-warnings.filterwarnings('ignore')
 
 device = 'cpu'
 if torch.cuda.is_available():
@@ -68,7 +55,9 @@ elif MODEL_NAME == "GPT2_czech_XL":
 
 elif MODEL_NAME == "Mistral_czech":
     tokenizer = AutoTokenizer.from_pretrained("simecek/cswikimistral_0.1")
-    model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1")
+    model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1",
+                                                 load_in_4bit=True,
+                                                 torch_dtype=torch.float16)
     tokenizer.model_max_length=1024
 
 elif MODEL_NAME == "tinyLlama":
@@ -138,6 +127,13 @@ class LyricsDataset(Dataset):
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp))
+            
+        elif DATASET_TYPE == DatasetType.FORCED_SYLLABLES:
+            for dat_i in dataset_dict:
+                temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} #"]
+                for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
+                    temp.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}")
+                self.lyrics_list.append("\n".join(temp))
 
         else:
             raise Exception(f"We don't support a Dataset type {dataset_type}")
@@ -160,10 +156,6 @@ scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps = WARMUP
 proc_seq_count = 0
 sum_loss = 0.0
 batch_count = 0
-
-# lora_r = 16 #@param {type:"number"}
-# lora_alpha = 32 #@param {type:"number"}
-# lora_dropout = 0.05 #@param {type:"number"}
 
 tmp_lyrics_tens = None
 models_folder = "trained_models"

@@ -1,0 +1,12 @@
+from enum import Enum
+
+class DatasetType(Enum):
+    BASELINE = 1
+    SYLLABLES = 2
+    END_OF_LINES = 3
+    CHARACTERISTIC_WORDS = 4
+    UNRHYMED = 5
+    SYLLABLES_AND_WORDS = 6
+    SYLLABLES_AND_ENDS = 7
+    ENDS_AND_WORDS = 8
+    FORCED_SYLLABLES = 9
