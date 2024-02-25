@@ -1,8 +1,8 @@
 #!/bin/bash
 #PBS -q gpu@meta-pbs.metacentrum.cz
 #PBS -l walltime=24:0:0
-#PBS -l select=1:ncpus=1:ngpus=1:mem=10gb:scratch_local=100gb
-#PBS -N oscar2
+#PBS -l select=1:ncpus=1:ngpus=1:mem=10gb:scratch_local=100gb:cl_galdor=True:brno=True
+#PBS -N oscar8
 
 
 # define a DATADIR variable: directory where the input files are taken from and where output will be copied to
@@ -15,29 +15,13 @@ echo "$PBS_JOBID is running on node `hostname -f` in a scratch directory $SCRATC
 #loads the Gaussian's application modules, version 03
 module add py-pip/21.3.1-gcc-10.2.1-mjt74tn
 
-pip install os
-pip install json
-pip install argparse
-pip install nvidia-nccl-cu12==2.19.3
-pip install nvidia-cublas-cu12
-pip install nvidia-cudnn-cu12==8.9.2.26
-pip install nvidia-curand-cu12==10.3.2.106
-pip install nvidia-cusolver-cu12==11.4.5.107
-pip install nvidia-cuda-nvrtc-cu12==12.1.105
-pip install nvidia-cufft-cu12==11.0.2.54
-pip install nvidia-cublas-cu12==12.1.3.1
-pip install nvidia-cusparse-cu12==12.1.0.106
-pip install triton==2.2.0
-pip install torch
-pip install transformers
-
 # run Gaussian 03 with h2o.com as input and save the results into h2o.out file
 # if the calculation ends with an error, issue error message an exit
-python $DATADIR/GPT2_baseline.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 2 --starting_epoch 3 >> $DATADIR/Out_file_osc2.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
+python $DATADIR/GPT2_baseline.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 8 >> $DATADIR/Out_file_osc8.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
 
 # move the output to user's DATADIR or exit in case of failure
 
-python $DATADIR/GPT2_baseline_infer.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 2 >> $DATADIR/Out_file_osc2i.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
+python $DATADIR/GPT2_baseline_infer.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 8 >> $DATADIR/Out_file_osc8i.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
 
 
 # clean the SCRATCH directory

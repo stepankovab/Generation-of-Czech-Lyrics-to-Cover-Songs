@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -q gpu@meta-pbs.metacentrum.cz
 #PBS -l walltime=24:0:0
-#PBS -l select=1:ncpus=1:ngpus=1:mem=45gb:scratch_local=100gb:gpu_cap=cuda86
+#PBS -l select=1:ncpus=1:ngpus=1:mem=10gb:scratch_local=100gb
 #PBS -N oscar7
 
 
