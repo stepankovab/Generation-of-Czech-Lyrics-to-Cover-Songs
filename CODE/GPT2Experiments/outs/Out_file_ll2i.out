@@ -1,3 +1,2327 @@
 ----------------- tinyLlama ------ DatasetType.SYLLABLES ----------------
 cuda available.
 ==========  tinyLlama_SYLLABLES_lyricist_0_32.pt ==========
+----------------- tinyLlama ------ DatasetType.SYLLABLES ----------------
+cuda available.
+==========  tinyLlama_SYLLABLES_lyricist_0_32.pt ==========
+1
+
+<s> 4 6 4 6 #
+4 # a jít sem dál
+6 # a jít sem dál, a jít sem dál
+4 # a jít sem dál
+6 # a jít
+2
+
+<s> 4 6 4 6 #
+4 # kdo to řek
+6 # že jsi nechceš vdát
+4 # má miláčku
+6 # když jsi nechceš
+3
+
+<s> 4 6 4 6 #
+4 # co jsme řádně
+6 # měli svlík ve svítání
+4 # vypustili
+6 # smeřili si vlastní
+4
+
+<s> 4 6 4 6 #
+4 # je to z lásky
+6 # tak nech mě jí dávám
+4 # je to z lásky
+6 # tebou můj ještě sp
+5
+
+<s> 4 6 4 6 #
+4 # tak to nevím
+6 # proč mě to bližší mi
+4 # a pro co víc
+6 # tak nevím co mí ti stát
+4
+6
+
+<s> 4 6 4 6 #
+4 # já jsem to sám
+6 # vracím se vám konec
+4 # už mě uviděl
+6 # v noci je to moc
+==========  tinyLlama_SYLLABLES_lyricist_1_32.pt ==========
+1
+
+<s> 4 6 4 6 #
+4 # vzpomínám včel
+6 # vzpomínám na vzkřeskání
+4 # děkuj o čin
+6 # dě
+2
+
+<s> 4 6 4 6 #
+4 # častěji blb
+6 # často nesmí se mi
+4 # s kůrkou zázrok
+6 # s kůrkou z
+3
+
+<s> 4 6 4 6 #
+4 # že by někam
+6 # co bychom byli právě
+4 # a že by tam
+6 # kde jsi můj důvod sv
+4
+
+<s> 4 6 4 6 #
+4 # pijeme to
+6 # pije sám, nezlý pijem
+4 # pijeme to
+6 # pije sám, jež zn
+5
+
+<s> 4 6 4 6 #
+4 # není to houf
+6 # jsem jsi můj kamarád
+4 # na to nechám
+6 # jsem jsi můj
+6
+
+<s> 4 6 4 6 #
+4 # když svítá
+6 # jak je to přání
+4 # když svítá
+6 # jak je to přání tmou vzduchem šť
+==========  tinyLlama_SYLLABLES_lyricist_2_32.pt ==========
+1
+
+<s> 4 6 4 6 #
+4 # co vzal jsi jsem
+6 # tohle to nemáš
+4 # co vzal jsi jsem
+6 # můj srdce
+2
+
+<s> 4 6 4 6 #
+4 # na na na na
+6 # na na na na na
+4 # na na na na
+6 # na na na na na na
+5 # a slavně nepat
+3
+
+<s> 4 6 4 6 #
+4 # já dnes vím
+6 # už se mi stáváš
+4 # já dnes vím
+6 # že se neslušíjš dří
+4
+
+<s> 4 6 4 6 #
+4 # hej, a já já
+6 # vždyť zůstáváma rád
+4 # hey now, and
+6 # I, for you,
+5
+
+<s> 4 6 4 6 #
+4 # když mi smejdou
+6 # že mám jenom právo
+4 # když mi smejdou
+6 # že mám
+6
+
+<s> 4 6 4 6 #
+4 # pár pohádků
+6 # na kterých jsem se splet
+4 # pár pohádků
+6 # na kterých jsem
+==========  tinyLlama_SYLLABLES_lyricist_3_32.pt ==========
+----------------- tinyLlama ------ DatasetType.SYLLABLES ----------------
+cuda available.
+==========  tinyLlama_SYLLABLES_lyricist_0_32.pt ==========
+
+1
+
+<s> 4 6 4 6 #
+4 # už dřív jsi vzal
+6 # já se mi dneska ztratil
+4 # jsi je mi chtěl
+6 # tak, já přestanu jít vzít tvou paměť tiše tiše tiše tiše tiše městem tiše sám tiše se vzpouzit vzít se tam něco tiše říkat tiše jdeš říkat já tiše se přivadím tiše tiše koukej kamarádku tiše všechno je tiše hned nejspíš jsi mě kamarádkám si hned nejspíš jsi mě kamarádčci si hned nejspíš jsi mě kamarádčečkci si hned nejspíš jsi mě kamarádčaček kamarádčeckci si hned nejspíš jsi mě kamarádčácečekkci si hned nejspíš jsi mě kamarádčáceččečkcie sám je jsi mě kamarádjsi mě kamarádků jsi mě kamarádčů jsi měková jsi mě máma jsi mě můj švarný švarnej švarnejj jsi mě kamarádků jsi mě kamarádčů jsi mě kamarádčačů jsi mě kamarádčáčku jsi mě kamarádčácečku jsi mě kamarádčáceččedu jsi mě kamarádčáceččedu ji sám je mě kamarád jsi mě kamarádků jsi mě kamarádčů jsi mě kamarádčácečku jsi mě kamarádčácečcedu jsi mě kamarádčácečcedu ji spíš nejspíš jsi mě mě stůj a říkám vám co se děláš jsi mě já už nejsem tvý můj bůh mě jsi mě připravím a řekám vám to co se děláš jsi mě já už nejsem tvý a řeknej můj bůh to co se děješ jsi mě já už nejsem tvůj a připraví mě se jsi mě připravím a řekněte vám to co se děláš jsi mě já už nejsem tvůj a připraví mě se jsi mě připravím a řekněte vám co se děláš jsi mě já už nejsem tvůj a připraví mě se tím jsi mě připravím i řekněte vám co se děláš jsi mě já už nejsem tvůj a připravím a řekněte vám co se děláš jsi mě já už nejsem tvůj a připravím již to vím říkáme a říkáme já to jste řeknete já to jste sním já to jste říkáme já to jste sním já to jste řeknete a říkáme ji já řekneš a říkáme ja to jste řeknete já to jste řeknete a říkáme ji já to jste říkáme já to jste řeknete já to jste řekté ji si sám to jste říkáme já to jste říkáme asi to tě taky říkáme i když tvě sám to nevíte ty jsi říkáme mě ji si sám to jste říkáme jsi mě jsi mě připravím otoč si tak sama sám to jste říkáme ta říkáme a říkáme ta říkáme i když tvůj oč měsíc měsíc měsíc měsíc měsíc měsíc měsíc měsíc měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc jsi měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc já to neumím jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc její měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc jestli jsme třikrát to mít a to je to tak krásná voda co to je tak voda co to je tak jsi mě sám já sám já sám jsi mě sám já sám jsi mě sám já sám jsi mě jsi mě sám já sám jsi mě jsi měsíc měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc byl bych blázen jsi měsíc byl bych blázen jsi měsíc byl bych divnej jsi měsíc byl bych divnej jsi měsíc byl bych divnej jsi měsíc byl bych divnej jsi měsíc byl bych divnej jsi měsíc bych divnej jsi měsíc byla jsi měsíc mě sám jsi mě sám jsi mě sám jsi mě mě sám jsi mě mě sám jsi mě jsi měsíc měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc měsíc jsi měsíc měsíc jsi měsíc jsi měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc byl bych blázen měsíc byl bych blázen jsi měsíc byl bych bláz na mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi mě mě sám jsi měsíc měsíc měsíc měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc jsi měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi měsíc měsíc měsíc jsi
+
+2
+
+<s> 4 6 4 6 #
+4 # tak se smát, dej
+6 # jak ti po vagáne
+4 # tak se smát, dej
+6 # jak ti po vagánejch snámkách dnes čas spatřit máš mě zase sám jen tvůj dnešní klout máš mě sám jen tvůj dnešní klout má
+4 # jsi můj žátek
+6 # tak se smát, dej, dej, dej
+4 # tak se smát, dej
+6 # tak se smát, dej, dej, dej
+4 # tak se smát, dej
+6 # tak se smát, dej, dej, dej
+4 # tak se smát, dej
+6 # tak se smát, dej, dej, dej
+4 # tak se smát, dej
+6 # tak se smát, dej, dej, dej
+4 # tak smat se, dej
+6 # tak se smát je tím vím
+4 # tak se smát je
+6 # tak se smát je to hříš
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát, dejte
+6 # tak se smát jestli víš
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát nejsem
+6 # na pohledu tvé chtěl bys
+4 # tak se smát, dej
+6 # tak se smát je tím vím
+4 # tak se smát je
+6 # tak se smát je to hříš
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát nejsem
+6 # tak se smát nejsem to jí
+4 # tak se smát, dejte
+6 # tak se smát jsi dneska sám
+4 # tak se smát dejte
+6 # tak se smát jsi dneska sám
+4 # tak se smát dejte
+6 # tak se smát jsi dneska sám
+4 # tak se smát, dejte
+6, tak se smát jestli víš
+4 # tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát nejsem
+6, to jsem se tak vzdal chcešli
+4, tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát nejsem
+6, to jsme se tak vzdali
+4, tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát nejsem
+6, to jsme se tak vzdali
+4, tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát dejte
+6, tak se smát je tím vím
+4, tak se smát dejte
+6, tak se smát je to hříš
+4, tak se smát dejte
+6, tak se smát je to hříš
+4, tak se smát dejte
+6 , tak se smát jestli víš chcešli má
+4, tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát nejsem
+6, to jsme se tak vzdali
+4, tak se smát nejsem
+6, ta chcešli tatíčko má
+4, tak se smát letí
+6, to jsme se tak vzdali
+4, tak se smát jestli víš
+6, ta chcešli tatíčko má
+4, tak se smát letí
+6, to jsme se tak vzdali
+4, tak se smát dejte
+6, tak se smát je to hříš
+4, tak se smát dejte
+6, tak se smát je to hříš
+4, tak jsi to máš
+6 , tak jsi to já nevím
+4, tak se smát dejte
+6 , tak jsi to já nevím
+4, tak jsi to máš
+6 , tak jsi to já nevím
+4, tak mě budu chtít
+6 , tak mě budu chtít, dej
+4, tak mě budu chtít
+6 , tak mě budu chtít dej
+4, tak mě budu chtít
+6 , tak mě budu chtít dej
+4, tak mě budu chtít
+6 , tak mě budu chtít dej
+4, jak to to znáš
+6 , to to tě znáš, dej
+4, jak to to znáš
+6 , co jsi to budeš
+4, jak to to znáš
+6 , jak to to znáš dej
+4, jak to to znáš
+6 , ty jsi to to znáš dej
+4, jak to to znáš
+6 , to to tě znáš, dej
+4, jak to to znáš
+6 , ty jsi to to znáš dej
+4, jak to to znáš
+6 , jak to to znáš dej
+4, jak to to znáš
+6 , ty jsi to to znáš, dej
+4, jak to to znáš
+6 , to to tě znáš, dej
+4, jak to to znáš
+6 , co jsi to budeš
+4, jak to to znáš
+6 , když tvůj srdce se mnou
+4, jak to to znáš chlápek
+6 , jak to to znáš dejte
+4, jak to to znáš ty
+6 , ty jsi to to znáš dejte
+4, jak to to znáš ty
+6 , ty jsi to to znáš dejte
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to znáš je
+6 , tak je to to znáš dej
+4, jak to to zpívám
+6 , jak to to zpívam dejte
+4, jak to to zpívám
+6 , jak to to zpívam dejte
+4, jak to to zpívám
+6 , jak to to zpívám dejte
+4, jak to to zpívám
+6 , jak to to zpívám dejte
+4, jak dnes večer zpívám
+6 , jak dnes večer zpívám dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak dnes večer zpívá
+6 , jak dnes večer zpívá dejte
+4, jak to to znáš
+6 , to to tě
+
+3
+
+<s> 4 6 4 6 #
+4 # až se srdce
+6 # a pudu chytnout psi
+4 # až sem se vdát
+6 # tak se sem tu dát běsy řeka hromo kámoše sem se vdát, to dala jsi mi dávno všechno
+4 # asi mám strach
+6 # že mít musím vzít důvod
+4 # asi mám strach
+6 # že mít musím vzít důvod
+4 # asi mám strach
+6 # že mít musím vzít důvod
+4 # asi mám strach
+6 # že mít musím vzít důvod
+4 # asi mám strach
+6, že mít musím vzít důvod
+4 # asi mám strach
+6 # že mít musím vzít důvod
+8 # ale asi neumím mít
+6 # a já přišel dojdem zas
+4 # asi mám strach
+6 # že mít musím vzít důvod
+4 # asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, že mít musím vzít důvod
+7, a mě to nepatřit
+6, že se nemoc dřítím
+4, asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, že mít musím vzít důvod
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, že mít musím vzít důvod
+9, a ty mě se nějak nevšimneš
+6, že sestříhal sem brousit
+4, asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, že mít musím vzít důvod
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, že mít musím vzít důvod
+10, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, když jednou zasjem dál
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, že mít musím vzít důvod
+11, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, když jednou zasjem dál
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, že mít musím vzít důvod
+12, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, že mít musím vzít důvod
+4, asi mám strach
+6, když jednou zasjem dál
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, že mít musím vzít důvod
+13, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, jinak umím jít s tím
+4, asi mám strach
+6, jít s toho pohlazení
+4, asi mám strach
+6, když jednou zasjem dál
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, kovbojům s tebou
+4, asi mám strach
+6, a jak se to stává
+8, ale asi neumím mít
+6, a já přišel dojdem zas
+4, asi mám strach
+6, že mám přepad a krásu
+8, ale asi neumím mít
+6, a všude to měls
+10, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, jinak umím jít s tím
+8, ale asi neumím mít
+6, jít s toho pohlazení
+4, asi mám strach
+6, kovbojů s tebou
+4, asi mám strach
+6, a jak se to stává
+8, ale asi neumím mít
+6, a já přišel dojdem zas
+4, asi mám strach
+6, že mám přepad a krásu
+8, ale asi neumím mít
+6, a všude to měls
+10, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, jestli chodívá dál
+8, jinak umím jít s tím
+6, kovbojů s tebou
+4, asi mám strach
+6, jinak umím jít s tím
+11, pánů se mohl zase brát chlapi
+7, až se srdce přede mně
+14, ten tisíc mladíku co chodívá
+6, co chodívá dát po tůní
+4, asi mám strach
+6, dřív nechám tu chlapa
+8, jinak umím jít s tím
+6, kovbojů s tebou
+4, asi mám strach
+6, jinak umím jít s tím
+13, pánů se mohl zase brát chlapi
+7, až se srdce přede mně
+14, jeden měl jinde a bůhví kam jede
+14, já v tom mlaském hlavě vodřilo jsem
+3, jsem v tom mlaském hlavě
+6, vodřilo jsem jsem
+4, asi mám strach
+6, jestli chodívá dál
+10, ten tisíc my jsme všichni
+7, kovbojů s tebou
+8, jinak umíte jít dál
+6, děvče vzduch je zase strach
+14, jeden měl jinde a bůhví kam jede
+3, jsme v tom mlaském hlavě
+6, vodřilo jsme jsme
+4, asi mám strach
+6, ještě dneska zpějem
+8, a ty už se přetrváváš
+6, dneska zpějem kovbojům
+4, asi mám strach
+6, jak se to stává
+15, jít dál je všude taky kovbojům
+12, když chovali jsou tu kůži
+14, já v tom mlaské hlavě vodřilo jsme
+14, jsme v tom mlaským hlavě vodřilo jsme
+3, jsme jdeme
+6, jsme jdeme dál
+4, asi mám strach
+6, a taky chci jít dál
+10, to přece nejsme kovbojům
+7, kovbojů s tebou
+8, jinak umíte jít dál
+6, dneska zpějem kovbojům
+14, jeden jsme všichni a bůhví kam jede
+3, a kovbojů s tebou
+6, jsme jdeme
+4, asi mám strach
+6, já dlhavý jdu střídám
+8, a ty už se přetrváváš
+6, dneska zpějem kovbojům
+4, asi mám strach
+6, jak se to stává
+15,
+
+4
+
+<s> 4 6 4 6 #
+4 # můj milý víc
+6 # když jsi dám s náma víc
+4 # co mi já víc
+6 # a to se ti říct mámš tak mocněš si všechno vzít a dál je mi spát sám z chladu tvá líčka tvá líčka tvá líčka tvá líčka tvá míň, víc, ó můj milý víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá míň, víc, ó můj milý víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bude dál tvá líčka tvá líčka tvá líčka tvá líčka tvá víc a pak tím pádem všemi bych měl jít zas za tolikrát zas za tolikrát zas se zas za tolikrát zas už nepochopím to zas za tolikrát zas za tolikrát zas se zas zas jdu od vás jinde jiná města jinde místa jinde místa jinde místa jinde místa jinde místa jinde jinde místa jinde jinde místa jinde místa jinde místa jinde jinde místa jinde jiště jasně nejdu s tím pánem co už chladná má jasně nejdu s tím průvodem co je mi líp jasně nejdu s tím pánem co už chladná má jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím pánem co už chladná má jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím průvodem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím pánem co už chladná má jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně nejdu s tím líbníkem co je mi líp jasně něco tu zase už jsem chtěl něco, já jsem chtěl a nic ti co jsi ti říct má být hned jsme v dálce hned všude vděčně jsme tě hned prosím jsi ty jsi rád jsme tě to řekeme tě jsi rád jsme tě to řekeme tě jsme tě to řekeme jsi rád jsme tě to řekeme tak jsme tě to řekeme jsi rád jsi nejvíc jsme tě to řekeme nejvíc jsme tě to řekeme jsme tak jsme tě to řekeme nejvíc jsme přepláčej své připravdej se na to všechno co jsi ti říct máš jsme ti kdo to udělali jsme ti kdo to udělali mám chladná oči já jsem chtěl něco čtu jsme ti kdo to udělals jsme jsi tu jsi rád jsme tě to řekeme s tebou jsi rád jsme tě to řekeme jsme to jsi rád já máš co měsíc a co všechno znám jsme ti kdo to udělali jsme jsi jsi měsíc já s tebou jsi měsíc a co mě s tím hned si říct mě s tím měsíc pro slyším jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli jahody v dáli
+62 # jsi mě tu tě smál jsi mě a všude jsi stál jsi mě a říkal
+62 # jsi mě tu tě smál jsi mě a všude jsi stál jsi mě a
+62 # jsi mě tu tě smál jsi mě a všude jsi stál jsi mě
+62 # jsi mě tu tě smál jsi mě a všude jsi stál jsi mě asi vždyť já jsi mě asi víc ti říkal jsi já jsi mě s tebou to jsem tu mě s tebou to jsem rád jsem připravdejs mi nějak něco mi nejvíc jsme teda to jsme ti kdo tu to udělali jsme ti kdo to udělali jsi mě máš co že s tím vzpomínám to jsem tu mě s tebou jsi mě s tebou jsi mě asi víc šanci máš jsi mě a všude jsi stál šanci máš jsi mě asi víc
+62 # jsi mě tu tě smál jsi mě vždyť já jsi mě mě asi víc to jsem tu mě s tebou jsi mě s tebou jsi mě asi víc ti zas mám rád jsme jsi ty jsi rád jsme tě to řekeme jsi rád to jsi něco jsi něco pro ty jsi jsi my jsme jste teda ty jsi máš co jsi mi všechno co jsi mi všechno co jsi mi všem něco ty jsi jsi můj pane to jsme ty jsi to jsme jsme mně jsi to jsme místa tvůj kůň má černá šata ti asi jsi nejvíc ty jsi nejvíc já máš to jsi nejvíc jsi jsi místa tvůj kůň žár pro všechny jsme ti to jsme jsme nejvíc jsme to jsme místa tvůj kůň žár jsi můj pane to jsme ti to jsme měsíc a co já jsi mě mám co já jsi mě mě s tebou mě měsíc přát se můj pane
+62 # jsi mě tu tě smál tu jsem ti říkal jsi to jsi mě já jsi mě to jsem tu něco nejvíc to js
+
+5
+
+<s> 4 6 4 6 #
+4 # až se zbledneš
+6 # tak mi povesli hrnk
+4 # tak mi povesli
+6 # tak mi povesli hrnk
+4 # tak mi povesli
+6 # tak mi povesli hrnk
+4 # až se zbledneš
+6 # tak mi povesli hrnk
+4 # ať se měsíc
+6 # ať se měsíc vykrtám
+4 # jí tiše zpívej
+6 # jí tiše zpívej, jíšej
+4 # jí tiše zpívej
+6 # jí tiše zpívej, jíšej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # as tiše zpívej
+6 # as tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zpívej
+6 # asi tiše zpívej
+4 # asi tiše zdvihoujš
+6 # asi tiše zdvihujš, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihuj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihuj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihuj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihuj, jíšej
+6 # asi tiše zdvihouj, jíšej
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+6 # asi tiše zdvihouj, jíšej
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+6 # asi tiše zdvihouj jíšej
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6 # asi tiše zdvihouj, jíšej
+4 # asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+6, asi tiše zdvihouj jíšej
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihouj, jíšej
+4, asi tiše zdvihouj
+6, asi tiše zdvihou
+
+6
+
+<s> 4 6 4 6 #
+4 # vzal mi ho pryč
+6 # jdu hned z města ven
+4 # když ho mám rád
+6 # když ho mám rád, jsem tu sám
+4 # já už mám rád
+6 # jdu hned z města ven
+4 # když ho mám rád
+6 # tak jsem si ho už sám
+4 # já už nejdu
+6 # jdu hned z města ven
+4 # když ho mám rád
+6 # jsem si ho utíkám
+4 # hned jsem se díváš
+6 # ať vem, z rána tě znám
+4 # je to jiná
+6 # jak mi štěstí znáš
+4 # je to jiná
+6 # jde svůj dům a měšec
+4 # je to jiná
+6, chtěl bych rád, to se mi zdát
+4, je to jiná
+6, chtěl bych rád je to zdát
+4, je to jiná
+6, jde svůj dům a měšec
+4, je to jiná
+6, chtěl bych rád je to zdát
+4, jsem si ho utíkám
+6, tak jsem si ho utíkám
+8 # když jsem se jdu vstát za vám
+7 # když jsem ti chodím za vám
+9 # jsem ti klokan pár vám už nedám
+6 # já už nejdu, jsem ji snou
+8 # je to jiná, je to ráj
+7, jsem si tenhle špínek pár snou
+9 # jsem ti klokan pár jsem ji chci snou
+6 # je to jiná jsem ji snout
+8 # je to jiná je to ráj
+7, jsem si tenhle špínek pár snou
+9 # jsem ti klokan pár jsem ji chci snout
+6 # je to jiná jsem ji snoun
+8 # je to jiná jsem ji chci snout
+7, jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, je to jiná jdám si hned
+7, jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, je to jiná jsem ji snout
+8, nechá se u ránu svůj brouk
+7 # jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, je to jiná jsem ji snout
+8, jdu k tobě večer zpátky
+7 # jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, je to jiná jsem ji snout
+8, jsem ti klokan pár jsem ji chci snout
+7, jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, jsem jisteň, jisteň, jisteň
+6 # jsem jisteň, jisteň, jisteň
+8, jsem si jisteň tvou tvou jisteň
+7 # jsem si tenhle špínek pár snou
+9 , jsem ti klokan pár jsem ji chci snout
+6, jste mě to starej sál
+6, jste mě to starej sál
+8, jsme jisteň tak sejíme sám
+4, ať si nejsem sám
+8, kdo ještě chce být sám
+7, co chce být sám, tak sejíme sám
+9, jsi mě tíhou zrychlila vlna
+9, jsi mě tíhou zrychlila vlna
+6, jste mě to starej sál
+6, jestli kdo ti stojí
+8, jste mě to starej sál
+7, jste mě to starej sál
+9, jsi mě tíhou zrychlila vlna
+6, jestli to máš rád
+6, jde svůj dům a měšec
+8, je to jiná, je to ráj
+7, jsme jisteň tak sejíme sám
+9, jsi mě tíhou zrychlila vlna
+6, jednou jsi mě tíhou
+6, jednou jsi mě tíhou
+8, jtu jsi mě to starej sál
+7, jtu jsi mě to starej sál
+9, jsi mě tíhou zrychlila vlna
+6, jdu svůj dům a měšec
+8 , cestu svou chci kůži tvou
+9 , jsi mě tíhou zrychlila vlna
+6, jednou jsi mě tíhou
+6, jednou jsi mě tíhou
+8 , co má chlast po kapsách
+7 , co má chlast po bráchách
+9 , jsi mě tíhou zrychlila vlna
+6, ať si nejsem sám
+6, jdu svůj dům a měšec
+8 , cestu svou chci kůži tvou
+9 , jsi mě tíhou zrychlila vlna
+6, jednou jsi mě tíhou
+6, jednou jsi mě tíhou
+8 , co má chlast po kapsách
+7 , co má chlast po bráchách
+9 , jsi mě tíhou zrychlila vlna
+6, ať si nejsem sám
+6 , jsme jisteň, jsme jisteň
+8 , jsou žízeň co máš
+7 , jsi mě to starej sál
+9 , jsi mě tíhou zrychlila vlna
+6 , jednou jsi mě tíhou
+6 , jednou jsi mě tíhou
+8 , kde chceš být ať si nejsem
+7 , co máš, co má, máma
+9 , jsi mě tíhou zrychlila vlna
+6 , je to jiná jsem ji snout
+8 , júď máma, děvče mámo
+7 , co máš, co má, máma
+9 , jsi mě tíhou zrychlila vlna
+6 , cestu svou jsi měšec
+6 , cestu svou jsi měšec
+8 , už tebou cesta je snou
+7 , jdu hned jsem si tiše řek
+9 , jsi mě tíhou zrychlila vlna
+6 , nechá se mi bázlnou
+6 , nechí hvězdy přicházenou
+8 , to chceš mi ty jsi mé sál
+7 , co máš, co má, jiným snům
+9 , jsi mě tíhou zrychlila vlna
+6 , je to jiná jsem ji snout
+8 , jsme jisteň, jsme jisteň, jsme jisteň
+7 , co máš, co má, jiným snům
+9 , jsi mě tíhou zrychlila vlna
+6 , někou co máš
+6 , sme jste mě tíhou
+8 , cestu svou jsi měšec
+7 , cestu svou jsi měšec
+9 , jsi mě tíhou zrychlila vlna
+6 , jak ztracenej vlak
+6 , jak ztracenej vlak
+8 , už tebou cesta je snout
+7 , co máš, co má, jiným snům
+9 , jsi mě tíhou zrychlila vlna
+6 , jsme jste mě tíhou
+6 , jsme jste mě tíhou
+8 , kdo má v uších vůni svou
+7 , kdo má v uším pár sněží
+9 , jsi mě tíhou zrychlila vlna
+6 , jsme jste mě tíhou
+6 , jsme jste mě tíhou
+8 , já to vlastně nechci být
+7 , jdu hned jsem si tiše řek
+9 , jsi
+
+7
+
+<s> 4 6 4 6 #
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6 # čtyři na sedmé
+4 # na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sed mé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sed Mé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šesté
+6, čtyři na sedmé
+4, na šest
+
+8
+
+<s> 4 6 4 6 #
+4 # až jednou
+6 # budem se toulat
+4 # že mi to
+6 # tak daj slyšíš můj svět
+4 # budem se toulat
+6 # budem se toulat a zase všem
+4 # najdu cestu
+6 # co znám jen já se věděl
+4 # až jednou, dřív než to všichni znali, budem se toulat
+6 # budem se toulat a nejde víc
+4 # až jednou jednou
+6 # budem se toulat a nejde víc
+4 # až jednou jednou
+6 # budem se toulat a nejde víc
+4 # až jednou jednou
+6 # budem se toulat a nejde víc
+4 # až jednou jedou
+6, ženy i máma jsou mi to chtěj
+4, že dřív než to všichni znali a nevěděj svou můj milou
+6, až jednou třesou růst chci být jiný já já mám tvá tvá
+4, až jednou budem se toulat
+6, budem se toulat nejdem víc
+4, až jednou jdeme všichni
+6, budem se toulat nejme si víc
+4, až jednou nejsme ty kdo s ním jdou
+6, ženy i máma jsou mi to chtěj
+4, že dřív než to všichni znali naší milou
+6, až jednou třesou růst chci být jiný já
+ja já jsme tu ty kdo s ním jdou
+4, až jednou budem se toulat
+6, budem se toulat nejde víc
+4, až jednou budem se toulat
+6, budem se toulat nejde víc
+4, až jednou budem se toulat
+6, budem se toulat nejdou i
+4, až jednou jednou naše milou
+6, ženy i máma jsou mi
+to to jdeme všichni
+4, až jednou nejsme ty kdo
+6, sny i fábory jsou mi
+to to jdeme všichni já kdy jsme tu
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nedovim jsme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nedovim jsme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nedovim jsme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nedovim jsme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nemajme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nemajme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichni znali až jednou budem se toulat
+6, přikryla hvězdy v noci
+4, až jednou nemajme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, že dřív než to všichň měl rád to budeme všichni
+5, vždyť tvá tvá budeme všichni
+4, až jednou nemajme
+6, sny i fábory jsou mi
+to to jdeme všichni
+4, kdo křej může vlastně jistě všichni
+5, vždyť tvá tvá budeme všichni
+4, že dřív než to všichň měl rád to budeme všichni
+6, tvá tvá budeme všichni
+5, vždyť nejsem jiný já já vím tvůj věk
+4, že dřív než to všichň měl rád to budeme všichni
+6, tvůj sis je mi věk pohledem známý s ním
+5, vždyť to je s vámi důstojný
+4, že tů jó jsme tu tě jsi
+6, tvá tvá budeme všichni
+5, vždyť tú jó jsme tu tě jsi
+4, že dřív než to všichň měl rád to budeme všichni
+6, tvůy sis je mi věk pohledem známý sním pořád že i věři
+4, že tvůj sis je mi věk
+5, vždyť to je s vámi důstojný
+6, svou hrob s tvým budeme všichni
+4, že dřív nebuš jsme tu tě
+jsi
+5, tú jó jsme tu tě jsi
+4, že dřív nebuš jsme
+jsi
+6, tvá tvá budeme všichni
+5, já jsme tu tě jsi
+4, budeme všichni
+6, tvůj sis je mi věk pohledem
+řeky jsou čas se růst
+prachy v trase vlát
+stříbrný pár hvězdy na zádech
+tráva, řeky jsou čas to sním
+vody jsou čas se růst a jistě měj svůj svět
+strašně chladný vody jsou čas
+nebe jsou čas kde je zima a žít můj milou
+stírají sůl svým písníkem v kůlně
+dál křeční se plát měj s námi
+časy jsou čas to sním večer všichni jsme tu
+sůl svým písníkem v kůlně
+dál křeční se plát měj s námi
+časy jsou čas to sním večer všichni jsme
+tvůj sis je mi věk pohledem
+řeky jsou čas se růst
+prachy v trase vlát sůl svým písníkem měří 1 8 4 5 8 8 5 #
+stříbrný pár hvězdy na zádešměř
+tráva, řeky jsou čas to sním
+večer všichni jsme
+stírají vůně smímí vůbec nic mít
+strašně chladný vody jsou čas měř
+nebe je plát měj s námi
+časy jsou čas to snídám
+řeky jsou časy jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy je plát měm jsme
+tů jó jsme těj si říkat
+řeky jsou časy jsou časy
+řeky jsou časy
+řeky jsou časy já jí
+budem se toulat
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy
+řeky jsou časy
+tů jó jsme tvůj sis je měř
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+řeky jsou časy jsou časy
+
+
+9
+
+<s> 4 6 4 6 #
+4 # že ti to
+6 # co tu pustil jsi
+4 # teď už to máš
+6 # teď už jsi jinějjůj # vrátil se zas po světě
+4 # tak to jsi chlap
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6 # to jsi jinovej já smím žít s tebou
+4 # dávno od vás šal
+6, já přemusím jít vzdálenej snů
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno dávno od vás šal
+dávno
+
+10
+
+<s> 4 6 4 6 #
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # já vím co jsi
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # jde sem s mnou
+6 # vím, že jsem sem zas
+4 # já vím co jsi
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsem tu zas
+4 # jde sem s mnou
+6 # vím, že jsme chápu
+4 # jde sem s mnou
+6 # vím, že jsme kouká
+4 # jde sem s mnou
+6 # vím, že jsme chápu
+4 # jde sem s mnou
+6 # vím, že jsme chápu
+4 # jde sem s mnou
+6 # vím, že jsme chápu
+4 # jde sem s mnou
+6 # vím, že jsme chápu
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, že jsme na to
+4 # jde sem s mnou
+6 # vím, je to růžovej
+4 # já znám je to
+6 # vím, že jsme to já jsem
+4 # já znám je to
+6 # vím, že jsme to já jsem
+4 # já znám je to
+6 # vím, že jsme to já jsem
+4 # já znám je to
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to jájsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # vím, že jsme to já jsem
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # vím, že jsi to jsem já
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # já znám je to
+6 # vím, že jsme to jsme byl já
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # ty máš čas jsem
+6 # je to pravda jseš
+4 # já jdu vzdychnout
+6 # sám se nevracím dnes
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # já jdu vzdychnout
+6 # sám se nevracím dnes
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # to je pravda jseš
+4 # jde sem s mnou
+6 # šup svojí chlapce jen
+4 # já jdu vzdychnout
+6, sám si s ním nevracím
+4 # jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, já jdu vzdychnout
+6, sám mi a s ním nevracím
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+4, jde sem s mnou
+6, to je pravda jseš
+
+
+11
+
+<s> 4 6 4 6 #
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 # číšníci
+6 # číšníci, číšníci
+4 číšníci
+6 číšníci, číšníci
+4 číšníci
+6 číšníci, číšníci
+4 číšníci
+6 číšníci, číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšníci
+6 číšnícky číšníci
+4 číšní
+
+12
+
+<s> 4 6 4 6 #
+4 # hvězdy zpívá
+6 # a svět je jen tvář
+4 # jsi důvod zvlá
+6 # jsi jen tvá vědění
+4 # a svět je jen
+6 # a jsi jistou tvář
+4 # jsi důvod zvlá
+6 # jsi jen tvá vědění
+4 # a svět je jen
+6 # a jsi jistou tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # hvězdy zpívá
+6 # a svět je jen tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # a svět je jen
+6 # a jsi jistou tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # hvězdy zpívá
+6 # a svět je jen tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # a svět je jen
+6 # a jsi jistou tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # hvězdy zpívá
+6 # a tvá hvězda jsi
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # hvězdy zpívá
+6 # a tvá hvězda jsi
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # jsi důvod zvlá
+6 # jsi jistou tvář
+4 # hvězdy zpívá
+6 # a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězdas jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou tvář
+4, hvězdy zpívá
+6, a tvá hvězda jsi
+4, jsi důvod zvlá
+6, jsi jistou t
+
+13
+
+<s> 4 6 4 6 #
+4 # hvězdy přicházení
+6 # co se kouká a stoupá
+4 # kosů cestní
+6 # co jsou časy a věty sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílových přátelí
+6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě
+6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # v ozvěně kruců věcí 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě 6 # kosů cílů a cílů sítě
+6 # jinak už si kukuří
+2 # je ten
+2 # kud vem
+6 # je ten kud vem cizí 2 # jsi ten, jsi ten
+2 # je ten
+2 # kud vem
+6 # je ten kud vem cizí měst
+2 # je ten
+2 # kud vem
+6 # je ten kud vem cizí měst
+2 # je ten
+2, co můj měst jsem znal
+6, cestu znám po koupelně
+je ten jsi ten je ten
+2, co můj měst jsem znal
+6, cestu znám po koupelně
+je ten jsi ten je ten
+2, co můj měst jsem znal
+6, cestu znám po koupelně
+je ten jsi ten jsem ten
+žiju, žiju, žiju žiju
+2 , cesta s jinou jsou
+2 čas můj vzlétl z hor
+6 čas máme s sebou šance
+nejsem jistá že všechno to znám
+je ten jsi ten je ten jsem ten
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno to znám
+je ten jsi ten je ten jsem ten
+9 co můj měst jsem znal cestu znám
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno to znám
+je ten jsi ten je ten jsem ten
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno to znám
+je ten jsi ten jsem ten jsem ten
+7 cestu znám po koupelně
+2 jsi ten jsem ten i ten
+2 jsme jsi ten ten jsme ten
+6 jsi ty co můj měst jsem znal
+7 už jsme vzpoura kouků můj
+7 je ten jsi ten jsem ten jsem ten
+2 jsi ten jsem ten jsme ten
+6 jsi ty cestu znám po
+2 že to znám jsme
+2 jsme ten ty jsme ten
+6 já jsem jindra žeďáckej
+je ten jsi ten jsme ten
+2 ty co můj měst jsem znal
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno to znám
+je ten jsi ten jsme ten
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno to znám
+je ten jsi ten jsem ten jsme ten
+2 já jsem jindra žeďáckej
+2 jsme ten ty jsme ten
+2 jsme ten ty jsme ten
+6 já jsem jindra žéďáckej
+je ten jsi ten jsme ten
+je ten jsi ten jsme ten
+2 žíďákej jindra
+2 jsme ten ty jsme ten
+2 jsme ten ty jsme ten
+6 jsi ty a ty jsme ten
+2 jsme ten ty jsme ten
+2 jsme ten tvůj žíďáckej
+6 jsi ty a ty jsme ten
+nejsem jistá že všechno zmám
+je ten jsi ten jsme ten
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno znám
+je ten jsi ten jsme ten
+2 já jsem jindra žeďáckej
+2 jsme ten ty jsme ten
+2 jsme ten ty jsme ten
+6 já jsem jindra žeďáckej
+je ten jsi ten jsme ten
+je ten jsi ten jsme ten
+2 žíďákej jindra
+2 jsme ten ty jsme ten
+2 jsme ten ty jsme ten
+6 jsi ty a ty jsme ten
+2 jsme ten tvůj žíďáckej
+2 jsme ten tvůj žíďáckej
+2 jsme ten tvůj žíďáckej
+6 jsi ty a ty jsme ten
+nejsem jistá že všechno zmám
+je ten jsi ten jsme ten
+6 jsme to vědli a jsme chtěli
+nejsem jistá že všechno znám
+je ten jsi ten jsme ten
+
+14
+
+<s> 4 6 4 6 #
+4 # doutník, doutník
+6 # srdce těla mou srdce mě
+4 # to je věčnost
+6 # to je věčnost věčnost mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi tej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej milej moj si mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej mi dej milej moj si mi dej mi dej mi dej mi dej milej jo moc mojsi mi dej mi dej mi dej mi dej milej jo moc mojsi mi dej mi dej mi dej mi dej milej jo moc mocjo moj si mi dej mi dej mi dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej milej jo moc dej mi dej milej jo moc dej milej jo moc dej milej jo moc dej mi le moj si mi dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej milej jo moc dej milej jo moc dej milej jo moc dej mi left moja mi dej mi dej mi dej mi dej mi dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi dej milej jo moc dej mi
+
+15
+
+<s> 4 6 4 6 #
+4 # jdem, vždyť jdem
+6 # jdem, kdy už chceš být
+4 # nebe, jdem
+6 # a jdeme, kdy chceš být # a jdeme, kdy chceš být
+4 # jdu dál, jdu dál
+6 # dál, jdu dál, jdu dál # jdu, kdy chceš být, jdu
+4 # jdou v čas dál
+6 # jdou, kdekdo zpívám ti
+4 # i když nejsem
+6 # i jak jsem nejsem krásný jako oni
+4 # na mém pruku
+6 # hladu připravím se
+4 # tak, naše dcerku
+6 # hned naše dcerku se
+4 # kdy chceš být
+6 # dál, jdeme, dál jdeme
+4 # jdou, hlavně dál
+6 # jdou, jdou, jak chceš být
+4 # nebe, jdem
+6 # a jdeme, kdy chceš být
+4 # jdou, hlavně dál
+6 # jdou, jdou, jak chceš být
+4 # nebe, jdem
+6 # a jdeme, kdy chceš být
+4, jdou, hlavně dál, jdou
+6, a jdeme, jak jste chtěj
+4, nebe, jdem, kdy chceš být
+6, a jdeme, v moci máš
+4, jdou, jak jste chtěj
+6, a jdeme, hlavně dál
+4, hlavně dál, hlavně dál
+6, a jdeme, kdy chceš být
+4, nebe, jdem, dál
+6, jdoume, jdoume dál, jdou
+4, jdou, jak jste chtěj
+6, a jdeme, jak jste chtěj
+4, dál jdeme, dál jdeme
+6, jdoume, jdoume dál
+4, nebe, jdem, dál
+6, jdoume, jdoume dál
+4, nebe, jdeme, jak
+6, jdoume, jdoume jak
+4, nebe jdeme, jdeme
+6 jak máš být
+4, i když nejsem
+6, jdoume, jak jste mě dáš
+nebe jdeme, jak je ti
+4 jdou, dál jdeme, jak jsi
+6 jdeme jak jsi nejsem
+4 jdout to je línej
+kulhavý pivo
+nebudem pláčet
+nebudem pláčet, láska máš
+nebudem pláčet láska máš
+nebudem pláčet
+kulhavý pivo
+dál jdu, dál jdu, nebe, dál
+dál jdu, dál jdu
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+kulhavý pivo
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+kulhavý pivo
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý z nás pláčem mraku
+a jdoume nebe, jak, jak, jaké, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+kulhavý pivo
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý z nás pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+kulhavý pivo
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý z nás pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudu, nebyť mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý ze mě pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudu, nebyť mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý ze mě pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudu, nebyť mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý ze mě pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každé mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý má mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+každý má mně pláčem mraku
+a jdoume nebe, jak, jak, jaké
+dál dál dál často mám strach
+nebudem pláčet
+nebudem pláčet láska máš
+nebudem pláčet
+dál dál dál často mám stra
+==========  tinyLlama_SYLLABLES_lyricist_1_32.pt ==========

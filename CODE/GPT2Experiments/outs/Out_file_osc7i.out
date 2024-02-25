@@ -1,3 +1,1242 @@
 ----------------- GPT2_oscar ------ DatasetType.SYLLABLES_AND_ENDS ----------------
 cuda available.
 ==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+----------------- GPT2_oscar ------ DatasetType.SYLLABLES_AND_ENDS ----------------
+cuda available.
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že nás nic neporní
+6 # nám # co nás v tobě vzbudí
+4 # ní # lásku
+6 # ky # kterou po životě toulám
+6
+2
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # to se nedá říct
+4 # nám # jak to víš
+4 # ní # ty víš jak to máš
+6 # ky # jak já vím
+6 # ky #
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # ví, že ví
+6 # nám # ale já už si pro ty chvíle
+4 # ní # co jsem
+6 # ky # a že vím
+6 # ky
+4
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # my tři
+4 # nám # ona sama
+4 # ní # jediná
+6 # ky # jedinou mám
+6 # ky # z dětství z lásky
+6 # ky
+5
+
+4 6 4 6 # ví nám ní ky #
+10 # ví # já mám tě ráda a co si chceš přát
+4 # nám # a co chceš
+4 # ní # já tě v lásce mám
+6 # ky # vím tvé přání
+6
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že jsme
+6 # nám # jenže k té větě to
+4 # ní # není to jen
+6 # ky # jen sen noc se sny
+6 # my #
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_1_32.pt ==========
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak k tomu všemu
+6 # nám # jak se vlastně k tomu všemu
+4 # ní # ke mně
+6 # ky # k těm chudinkám
+6 #
+2
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # je tam moc
+6 # nám # tam jsou tři malé vesnice
+4 # ní # dvě malé
+6 # ky # dva krásné
+6 # ky # a tři krásné
+3
+
+4 6 4 6 # ví nám ní ky #
+3 # ví # když tu noc
+4 # nám # je jí málo
+4 # ky # nemá ráda ky
+6 # ní # nemá ráda ky # už ani ní
+6 # ky
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak se to píše
+6 # nám # ty zmoklá
+4 # ní # to je jen mýlí
+6 # ky # já to nevím
+6 # ky
+5
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # kdo by mi rozuměl
+4 # nám # kdo by řekl
+6 # ní # že je krásná
+4 # ky # z lásky
+6 # ky # z lásky
+6
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # já jsem to byla
+6 # nám # na to že jsem tě znala
+4 # ní # z celé mé duše
+6 # ky # že jsi byla moje jediná
+
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_2_32.pt ==========
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co nás čeká
+6 # nám # tak za nic ti nechci
+4 # ní # já tu na věky věků
+6 # ky # ať se mnou chceš
+6
+2
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # je mi to souzeno
+4 # nám # mám z nich strach
+4 # ní # až je mi to líto
+6 # ky # jak se jí bojíš
+
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak by se v ní
+6 # nám # jak by se v ní
+4 # ní # v níž by se
+6 # ky # v níž by se mohla za
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # a já vím
+6 # nám # co nám zbývá
+4 # ní # a já vím
+6 # ky # že je pozdě
+6 # ky # jsem příliš lí
+5
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # z očí se mu chvěje
+4 # nám # ale i z očí
+4 # ní # po čem touží
+6 # ky # a tak se snaží
+6
+6
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # že já jsem s tebou
+4 # nám # a že si mě chceš vzít
+4 # ní # a že si mě
+6 # ky # a že tě chci
+
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_3_32.pt ==========
+----------------- GPT2_oscar ------ DatasetType.SYLLABLES_AND_ENDS ----------------
+cuda available.
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že i nám
+6 # nám # kde jsi
+4 # ní # a ne všude
+6 # ky # kde na tebe bude čekat
+6 # ky # tam na tebe čeká
+6 # ky # kde na tebe čeká
+6 # ky # kde na tebe čeká
+4 # tam # na tebe čeká
+4 # čeká
+6 # se # kde na tebe chystá
+6 # máj, máj,
+
+2
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # po noci
+4 # nám # ráno i noci
+4 # ní # i po ní
+6 # ky # pak je jako když se točí
+6 # ky # ráno i noci
+4 # ní # pak je jako když se točí
+6 # ky # ráno i noci
+6 # ní # a jak se točí
+6 # noci # jako když jsou to sny
+4 # jak se točí
+6 # noci
+
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak se má
+6 # nám # když se na tebe dívá
+4 # ní # jak má milá
+6 # ky # v srdci má slzy
+6 # ky # jak má je ráda
+6 # ky # tak má milá
+6 # se # že všechno prohraje
+6 # ky # tak má má je ráda
+6 # se # že všechno prohraje
+2 # má # má
+6 # je
+
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # a na jaře ti
+6 # nám # že se na nás
+4 # ní # že nás tu s ní
+6 # ky # a když nám v zimě
+6 # ky # tak se po ní prohání a na jaře
+6 # ky # se
+6 # na ní # když k nám se vrací z jara
+4 # se # vrací z jara
+6 # na ní # když pak na ni hledí
+
+5
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # proč jsem o vás psal
+4 # nám # proč jste o mě psal
+4 # ní # proč jsem
+6 # ky # chtěl jsem vám říci
+6 # ky # o mě já chtěl vám ukázat
+6 # ky # byl jsem o mně zase v televizi a to je moje práce
+4 # ky # že jste o mně mluvil
+6 # ky # to je moje práce
+6 # to je moje práce
+
+6
+
+4 6 4 6 # ví nám ní ky #
+5 # ví # už je čas nám
+4 # nám # a my se už
+6 # ní # budeme mít štěstí v kapse
+4 # ky # když ti to nevyjde
+6 # ky # že si to zasloužíš
+6 # ky # tak už to vem si a my se v klidu dáme
+4 # ky # máme to v kapse
+6 # ky # jen ty se neztratíš
+6 # ky # a my
+
+7
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že ví je
+6 # nám # že neví ví
+4 # ní # že ví
+6 # ky # že ví
+6 # ky # ví ví že je
+6 # ky # že ví ví
+6 # ky # je ví ví má je ví má
+6 # ky # je ví ví má je ví má
+4 # má # je ví má
+6 # má # je ví má má je ví
+
+8
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # když ti to nevadí
+6 # nám # tak to už je lepší
+4 # ní # ať je to jak má být
+6 # ky # než být to se mnou
+6 # ky # že si s váma sednem
+4 # ní # ať je to jak má být
+6 # ky # nebo co má být
+4 # co má být
+6 # co má být
+6 # co má být
+
+9
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co vám brání
+6 # nám # aby vám nebylo
+4 # ní # když vás není
+6 # ky # ale je to tak
+6 # ky # když v té síti vás není
+6 # ky # ve které nejste
+6 # ky # jako ve která jste nebyli
+6 # ky # jako ve které nejste
+6 # nejsou # jako ty kde nejste
+4 # tam
+6 # ne # jako
+
+10
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # v létě mi kvetou
+4 # nám # až přijde den po nám
+4 # ní # v létě
+6 # ky # když slunce zapadá
+4 # ky # v létě mi kvetou
+6 # ky # kdy slunce zapadá
+6 # ky # když slunce padá
+6 # ky # když slunce padá
+6 # ky # když slunce padá
+6 # ky # je to jen sen
+4 # jen sen
+
+
+11
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # a když už tu
+6 # nám # tak proč nepoděkovat
+4 # ní #
+6 # ky # za jejich lásku
+6 # ky # že ty víš
+6 # ně # a že v lásce je láska
+6 # ky # že ty víš
+6 # že ty víš
+6 # že ty víš
+6 # že ty víš
+3 # že ty víš
+4 # že ty víš
+
+
+12
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že se známe
+6 # nám # známe se
+4 # ní # a že
+6 # ky # i když někdy si spolu tak nějak
+6 # ky #
+6 # ky # tak v mládí a mládí
+6 # ky # se spolu nebavili
+6 # ky # a teď už spolu
+6 # tak v mládí a mládí
+6 # tak v mládí a mládí
+6 # tak v mládí a
+
+13
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # kdo by se k nám
+6 # nám # stýskalo by se nám
+4 # ní # komu by se stýskalo
+6 # ky # nám všem
+6 # ky # nám všem
+6 # ky # nám všem
+6 # ky # nám všem
+6 # ky # nám všem
+6 # jenom ky # už se to nikdy nevrátí
+4 # ky # už se to nikdy nevrátí
+6
+
+14
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # co na ni čeká
+4 # nám # má to jenom nás
+6 # ní # co si o ní my myslíš
+4 # ky # že ji
+6 # ky # naň čeká
+6 # ky # já ti věřím
+6 # ky # že ji na tebe čekám
+6 # ky # co ti závidím
+6 # ky # že ji na tebe čeká
+6 # ky # můj úsměv na tobě
+
+15
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # tak ať mu zdraví
+4 # nám # ať se to líbí
+4 # ní # nám všem
+6 # ky # že se nám všem
+6 # ky # že si i ti krásní
+6 # # ky # až na těch krásných
+6 # ky # že si i ti krásní
+6 # ky # až na těch krásných
+6 # krásní # dokud se s tím vším neztotožníme
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_1_32.pt ==========
+
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # a my už tě chápeme
+6 # nám # že jsme tě chápali
+4 # ní # tys naše slzy
+6 # ky # že jsme je chápali
+6 # ni # ty jsi z nich ta jediná
+6 # ky # ta jediná jediná jediná
+6 # vám # ta jediná jediná jediná jediná
+4 # chá # kterou jsme chápali
+4 # chá # kterou jsme chápali
+6
+
+2
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jen když se mi zdá
+6 # nám # že se nám zdá
+4 # ní # jen tak nám
+6 # ky # co nás provází
+6 # ky # jenom tam a zpátky
+6 # ky # kde jsou naši mívalové
+6 # # sám a sám
+6 # sám # sám sám a sám
+6 # sám # sám a sám
+6 # sám # sám a sám
+6 #
+
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # já vím
+6 # nám # já vím že víš
+4 # ní # že tě mám rád
+6 # ky # víš to dobře víš
+6 # ky # že tě mám rád
+6 # # máš rád svý pocity
+6 # iry # a to že chceš to říct
+6 # mít rád svý city
+6 # iry # ale že nechceš to říct
+6 # mít rád svý city
+6
+
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že ti říkám
+6 # nám # že mi říkají jí
+4 # ní # že jí nevědí
+6 # ky # že netuší
+6 # ky # že nevědí proč
+6 # ky # že neví proč
+6 # ví # že vám říkám
+4 # jí # jenom já vám říkám
+6 # že neví
+4 # že neví proč
+6 # ky # že nevědí proč
+6 # že neví proč
+
+5
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # já vím, teď se cítím tak
+4 # nám # jak by
+6 # ní # toužím víc poznat
+4 # ky # jen tak
+6 # ky # já vím že mě nikdo nemůže vzít
+6 # ky # já musím mít všechny písně
+6 # ky # v paměti všechno
+6 # ni # všechny písně jsou
+6 # ky # jsem z nich jenom tak
+4 # ky # tak to
+
+6
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak se mi nalhat
+6 # nám # co bych rád
+4 # ní # že je mi fajn
+6 # ky # že se mi nechce
+6 # ky # že by chtěl bych jí říct lásko
+6 # ky # že bych chtěl jim říct láska
+6 # lásko # i když by je mě nelásko
+6 # láska # ač je mi líto
+4 # láska # ač je
+
+7
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # na tom nic není
+4 # nám # jen vzpomínky
+6 # ní # co když se nám
+4 # ky # v hlavě to samé
+6 # ky # a že jsme zas to stejní
+6 # ky # co když se nám už všechno
+6 # ky # v hlavě to samé
+6 # ky # a že se nám ještě nikdy nikdy
+4 # už nikdy
+6 # už nikdy
+4
+
+8
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # když se chce
+4 # nám # když se chce
+4 # ní # když se chce
+6 # ky # když se nechce
+6 # ky # když se nechce jít
+6 # ky # když se nechce jít
+8 # ky # když se nechce jít a po dnešku chce
+6 # po # to není sen
+6 # chtít být s ním i po smrti
+6 # chtít být s ním i
+
+9
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # že je mi to líto
+4 # nám # já vím
+4 # ní # vím že je mi to líto
+6 # ky # nevím, že jsou mi to k ničemu
+6 # ky # nebo že jsou mi to k ničemu
+6 # # ky # jenom k ničemu
+4 # ky # k ničemu
+6 # k ničemu # jen k ničemu
+6 # k ničemu # až se stane bůh
+6
+
+10
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak jsme v dáli
+6 # nám # i my jsme se narodili
+4 # ní # tak jako když
+6 # ky # ale jako když někdo padá
+6 # ky # když někdo padá
+6 # ky # když někdo padá
+6 # ky # tak jako když někdo padá
+4 # že by to mohlo být
+6 # že by to mohlo být
+6 # že by to mohlo být
+
+
+11
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # za chvíli ráno
+4 # nám # v mžiku zazáříš
+4 # ní # za chvíli
+6 # ky # za chvíli ráno
+6 # ky # za chvíli ráno
+6 # ky # za chvíli ráno
+6 # ky # za chvíli ráno
+6 # ky # za chvíli ráno
+6 # ráno # v mžiku zazáříš
+6 # ky # za chvíli ráno
+4 #
+
+12
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # já jsem tě nikdy nepoznal
+6 # nám # vím však jak na tebe myslím
+4 # ní # ve svých chvilkách
+6 # ky # na tvých rtech
+6 # ky # ty jsi krásná žena
+6 # ky # ty jsi krásná žena
+6 # ky # ty jsi nádherná žena
+6 # ní # ve svých chvilkách
+4 # na tvých rtech # ve svých chvílích
+6 # na tvých rtech
+
+13
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jak k tomu došlo
+6 # nám # už jsi v té pohádce
+4 # ní # jak k tomu došlo
+6 # ky # a pak jsme se ještě milovali
+4 # ní # jak k tomu došla
+6 #
+6 # ky # a potom jsme se ještě milovali
+6 # ní # jak k tomu došlo
+6 # milovali # jak je milovat a ne žít
+4 # ale jen
+
+14
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co jí je
+6 # nám # však je to jenom sen
+4 # ní # a zdá se nám
+6 # ky # že tu jen my
+6 # ky # že už je to jen sen
+6 # # co jí je
+4 # ky # že už je to jen sen
+6 # nářků # i když to tak vypadá
+6 # nářků
+4 # i když v nás
+
+15
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # a po ní sáhne
+4 # nám # až já se k nim přiblížím
+6 # ní # už mě nech
+4 # ky # nech po mě v zápětí
+6 # ky # nehádejte se
+6 # ky # že mi nedáte se na nikoho
+6 # ky # že vám neudělám z lásky
+6 # ky # z toho ani z lásky
+4 # z lásky
+6
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_2_32.pt ==========
+
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # a tak když jí
+6 # nám # pošli ji zas nám
+4 # ní # tak si povídejme
+6 # ky # že
+4 # ky # než se tam s ní budem mít
+6 # ky # to by se
+6 # ky # až ti bude stát na tý louce
+6 # ky # proč tu jen tak stát
+6 # ky # tak tě mít rád a tak jen mít rád
+
+2
+
+4 6 4 6 # ví nám ní ky #
+8 # ví # za oknem v trávě jen
+4 # nám # za okny v trávě #
+4 # ní # co tě zajímá
+6 # ky # za oknem v trávě
+6 # ky # v trávě
+6 # ky # za oknem v trávě #
+4 # ky # v trávě
+6 # ky # v trávě
+6 # ky # v trávě
+4 # v trávě # v trávě
+6 # ky # v trávě
+
+3
+
+4 6 4 6 # ví nám ní ky #
+5 # ví # ví, že nám
+4 # nám # že nám
+4 # ní # že nám
+6 # ky # jsou na nás pyšné
+6 # ní # ale to nám nevadí
+6 # ky # jen si na nás my,
+4 # my # neděste se
+6 # ky # protože tak, jak nás mají, tak si na nás my
+6 # na # nám to nevadí
+6 #
+
+4
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # a když v tom mě kousli
+4 # nám #
+4 # ní # a řekli jsme jí
+6 # ky # že my máme
+6 # ky # že my máme
+6 # ky # že my máme
+6 # ky # že my máme
+4 # že my máme
+6 # že my máme
+4 # my # že my máme
+6 # že my máme
+6 # že my máme
+
+5
+
+4 6 4 6 # ví nám ní ky #
+5 # ví # že se v klidu budem smát
+4 # nám # a že si budeme všichni zpívat
+4 # ní #
+6 # ky # každý z nás zmoudří
+6 # ky # až ti donese ky
+6 # ky # tak zmoudří
+4 # ky # až ti poletí kabriolet
+6 # ky # tak se za břicho sednou
+4 # poletí kabriolet
+6
+
+6
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # co říká sám má mil
+4 # nám # na co mluví sám
+6 # ní # a na co je si vzpomíná
+4 # ky # na co vzpomíná
+6 # ky # na co se ptá sám má
+6 # # ky # na co je si vzpomíná
+6 # má # co v něm chce má
+6 # rád # o nic ho nestál
+6 # sám # proč se ptá sám má
+
+
+7
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že vím
+6 # nám # a že ví
+4 # ní # že je to pravda
+6 # ky # že mám ráda tě
+6 # ní # to víš že to vím
+6 # ky # že jsem v něm ráda
+6 # ky # že nejsem ve tvém srdci
+4 # to # jsem ráda že
+6 # ta # jsem v tobě hezká
+6 # tím # jsem ráda že to mám
+
+8
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co už ví
+6 # nám # teď už ví
+4 # ní # tak proč ne
+6 # ky # když ví líp než my
+4 # ky # jako je on ví
+6 # ky #
+6 # ky # než na nás zbyl sám
+6 # ky # jako na nás zbyl on
+6 # ky # jako na nás zbyl on
+6 # jak na nás zbyl on
+
+9
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # na stole
+6 # nám # pod stromovou cestou
+4 # ní # v údolí
+6 # ky # v zákrutách polí
+6 # ky # v údolí
+6 # ky # v horách na stráních
+6 # ky # pod luží
+6 # ky # v řekách, v horách na stráních
+4 # laní # a nad nimi
+6 # laní # pod luží
+
+10
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # vím
+6 # nám # že se mýlím
+4 # ní # ale vím
+6 # ky # že se mýlím
+6 # ky # že se mýlím
+6 # ní # ale vím
+6 # že se mýlím
+4 # vím # že se mýlím
+6 # že se mýlím
+2 # ky # ale vím
+4 # že se mýlím
+6 # že se mý
+
+11
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # než se rozplynou
+6 # nám # už mě dávno znají
+4 # ní # kdo ví
+6 # ky # a co na oplátku
+6 # ky # to už nikdo nevyruší
+6 # ky # a kdo ví
+6 # co na oplátku
+3 # jen # kdo ví
+6 # ky # a kdo ví
+6 # co na oplátku
+4 # kdo ví
+6 # co
+
+12
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # to my
+6 # nám # že se k tobě musíme vracet
+4 # ní # a že se nesmíme
+6 # ky # bát a bát
+6 # ky # milovat a že nás nemá na růžích ustláno
+6 # ky # že bychom měli milovat
+6 # a že náš domov není jen místo
+6 # ne # i já jsem svět
+6 # to # a tak se v nás nesmí nic
+
+13
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # když se nám zdá
+6 # nám # že nás mát už nebaví
+4 # ní # že nám chybí
+6 # ky # že je nám ouvej
+6 # ky # že nám chybí nás
+6 # ouvej # že nám schází láska
+4 # ně # že nás mát už nebaví
+4 # ouvej # že nás nechce
+6 # láska # že nás nebaví
+6 # neutí
+
+14
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # když už vím
+6 # nám # jen tak, že ti nic neukazuj
+4 # ní # víš,
+6 # ky # a tak jen tak
+6 # ky # a tak jen tak
+4 # ky # a tak jen tak
+6 # ky # a tak jen tak
+6 # zkrátka a dobře
+6 # zkrátka a dobře
+2 # prostě a dobře
+6 # prostě a dobře
+
+
+15
+
+4 6 4 6 # ví nám ní ky #
+5 # ví # na náměstí
+6 # nám # a nikdo nás nezván není
+4 # ní # na náměstí
+6 # ky # všude plno lidí
+6 # ky # všude plno lidí
+6 # ky # všude plno lidí
+6 # ky # všude plno lidí
+6 # ky # všechno v pořádku
+6 # všude plno lidí
+6 # lidí # snad na náměstí
+6 # klidu a míru
+6 # míru #
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_3_32.pt ==========
+
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # kdo se podívá
+6 # nám # kdo se podívá
+4 # ní # kdo se podívá
+6 # ky # kdo se podívá
+4 # ky # kdo se podívá
+6 # ky # kdo se podívá
+6 # ky # kdo se podívá
+4 # na # do dálky
+4 # na # do dálky
+12 # ky # kdo se podívá na město u řeky v korunách stromků ky
+4 #
+
+2
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jestli jsem ti
+6 # nám # ale já nevím proč se nám
+4 # ní # jsme jiní
+6 # ky # jsme jiní a v ní
+4 # ky # jsme lidé
+6 # ky # jsme jiní a v ní
+6 # ky # jsme lidé
+5 # hygge # jsme lidé
+4 # co # tak já už se nuzných
+5 # hygge, já už
+
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # já tě volám
+6 # nám # já tě volám naposled
+4 # ní # ať si tě volám
+6 # ky # já si tě volám naposled
+6 # ky # jó, jó, jó, jó, jó
+6 # ky # jó, jó, jó, jó, jó, jó, jó, jó, jó, jó, jó
+4 # ky # jó, jó, jó
+
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # až se vrátí
+6 # nám # snad mi někdy zamává
+4 # ní # naposled
+6 # ky # a kdo o ni nemá zájem
+6 # ky # pak se vrátí z práce
+5 # ky # ať si jí dones
+6 # ky # ať si ji domů přinese
+4 # ky # ať si jí domů přinese
+5 # se # z práce domů se vrací se
+4 # domů
+
+5
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # to co ví
+6 # nám # že to nemusí být
+4 # ní # to co není
+6 # ky # co není nic krásne
+6 # ky # to co není moc něžné
+4 # ky # co je krásne
+4 # ky # není nic krásne
+6 # ky # co je krásne
+4 # to # co není krásne
+6 # krásne, co se
+
+6
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že v nás je
+6 # nám # že na sebe zapomeneme
+4 # ní # no nic s tím neděláním
+6 # ky # je v něm víc krásy
+6 # ky # než se zdá
+4 # ky # že život je krásny ky
+6 # ky # že má krásný ky
+4 # co se ti zdá
+10 # že je ten osud a tak proč se na něho vcí
+
+7
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jen co pozná
+6 # nám # kdo zná svět a zná
+4 # ní # jak nám
+6 # ky # co na nás čeká v létě
+6 # ky # v lese se dá najít
+6 # ky # co se kolem ky
+4 # jaro # co začíná podzim
+4 # rok # končí zima
+3 # podzim # končí léto
+4 # podzim # začíná zima
+2 # zima # končí
+
+8
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # v očích stín
+6 # nám # má v tom prsty jenom
+4 # ní # v očích stín
+6 # ky # v očích stín
+4 # ky # v očích stín
+6 # ky # v očích stín
+4 # ky # v očích stín
+6 # stín # jak někdo je stín
+5 # ky # jen stín a stín
+5 # stín # jak někdo je stín
+2 # stín #
+
+9
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # snad jsem tu jen
+6 # nám # když jsem byl ještě malý
+4 # ní # to bylo
+6 # ky # když jsem tu stál vedle
+4 # ky # jen v plavkách
+6 # ky # pak jsem s tebou v té tmě
+6 # ky # s tebou v té tmě
+4 # to # když jsem byl tak malý
+6 # to # když jsem byl tak malý
+6 #
+
+10
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co to všechno
+6 # nám # na konci září se už s námi nestane
+4 # ní # že se nám
+6 # ky # že jsme malí jak ky
+4 # ky # z dětství
+6 # ky # že nás na konci září už neopustí
+5 # ky # že se v nás probudí
+4 # ky # až přijde podzim
+6 # jaro # jarní láska
+4 # jaro # jarní
+
+11
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # v ruce klíček
+6 # nám # odkládám na stůl
+4 # ní # já mám tě ráda
+6 # ky # já jsem na cestě od ní
+4 # ky # teď budu na cestě s ky
+6 # ky # až tě ráno zahlédnu
+6 # ky # zavolám kamarádčiné kámošce
+8 # ky # jestli má se mnou zítra nějakou svatbu
+2 # a # a
+
+
+12
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # už je pozdě
+6 # nám # jsme na dně věcí
+4 # ní # ve mně je teď
+6 # ky # jak nám hoří oči
+6 # ky # když se v našem těle začne
+4 # ky # smát
+6 # ky # když se v našem těle začne smát
+4 # ky # smát
+4 # smát # tak teď nám na tobě
+4 # ky # už je pozdě
+4
+
+13
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # do nebe se vrací
+4 # nám # až přijde déšť
+4 # ní # a déšť
+6 # ky # bude padat po dešti
+6 # ky # až přijde déšť
+4 # ky # pak se vrátí déšť
+6 # ky # déšť se vrátí
+4 # déšť # déšť přijde déšť
+4 # déšť # déšť, déšť se vrátí
+6 # vítr # déšť se vrátí déšť
+4 # déšť,
+
+14
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # vím
+6 # nám # že jsem tady
+4 # ní # na kolejích
+6 # ky # kde se to všechno točí
+6 # ky # kde se to všechno točí
+14 # ky # kde se to všechno točí tak dlouho, že se to na to všechno složí
+6 # ky # kdy už tam se to složí
+10 # joe houston se narodil v roce 1767 tak to už
+
+15
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # je to jen náhoda
+6 # nám # já věřím na lásku
+4 # ní # že se vrátí
+6 # ky # je to jen náhoda
+6 # ky # je to jen náhoda
+4 # ky # je to jen náhoda
+6 # ky # je to jen náhoda
+4 # náhody
+6 # náhod # já se vždycky nechám překvapit
+6 # náhoda # já se vždycky nechám překvapit
+6 #
+==========  GPT2_oscar_SYLLABLES_AND_ENDS_lyricist_4_32.pt ==========
+
+1
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # už nás to nebaví
+6 # nám # to se stává málokdy
+4 # ní # i když je to
+6 # ky # jednou to bude
+6 # ky # jednou zas bude
+4 # ky # bude to na dlouho
+5 # ky # jednou na celý život
+6 # ky # jednou na celý život
+7 # je # a jednou na celý život
+4 # čas # až přijde čas
+4
+
+2
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # na nebi svítí
+6 # nám # a v nebi svítí
+4 # ní # když vítr fouká
+6 # ky # k nebi se kédy vracejí
+6 # ky # kdy vítr fouká
+6 # ky # kde se zpívá píseň lásky
+4 # ky # kde se zpívá
+6 # ky # kde se zpívá píseň lásky
+4 # láska # kde láska
+3 # láska
+4 # láska
+
+3
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že máš sílu
+6 # nám # já znám tvou sílu
+4 # ní # ale nechci se o ni
+6 # ky # bát se o tebe
+4 # ky # nechci se o tebe
+6 #
+ # ky # bojíš se o tebe o ni
+5 # o # ty co se bojí
+ # že by se tě o ně o
+ # báli
+ # že by na tvém životě byla
+ #
+
+4
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # má tě ráda
+6 # nám # to je pravda jen nám
+4 # ní # i když ti z ní
+6 # ky # se s tebou v lásce
+4 # ky # v lásce
+6 # ky # lásku a v lásce lásky
+4 # ky # v lásce
+7 # lásky # v lásky a v lásce lásky
+6 # lásky # v lásce lásky
+7 # lásky # v lásce lásky
+
+
+5
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co může člověk
+6 # nám # znát a znát a znát
+4 # ní # co kdo má jí
+6 # ky # zná a zná ji
+6 # ky # zná ji a zná ji
+4 # ky # zná a zná ji
+6 # ky # zná ji a zná ji
+6 # ji # dobře se pozná
+4 # ji # ne, láska má své
+5 # ji # však co
+
+6
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co to udělá
+6 # nám # v hospodě s tím to povídáme
+4 # ní # i v hospodě
+6 # ky # a s tebou i o tom sní # co to je
+6 # ky # když máš žízeň
+4 # ky # tak si povídáme
+6 # a o tom sní # co to je
+4 # co to je
+5 # je # a co to je
+4 #
+
+7
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co bude
+6 # nám # co se asi tak stane
+4 # ní # jestli je to
+6 # ky # až přijde ten den
+6 # ky # tak na řadu přijde
+4 # ky # jestli je to teď
+6 # ky # jestli se to stane
+4 # ky # jestli se to stane
+6 # co # tak na to přijde
+6 # je # tak se to stává
+
+
+
+8
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že v tobě dřímá
+6 # nám # tak proč nám nevěřit
+4 # ní # co ti může být
+6 # ky # že v tobě dřímá láska
+ # ky # co ti může být
+6 # # ky # co ti může být
+5 # ky # co ti může být
+ # co ti může být
+ # co ti může být
+ # co ti může být
+ # co ti může
+
+9
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # jestli se ti to
+6 # nám # líbí
+4 # ní # nebo nehledáš
+6 # ky # kdepak je s tím kdo hledá
+4 # ky # kdo hledá
+6 # ky # hledá kde se skrývá touha
+6 # ky # co tě nabije je pro ně láska
+4 # ky # co hledá
+6 # calmary a calmary
+4 # jah
+
+10
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # slunce se dívá
+6 # nám # když slunce na nebi
+4 # ní # hvězdy na nebi
+6 # ky # nebe stoupá
+6 # ky # do oblak svítí hvězdy
+4 # ky # mraky už svítí
+6 # ky # slunce na nebi je stále
+4 # lady # už je to za mnou
+4 # ni # a už se blíží k nám
+4 # ky # nebe stoupá
+
+
+11
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # tak jen ty víš
+5 # nám # že jsme na konci světa
+4 # ní # máme rádi
+6 # ky # a tak jen ty víš
+6 # ky # že jsme na konci světa
+5 # # ky # mám rádi
+2 # ky # i ty
+5 # ky # jsi moje máma
+2 # ty # moje dcera
+4 # ty # moje dcera
+8 # já, máma,
+
+12
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # co ti ví
+6 # nám # že tě to zajímá
+4 # ní # a to není vše
+6 # ky # to je náš vlak
+4 # ky # to je náš vlak
+6 # ky # je náš vlak
+4 # hygge # já mám to k obědu
+5 # ky # já jdu se dívat
+12 # ky # s tebou na ty svý stránky a já se za ní vy
+
+13
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # že není to pravda
+6 # nám # je to však omyl
+4 # ní # že je to blbost
+6 # ky # ta co je mi cizí
+6 # ky # ta co je mi neznámá
+4 # ky # ta co je mi neznámá
+4 # ky # ta co je mě neznámá
+4 # ta # to vím
+4 # to vím # ale to nevím
+4 # to vím # ale
+
+14
+
+4 6 4 6 # ví nám ní ky #
+4 # ví # teď ví
+6 # nám # i my jsme jen ti dobří
+4 # ní # co nás živí
+6 # ky # teď nám nezbývá
+6 # ky # než se radovat z květů
+4 # ky # co nás živí
+6 #ppy # když nám zbydou
+5 # ky # co nás živí
+5 # ty # co jsou jak ty
+9 # co s tím životem bojují jen vy tři
+
+
+15
+
+4 6 4 6 # ví nám ní ky #
+6 # ví # má krásná slova
+4 # nám # která nám
+4 # ní # slova snesu
+6 # ky # která potěší
+6 # ky # která potěší a dodá nám
+4 # ky # která potěší
+6 # ky # z tebe udělá ky
+4 # dodán # tak nám
+6 # dodat, jen nám
+6 # dodán, jen nám
+6 # jen nám, jen nám a jen nám
