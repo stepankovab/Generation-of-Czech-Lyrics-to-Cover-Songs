@@ -51,7 +51,7 @@ args = parser.parse_args([] if "__file__" not in globals() else None)
 
 #     return rhymes
 
-with open(os.path.join(args.dataset_path, "VZ_added_24000.json"), "r", encoding="utf-8") as json_file:
+with open(os.path.join(args.dataset_path, "VZ_added_61000.json"), "r", encoding="utf-8") as json_file:
     dataset_dict = json.load(json_file)
 
 # rt = tagger.RhymeTagger()
