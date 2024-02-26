@@ -2,7 +2,7 @@ import re
 
 
 def dashed_syllabified_line(text : str):
-    syll_line = syllabify(text)
+    syll_line = syllabify(text, True)
     final_line = ""
 
     for syll in syll_line:
@@ -20,7 +20,7 @@ def dashed_syllabified_line(text : str):
 
 
 
-def syllabify(text : str):
+def syllabify(text : str, dashed = False):
 
     words = re.findall(r"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžAÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽäöüÄÜÖ]+", text)
     syllables = []
@@ -44,12 +44,13 @@ def syllabify(text : str):
             for _ in syllable_mask:
                 word_syllable += word[letter_counter]
                 letter_counter += 1
-                if glued_preposition and letter_counter == 1:
+                if dashed and glued_preposition and letter_counter == 1:
                     word_syllable += "_"
 
             syllables.append(word_syllable)
 
-        syllables.append("_")
+        if dashed:
+            syllables.append("_")
         i += 1
 
     return syllables

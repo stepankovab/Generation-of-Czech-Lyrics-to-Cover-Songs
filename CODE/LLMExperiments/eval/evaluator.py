@@ -26,14 +26,25 @@ class Evaluator():
         --------------
         results
         """
+        print(model_output)
+        model_output = model_output.split("\n")
+        print(model_output)
+
         if read_output == True:
             eval_info = [x.strip() for x in model_output[0].split("#") if x.strip()]
+            if len(eval_info) == 0:
+                return None, None, None, None
             if len(eval_info) > 0:
-                syllables = eval_info[0].split(" ")
+                syllables = [int(x) for x in eval_info[0].split(" ")]
             if len(eval_info) > 1:
                 keywords = eval_info[1].split(" ")
             if len(eval_info) > 2:
                 endings = eval_info[2].split(" ")
+
+        print(syllables)
+        print(endings)
+        print(keywords)
+
 
         expected_length = len(syllables)
         length_ratio = (len(model_output) - 1) / expected_length
@@ -44,7 +55,16 @@ class Evaluator():
 
         for line_i in range(1, min(expected_length + 1,len(model_output))):
             line = model_output[line_i]
-            out_lines.append(line.copy())
+
+            if not line.strip():
+                continue
+
+            line = line.split("#")[-1].strip()
+
+            if not line:
+                continue
+
+            out_lines.append(line)
 
             syllabified_line = syllabify(line)
 
@@ -55,6 +75,15 @@ class Evaluator():
         syll_distance = None
         if len(syllables) > 0:
             syll_distance = self.get_section_syllable_distance(syllables, out_syllables)
+
+        # syllable accuracy
+        syll_accuracy = None
+        if len(syllables) > 0:
+            positive = 0
+            for i in range(len(out_syllables)):
+                if out_syllables[i] == syllables[i]:
+                    positive += 1
+            syll_accuracy = positive / len(out_syllables)
 
         # line endings accuracy
         end_accuracy = None
@@ -70,14 +99,14 @@ class Evaluator():
         if len(keywords) > 0:
             keyword_similarity = self.get_keyword_semantic_similarity(keywords, out_lines)
 
-        return length_ratio, syll_distance, end_accuracy, keyword_similarity
+        return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
 
 
 
 
     def get_keyword_semantic_similarity(self, keywords, model_output):
         # Keywords to english
-        keywords_joined = ", ".join([x[0] for x in keywords])    
+        keywords_joined = ", ".join(keywords)    
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
         response = requests.post(url, data = {"input_text": keywords_joined})
         response.encoding='utf8'
@@ -91,7 +120,7 @@ class Evaluator():
         response.encoding='utf8'
         en_lyrics_joined = response.text[:-1]
 
-        out_keywords = self.kw_model.extract_keywords(en_lyrics_joined)
+        out_keywords = [x[0] for x in self.kw_model.extract_keywords(en_lyrics_joined)]
 
         embedding1 = self.embed_model.encode(keywords, convert_to_tensor=False)
         embedding2 = self.embed_model.encode(out_keywords, convert_to_tensor=False)
@@ -107,3 +136,12 @@ class Evaluator():
         distance /= (2 * len(out_syllables))
         return distance
     
+
+
+
+# evaluator = Evaluator()
+
+# output = ["4 6 4 8 # čas půlnoc komáři kostel kytka #","6 # co se v kostele děje","4 # co se v kostele děje","4 # co se v kostele děje","8 # co z kostela plyne k ránu","8 # co se v kostele dít má","8 # co z kostela plyne k ránu do noci","6 # co z kostela vychází k ránu","8 # co z kostela odchází k ránu do noci","4 # co z kostela plyne k ránu"]
+
+
+# evaluator.eval_output(output)

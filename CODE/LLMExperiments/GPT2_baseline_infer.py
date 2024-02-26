@@ -1,6 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from dataset_types import DatasetType
+from eval.evaluator import Evaluator
 import argparse
 import os
 
@@ -55,6 +56,39 @@ elif MODEL_NAME == "tinyLlama":
     model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
     tokenizer.model_max_length=1024
 
+
+if DATASET_TYPE == DatasetType.BASELINE:
+    text = ""
+
+elif DATASET_TYPE == DatasetType.SYLLABLES:
+    text = "4 6 4 6 #\n"
+            
+elif DATASET_TYPE == DatasetType.END_OF_LINES:
+    text = "ví nám ní ky #\n"
+        
+elif DATASET_TYPE == DatasetType.CHARACTERISTIC_WORDS:
+    text = "4 # čas půlnoc komáři kostel kytka #\n"
+
+elif DATASET_TYPE == DatasetType.UNRHYMED:
+    pass
+
+elif DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
+    text = "4 6 4 8 # čas půlnoc komáři kostel kytka #\n"
+
+elif DATASET_TYPE == DatasetType.SYLLABLES_AND_ENDS:
+    text = "4 6 4 6 # ví nám ní ky #\n"
+
+elif DATASET_TYPE == DatasetType.ENDS_AND_WORDS:
+    text = "ví nám tel sám # čas půlnoc komáři kostel kytka #\n"
+
+elif DATASET_TYPE == DatasetType.FORCED_SYLLABLES:
+    text = "4 6 4 8 #\n"
+
+else:
+    raise Exception(f"We don't support a Dataset type {DATASET_TYPE}")
+
+
+
 for model_path in model_paths:
 
     print("="*10 + "  " + model_path + " " + "="*10)
@@ -62,39 +96,13 @@ for model_path in model_paths:
     model.load_state_dict(state_dict=torch.load(os.path.join(DATASET_PATH, "trained_models", model_path), map_location=torch.device(device)))
     model.eval()
 
-    
-    if DATASET_TYPE == DatasetType.BASELINE:
-        text = ""
-
-    elif DATASET_TYPE == DatasetType.SYLLABLES:
-        text = "4 6 4 6 #\n"
-                
-    elif DATASET_TYPE == DatasetType.END_OF_LINES:
-        text = "ví nám ní ky #\n"
-            
-    elif DATASET_TYPE == DatasetType.CHARACTERISTIC_WORDS:
-        text = "4 # čas půlnoc komáři kostel kytka #\n"
-
-    elif DATASET_TYPE == DatasetType.UNRHYMED:
-        pass
-
-    elif DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
-        text = "4 6 4 8 # čas půlnoc komáři kostel kytka #\n"
-
-    elif DATASET_TYPE == DatasetType.SYLLABLES_AND_ENDS:
-        text = "4 6 4 6 # ví nám ní ky #\n"
-
-    elif DATASET_TYPE == DatasetType.ENDS_AND_WORDS:
-        text = "ví nám tel sám # čas půlnoc komáři kostel kytka #\n"
-
-    elif DATASET_TYPE == DatasetType.FORCED_SYLLABLES:
-        text = "4 6 4 8 #\n"
-
-    else:
-        raise Exception(f"We don't support a Dataset type {DATASET_TYPE}")
+    avg_length_ratio = 0
+    avg_syll_distance = 0
+    avg_syll_accuracy = 0
+    avg_end_accuracy = 0
+    avg_keyword_similarity = 0
 
     inputs = tokenizer(text, return_tensors="pt") 
-    
     tokenizer.encode(text, return_tensors="pt") #directly for input_ids
 
     # model output using Top-k sampling text generation method
@@ -105,7 +113,32 @@ for model_path in model_paths:
                                     top_k=40,
                                     num_return_sequences=15)
 
+    if DATASET_TYPE == DatasetType.SYLLABLES or DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
+        evaluator = Evaluator()
+
     # generated sequence
     for i, sample_output in enumerate(sample_outputs):
-        print("\n{}\n\n{}".format(i+1, tokenizer.decode(sample_output.tolist()))) # tokenizer.decode(sample_output, skip_special_tokens=True)
+        model_out = tokenizer.decode(sample_output.tolist())
+        print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
+
+        if DATASET_TYPE == DatasetType.SYLLABLES or DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
+            length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity = evaluator.eval_output(model_out)
+            print(f"length_ratio = {length_ratio}")
+            print(f"syll_distance = {syll_distance}")
+            print(f"syll_accuracy = {syll_accuracy}")
+            print(f"keyword_similarity = {keyword_similarity}")
+            print(f"end_accuracy = {end_accuracy}")
+
+            avg_length_ratio += length_ratio
+            avg_syll_distance += syll_distance 
+            avg_syll_accuracy += syll_accuracy
+            avg_end_accuracy += end_accuracy
+            avg_keyword_similarity += keyword_similarity
+
+    
+    print(f"length_ratio = {avg_length_ratio / (EPOCHS - args.starting_epoch)}")
+    print(f"syll_distance = {avg_syll_distance / (EPOCHS - args.starting_epoch)}")
+    print(f"syll_accuracy = {avg_syll_accuracy / (EPOCHS - args.starting_epoch)}")
+    print(f"keyword_similarity = {avg_keyword_similarity / (EPOCHS - args.starting_epoch)}")
+    print(f"end_accuracy = {avg_end_accuracy / (EPOCHS - args.starting_epoch)}")
 
