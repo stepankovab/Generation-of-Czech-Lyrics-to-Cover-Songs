@@ -4,7 +4,7 @@
 
 get a place to run things with a good gpu
 ```sh
-qsub -I -l walltime=24:0:0 -q gpu@meta-pbs.metacentrum.cz -l select=1:ncpus=1:ngpus=1:mem=45gb:scratch_local=100gb:gpu_cap=cuda86 
+qsub -I -l walltime=24:0:0 -q gpu@meta-pbs.metacentrum.cz -l select=1:ncpus=1:ngpus=1:mem=45gb:scratch_local=100gb:gpu_cap=cuda86:cl_galdor=True:brno=True 
 ```
 
 load newest python with pip
