@@ -1,44 +1,4 @@
 import re
-# import eng_to_ipa as ipa
-
-# def english_to_czech_pron(english):
-#     pronaunciation = ipa.convert(english)
-
-#     substitutions=[
-#         # solves 'every' problem
-#         ('vər', 'vr'),
-        
-#         ('ˈ', ''),
-#         ('ɛ', 'e'),
-#         ('ə', 'e'),
-#         ('θ', 't'),
-#         ('ɔ', 'ou'),
-#         ('i', 'y'),
-#         ('ɪ', 'i'),
-#         ('u', 'ú'),
-#         ('ʊ', 'u'),
-#         ('ɑ', 'a'),
-#         ('ð', 'd'),
-#         ('æ', 'e'),
-#         ('ʃ', 'š'),
-#         ('ʒ', 'ž'),
-#         ('ʧ', 'č'),
-#         ('ʤ', 'ž'),
-#         ('ŋ', 'n'),
-#         ('ˌ', ''),
-#         ('oú', 'ou'),
-#         ('ks', 'x'),
-#         ('ts', 'c'),
-#         ('ouy', 'ouwi'),
-#         (r'([aeiou])\1', r'\1'),
-#         (r'([aeouáéóú])[yi]', r'\1j'),
-#         (r'([rj])l', r'\1')
-#     ]
-
-#     for (a,b) in substitutions: 
-#         pronaunciation=re.sub(a,b,pronaunciation)
-
-#     return pronaunciation
 
 
 def dashed_syllabified_line(text : str):
@@ -60,11 +20,7 @@ def dashed_syllabified_line(text : str):
 
 
 
-
-
 def syllabify(text : str):
-    # if language == "en":
-        # text = english_to_czech_pron(text)
 
     words = re.findall(r"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžAÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽäöüÄÜÖ]+", text)
     syllables = []
