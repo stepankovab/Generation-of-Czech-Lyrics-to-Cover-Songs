@@ -26,9 +26,7 @@ class Evaluator():
         --------------
         results
         """
-        print(model_output)
         model_output = model_output.split("\n")
-        print(model_output)
 
         if read_output == True:
             eval_info = [x.strip() for x in model_output[0].split("#") if x.strip()]
@@ -40,11 +38,6 @@ class Evaluator():
                 keywords = eval_info[1].split(" ")
             if len(eval_info) > 2:
                 endings = eval_info[2].split(" ")
-
-        print(syllables)
-        print(endings)
-        print(keywords)
-
 
         expected_length = len(syllables)
         length_ratio = (len(model_output) - 1) / expected_length
@@ -97,7 +90,17 @@ class Evaluator():
         # keyword similarity
         keyword_similarity = None
         if len(keywords) > 0:
-            keyword_similarity = self.get_keyword_semantic_similarity(keywords, out_lines)
+            keyword_similarity, out_keywords = self.get_keyword_semantic_similarity(keywords, out_lines)
+
+        print(syllables)
+        print(out_syllables)
+        print()
+        print(endings)
+        print(out_endings)
+        print()
+        print(keywords)
+        print(out_keywords)
+        print()
 
         return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
 
@@ -127,7 +130,7 @@ class Evaluator():
 
         cosine_similarity = util.cos_sim(embedding1, embedding2)
 
-        return(cosine_similarity[0][0].item())
+        return(cosine_similarity[0][0].item(), out_keywords)
 
     def get_section_syllable_distance(self, syllables, out_syllables):
         distance = 0

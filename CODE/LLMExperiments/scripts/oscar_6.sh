@@ -15,9 +15,12 @@ echo "$PBS_JOBID is running on node `hostname -f` in a scratch directory $SCRATC
 #loads the Gaussian's application modules, version 03
 module add py-pip/21.3.1-gcc-10.2.1-mjt74tn
 
+pip install sentence_transformers
+pip install keybert
+
 # run Gaussian 03 with h2o.com as input and save the results into h2o.out file
 # if the calculation ends with an error, issue error message an exit
-python $DATADIR/GPT2_baseline.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 6 >> $DATADIR/Out_file_osc6.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
+# python $DATADIR/GPT2_baseline.py --model "GPT2_oscar" --dataset_path $DATADIR --dataset_type 6 >> $DATADIR/Out_file_osc6.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
 
 # move the output to user's DATADIR or exit in case of failure
 
