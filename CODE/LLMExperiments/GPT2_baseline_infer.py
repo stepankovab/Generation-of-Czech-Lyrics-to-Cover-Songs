@@ -1,13 +1,33 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from eval.evaluator import Evaluator
 import argparse
 import os
 
+class StoppingSequenceCriteria(StoppingCriteria):
+    def __init__(self, prompt, tokenizer):
+        self.prompt=prompt
+        self.tokenizer = tokenizer
+        self.number_of_lines = len(prompt.split("#")[0].strip().split(" "))
+
+    def __call__(self, input_ids, scores, **kwargs):
+        generated_text = self.tokenizer.decode(input_ids[0])
+        generated_text = generated_text.replace(self.prompt,'')
+        generated_lines = generated_text.strip().split("\n")
+        if len(generated_lines) >= self.number_of_lines + 1:
+            return True  # Stop generation
+        return False  # Continue generation
+
+    def __len__(self):
+        return 1
+
+    def __iter__(self):
+        yield self
+
 
 parser = argparse.ArgumentParser()
-# These arguments will be set appropriately by ReCodEx, even if you change them.
+
 parser.add_argument("--batch_size", default=32, type=int, help="Batch size")
 parser.add_argument("--model", default="GPT2_oscar", type=str, help="tinyLlama # GPT2_oscar # GPT2_czech_XL # Mistral_czech # ") 
 parser.add_argument("--epochs", default=5, type=int, help="Number of epochs")
@@ -106,12 +126,16 @@ for model_path in model_paths:
     tokenizer.encode(text, return_tensors="pt") #directly for input_ids
 
     # model output using Top-k sampling text generation method
-    sample_outputs = model.generate(inputs.input_ids,
-                                    pad_token_id=50256,
-                                    do_sample=True, 
-                                    max_length=100, # put the token number you want
-                                    top_k=40,
-                                    num_return_sequences=15)
+    sample_outputs = sample_outputs = model.generate(**inputs,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id,
+        top_k=40,
+        num_return_sequences=15,
+        penalty_alpha=0.6,
+        num_beams=3,
+        max_new_tokens=1024,
+        stopping_criteria=StoppingSequenceCriteria(text, tokenizer),
+        )
 
     if DATASET_TYPE == DatasetType.SYLLABLES or DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
         evaluator = Evaluator()
@@ -127,18 +151,22 @@ for model_path in model_paths:
             print(f"syll_distance = {syll_distance}")
             print(f"syll_accuracy = {syll_accuracy}")
             print(f"keyword_similarity = {keyword_similarity}")
-            print(f"end_accuracy = {end_accuracy}")
+            # print(f"end_accuracy = {end_accuracy}")
 
             avg_length_ratio += length_ratio
             avg_syll_distance += syll_distance 
             avg_syll_accuracy += syll_accuracy
-            avg_end_accuracy += end_accuracy
+            # avg_end_accuracy += end_accuracy
             avg_keyword_similarity += keyword_similarity
 
-    
-    print(f"length_ratio = {avg_length_ratio / (EPOCHS - args.starting_epoch)}")
-    print(f"syll_distance = {avg_syll_distance / (EPOCHS - args.starting_epoch)}")
-    print(f"syll_accuracy = {avg_syll_accuracy / (EPOCHS - args.starting_epoch)}")
-    print(f"keyword_similarity = {avg_keyword_similarity / (EPOCHS - args.starting_epoch)}")
-    print(f"end_accuracy = {avg_end_accuracy / (EPOCHS - args.starting_epoch)}")
+
+    print("="*100)
+    print("\n\nepoch average:\n")
+    print(f"length_ratio = {avg_length_ratio / len(sample_outputs)}")
+    print(f"syll_distance = {avg_syll_distance / len(sample_outputs)}")
+    print(f"syll_accuracy = {avg_syll_accuracy / len(sample_outputs)}")
+    print(f"keyword_similarity = {avg_keyword_similarity / len(sample_outputs)}")
+    # print(f"end_accuracy = {avg_end_accuracy / len(sample_outputs)}")
+    print("="*100)
+    print("\n")
 
