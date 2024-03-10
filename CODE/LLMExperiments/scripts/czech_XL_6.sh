@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -q gpu@meta-pbs.metacentrum.cz
 #PBS -l walltime=24:0:0
-#PBS -l select=1:ncpus=1:ngpus=1:mem=15gb:scratch_local=100gb:cl_galdor=True:brno=True
+#PBS -l select=1:ncpus=1:ngpus=1:mem=30gb:scratch_local=100gb:cl_galdor=True:brno=True
 #PBS -N czech_XL_6
 
 
