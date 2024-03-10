@@ -2,6 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from eval.evaluator import Evaluator
+from eval.syllabator import syllabify
 import argparse
 import os
 
@@ -15,7 +16,7 @@ class StoppingSequenceCriteria(StoppingCriteria):
         generated_text = self.tokenizer.decode(input_ids[0])
         generated_text = generated_text.replace(self.prompt,'')
         generated_lines = generated_text.strip().split("\n")
-        if len(generated_lines) >= self.number_of_lines + 1:
+        if (len(generated_lines) == self.number_of_lines and len(syllabify(generated_lines[-1].split("#")[-1].strip())) >= int(self.prompt.split("#")[0].strip().split(" ")[-1])) or len(generated_lines) > self.number_of_lines:
             return True  # Stop generation
         return False  # Continue generation
 
@@ -126,13 +127,11 @@ for model_path in model_paths:
     tokenizer.encode(text, return_tensors="pt") #directly for input_ids
 
     # model output using Top-k sampling text generation method
-    sample_outputs = sample_outputs = model.generate(**inputs,
+    sample_outputs = model.generate(**inputs,
         do_sample=True,
         pad_token_id=tokenizer.eos_token_id,
-        top_k=40,
-        num_return_sequences=15,
+        num_return_sequences=50,
         penalty_alpha=0.6,
-        num_beams=3,
         max_new_tokens=1024,
         stopping_criteria=StoppingSequenceCriteria(text, tokenizer),
         )
@@ -142,7 +141,7 @@ for model_path in model_paths:
 
     # generated sequence
     for i, sample_output in enumerate(sample_outputs):
-        model_out = tokenizer.decode(sample_output.tolist())
+        model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
         print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
 
         if DATASET_TYPE == DatasetType.SYLLABLES or DATASET_TYPE == DatasetType.SYLLABLES_AND_WORDS:
