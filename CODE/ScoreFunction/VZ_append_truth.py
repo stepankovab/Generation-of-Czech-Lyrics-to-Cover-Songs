@@ -4,10 +4,10 @@ import json
 # import Imports.tagger as tagger
 # from syllabator import syllabify
 # import re
-from keybert import KeyBERT
+# from keybert import KeyBERT
 import argparse
 import os
-# import os
+
 
 
 
@@ -51,7 +51,7 @@ args = parser.parse_args([] if "__file__" not in globals() else None)
 
 #     return rhymes
 
-with open(os.path.join(args.dataset_path, "VZ_added_61000.json"), "r", encoding="utf-8") as json_file:
+with open(os.path.join(args.dataset_path, "VZ.json"), "r", encoding="utf-8") as json_file:
     dataset_dict = json.load(json_file)
 
 # rt = tagger.RhymeTagger()
@@ -59,12 +59,9 @@ with open(os.path.join(args.dataset_path, "VZ_added_61000.json"), "r", encoding=
 
 # model = SentenceTransformer('all-MiniLM-L12-v2') 
 
-kw_model = KeyBERT()
+# kw_model = KeyBERT()
 
 for dat_i in dataset_dict:
-
-    if "keywords" in dataset_dict[dat_i]:
-        continue   
 
     lyrics_section = dataset_dict[dat_i]["lyrics"]
     without_newlines_section = []
@@ -81,33 +78,33 @@ for dat_i in dataset_dict:
     lines_count = len(lyrics_section)
     # dataset_dict[dat_i]["len"] = lines_count
 
-    # Keywords
-    lyrics_joined = ", ".join(lyrics_section)    
-    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-    response = requests.post(url, data = {"input_text": lyrics_joined})
-    response.encoding='utf8'
-    en_lyrics_joined = response.text[:-1]
-    en_lyrics = en_lyrics_joined.split(", ")
-    dataset_dict[dat_i]["en_lyrics"] = en_lyrics
+    # # Keywords
+    # lyrics_joined = ", ".join(lyrics_section)    
+    # url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
+    # response = requests.post(url, data = {"input_text": lyrics_joined})
+    # response.encoding='utf8'
+    # en_lyrics_joined = response.text[:-1]
+    # en_lyrics = en_lyrics_joined.split(", ")
+    # dataset_dict[dat_i]["en_lyrics"] = en_lyrics
 
 
-    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-    response = requests.post(url, data = {"input_text": en_lyrics_joined})
-    response.encoding='utf8'
-    cs_unrhymed_joined = response.text[:-1]
-    cs_unrhymed = cs_unrhymed_joined.split(", ")
-    dataset_dict[dat_i]["unrhymed"] = cs_unrhymed
+    # url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+    # response = requests.post(url, data = {"input_text": en_lyrics_joined})
+    # response.encoding='utf8'
+    # cs_unrhymed_joined = response.text[:-1]
+    # cs_unrhymed = cs_unrhymed_joined.split(", ")
+    # dataset_dict[dat_i]["unrhymed"] = cs_unrhymed
 
 
-    keywords = kw_model.extract_keywords(en_lyrics_joined)
+    # keywords = kw_model.extract_keywords(en_lyrics_joined)
 
-    keywords_joined = ", ".join([x[0] for x in keywords])    
-    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-    response = requests.post(url, data = {"input_text": keywords_joined})
-    response.encoding='utf8'
-    cs_keywords_joined = response.text[:-1]
-    cs_keywords = cs_keywords_joined.split(", ")
-    dataset_dict[dat_i]["keywords"] = cs_keywords
+    # keywords_joined = ", ".join([x[0] for x in keywords])    
+    # url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+    # response = requests.post(url, data = {"input_text": keywords_joined})
+    # response.encoding='utf8'
+    # cs_keywords_joined = response.text[:-1]
+    # cs_keywords = cs_keywords_joined.split(", ")
+    # dataset_dict[dat_i]["keywords"] = cs_keywords
 
     # # rhyme scheme
     # rhymes = rt.tag(poem=lyrics_section, output_format=3)
