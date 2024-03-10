@@ -1,4 +1,4 @@
-from syllabator import syllabify
+from eval.syllabator import syllabify
 import requests
 from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer, util
@@ -62,7 +62,7 @@ class Evaluator():
             syllabified_line = syllabify(line)
 
             out_syllables.append(len(syllabified_line))
-            out_endings.append(syllabified_line[-1])
+            # out_endings.append(syllabified_line[-1])
 
         # syllable distance
         syll_distance = None
@@ -98,9 +98,6 @@ class Evaluator():
         print(endings)
         print(out_endings)
         print()
-        print(keywords)
-        print(out_keywords)
-        print()
 
         return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
 
@@ -125,9 +122,17 @@ class Evaluator():
 
         out_keywords = [x[0] for x in self.kw_model.extract_keywords(en_lyrics_joined)]
 
-        embedding1 = self.embed_model.encode(keywords, convert_to_tensor=False)
-        embedding2 = self.embed_model.encode(out_keywords, convert_to_tensor=False)
+        print(keywords)
+        print(out_keywords)
+        print()
 
+        
+        embedding1 = self.embed_model.encode(keywords, convert_to_tensor=False)
+        if out_keywords != []:
+            embedding2 = self.embed_model.encode(out_keywords, convert_to_tensor=False)
+        else:
+            embedding2 = self.embed_model.encode(model_output, convert_to_tensor=False)
+        
         cosine_similarity = util.cos_sim(embedding1, embedding2)
 
         return(cosine_similarity[0][0].item(), out_keywords)
