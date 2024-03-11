@@ -7,7 +7,7 @@ import os
 import json
 from transformers import get_linear_schedule_with_warmup
 from transformers import AdamW
-from syllabator import dashed_syllabified_line
+from eval.syllabator import dashed_syllabified_line
 
 import argparse
 
