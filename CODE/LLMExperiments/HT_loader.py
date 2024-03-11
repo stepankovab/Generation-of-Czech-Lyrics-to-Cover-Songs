@@ -24,6 +24,6 @@ def _extract_lyrics(dataset_dict, language):
     for mov in dataset_dict[language]:
         for song in dataset_dict[language][mov]:
             for section in dataset_dict[language][mov][song]:
-                list_of_sections.append(dataset_dict[language][mov][song][section]["lyrics"])
+                list_of_sections.append(','.join(dataset_dict[language][mov][song][section]["lyrics"]))
 
     return list_of_sections
