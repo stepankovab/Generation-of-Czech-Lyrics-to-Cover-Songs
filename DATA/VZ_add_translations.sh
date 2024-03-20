@@ -20,6 +20,7 @@ pip install json
 pip install argparse
 pip install os
 pip install keybert
+pip install re
 
 
 python $DATADIR/VZ_append_truth.py --dataset_path $DATADIR >> $DATADIR/Out_file_truth_append.out || { echo >&2 "Calculation ended up erroneously (with a code $?) !!"; exit 3; }
