@@ -2,7 +2,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from english_structure_extractor import SectionStructure
-from CODE.LLMExperiments.evaluator import Evaluator
 from eval.syllabator import syllabify
 import os
 import requests
@@ -17,7 +16,7 @@ class StoppingSequenceCriteria(StoppingCriteria):
         generated_text = self.tokenizer.decode(input_ids[0])
         generated_text = generated_text.replace(self.prompt,'')
         generated_lines = generated_text.strip().split("\n")
-        if (len(generated_lines) > len(self.prompt.strip().split("\n"))):
+        if (len(generated_lines) > len(self.prompt.split("\n"))):
             return True  # Stop generation
         return False  # Continue generation
 
@@ -48,13 +47,13 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
         response.encoding='utf8'
-        translated_output = response.text[:-1]
+        translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         prompt = f"{len(syllabify(translated_output))} # {translated_output} #\n{structure.syllables[line_i]} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN_END:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
         response.encoding='utf8'
-        translated_output = response.text[:-1]
+        translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         translated_output_sylls = syllabify(translated_output)
         prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output} #\n{structure.syllables[line_i]} # {ending} # "
     else:
@@ -121,7 +120,8 @@ def generate_lines(args, input_sections):
     w_model.eval()
 
     structure = SectionStructure()
-    evaluator = Evaluator()
+
+    result_pairs = []
 
     for input_section in input_sections:
         # Load the structure of the english text
@@ -146,7 +146,7 @@ def generate_lines(args, input_sections):
                     pad_token_id=tokenizer.eos_token_id,
                     num_return_sequences=LINES_PER_GENERATION,
                     penalty_alpha=0.6,
-                    max_new_tokens=512,
+                    max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
 
@@ -154,8 +154,8 @@ def generate_lines(args, input_sections):
                 for i, sample_output in enumerate(sample_outputs):
                     model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
                     print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-                    temp_result[i].append(model_out.strip().split("#")[-1])
-
+                    temp_result[i].append(''.join([x for x in model_out.strip().split("\n")[len(prompt.split("\n")) - 1] if x.isalpha() or x.isspace() or x == '.' or x == ',']).strip())
+                    
             else:
                 prompt = prepare_prompt(wout_dataset_type, structure, line_i)
 
@@ -169,7 +169,7 @@ def generate_lines(args, input_sections):
                     pad_token_id=tokenizer.eos_token_id,
                     num_return_sequences=LINES_PER_GENERATION,
                     penalty_alpha=0.6,
-                    max_new_tokens=512,
+                    max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
 
@@ -177,23 +177,19 @@ def generate_lines(args, input_sections):
                 for i, sample_output in enumerate(sample_outputs):
                     model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
                     print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-                    temp_result[i].append(model_out.strip().split("#")[-1])
-                    if i == 0:
-                        syll_output = syllabify(model_out.strip().split("#")[-1])
+
+                    temp_result[i].append(''.join([x for x in model_out.strip().split("\n")[len(prompt.split("\n")) - 1] if x.isalpha() or x.isspace()]).strip())
+                    
+                    if i == 0 and temp_result[i][line_i] != "":
+                        syll_output = syllabify(temp_result[i][line_i])
                         known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
 
-        result_pairs = []
         for result in temp_result:
-            result_pairs.append((','.join(result), structure))
+            result_pairs.append((','.join(result), structure.copy()))
             for line in result:
                 print(line)
             print()
 
-        results_dict = evaluator.evaluate_outputs_structure(result_pairs)
-
-        for cat in results_dict:
-            print(f"{cat} -> {sum(results_dict[cat]) / len(results_dict[cat])}")
-        print()
-        print("=" * 30)
+    return result_pairs
 
 
