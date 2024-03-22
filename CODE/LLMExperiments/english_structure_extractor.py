@@ -22,6 +22,22 @@ class SectionStructure:
         if section != None:
             self.fill(section)
 
+    def copy(self):
+        """
+        copy section structure as a new instance
+        """
+        new_section = SectionStructure(kw_model=self.kw_model, rt=self.rt)
+        new_section.original_lyrics = self.original_lyrics.copy()
+        new_section.syllables = self.syllables.copy()
+        new_section.rhyme_scheme = self.rhyme_scheme.copy()
+        new_section.keywords = self.keywords.copy()
+        new_section.en_keywords = self.en_keywords.copy()
+        new_section.line_keywords = self.line_keywords.copy()
+        new_section.en_line_keywords = self.en_line_keywords.copy()
+        new_section.num_lines = self.num_lines
+
+        return new_section
+
     def fill(self, section):
         """
         section: divided by ','
