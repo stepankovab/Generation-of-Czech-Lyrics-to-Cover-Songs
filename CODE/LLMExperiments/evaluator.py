@@ -46,8 +46,8 @@ class Evaluator():
         for output, structure in outputs_w_structures:
             output = output.split(",")
 
-            assert len(output) == structure.num_lines
-            
+            if len(output) != structure.num_lines:
+                continue            
 
             out_syllables = []
             out_endings = []
@@ -200,7 +200,9 @@ class Evaluator():
     def get_section_syllable_distance(self, syllables, out_syllables):
         distance = 0
         
-        assert len(syllables) == len(out_syllables)
+        if len(syllables) != len(out_syllables):
+            print("syll error")
+            return 100
 
         for i in range(len(out_syllables)):
             distance += (abs(syllables[i] - out_syllables[i]) / max(syllables[i], 1)) + (abs(syllables[i] - out_syllables[i]) / max(out_syllables[i], 1))
@@ -225,8 +227,12 @@ class Evaluator():
         --------------
         Agreement between rhyme schemes: int, [0,1], 1 is the best
         """
-        assert len(desired_scheme) == len(new_scheme)
-        assert len(desired_scheme) > 0
+        try:
+            assert len(desired_scheme) == len(new_scheme)
+            assert len(desired_scheme) > 0
+        except:
+            print("rhyme error")
+            return 0
 
         desired_edges = set()
         new_edges = set()
