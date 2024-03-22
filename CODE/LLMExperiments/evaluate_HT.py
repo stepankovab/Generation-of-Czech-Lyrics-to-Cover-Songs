@@ -18,3 +18,13 @@ results_dict = evaluator.evaluate_outputs_structure(HT_pairs)
 
 for cat in results_dict:
     print(f"{cat} -> {sum(results_dict[cat]) / len(results_dict[cat])}")
+
+
+
+
+# syll_dist -> 0.03589051233543377
+# syll_acc -> 0.8322604729176896
+# rhyme_scheme_agree -> 0.6314852315496646    rhymetagger
+# semantic_sim -> 0.5961625609047634
+# keyword_sim -> 0.5273546302287849
+# line_keyword_sim -> 0.5178069276220453
