@@ -108,22 +108,24 @@ def generate_whole(args, input_sections):
             model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
             print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
 
-            model_output = model_output.split("\n")
+            model_out = model_out.split("\n")
             start_of_text = 1
             if dataset_type == DatasetType.BASELINE:
                 start_of_text = 0
 
-            for line_i in range(start_of_text, len(model_output)):
-                line = model_output[line_i]
+            output = []
+
+            for line_i in range(start_of_text, min(len(model_out), structure.num_lines + start_of_text)):
+                line = model_out[line_i]
                 if not line.strip():
                     continue
                 line = line.split("#")[-1].strip()
                 if not line.strip():
                     continue
-                model_output[line_i] = line
+                output.append(line)
 
-            result_pairs.append((','.join(model_output), structure.copy()))
-            for line in model_output:
+            result_pairs.append((','.join(output), structure.copy()))
+            for line in output:
                 print(line)
             print()
 
