@@ -5,16 +5,29 @@ from sentence_transformers import SentenceTransformer, util
 from english_structure_extractor import SectionStructure
 import re
 from eval.tagger import RhymeTagger
+from eval.rhyme_finder import RhymeFinder
 
 
 class Evaluator():
 
-    def __init__(self) -> None:
-        pass
-        self.kw_model = KeyBERT()
-        self.embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-        self.rt_cs = RhymeTagger()
-        self.rt_cs.load_model("cs", verbose=False)
+    def __init__(self, rt = RhymeFinder(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')) -> None:
+        """
+        Parameters
+        ---------------
+        rt: "cs" RhymeTagger, RhymeFinder, or any rhymer with 'tag(self, poem : list[str], output_format : int)' method
+        kw_model: keyword finder
+        embed_model: sentence embedding model
+        """
+        
+        self.kw_model = kw_model
+        self.embed_model = embed_model
+        self.rt = rt
+
+        if isinstance(self.rt, RhymeTagger):
+            self.rt.load_model("cs", verbose=False)
+
+        if isinstance(self.rt, RhymeFinder):
+            self.rt.lang = "cs"
 
     def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]]):
         """
@@ -87,8 +100,9 @@ class Evaluator():
             results_dict["syll_acc"].append(syll_accuracy)
 
             # rhyme scheme distance
-            rhymes_cs = self.rt_cs.tag(poem=output, output_format=3)
-            cs_rhyme_scheme = self._fill_in_none_rhymes(rhymes_cs)
+            cs_rhyme_scheme = self.rt.tag(poem=output, output_format=3)
+            if isinstance(self.rt, RhymeTagger):
+                cs_rhyme_scheme = self._fill_in_none_rhymes(cs_rhyme_scheme)
 
             results_dict["rhyme_scheme_agree"].append(self.get_rhyme_scheme_agreement(structure.rhyme_scheme, cs_rhyme_scheme))
 

@@ -7,11 +7,11 @@ class RhymeFinder:
     def __init__(self, lang = "cs") -> None:
         self.lang = lang
 
-    def tag(self, lines):
+    def tag(self, poem, output_format = 0):
         if self.lang == "cs":
-            return self._tag_cs(lines)
+            return self._tag_cs(poem)
         elif self.lang == "en":
-            return self._tag_en(lines)
+            return self._tag_en(poem)
         else:
             raise ValueError(f"Unsupported language: {self.lang}")
 
@@ -113,8 +113,7 @@ class RhymeFinder:
                 rhyme_scheme[i] = chr(64 + char_counter)
 
             for j in rhyming_lines[i]:
-                if rhyme_scheme[j] != None:
-                    print("RHYME SCHEME ERROR")
-                    pass
                 rhyme_scheme[j] = chr(64 + char_counter)
+        
+        return rhyme_scheme
 
