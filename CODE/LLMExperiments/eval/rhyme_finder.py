@@ -37,7 +37,11 @@ class RhymeFinder:
         line = line.lower()
         line = re.sub("ch", "h", line)
 
-        ending = "***" + syllabify(line)[-1]
+        syll_line = syllabify(line)
+        if len(syll_line) == 0:
+            return "***"
+
+        ending = "***" + syll_line[-1]
         ending = ending[-3:]
 
         replacements = [
