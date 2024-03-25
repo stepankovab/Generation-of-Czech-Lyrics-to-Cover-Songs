@@ -57,7 +57,7 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
         translated_output_sylls = syllabify(translated_output)
         prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output} #\n{structure.syllables[line_i]} # {ending} # "
     else:
-        prompt = ""
+        raise Exception(f"We don't support a Dataset type {dataset_type}")
 
     return prompt
 
@@ -110,11 +110,12 @@ def generate_lines(args, input_sections):
         w_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
 
-    wout_model_path = os.path.join(args.dataset_path, "trained_models", f"{args.model}_{wout_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
-    w_model_path = os.path.join(args.dataset_path, "trained_models", f"{args.model}_{w_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
+    wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
+    w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
     
     print("="*10 + "  " + wout_model_path + " " + "="*10)
     wout_model.load_state_dict(state_dict=torch.load(wout_model_path, map_location=torch.device(device)))
+    print("="*10 + "  " + w_model_path + " " + "="*10)
     w_model.load_state_dict(state_dict=torch.load(w_model_path, map_location=torch.device(device)))
     wout_model.eval()
     w_model.eval()
