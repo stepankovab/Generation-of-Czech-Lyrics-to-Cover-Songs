@@ -5,6 +5,7 @@ from sentence_transformers import SentenceTransformer, util
 from english_structure_extractor import SectionStructure
 import re
 from eval.tagger import RhymeTagger
+# from rhymetagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
 
 
@@ -336,91 +337,91 @@ class Evaluator():
 
 
 
-    # def eval_from_first_line(self, model_output):
-    #     """
-    #     Evaluate model outputs based on syllables, rhymes and semantics criteria read from first line
+    def eval_from_first_line(self, model_output):
+        """
+        Evaluate model outputs based on syllables, rhymes and semantics criteria read from first line
 
-    #     Parameters
-    #     --------------
-    #     model_output: The output of a model
+        Parameters
+        --------------
+        model_output: The output of a model
 
-    #     Returns
-    #     --------------
-    #     results
-    #     """
-    #     model_output = model_output.split("\n")
+        Returns
+        --------------
+        results
+        """
+        model_output = model_output.split("\n")
 
-    #     eval_info = [x.strip() for x in model_output[0].split("#") if x.strip()]
-    #     if len(eval_info) == 0:
-    #         return None, None, None, None
-    #     if len(eval_info) > 0:
-    #         syllables = [int(x) for x in eval_info[0].split(" ")]
-    #     if len(eval_info) > 1:
-    #         keywords = eval_info[1].split(" ")
-    #     if len(eval_info) > 2:
-    #         endings = eval_info[2].split(" ")
+        eval_info = [x.strip() for x in model_output[0].split("#") if x.strip()]
+        if len(eval_info) == 0:
+            return None, None, None, None
+        if len(eval_info) > 0:
+            syllables = [int(x) for x in eval_info[0].split(" ")]
+        if len(eval_info) > 1:
+            keywords = eval_info[1].split(" ")
+        if len(eval_info) > 2:
+            endings = eval_info[2].split(" ")
 
-    #     expected_length = len(syllables)
-    #     length_ratio = (len(model_output) - 1) / expected_length
+        expected_length = len(syllables)
+        length_ratio = (len(model_output) - 1) / expected_length
 
-    #     out_syllables = []
-    #     out_endings = []
-    #     out_lines = []
+        out_syllables = []
+        out_endings = []
+        out_lines = []
 
-    #     for line_i in range(1, min(expected_length + 1,len(model_output))):
-    #         line = model_output[line_i]
+        for line_i in range(1, min(expected_length + 1,len(model_output))):
+            line = model_output[line_i]
 
-    #         if not line.strip():
-    #             continue
+            if not line.strip():
+                continue
 
-    #         line = line.split("#")[-1].strip()
+            line = line.split("#")[-1].strip()
 
-    #         if not line:
-    #             continue
+            if not line.strip():
+                continue
 
-    #         out_lines.append(line)
+            out_lines.append(line)
 
-    #         syllabified_line = syllabify(line)
+            syllabified_line = syllabify(line)
 
-    #         out_syllables.append(len(syllabified_line))
-    #         # out_endings.append(syllabified_line[-1])
+            out_syllables.append(len(syllabified_line))
+            # out_endings.append(syllabified_line[-1])
 
-    #     # syllable distance
-    #     syll_distance = None
-    #     if len(syllables) > 0:
-    #         syll_distance = self.get_section_syllable_distance(syllables, out_syllables)
+        # syllable distance
+        syll_distance = None
+        if len(syllables) > 0:
+            syll_distance = self.get_section_syllable_distance(syllables, out_syllables)
 
-    #     # syllable accuracy
-    #     syll_accuracy = None
-    #     if len(syllables) > 0:
-    #         positive = 0
-    #         for i in range(len(out_syllables)):
-    #             if out_syllables[i] == syllables[i]:
-    #                 positive += 1
-    #         syll_accuracy = positive / len(out_syllables)
+        # syllable accuracy
+        syll_accuracy = None
+        if len(syllables) > 0:
+            positive = 0
+            for i in range(len(out_syllables)):
+                if out_syllables[i] == syllables[i]:
+                    positive += 1
+            syll_accuracy = positive / len(out_syllables)
 
-    #     # line endings accuracy
-    #     end_accuracy = None
-    #     if len(endings) > 0:
-    #         positive = 0
-    #         for i in range(len(out_endings)):
-    #             if out_endings[i] == endings[i]:
-    #                 positive += 1
-    #         end_accuracy = positive / len(out_endings)
+        # line endings accuracy
+        end_accuracy = None
+        if len(endings) > 0:
+            positive = 0
+            for i in range(len(out_endings)):
+                if out_endings[i] == endings[i]:
+                    positive += 1
+            end_accuracy = positive / len(out_endings)
 
-    #     # keyword similarity
-    #     keyword_similarity = None
-    #     if len(keywords) > 0:
-    #         keyword_similarity, out_keywords = self.get_keyword_semantic_similarity(keywords, out_lines)
+        # keyword similarity
+        keyword_similarity = None
+        if len(keywords) > 0:
+            keyword_similarity, out_keywords = self.get_keyword_semantic_similarity(keywords, out_lines)
 
-    #     print(syllables)
-    #     print(out_syllables)
-    #     print()
-    #     print(endings)
-    #     print(out_endings)
-    #     print()
+        print(syllables)
+        print(out_syllables)
+        print()
+        print(endings)
+        print(out_endings)
+        print()
 
-    #     return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
+        return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
 
 
 
