@@ -1,8 +1,9 @@
-
 from eval.tagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
 from HT_loader import HT_loader
 from evaluator import Evaluator
+import matplotlib.pyplot as plt
+import numpy as np
 
 ev = Evaluator()
 
@@ -36,28 +37,65 @@ def _fill_in_none_rhymes(rhymes):
 
     return rhymes
 
-cs_rt = RhymeTagger()
-cs_rt.load_model("cs", verbose=False)
+LANG = "en"
 
-cs_rf = RhymeFinder("cs")
+rt = RhymeTagger()
+rt.load_model(LANG, verbose=False)
+rf = RhymeFinder(LANG)
+ht = HT_loader("DATA", LANG)
 
-cs_ht = HT_loader("DATA", "cs")
+tagfin = []
+fintag = []
 
-for text in cs_ht:
+for text in ht:
     text = text.split(",")
 
-    print()
-    for line in text:
-        print(line)
-    print()
+    print(text[0])
 
-    a = _fill_in_none_rhymes(cs_rt.tag(poem=text, output_format=3))
-    b = cs_rf.tag(text)
+    # print()
+    # for line in text:
+    #     print(line)
+    # print()
 
-    print(a)
-    print(b)
+    a = _fill_in_none_rhymes(rt.tag(poem=text, output_format=3))
+    b = rf.tag(text)
 
-    print("original tagger", ev.get_rhyme_scheme_agreement(a, b))
-    print("original finder", ev.get_rhyme_scheme_agreement(b, a))
+    # print(a)
+    # print(b)
+
+    c = ev.get_rhyme_scheme_agreement(a, b)
+    d = ev.get_rhyme_scheme_agreement(b, a)
+
+    # print("tagger -> finder", c)
+    # print("finder -> tagger", d)
+
+    tagfin.append(c)
+    fintag.append(d)
+
+
+bins = np.linspace(0, 1, 10)
+
+plt.hist(tagfin, bins, density=True, alpha=0.5, label='rhymefinder', edgecolor='black')
+plt.hist(fintag, bins, density=True, alpha=0.5, label='rhymetagger', edgecolor='black')
+plt.xlabel('Results')
+plt.ylabel('Frequency')
+plt.title(f"Comparison of tagger and finder in {LANG}")
+plt.legend(loc='upper center')
+plt.savefig(f"tagfin_{LANG}.png")
+plt.show()
+
+print()
+print("tagger -> finder avg:", sum(tagfin)/len(tagfin))
+print("finder -> tagger avg:", sum(fintag)/len(fintag))
+
+
+
+
+# EN compare  
+# neznamy slova ignoruje no...
+
+# CS compare:
+# finder je lepsi, ale myslim ze kdyby se do taggeru pridali shodny slova tak mozna bude lepsi
+
 
 
