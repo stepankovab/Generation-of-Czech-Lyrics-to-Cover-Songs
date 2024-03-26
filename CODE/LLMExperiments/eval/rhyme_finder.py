@@ -74,8 +74,9 @@ class RhymeFinder:
         last_words = []
         for line in lines:
             if not line.strip():
-                continue
-            last = ''.join([x for x in re.split(r"\s", line.strip())[-1] if x.isalpha])
+                last = ""
+            else:
+                last = ''.join([x for x in re.split(r"\s", line.strip())[-1] if x.isalpha])
             last_words.append(last.lower())
 
         # fill in rhymes dict
