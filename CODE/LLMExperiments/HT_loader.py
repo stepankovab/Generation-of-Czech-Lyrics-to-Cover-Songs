@@ -2,7 +2,7 @@ import os
 import json
 import numpy
 
-def HT_loader(dataset_path, language = "en"):
+def HT_loader(dataset_path, language = "en", without_repetition = False):
     lyrics_path = os.path.join(dataset_path, 'HT.json')
 
     with open(lyrics_path, "r", encoding="utf-8") as json_file:
@@ -16,6 +16,9 @@ def HT_loader(dataset_path, language = "en"):
 
     else:
         HT_lyrics = []
+
+    if without_repetition:
+        HT_lyrics = list(set(HT_lyrics))
 
     return HT_lyrics
 
