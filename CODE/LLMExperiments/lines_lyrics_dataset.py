@@ -18,24 +18,24 @@ class LinesLyricsDataset(Dataset):
         if dataset_type == DatasetType.BASELINE:
             for dat_i in dataset_dict:
                 for line in dataset_dict[dat_i]['lyrics']:
-                    self.lines_list.append(line)
+                    self.lines_list.append(line + "\n")
 
         elif dataset_type == DatasetType.SYLLABLES:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
                     
         elif dataset_type == DatasetType.END_OF_LINES:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    self.lines_list.append(f"{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
                 
         elif dataset_type == DatasetType.CHARACTERISTIC_WORDS:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
                         continue
-                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.UNRHYMED_LEN:
             for dat_i in dataset_dict:
@@ -50,7 +50,7 @@ class LinesLyricsDataset(Dataset):
                     if unrhymed_len == dataset_dict[dat_i]["syllables"][lin_i]:
                         original = unrhymed
 
-                    self.lines_list.append(f"{unrhymed_len} # {unrhymed} #\n{dataset_dict[dat_i]['syllables'][lin_i]} # {original}")
+                    self.lines_list.append(f"{unrhymed_len} # {unrhymed}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {original}\n")
 
         elif dataset_type == DatasetType.UNRHYMED_LEN_END:
             for dat_i in dataset_dict:
@@ -70,38 +70,38 @@ class LinesLyricsDataset(Dataset):
                     if unrhymed_end == dataset_dict[dat_i]["line_endings"][lin_i] and unrhymed_len == dataset_dict[dat_i]["syllables"][lin_i]:
                         original = unrhymed
 
-                    self.lines_list.append(f"{unrhymed_len} # {unrhymed_end} # {unrhymed} #\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {original}")
+                    self.lines_list.append(f"{unrhymed_len} # {unrhymed_end} # {unrhymed}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {original}\n")
 
         elif dataset_type == DatasetType.SYLLABLES_AND_WORDS:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
                         continue
-                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} #\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.SYLLABLES_AND_ENDS:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.ENDS_AND_WORDS:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
                         continue
-                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} #\n{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.FORCED_SYLLABLES:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}\n")
 
         elif dataset_type == DatasetType.SYLLABLES_ENDS_WORDS:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
                         continue
-                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} #\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
+                    self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         else:
             raise Exception(f"We don't support a Dataset type {dataset_type}")
