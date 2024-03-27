@@ -7,11 +7,11 @@ import re
 from eval.tagger import RhymeTagger
 # from rhymetagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
-
+from eval.same_word_tagger import SameWordRhymeTagger
 
 class Evaluator():
 
-    def __init__(self, rt = RhymeFinder(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')) -> None:
+    def __init__(self, rt = SameWordRhymeTagger(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')) -> None:
         """
         Parameters
         ---------------
@@ -29,6 +29,9 @@ class Evaluator():
 
         if isinstance(self.rt, RhymeFinder):
             self.rt.lang = "cs"
+
+        if isinstance(self.rt, SameWordRhymeTagger):
+            self.rt.load_model("cs")
 
     def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]]):
         """

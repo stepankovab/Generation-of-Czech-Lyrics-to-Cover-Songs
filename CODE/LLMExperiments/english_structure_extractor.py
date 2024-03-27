@@ -2,6 +2,7 @@ from eval.en_syllabator import syllabify
 from eval.tagger import RhymeTagger
 # from rhymetagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
+from eval.same_word_tagger import SameWordRhymeTagger
 import requests
 from keybert import KeyBERT
 
@@ -16,7 +17,7 @@ class SectionStructure:
     en_line_keywords = []
     num_lines: int
 
-    def __init__(self, section = None, kw_model = KeyBERT(), rt = RhymeFinder()) -> None:
+    def __init__(self, section = None, kw_model = KeyBERT(), rt = SameWordRhymeTagger(lang="en")) -> None:
         self.kw_model = kw_model
         self.rt = rt
 
@@ -25,6 +26,9 @@ class SectionStructure:
 
         if isinstance(self.rt, RhymeFinder):
             self.rt.lang = "en"
+        
+        if isinstance(self.rt, SameWordRhymeTagger):
+            self.rt.load_model("en")
 
         if section != None:
             self.fill(section)

@@ -8,6 +8,10 @@ class SameWordRhymeTagger():
         self.rt = RhymeTagger()
         self.rt.load_model(self.lang, verbose=False)
 
+    def load_model(self, lang = "cs"):
+        self.lang = lang
+        self.rt.load_model(self.lang, verbose=False)
+
     def tag(self, poem, output_format = 3):
         scheme = self.rt.tag(poem=poem, output_format=output_format)
         scheme = self._fill_in_none_rhymes(scheme)
