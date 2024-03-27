@@ -61,6 +61,10 @@
 
 ## ASAP
 
+#### [Spanish song dataset](https://arxiv.org/pdf/2306.01325.pdf)
+
+#### [Kpop dataset](https://arxiv.org/pdf/2309.11093.pdf)
+
 #### [Songs Across Borders: Singable and Controllable Neural Lyric Translation](https://arxiv.org/abs/2305.16816)
 - 2023
 
@@ -82,6 +86,10 @@
 #### [Controllable Generation from Pre-trained Language Models via Inverse Prompting](https://arxiv.org/abs/2103.10685)
 - 2021
 - $yo^2$
+
+#### [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
+- 2021
+- [in plain english](https://www.entrypointai.com/blog/lora-fine-tuning/)
 
 #### [Rigid Formats Controlled Text Generation](https://arxiv.org/abs/2004.08022)
 - 2020

@@ -1,2 +1,0 @@
-20270488.meta-pbs.metacentrum.cz is running on node luna206.fzu.cz in a scratch directory /scratch.ssd/stepanb2/job_20270488.meta-pbs.metacentrum.cz
-20270489.meta-pbs.metacentrum.cz is running on node luna206.fzu.cz in a scratch directory /scratch.ssd/stepanb2/job_20270489.meta-pbs.metacentrum.cz
