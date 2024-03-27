@@ -113,11 +113,7 @@ class Evaluator():
             # semantic similarity
             semantic_similarity = 0
             if len(structure.original_lyrics) > 0:
-                url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-                response = requests.post(url, data = {"input_text": ' '.join(output)})
-                response.encoding='utf8'
-                translated_output = response.text[:-1]
-                semantic_similarity = self.get_semantic_similarity(translated_output, ' '.join(structure.original_lyrics))
+                semantic_similarity = self.get_semantic_similarity(output, ' '.join(structure.original_lyrics), text1_in_en=False)
             results_dict["semantic_sim"].append(semantic_similarity)
 
             # keyword similarity
@@ -135,7 +131,7 @@ class Evaluator():
             results_dict["line_keyword_sim"].append(line_keywords_similarity)
 
         return results_dict
-
+    
     def get_line_keyword_semantic_similarity(self, keywords, output, keywords_in_en = True, output_in_en = True):
         """
         returns average similarity of a line to keywords
@@ -204,10 +200,23 @@ class Evaluator():
         return self.get_semantic_similarity(out_keywords, keywords)
 
 
-    def get_semantic_similarity(self, text1, text2):
+    def get_semantic_similarity(self, text1, text2, text1_in_en = True, text2_in_en = True):
         """
         Embed two texts and get their cosine similarity
         """
+
+        if not text1_in_en:
+            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
+            response = requests.post(url, data = {"input_text": ' '.join(text1)})
+            response.encoding='utf8'
+            text1 = response.text[:-1]
+
+        if not text2_in_en:
+            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
+            response = requests.post(url, data = {"input_text": ' '.join(text2)})
+            response.encoding='utf8'
+            text2 = response.text[:-1]
+
         embedding1 = self.embed_model.encode(text1, convert_to_tensor=False)
         embedding2 = self.embed_model.encode(text2, convert_to_tensor=False)
         
