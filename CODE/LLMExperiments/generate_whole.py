@@ -44,6 +44,28 @@ def prepare_prompt(dataset_type, structure: SectionStructure):
     return prompt
 
 
+def extract_model_out(out_lines, prompt, dataset_type, structure):
+    out_lines = out_lines.split("\n")
+    start_of_text = 1
+    if not prompt.strip():
+        start_of_text = 0
+
+    output = []
+    for line_i in range(start_of_text, min(len(out_lines), structure.num_lines + start_of_text)):
+        line = out_lines[line_i]
+        if not line.strip():
+            output.append("")
+            continue
+    
+        line_sections = line.strip().split("#")
+        if dataset_type in [DatasetType.SYLLABLES, DatasetType.CHARACTERISTIC_WORDS, DatasetType.SYLLABLES_AND_WORDS, DatasetType.FORCED_SYLLABLES]:
+            if len(line_sections) > 1:
+                line = ' # '.join([x.strip() for x in line_sections[1:]])
+
+        output.append(line)
+        
+    return output
+
 def generate_whole(args, input_sections):
     
     dataset_type = DatasetType(args.dataset_type)
@@ -73,7 +95,7 @@ def generate_whole(args, input_sections):
         model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
 
-    model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_lyricist_{args.epoch}_32.pt")
+    model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
 
     print("="*10 + "  " + model_path + " " + "="*10)
     model.load_state_dict(state_dict=torch.load(model_path, map_location=torch.device(device)))
@@ -108,21 +130,7 @@ def generate_whole(args, input_sections):
             model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
             print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
 
-            model_out = model_out.split("\n")
-            start_of_text = 1
-            if dataset_type == DatasetType.BASELINE:
-                start_of_text = 0
-
-            output = []
-
-            for line_i in range(start_of_text, min(len(model_out), structure.num_lines + start_of_text)):
-                line = model_out[line_i]
-                if not line.strip():
-                    continue
-                line = line.split("#")[-1].strip()
-                if not line.strip():
-                    continue
-                output.append(line)
+            output = extract_model_out(model_out, prompt, dataset_type, structure)
 
             result_pairs.append((','.join(output), structure.copy()))
             for line in output:

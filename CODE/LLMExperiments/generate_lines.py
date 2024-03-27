@@ -30,7 +30,7 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
     if dataset_type == DatasetType.CHARACTERISTIC_WORDS:
         prompt = f"{structure.line_keywords[line_i]} # "
     elif dataset_type == DatasetType.ENDS_AND_WORDS:
-        prompt = f"{structure.line_keywords[line_i]} #\n{ending} # "
+        prompt = f"{structure.line_keywords[line_i]}\n{ending} # "
     elif dataset_type == DatasetType.BASELINE:
         prompt = ""
     elif dataset_type == DatasetType.END_OF_LINES:
@@ -40,26 +40,36 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
     elif dataset_type == DatasetType.SYLLABLES_AND_ENDS:
         prompt = f"{structure.syllables[line_i]} # {ending} # "
     elif dataset_type == DatasetType.SYLLABLES_AND_WORDS:
-        prompt = f"{structure.line_keywords[line_i]} #\n{structure.syllables[line_i]} # "
+        prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # "
     elif dataset_type == DatasetType.SYLLABLES_ENDS_WORDS:
-        prompt = f"{structure.line_keywords[line_i]} #\n{structure.syllables[line_i]} # {ending} # "
+        prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # {ending} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
-        prompt = f"{len(syllabify(translated_output))} # {translated_output} #\n{structure.syllables[line_i]} # "
+        prompt = f"{len(syllabify(translated_output))} # {translated_output}\n{structure.syllables[line_i]} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN_END:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         translated_output_sylls = syllabify(translated_output)
-        prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output} #\n{structure.syllables[line_i]} # {ending} # "
+        prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output}\n{structure.syllables[line_i]} # {ending} # "
     else:
         raise Exception(f"We don't support a Dataset type {dataset_type}")
 
     return prompt
+
+
+def extrat_model_out(prompt, model_out):
+    if len(model_out) <= len(prompt):
+        return ""
+    
+    assert model_out[:len(prompt)] == prompt
+    model_out = model_out[len(prompt):]
+    out_lines = model_out.strip().split("\n")
+    return out_lines[0]
 
 
 def generate_lines(args, input_sections):
@@ -110,8 +120,8 @@ def generate_lines(args, input_sections):
         w_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
 
-    wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
-    w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_one_line_lyricist_{args.epoch}.pt")
+    wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
+    w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     
     print("="*10 + "  " + wout_model_path + " " + "="*10)
     wout_model.load_state_dict(state_dict=torch.load(wout_model_path, map_location=torch.device(device)))
@@ -155,7 +165,9 @@ def generate_lines(args, input_sections):
                 for i, sample_output in enumerate(sample_outputs):
                     model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
                     print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-                    temp_result[i].append(''.join([x for x in model_out.strip().split("\n")[len(prompt.split("\n")) - 1] if x.isalpha() or x.isspace() or x == '.' or x == ',']).strip())
+                    model_out = extrat_model_out(prompt, model_out)
+                    print(f"\n{model_out}\n")
+                    temp_result[i].append(model_out)
                     
             else:
                 prompt = prepare_prompt(wout_dataset_type, structure, line_i)
@@ -178,9 +190,10 @@ def generate_lines(args, input_sections):
                 for i, sample_output in enumerate(sample_outputs):
                     model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
                     print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
+                    model_out = extrat_model_out(prompt, model_out)
+                    print(f"\n{model_out}\n")
+                    temp_result[i].append(model_out)
 
-                    temp_result[i].append(''.join([x for x in model_out.strip().split("\n")[len(prompt.split("\n")) - 1] if x.isalpha() or x.isspace()]).strip())
-                    
                     if i == 0 and temp_result[i][line_i] != "":
                         syll_output = syllabify(temp_result[i][line_i])
                         known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
