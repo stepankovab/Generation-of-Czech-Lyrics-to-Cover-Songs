@@ -6,7 +6,7 @@ class SameWordRhymeTagger():
     def __init__(self, lang = "cs") -> None:
         self.lang = lang
         self.rt = RhymeTagger()
-        self.rt.load_model(self.lang)
+        self.rt.load_model(self.lang, verbose=False)
 
     def tag(self, poem, output_format = 3):
         scheme = self.rt.tag(poem=poem, output_format=output_format)
