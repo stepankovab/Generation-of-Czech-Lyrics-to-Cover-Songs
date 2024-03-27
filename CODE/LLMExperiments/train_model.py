@@ -3,8 +3,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from dataset_types import DatasetType
 from torch.utils.data import DataLoader
 import os
-from lines_lyrics_dataset import LinesLyricsDataset
-from whole_lyrics_dataset import WholeLyricsDataset
+from lyrics_datasets import LinesLyricsDataset, WholeLyricsDataset
 from transformers import get_linear_schedule_with_warmup
 from transformers import AdamW
 import argparse
