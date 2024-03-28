@@ -170,7 +170,7 @@ class Evaluator():
         return sum(similarities_per_line) / len(similarities_per_line)
 
 
-    def get_keyword_semantic_similarity(self, keywords, output, keywords_in_en = True, output_in_en = True):
+    def get_keyword_semantic_similarity(self, keywords, output_lines, keywords_in_en = True, output_in_en = True):
         if not keywords_in_en:
             # Keywords to english
             keywords_joined = ", ".join(keywords)    
@@ -182,14 +182,14 @@ class Evaluator():
 
         if not output_in_en:
             # output to english
-            lyrics_joined = ", ".join(output)    
+            lyrics_joined = ", ".join(output_lines)    
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
             response = requests.post(url, data = {"input_text": lyrics_joined})
             response.encoding='utf8'
-            output = response.text[:-1]
+            output_lines = response.text[:-1]
 
         # Extract new keywords
-        out_keywords = [x[0] for x in self.kw_model.extract_keywords(output)]
+        out_keywords = [x[0] for x in self.kw_model.extract_keywords(output_lines)]
         if out_keywords == []:
             out_keywords = [""]
 
