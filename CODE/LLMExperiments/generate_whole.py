@@ -2,7 +2,9 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from english_structure_extractor import SectionStructure
+from postprocessing import Postprocesser
 import os
+import re
 
 
 
@@ -53,6 +55,7 @@ def extract_model_out(out_lines, prompt, dataset_type, structure):
     output = []
     for line_i in range(start_of_text, min(len(out_lines), structure.num_lines + start_of_text)):
         line = out_lines[line_i]
+        line = re.sub(',', '', line)
         if not line.strip():
             output.append("")
             continue
@@ -102,6 +105,7 @@ def generate_whole(args, input_sections):
     model.eval()
 
     structure = SectionStructure()
+    postprocesser = Postprocesser()
 
     result_pairs = []
 
@@ -119,22 +123,22 @@ def generate_whole(args, input_sections):
         sample_outputs = model.generate(**inputs,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
-            num_return_sequences=5,
+            num_return_sequences=args.out_per_gerenation,
             penalty_alpha=0.6,
             max_new_tokens=512,
             stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
             )
+        
+        out_lyrics = []
+        for sample_output in sample_outputs:
+            out_lyrics.append(extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt, dataset_type, structure))
+        model_out = postprocesser.choose_best_section(out_lyrics, structure)
+        
+        print(f"\n{', '.join(model_out)}\n")
 
-        # generated sequence
-        for i, sample_output in enumerate(sample_outputs):
-            model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
-            print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-
-            output = extract_model_out(model_out, prompt, dataset_type, structure)
-
-            result_pairs.append((','.join(output), structure.copy()))
-            for line in output:
-                print(line)
-            print()
+        result_pairs.append((','.join(model_out), structure.copy()))
+        for line in model_out:
+            print(line)
+        print()
 
     return result_pairs

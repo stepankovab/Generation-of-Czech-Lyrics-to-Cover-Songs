@@ -2,8 +2,10 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from english_structure_extractor import SectionStructure
+from postprocessing import Postprocesser
 from eval.syllabator import syllabify
 import os
+import re
 import requests
 
 
@@ -62,20 +64,17 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
     return prompt
 
 
-def extrat_model_out(prompt, model_out):
+def extract_model_out(model_out, prompt):
     if len(model_out) <= len(prompt):
         return ""
     
     assert model_out[:len(prompt)] == prompt
     model_out = model_out[len(prompt):]
     out_lines = model_out.strip().split("\n")
-    return out_lines[0]
+    return re.sub(',', '', out_lines[0])
 
 
 def generate_lines(args, input_sections):
-
-    LINES_PER_GENERATION = 5
-
     wout_dataset_type = DatasetType(args.dataset_type)
 
     if wout_dataset_type == DatasetType.CHARACTERISTIC_WORDS:
@@ -131,6 +130,7 @@ def generate_lines(args, input_sections):
     w_model.eval()
 
     structure = SectionStructure()
+    postprocesser = Postprocesser()
 
     result_pairs = []
 
@@ -138,7 +138,7 @@ def generate_lines(args, input_sections):
         # Load the structure of the english text
         structure.fill(input_section) 
 
-        temp_result = [[] for x in range(LINES_PER_GENERATION)]
+        result = []
 
         known_endings = {}
 
@@ -155,20 +155,18 @@ def generate_lines(args, input_sections):
                 sample_outputs = w_model.generate(**inputs,
                     do_sample=True,
                     pad_token_id=tokenizer.eos_token_id,
-                    num_return_sequences=LINES_PER_GENERATION,
+                    num_return_sequences=args.out_per_gerenation,
                     penalty_alpha=0.6,
                     max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
+                
+                out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True)
+                
+                print(f"\n{model_out}\n")
+                result.append(model_out)
 
-                # generated sequence
-                for i, sample_output in enumerate(sample_outputs):
-                    model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
-                    print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-                    model_out = extrat_model_out(prompt, model_out)
-                    print(f"\n{model_out}\n")
-                    temp_result[i].append(model_out)
-                    
             else:
                 prompt = prepare_prompt(wout_dataset_type, structure, line_i)
 
@@ -180,29 +178,25 @@ def generate_lines(args, input_sections):
                 sample_outputs = wout_model.generate(**inputs,
                     do_sample=True,
                     pad_token_id=tokenizer.eos_token_id,
-                    num_return_sequences=LINES_PER_GENERATION,
+                    num_return_sequences=args.out_per_gerenation,
                     penalty_alpha=0.6,
                     max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
+                
+                out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True)
+                
+                print(f"\n{model_out}\n")
+                result.append(model_out)
 
-                # generated sequence
-                for i, sample_output in enumerate(sample_outputs):
-                    model_out = tokenizer.decode(sample_output.tolist(), skip_special_tokens=True)
-                    print("\n{}\n\n{}\n".format(i+1, model_out)) # tokenizer.decode(sample_output, skip_special_tokens=True)
-                    model_out = extrat_model_out(prompt, model_out)
-                    print(f"\n{model_out}\n")
-                    temp_result[i].append(model_out)
+                syll_output = syllabify(model_out)
+                known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
 
-                    if i == 0 and temp_result[i][line_i] != "":
-                        syll_output = syllabify(temp_result[i][line_i])
-                        known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
-
-        for result in temp_result:
-            result_pairs.append((','.join(result), structure.copy()))
-            for line in result:
-                print(line)
-            print()
+        result_pairs.append((','.join(result), structure.copy()))
+        for line in result:
+            print(line)
+        print()
 
     return result_pairs
 

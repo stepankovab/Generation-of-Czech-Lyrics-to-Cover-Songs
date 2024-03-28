@@ -7,7 +7,7 @@ class Postprocesser():
     def __init__(self, evaluator = Evaluator()) -> None:
         self.evaluator = evaluator
 
-    def choose_best_line(self, lines_list, syll_dist_tollerance = 0.2, syllables_in = None, ending_in = None, keywords_in = None, text_in = None, text_in_english = True):
+    def choose_best_line(self, lines_list, syll_dist_tollerance = 0.2, syllables_in = None, ending_in = None, keywords_in = None, text_in = None, keywords_in_en=False, text_in_english=False):
         if len(lines_list) == 0:
             return ""
         if syllables_in == None and ending_in == None and keywords_in == None and text_in == None:
@@ -38,7 +38,7 @@ class Postprocesser():
             similarity = 0
             measurings = 0
             if keywords_in != None:
-                similarity += self.evaluator.get_keyword_semantic_similarity([keywords_in], [lines_list[line_i]], keywords_in_en=False, output_in_en=False)
+                similarity += self.evaluator.get_keyword_semantic_similarity([keywords_in], [lines_list[line_i]], keywords_in_en=keywords_in_en, output_in_en=False)
                 measurings += 1
             if text_in != None:
                 similarity += self.evaluator.get_semantic_similarity(lines_list[line_i], text_in, text1_in_en=False, text2_in_en=text_in_english)
@@ -60,6 +60,7 @@ class Postprocesser():
 
         for i in ordered_indicies:
             print(lines_list[i])
+            print()
 
         return lines_list[ordered_indicies[0]]
 
@@ -72,7 +73,7 @@ class Postprocesser():
         rhyme_multip_factor = 10 / (1 - min(rhyme_scheme_agree_tollerance, 0.9999))
         for line_i in range(len(lyrics_list)):
             scores[line_i] += syll_multip_factor * scores_dict["syll_dist"][line_i]
-            scores[line_i] += rhyme_multip_factor * scores_dict["rhyme_scheme_agree"][line_i]
+            scores[line_i] += rhyme_multip_factor * (1 - scores_dict["rhyme_scheme_agree"][line_i])
             scores[line_i] += (1 - ((scores_dict["semantic_sim"][line_i] + 
                                      scores_dict["keyword_sim"][line_i] + 
                                      scores_dict["line_keyword_sim"][line_i])/3))
@@ -85,7 +86,7 @@ class Postprocesser():
 
         return lyrics_list[ordered_indicies[0]]
 
-    def correct_length_word(self):
+    def correct_length_by_word(self):
         pass
 
     def correct_length_by_rhyme(self):
@@ -102,10 +103,5 @@ class Postprocesser():
 
 
 
-
-
-
-
-pc = Postprocesser()
-pc.choose_best_line(["tohle je test", "je to zkouska", "tohle neni trest"], syllables_in=4, ending_in="est", keywords_in="test", text_in="Je to test", text_in_english=False)
-
+# pc = Postprocesser()
+# pc.choose_best_line(["tohle je test", "je to zkouska", "tohle neni trest"], syllables_in=4, ending_in="est", keywords_in="test", text_in="Je to test", text_in_english=False)
