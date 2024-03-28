@@ -61,10 +61,7 @@ class Evaluator():
                         "line_keyword_sim" : []}
 
         for output, structure in outputs_w_structures:
-            output = output.split(",")
-
-            if len(output) != structure.num_lines:
-                continue            
+            output = output.split(",")         
 
             out_syllables = []
             out_endings = []
@@ -96,10 +93,10 @@ class Evaluator():
             # syllable accuracy
             syll_accuracy = 0
             positive = 0
-            for i in range(len(out_syllables)):
-                if out_syllables[i] == structure.syllables[i]:
-                    positive += 1
-            if len(out_syllables) > 0:
+            if len(structure.syllables) == len(out_syllables) and len(out_syllables) > 0:
+                for i in range(len(out_syllables)):
+                    if out_syllables[i] == structure.syllables[i]:
+                        positive += 1
                 syll_accuracy = positive / len(out_syllables)
             results_dict["syll_acc"].append(syll_accuracy)
 
@@ -140,6 +137,8 @@ class Evaluator():
         if not keywords_in_en:
             # Keywords to english
             for i in range(len(keywords)):
+                if not keywords[i].strip():
+                    continue
                 url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
                 response = requests.post(url, data = {"input_text": keywords[i]})
                 response.encoding='utf8'
@@ -149,6 +148,8 @@ class Evaluator():
             # output to english
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
             for i in range(len(output)):
+                if not output[i].strip():
+                    continue
                 response = requests.post(url, data = {"input_text": output[i]})
                 response.encoding='utf8'
                 output[i] = response.text[:-1]
@@ -163,6 +164,10 @@ class Evaluator():
         print(out_keywords)
         print()
 
+        if len(out_keywords) != len(keywords):
+            print("keywords error")
+            return 0
+
         similarities_per_line = []
         for i in range(len(keywords)):
             similarities_per_line.append(self.get_semantic_similarity(keywords[i], out_keywords[i]))
@@ -171,20 +176,18 @@ class Evaluator():
 
 
     def get_keyword_semantic_similarity(self, keywords, output_lines, keywords_in_en = True, output_in_en = True):
-        if not keywords_in_en:
-            # Keywords to english
-            keywords_joined = ", ".join(keywords)    
+        if not keywords_in_en and ', '.join(keywords).strip():
+            # Keywords to english  
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": keywords_joined})
+            response = requests.post(url, data = {"input_text": ', '.join(keywords)})
             response.encoding='utf8'
             en_keywords_joined = response.text[:-1]
             keywords = en_keywords_joined.split(", ")
 
-        if not output_in_en:
+        if not output_in_en and ', '.join(output_lines).strip():
             # output to english
-            lyrics_joined = ", ".join(output_lines)    
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": lyrics_joined})
+            response = requests.post(url, data = {"input_text": ', '.join(output_lines)})
             response.encoding='utf8'
             output_lines = response.text[:-1]
 
@@ -205,13 +208,13 @@ class Evaluator():
         Embed two texts and get their cosine similarity
         """
 
-        if not text1_in_en:
+        if not text1_in_en and ' '.join(text1).strip():
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
             response = requests.post(url, data = {"input_text": ' '.join(text1)})
             response.encoding='utf8'
             text1 = response.text[:-1]
 
-        if not text2_in_en:
+        if not text2_in_en and ' '.join(text2).strip():
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
             response = requests.post(url, data = {"input_text": ' '.join(text2)})
             response.encoding='utf8'
@@ -229,7 +232,7 @@ class Evaluator():
         
         if len(syllables) != len(out_syllables):
             print("syll error")
-            return 100
+            return 10
 
         for i in range(len(out_syllables)):
             distance += (abs(syllables[i] - out_syllables[i]) / max(syllables[i], 1)) + (abs(syllables[i] - out_syllables[i]) / max(out_syllables[i], 1))
