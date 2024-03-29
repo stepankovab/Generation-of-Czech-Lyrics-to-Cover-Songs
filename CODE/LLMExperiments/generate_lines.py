@@ -31,21 +31,19 @@ class StoppingSequenceCriteria(StoppingCriteria):
         yield self
 
 def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = None):
-    if dataset_type == DatasetType.CHARACTERISTIC_WORDS:
-        prompt = f"{structure.line_keywords[line_i]} # "
-    elif dataset_type == DatasetType.ENDS_AND_WORDS:
-        prompt = f"{structure.line_keywords[line_i]}\n{ending} # "
-    elif dataset_type == DatasetType.BASELINE:
-        prompt = ""
-    elif dataset_type == DatasetType.END_OF_LINES:
-        prompt = f"{ending} # "
+    if dataset_type == DatasetType.BASELINE:
+        prompt = " "
     elif dataset_type == DatasetType.SYLLABLES:
         prompt = f"{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.SYLLABLES_AND_ENDS:
+    elif dataset_type == DatasetType.SYLLABLES_ENDS:
         prompt = f"{structure.syllables[line_i]} # {ending} # "
-    elif dataset_type == DatasetType.SYLLABLES_AND_WORDS:
+    elif dataset_type == DatasetType.WORDS:
+        prompt = f"{structure.line_keywords[line_i]} # "
+    elif dataset_type == DatasetType.WORDS_ENDS:
+        prompt = f"{structure.line_keywords[line_i]}\n{ending} # "
+    elif dataset_type == DatasetType.SYLLABLES_WORDS:
         prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.SYLLABLES_ENDS_WORDS:
+    elif dataset_type == DatasetType.SYLLABLES_WORDS_ENDS:
         prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # {ending} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
@@ -60,6 +58,10 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         translated_output_sylls = syllabify(translated_output)
         prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output}\n{structure.syllables[line_i]} # {ending} # "
+    elif dataset_type == DatasetType.FORCED_SYLLABLES:
+        prompt = f"{structure.syllables[line_i]} # "
+    elif dataset_type == DatasetType.FORCED_SYLLABLES_ENDS:
+        prompt = f"{structure.syllables[line_i]} # {ending} # "
     else:
         raise Exception(f"We don't support a Dataset type {dataset_type}")
 
@@ -79,14 +81,14 @@ def extract_model_out(model_out, prompt):
 def generate_lines(args, input_sections):
     wout_dataset_type = DatasetType(args.dataset_type)
 
-    if wout_dataset_type == DatasetType.CHARACTERISTIC_WORDS:
-        w_dataset_type = DatasetType.ENDS_AND_WORDS
+    if wout_dataset_type == DatasetType.WORDS:
+        w_dataset_type = DatasetType.WORDS_ENDS
     elif wout_dataset_type == DatasetType.BASELINE:
         w_dataset_type = DatasetType.END_OF_LINES
     elif wout_dataset_type == DatasetType.SYLLABLES:
-        w_dataset_type = DatasetType.SYLLABLES_AND_ENDS
-    elif wout_dataset_type == DatasetType.SYLLABLES_AND_WORDS:
-        w_dataset_type = DatasetType.SYLLABLES_ENDS_WORDS
+        w_dataset_type = DatasetType.SYLLABLES_ENDS
+    elif wout_dataset_type == DatasetType.SYLLABLES_WORDS:
+        w_dataset_type = DatasetType.SYLLABLES_WORDS_ENDS
     elif wout_dataset_type == DatasetType.UNRHYMED_LEN:
         w_dataset_type = DatasetType.UNRHYMED_LEN_END
     else:

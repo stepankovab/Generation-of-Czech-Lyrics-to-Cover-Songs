@@ -33,15 +33,21 @@ class StoppingSequenceCriteria(StoppingCriteria):
 
 def prepare_prompt(dataset_type, structure: SectionStructure):
     if dataset_type == DatasetType.BASELINE:
-            prompt = ""
+            prompt = " "
     elif dataset_type == DatasetType.SYLLABLES:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
-    elif dataset_type == DatasetType.CHARACTERISTIC_WORDS:
+    elif dataset_type == DatasetType.WORDS:
         prompt = f"{structure.num_lines} # {' '.join(structure.keywords)} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_AND_WORDS:
+    elif dataset_type == DatasetType.SYLLABLES_WORDS:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join(structure.keywords)} #\n"
     elif dataset_type == DatasetType.FORCED_SYLLABLES:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
+    elif dataset_type == DatasetType.RHYME_SCHEME:
+        prompt = f"{' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
+    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
+    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME_WORDS:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} # {' '.join(structure.keywords)} #\n"
     else:
         raise Exception(f"We don't support a Dataset type {dataset_type}")
 
@@ -63,7 +69,7 @@ def extract_model_out(out_lines, prompt, dataset_type, structure):
             continue
     
         line_sections = line.strip().split("#")
-        if dataset_type in [DatasetType.SYLLABLES, DatasetType.CHARACTERISTIC_WORDS, DatasetType.SYLLABLES_AND_WORDS, DatasetType.FORCED_SYLLABLES]:
+        if dataset_type in [DatasetType.SYLLABLES, DatasetType.WORDS, DatasetType.SYLLABLES_WORDS, DatasetType.FORCED_SYLLABLES]:
             if len(line_sections) > 1:
                 line = ' # '.join([x.strip() for x in line_sections[1:]])
 
