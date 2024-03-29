@@ -56,6 +56,6 @@ for cat in results_dict:
 print()
 print("=" * 30)
 print()
-print(f"eval time: {(eval_stop_stamp - eval_start_stamp) * 10**3} ms")
+print(f"eval time: {(eval_stop_stamp - eval_start_stamp)} s")
 if len(input_sections) > 0:
-    print(f"generation time: {(gen_end_stamp - gen_start_stamp) * 10**3} ms, with {((gen_end_stamp - gen_start_stamp) * 10**3) / len(input_sections)} ms per lyrics section")
+    print(f"generation time: {(gen_end_stamp - gen_start_stamp)} s, with {((gen_end_stamp - gen_start_stamp)) / len(input_sections)} s per lyrics section")
