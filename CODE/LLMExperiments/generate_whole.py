@@ -1,8 +1,10 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
+from rhymer_types import RhymerType
 from english_structure_extractor import SectionStructure
 from postprocessing import Postprocesser
+from evaluator import Evaluator
 import os
 import re
 
@@ -97,6 +99,9 @@ def generate_whole(args, input_sections):
         tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
+    
+    else:
+        raise ValueError(f"Model {args.model} is not supported.")
 
     model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
 
@@ -104,20 +109,25 @@ def generate_whole(args, input_sections):
     model.load_state_dict(state_dict=torch.load(model_path, map_location=torch.device(device)))
     model.eval()
 
-    structure = SectionStructure()
-    postprocesser = Postprocesser()
+    structure = SectionStructure(rt=RhymerType(args.rhymer))
+    postprocesser = Postprocesser(evaluator=Evaluator(rt=RhymerType(args.rhymer)))
 
     result_pairs = []
 
     for input_section in input_sections:
+        print("before structure filling")
         # Load the structure of the english text
         structure.fill(input_section) 
+
+        print("after structure filling")
 
         prompt = prepare_prompt(dataset_type, structure)
         print(prompt)
 
         inputs = tokenizer(prompt, return_tensors="pt") 
         tokenizer.encode(prompt, return_tensors="pt") #directly for input_ids
+
+        print("before generation")
 
         # model output using Top-k sampling text generation method
         sample_outputs = model.generate(**inputs,
@@ -129,10 +139,15 @@ def generate_whole(args, input_sections):
             stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
             )
         
+        print("after generation")
+        
         out_lyrics = []
         for sample_output in sample_outputs:
             out_lyrics.append(extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt, dataset_type, structure))
-        model_out = postprocesser.choose_best_section(out_lyrics, structure)
+        
+        print("before postprocessing")
+        model_out = postprocesser.choose_best_section(out_lyrics, structure, remove_add_stopwords=args.postprocess_stopwords)
+        print("after postprocessing")
         
         print(f"\n{', '.join(model_out)}\n")
 

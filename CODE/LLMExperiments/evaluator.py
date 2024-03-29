@@ -8,10 +8,11 @@ from eval.tagger import RhymeTagger
 # from rhymetagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
 from eval.same_word_tagger import SameWordRhymeTagger
+from rhymer_types import RhymerType
 
 class Evaluator():
 
-    def __init__(self, rt = SameWordRhymeTagger(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')) -> None:
+    def __init__(self, rt = RhymeFinder(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2'), verbose = False) -> None:
         """
         Parameters
         ---------------
@@ -22,7 +23,17 @@ class Evaluator():
         
         self.kw_model = kw_model
         self.embed_model = embed_model
+
+        if isinstance(rt, RhymerType):
+            if rt == RhymerType.RHYMETAGGER:
+                rt = RhymeTagger()
+            elif rt == RhymerType.RHYMEFINDER:
+                rt = RhymeFinder()
+            elif rt == RhymerType.SAME_WORD_RHYMETAGGER:
+                rt = SameWordRhymeTagger()
+
         self.rt = rt
+        self.verbose = verbose
 
         if isinstance(self.rt, RhymeTagger):
             self.rt.load_model("cs", verbose=False)
@@ -61,6 +72,9 @@ class Evaluator():
                         "line_keyword_sim" : []}
 
         for output, structure in outputs_w_structures:
+            if self.verbose:
+                print("=" * 30 + "\n")
+
             output = output.split(",")         
 
             out_syllables = []
@@ -74,14 +88,13 @@ class Evaluator():
                     out_endings.append("")
                     continue
 
-                line = line.split("#")[-1].strip()
+                syllabified_line = syllabify(line)
 
-                if not line:
+                if len(syllabified_line) == 0:
                     out_syllables.append(0)
                     out_endings.append("")
                     continue
 
-                syllabified_line = syllabify(line)
                 out_syllables.append(len(syllabified_line))
                 out_endings.append(syllabified_line[-1][-min(len(syllabified_line[-1]), 3):])
 
@@ -160,12 +173,14 @@ class Evaluator():
             line_keywords = [x[0] for x in self.kw_model.extract_keywords(output[i])]
             out_keywords.append(' '.join(line_keywords[:min(len(line_keywords), 2)]))
 
-        print(keywords)
-        print(out_keywords)
-        print()
+        if self.verbose:
+            print(keywords)
+            print(out_keywords)
+            print()
 
         if len(out_keywords) != len(keywords):
-            print("keywords error")
+            if self.verbose:
+                print("keywords error")
             return 0
 
         similarities_per_line = []
@@ -195,10 +210,11 @@ class Evaluator():
         out_keywords = [x[0] for x in self.kw_model.extract_keywords(output_lines)]
         if out_keywords == []:
             out_keywords = [""]
-
-        print(keywords)
-        print(out_keywords)
-        print()
+            
+        if self.verbose:
+            print(keywords)
+            print(out_keywords)
+            print()
 
         return self.get_semantic_similarity(out_keywords, keywords)
 
@@ -231,7 +247,8 @@ class Evaluator():
         distance = 0
         
         if len(syllables) != len(out_syllables):
-            print("syll error")
+            if self.verbose:
+                print("syll error")
             return 10
 
         for i in range(len(out_syllables)):
@@ -261,7 +278,8 @@ class Evaluator():
             assert len(desired_scheme) == len(new_scheme)
             assert len(desired_scheme) > 0
         except:
-            print("rhyme error")
+            if self.verbose:
+                print("rhyme error")
             return 0
 
         desired_edges = set()
@@ -275,6 +293,11 @@ class Evaluator():
                     new_edges.add((i,j))
 
         edge_agreement = desired_edges.intersection(new_edges)
+
+        if self.verbose:
+            print(desired_scheme)
+            print(new_scheme)
+            print()
 
         if len(desired_edges) == 0:
             return 1
@@ -312,144 +335,3 @@ class Evaluator():
 
         return rhymes
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def eval_from_first_line(self, model_output):
-        """
-        Evaluate model outputs based on syllables, rhymes and semantics criteria read from first line
-
-        Parameters
-        --------------
-        model_output: The output of a model
-
-        Returns
-        --------------
-        results
-        """
-        model_output = model_output.split("\n")
-
-        eval_info = [x.strip() for x in model_output[0].split("#") if x.strip()]
-        if len(eval_info) == 0:
-            return None, None, None, None
-        if len(eval_info) > 0:
-            syllables = [int(x) for x in eval_info[0].split(" ")]
-        if len(eval_info) > 1:
-            keywords = eval_info[1].split(" ")
-        if len(eval_info) > 2:
-            endings = eval_info[2].split(" ")
-
-        expected_length = len(syllables)
-        length_ratio = (len(model_output) - 1) / expected_length
-
-        out_syllables = []
-        out_endings = []
-        out_lines = []
-
-        for line_i in range(1, min(expected_length + 1,len(model_output))):
-            line = model_output[line_i]
-
-            if not line.strip():
-                continue
-
-            line = line.split("#")[-1].strip()
-
-            if not line.strip():
-                continue
-
-            out_lines.append(line)
-
-            syllabified_line = syllabify(line)
-
-            out_syllables.append(len(syllabified_line))
-            # out_endings.append(syllabified_line[-1])
-
-        # syllable distance
-        syll_distance = None
-        if len(syllables) > 0:
-            syll_distance = self.get_section_syllable_distance(syllables, out_syllables)
-
-        # syllable accuracy
-        syll_accuracy = None
-        if len(syllables) > 0:
-            positive = 0
-            for i in range(len(out_syllables)):
-                if out_syllables[i] == syllables[i]:
-                    positive += 1
-            syll_accuracy = positive / len(out_syllables)
-
-        # line endings accuracy
-        end_accuracy = None
-        if len(endings) > 0:
-            positive = 0
-            for i in range(len(out_endings)):
-                if out_endings[i] == endings[i]:
-                    positive += 1
-            end_accuracy = positive / len(out_endings)
-
-        # keyword similarity
-        keyword_similarity = None
-        if len(keywords) > 0:
-            keyword_similarity, out_keywords = self.get_keyword_semantic_similarity(keywords, out_lines)
-
-        print(syllables)
-        print(out_syllables)
-        print()
-        print(endings)
-        print(out_endings)
-        print()
-
-        return length_ratio, syll_distance, syll_accuracy, end_accuracy, keyword_similarity
-
-
-
-
-
-
-
-
-# evaluator = Evaluator()
-
-
-
-# output = ["4 6 4 8 # čas půlnoc komáři kostel kytka #","6 # co se v kostele děje","4 # co se v kostele děje","4 # co se v kostele děje","8 # co z kostela plyne k ránu","8 # co se v kostele dít má","8 # co z kostela plyne k ránu do noci","6 # co z kostela vychází k ránu","8 # co z kostela odchází k ránu do noci","4 # co z kostela plyne k ránu"]
-
-
-# evaluator.eval_output(output)

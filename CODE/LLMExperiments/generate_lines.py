@@ -3,6 +3,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from english_structure_extractor import SectionStructure
 from postprocessing import Postprocesser
+from evaluator import Evaluator
+from rhymer_types import RhymerType
 from eval.syllabator import syllabify
 import os
 import re
@@ -118,6 +120,9 @@ def generate_lines(args, input_sections):
         wout_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         w_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
+    
+    else:
+        raise ValueError(f"Model {args.model} is not supported.")
 
     wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
@@ -129,8 +134,8 @@ def generate_lines(args, input_sections):
     wout_model.eval()
     w_model.eval()
 
-    structure = SectionStructure()
-    postprocesser = Postprocesser()
+    structure = SectionStructure(rt=RhymerType(args.rhymer))
+    postprocesser = Postprocesser(evaluator=Evaluator(rt=RhymerType(args.rhymer)))
 
     result_pairs = []
 
@@ -162,7 +167,7 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)
@@ -185,13 +190,14 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)
 
                 syll_output = syllabify(model_out)
-                known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
+                if len(syll_output) > 0:
+                    known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
 
         result_pairs.append((','.join(result), structure.copy()))
         for line in result:
