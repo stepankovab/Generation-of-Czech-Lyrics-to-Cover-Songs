@@ -71,13 +71,16 @@ class Postprocesser():
         return lines_list[ordered_indicies[0]]
 
     def choose_best_section(self, lyrics_list, structure : SectionStructure, syll_dist_tollerance = 0.2, rhyme_scheme_agree_tollerance = 0.5, remove_add_stopwords=False):
+        if isinstance(lyrics_list, str):
+            lyrics_list = [lyrics_list]
+            
         if remove_add_stopwords:
             for i in range(len(lyrics_list)):
                 print(i)
                 lyrics_list[i] = self.correct_length_remove_add_stopwords(lyrics_list[i], structure.syllables)
             print("stop words removed")
 
-        scores_dict = self.evaluator.evaluate_outputs_structure([(','.join(lyrics), structure) for lyrics in lyrics_list])
+        scores_dict = self.evaluator.evaluate_outputs_structure([(','.join(lyrics), structure) for lyrics in lyrics_list if len(lyrics) < (structure.num_lines * 2)])
         scores = [0 for _ in range(len(lyrics_list))]
 
         # pick the best match
@@ -105,6 +108,9 @@ class Postprocesser():
         pass
 
     def correct_length_remove_add_stopwords(self, lines, lengths, keep_last_word=True):
+        if isinstance(lines, str):
+            lines = [lines]
+
         if len(lines) != len(lengths):
             return lines
         
@@ -130,7 +136,7 @@ class Postprocesser():
                         words_to_remove.append(word)
                 line, difference = self._find_best_removal(line, words_to_remove, difference)
 
-            if difference < 0:
+            if difference < 0 and line.strip():
                 if difference == -1:
                     prefix = random.choice(["a", "tak", "že", "co", "dál"])
                 if difference == -2:
