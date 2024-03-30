@@ -5,22 +5,23 @@ from rhymer_types import RhymerType
 from english_structure_extractor import SectionStructure
 from postprocessing import Postprocesser
 from evaluator import Evaluator
+from lyrics_datasets import prepare_prompt_whole, extract_output_whole
 import os
 import re
 
 
 
 class StoppingSequenceCriteria(StoppingCriteria):
-    def __init__(self, prompt, tokenizer):
+    def __init__(self, prompt, tokenizer, desired_lines):
         self.prompt=prompt
         self.tokenizer = tokenizer
-        self.number_of_lines = len(prompt.split("#")[0].strip().split(" "))
+        self.desired_lines = desired_lines
 
     def __call__(self, input_ids, scores, **kwargs):
         generated_text = self.tokenizer.decode(input_ids[0])
         generated_text = generated_text.replace(self.prompt,'')
         generated_lines = generated_text.strip().split("\n")
-        if len(generated_lines) > self.number_of_lines:
+        if len(generated_lines) > self.desired_lines:
             return True  # Stop generation
         return False  # Continue generation
 
@@ -30,52 +31,6 @@ class StoppingSequenceCriteria(StoppingCriteria):
     def __iter__(self):
         yield self
 
-
-def prepare_prompt(dataset_type, structure: SectionStructure):
-    if dataset_type == DatasetType.BASELINE:
-            prompt = " "
-    elif dataset_type == DatasetType.SYLLABLES:
-        prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
-    elif dataset_type == DatasetType.WORDS:
-        prompt = f"{structure.num_lines} # {' '.join(structure.keywords)} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_WORDS:
-        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join(structure.keywords)} #\n"
-    elif dataset_type == DatasetType.FORCED_SYLLABLES:
-        prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
-    elif dataset_type == DatasetType.RHYME_SCHEME:
-        prompt = f"{' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME:
-        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME_WORDS:
-        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} # {' '.join(structure.keywords)} #\n"
-    else:
-        raise Exception(f"We don't support a Dataset type {dataset_type}")
-
-    return prompt
-
-
-def extract_model_out(out_lines, prompt, dataset_type, structure):
-    out_lines = out_lines.split("\n")
-    start_of_text = 1
-    if not prompt.strip():
-        start_of_text = 0
-
-    output = []
-    for line_i in range(start_of_text, min(len(out_lines), structure.num_lines + start_of_text)):
-        line = out_lines[line_i]
-        line = re.sub(',', '', line)
-        if not line.strip():
-            output.append("")
-            continue
-    
-        line_sections = line.strip().split("#")
-        if dataset_type in [DatasetType.SYLLABLES, DatasetType.WORDS, DatasetType.SYLLABLES_WORDS, DatasetType.FORCED_SYLLABLES]:
-            if len(line_sections) > 1:
-                line = ' # '.join([x.strip() for x in line_sections[1:]])
-
-        output.append(line)
-        
-    return output
 
 def generate_whole(args, input_sections):
     
@@ -96,18 +51,13 @@ def generate_whole(args, input_sections):
         model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
         tokenizer.model_max_length=1024
 
-    elif args.model == "Mistral_czech":
-        tokenizer = AutoTokenizer.from_pretrained("simecek/cswikimistral_0.1")
-        model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1")
-        tokenizer.model_max_length=1024
-
     elif args.model == "tinyLlama":
         tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         tokenizer.model_max_length=1024
     
     else:
-        raise ValueError(f"Model {args.model} is not supported.")
+        raise ValueError(f"Model {args.model} is not supported with generation mode 'whole'.")
 
     model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
 
@@ -127,7 +77,7 @@ def generate_whole(args, input_sections):
 
         print("after structure filling")
 
-        prompt = prepare_prompt(dataset_type, structure)
+        prompt = prepare_prompt_whole(dataset_type, structure)
         print(prompt)
 
         inputs = tokenizer(prompt, return_tensors="pt") 
@@ -138,18 +88,21 @@ def generate_whole(args, input_sections):
         # model output using Top-k sampling text generation method
         sample_outputs = model.generate(**inputs,
             do_sample=True,
-            pad_token_id=tokenizer.eos_token_id,
+            top_p=0.95,
+            repetition_penalty=1.0,
+            temperature=0.8,
+            max_new_tokens=256,
             num_return_sequences=args.out_per_gerenation,
+            pad_token_id=tokenizer.eos_token_id,
             penalty_alpha=0.6,
-            max_new_tokens=512,
-            stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
+            stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer, structure.num_lines),
             )
         
         print("after generation")
         
         out_lyrics = []
         for sample_output in sample_outputs:
-            out_lyrics.append(extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt, dataset_type, structure))
+            out_lyrics.append(extract_output_whole(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt, dataset_type, structure))
         
         print("before postprocessing")
         model_out = postprocesser.choose_best_section(out_lyrics, structure, remove_add_stopwords=args.postprocess_stopwords)

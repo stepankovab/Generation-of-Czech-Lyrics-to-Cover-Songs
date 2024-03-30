@@ -1,7 +1,9 @@
 import os
 import json
+import re
 from dataset_types import DatasetType
 from torch.utils.data import Dataset
+from english_structure_extractor import SectionStructure
 from eval.syllabator import dashed_syllabified_line, syllabify
 
 class LinesLyricsDataset(Dataset):
@@ -186,3 +188,60 @@ class WholeLyricsDataset(Dataset):
 
     def __getitem__(self, item):
         return self.lyrics_list[item]
+    
+
+def prepare_prompt_whole(dataset_type, structure: SectionStructure):
+    if dataset_type == DatasetType.BASELINE:
+            prompt = " "
+    elif dataset_type == DatasetType.SYLLABLES:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
+    elif dataset_type == DatasetType.WORDS:
+        prompt = f"{structure.num_lines} # {' '.join(structure.keywords)} #\n"
+    elif dataset_type == DatasetType.SYLLABLES_WORDS:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join(structure.keywords)} #\n"
+    elif dataset_type == DatasetType.FORCED_SYLLABLES:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
+    elif dataset_type == DatasetType.RHYME_SCHEME:
+        prompt = f"{' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
+    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
+    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME_WORDS:
+        prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} # {' '.join(structure.keywords)} #\n"
+    else:
+        raise Exception(f"We don't support a Dataset type {dataset_type}")
+
+    return prompt
+
+
+def extract_output_whole(out_lines, prompt, dataset_type, structure):
+    
+    print("+++++++++++++++++++++++++\ndetokenized text: ")
+    print(out_lines.replace(prompt,''))
+    print()
+
+    out_lines = out_lines.strip().split("\n")
+    start_of_text = len(prompt.strip().split("\n"))
+    if not prompt.strip():
+        start_of_text = 0
+
+    output = []
+    for line_i in range(start_of_text, min(len(out_lines), structure.num_lines + start_of_text)):
+        line = out_lines[line_i]
+        line = re.sub(',', '', line)
+        if not line.strip():
+            output.append("")
+            continue
+    
+        line_sections = line.strip().split("#")
+        if dataset_type in [DatasetType.SYLLABLES, DatasetType.SYLLABLES_WORDS, DatasetType.FORCED_SYLLABLES, DatasetType.RHYME_SCHEME]:
+            if len(line_sections) > 1:
+                line = ' # '.join([x.strip() for x in line_sections[1:]])
+        if dataset_type in [DatasetType.SYLLABLES_RHYME_SCHEME, DatasetType.SYLLABLES_RHYME_SCHEME_WORDS]:
+            if len(line_sections) > 2:
+                line = ' # '.join([x.strip() for x in line_sections[2:]])
+            elif len(line_sections) > 1:
+                line = ' # '.join([x.strip() for x in line_sections[1:]])
+
+        output.append(line)
+
+    return output
