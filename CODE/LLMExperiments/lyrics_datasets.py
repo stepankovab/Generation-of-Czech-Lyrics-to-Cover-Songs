@@ -3,7 +3,6 @@ import json
 import re
 from dataset_types import DatasetType
 from torch.utils.data import Dataset
-from english_structure_extractor import SectionStructure
 from eval.syllabator import dashed_syllabified_line, syllabify
 
 class LinesLyricsDataset(Dataset):
@@ -190,7 +189,7 @@ class WholeLyricsDataset(Dataset):
         return self.lyrics_list[item]
     
 
-def prepare_prompt_whole(dataset_type, structure: SectionStructure):
+def prepare_prompt_whole(dataset_type, structure):
     if dataset_type == DatasetType.BASELINE:
             prompt = " "
     elif dataset_type == DatasetType.SYLLABLES:
