@@ -83,8 +83,6 @@ def generate_lines(args, input_sections):
 
     if wout_dataset_type == DatasetType.WORDS:
         w_dataset_type = DatasetType.WORDS_ENDS
-    elif wout_dataset_type == DatasetType.BASELINE:
-        w_dataset_type = DatasetType.END_OF_LINES
     elif wout_dataset_type == DatasetType.SYLLABLES:
         w_dataset_type = DatasetType.SYLLABLES_ENDS
     elif wout_dataset_type == DatasetType.SYLLABLES_WORDS:
@@ -111,12 +109,6 @@ def generate_lines(args, input_sections):
         w_model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
         tokenizer.model_max_length=1024
 
-    elif args.model == "Mistral_czech":
-        tokenizer = AutoTokenizer.from_pretrained("simecek/cswikimistral_0.1")
-        wout_model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1")
-        w_model = AutoModelForCausalLM.from_pretrained("simecek/cswikimistral_0.1")
-        tokenizer.model_max_length=1024
-
     elif args.model == "tinyLlama":
         tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         wout_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
@@ -124,7 +116,7 @@ def generate_lines(args, input_sections):
         tokenizer.model_max_length=1024
     
     else:
-        raise ValueError(f"Model {args.model} is not supported.")
+        raise ValueError(f"Model {args.model} is not supported with generation mode 'lines'.")
 
     wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
@@ -161,10 +153,13 @@ def generate_lines(args, input_sections):
                 # model output using Top-k sampling text generation method
                 sample_outputs = w_model.generate(**inputs,
                     do_sample=True,
-                    pad_token_id=tokenizer.eos_token_id,
+                    top_p=0.95,
+                    repetition_penalty=1.0,
+                    temperature=0.8,
+                    max_new_tokens=256,
                     num_return_sequences=args.out_per_gerenation,
+                    pad_token_id=tokenizer.eos_token_id,
                     penalty_alpha=0.6,
-                    max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
                 
@@ -184,10 +179,13 @@ def generate_lines(args, input_sections):
                 # model output using Top-k sampling text generation method
                 sample_outputs = wout_model.generate(**inputs,
                     do_sample=True,
-                    pad_token_id=tokenizer.eos_token_id,
+                    top_p=0.95,
+                    repetition_penalty=1.0,
+                    temperature=0.8,
+                    max_new_tokens=256,
                     num_return_sequences=args.out_per_gerenation,
+                    pad_token_id=tokenizer.eos_token_id,
                     penalty_alpha=0.6,
-                    max_new_tokens=128,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
                     )
                 
