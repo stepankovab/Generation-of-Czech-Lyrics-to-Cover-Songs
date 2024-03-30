@@ -1,8 +1,9 @@
 import os
 import json
 import numpy
+import random
 
-def HT_loader(dataset_path, language = "en", without_repetition = False):
+def HT_loader(dataset_path, language = "en", without_repetition = False, shuffle = False, seed = 31):
     lyrics_path = os.path.join(dataset_path, 'HT.json')
 
     with open(lyrics_path, "r", encoding="utf-8") as json_file:
@@ -19,6 +20,10 @@ def HT_loader(dataset_path, language = "en", without_repetition = False):
 
     if without_repetition:
         HT_lyrics = list(set(HT_lyrics))
+
+    if shuffle:
+        random.seed(seed)
+        random.shuffle(HT_lyrics)
 
     return HT_lyrics
 
