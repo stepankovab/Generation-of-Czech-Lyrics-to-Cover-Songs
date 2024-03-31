@@ -11,14 +11,14 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", default=64, type=int, help="Batch size")
 parser.add_argument("--model", default="GPT2_oscar", type=str, help="tinyLlama # GPT2_oscar # GPT2_czech_XL # Mistral_czech # ") 
-parser.add_argument("--model_path", default="CODE/LLMExperiments/trained_models", type=str, help="./trained_models # ./ #  CODE/LLMExperiments/trained_models")
+parser.add_argument("--model_path", default="./trained_models", type=str, help="./trained_models # ./ #  CODE/LLMExperiments/trained_models")
 parser.add_argument("--epochs", default=5, type=int, help="Number of epochs")
 parser.add_argument("--starting_epoch", default=0, type=int, help="epoch to load, 0 for not loading")
 parser.add_argument("--learning_rate", default=5e-4, type=float, help="Learning rate")
 parser.add_argument("--warmup_steps", default=200, type=int, help="Warmup steps")
 parser.add_argument("--generation_method", default="whole", type=str, help="whole, lines")
 parser.add_argument("--dataset_path", default="./", type=str, help="./ # DATA/Velky_zpevnik # ")
-parser.add_argument("--dataset_type", default=12, type=int, help="""Dataset type: 
+parser.add_argument("--dataset_type", default=0, type=int, help="""Dataset type: 
     BASELINE = 0
     SYLLABLES = 1
     SYLLABLES_ENDS = 2
@@ -61,7 +61,7 @@ elif args.generation_method == "whole":
 else:
     raise ValueError(f"Unsupported method: {args.generation_method}")
 
-lyrics_loader = DataLoader(dataset, batch_size=1, shuffle=True)
+lyrics_loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
 
 print(f"----------------- {args.model} ------ {DATASET_TYPE.name} ----------------")
 
@@ -71,14 +71,18 @@ if torch.cuda.is_available():
     device = 'cuda'
     torch.cuda.empty_cache()
 
-if args.model == "GPT2_oscar":
-    args.model = "lchaloupsky/czech-gpt2-oscar"
-elif args.model == "GPT2_czech_XL":
-    args.model = "BUT-FIT/Czech-GPT-2-XL-133k"
-elif args.model == "tinyLlama":
-    args.model = "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+if args.model == "OSCAR_GPT2":
+    huggingface_path = "lchaloupsky/czech-gpt2-oscar"
+elif args.model == "VUT_GPT2":
+    huggingface_path = "BUT-FIT/Czech-GPT-2-XL-133k"
+elif args.model == "TINYLLAMA":
+    huggingface_path = "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+elif args.model == "VUT_TINYLLAMA":
+    huggingface_path = "BUT-FIT/CSTinyLlama-1.2B"
+else:
+    raise ValueError(f"Model {args.model} is not supported for fine-tuning.")
 
-model, tokenizer = AutoModelForCausalLM.from_pretrained(args.model), AutoTokenizer.from_pretrained(args.model)
+model, tokenizer = AutoModelForCausalLM.from_pretrained(huggingface_path), AutoTokenizer.from_pretrained(huggingface_path)
 
 # Set special tokens if they are not already set
 if tokenizer.sep_token is None:
@@ -96,31 +100,27 @@ if args.starting_epoch != 0:
 model.train()
 optimizer = AdamW(model.parameters(), lr=args.learning_rate)
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps = args.warmup_steps, num_training_steps = args.epochs * (len(lyrics_loader) // args.batch_size))
-sum_loss = 0.0
-batch_count = 0
 
 if not os.path.exists(args.model_path):
     os.mkdir(args.model_path)
 
 for epoch in range(args.starting_epoch, args.epochs):
     print('=' * 30 + f" EPOCH {epoch} started " + '=' * 30)
-    for idx, lyrics in enumerate(lyrics_loader):
-        lyric_tens = torch.tensor(tokenizer.encode(lyrics[0])).unsqueeze(0).to(device)
+    sum_loss = 0.0
+    for idx, batch in enumerate(lyrics_loader):
+        for lyrics in batch:
+            lyric_tens = torch.tensor(tokenizer.encode(lyrics)).unsqueeze(0).to(device)
 
-        outputs = model(lyric_tens, labels=lyric_tens)
-        loss, logits = outputs[:2] 
-        sum_loss += loss.detach().data
-                     
-        loss.backward()
-        if (idx + 1) % args.batch_size == 0:
-            optimizer.step()
-            scheduler.step() 
-            optimizer.zero_grad()
-            model.zero_grad()
+            outputs = model(lyric_tens, labels=lyric_tens)
+            loss, logits = outputs[:2] 
+            sum_loss += loss.detach().data     
+            loss.backward()
 
-        if (idx + 1) % (args.batch_size * 100) == 0:
-            print(f"Epoch {epoch}, Average Loss: {sum_loss:.4f}")
-            sum_loss = 0.0
-            torch.save(model.state_dict(), os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{epoch}.pt"))
-    
+        optimizer.step()
+        scheduler.step() 
+        optimizer.zero_grad()
+        model.zero_grad()
+
+        print(f"Epoch {epoch}, Batch {idx + 1}, Average Loss: {(sum_loss/(idx + 1)):.4f}")
+
     torch.save(model.state_dict(), os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{epoch}.pt"))
