@@ -16,12 +16,52 @@ parser.add_argument("--epochs", default=5, type=int, help="Number of epochs")
 parser.add_argument("--starting_epoch", default=0, type=int, help="epoch to load, 0 for not loading")
 parser.add_argument("--learning_rate", default=5e-4, type=float, help="Learning rate")
 parser.add_argument("--warmup_steps", default=200, type=int, help="Warmup steps")
+parser.add_argument("--generation_method", default="whole", type=str, help="whole, lines")
 parser.add_argument("--dataset_path", default="./", type=str, help="./ # DATA/Velky_zpevnik # ")
-parser.add_argument("--dataset_type", default=1, type=int, help="Dataset type: BASELINE = 1, SYLLABLES = 2, END_OF_LINES = 3, CHARACTERISTIC_WORDS = 4, UNRHYMED = 5, SYLLABLES_AND_WORDS = 6, SYLLABLES_AND_ENDS = 7, ENDS_AND_WORDS = 8")
-parser.add_argument("--generation_method", default="lines", type=str, help="whole, lines")
+parser.add_argument("--dataset_type", default=12, type=int, help="""Dataset type: 
+    BASELINE = 0
+    SYLLABLES = 1
+    SYLLABLES_ENDS = 2
+    WORDS = 3
+    WORDS_ENDS = 4
+    SYLLABLES_WORDS = 5
+    SYLLABLES_WORDS_ENDS = 6
+    UNRHYMED_LEN = 7
+    UNRHYMED_LEN_END = 8
+    FORCED_SYLLABLES = 9
+    FORCED_SYLLABLES_ENDS = 10
+    RHYME_SCHEME = 11
+    SYLLABLES_RHYME_SCHEME = 12
+    SYLLABLES_RHYME_SCHEME_WORDS = 13""")
 args = parser.parse_args([] if "__file__" not in globals() else None)
 
-DATASET_TYPE = DatasetType(args.dataset_type)
+try:
+    DATASET_TYPE = DatasetType(args.dataset_type)
+except:
+    raise ValueError(f"""{args.dataset_type} does not map onto any Dataset type.\n\nBASELINE = 0
+    SYLLABLES = 1
+    SYLLABLES_ENDS = 2
+    WORDS = 3
+    WORDS_ENDS = 4
+    SYLLABLES_WORDS = 5
+    SYLLABLES_WORDS_ENDS = 6
+    UNRHYMED_LEN = 7
+    UNRHYMED_LEN_END = 8
+    FORCED_SYLLABLES = 9
+    FORCED_SYLLABLES_ENDS = 10
+    RHYME_SCHEME = 11
+    SYLLABLES_RHYME_SCHEME = 12
+    SYLLABLES_RHYME_SCHEME_WORDS = 13""")
+
+
+if args.generation_method == "lines":
+    dataset = LinesLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
+elif args.generation_method == "whole":
+    dataset = WholeLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
+else:
+    raise ValueError(f"Unsupported method: {args.generation_method}")
+
+lyrics_loader = DataLoader(dataset, batch_size=1, shuffle=True)
 
 print(f"----------------- {args.model} ------ {DATASET_TYPE.name} ----------------")
 
@@ -32,19 +72,13 @@ if torch.cuda.is_available():
     torch.cuda.empty_cache()
 
 if args.model == "GPT2_oscar":
-    tokenizer = AutoTokenizer.from_pretrained("lchaloupsky/czech-gpt2-oscar")
-    model = AutoModelForCausalLM.from_pretrained("lchaloupsky/czech-gpt2-oscar")
-    tokenizer.model_max_length=1024
-
+    args.model = "lchaloupsky/czech-gpt2-oscar"
 elif args.model == "GPT2_czech_XL":
-    tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
-    model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
-    tokenizer.model_max_length=1024
-
+    args.model = "BUT-FIT/Czech-GPT-2-XL-133k"
 elif args.model == "tinyLlama":
-    tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
-    model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
-    tokenizer.model_max_length=1024
+    args.model = "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+
+model, tokenizer = AutoModelForCausalLM.from_pretrained(args.model), AutoTokenizer.from_pretrained(args.model)
 
 # Set special tokens if they are not already set
 if tokenizer.sep_token is None:
@@ -55,15 +89,6 @@ if tokenizer.mask_token is None:
     tokenizer.add_special_tokens({'mask_token': '[MASK]'})
     
 model = model.to(device)
-
-if args.generation_method == "lines":
-    dataset = LinesLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
-elif args.generation_method == "whole":
-    dataset = WholeLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
-else:
-    raise ValueError(f"Unsupported method: {args.generation_method}")
-
-lyrics_loader = DataLoader(dataset, batch_size=1, shuffle=True)
 
 if args.starting_epoch != 0:
     model.load_state_dict(state_dict=torch.load(os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{args.starting_epoch - 1}.pt"), map_location=torch.device(device)))

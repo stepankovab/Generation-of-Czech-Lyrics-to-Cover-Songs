@@ -33,30 +33,30 @@ class LinesLyricsDataset(Dataset):
                    
         elif dataset_type == DatasetType.WORDS:
             for dat_i in dataset_dict:
+                if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
+                    continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
-                        continue
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.WORDS_ENDS:
             for dat_i in dataset_dict:
+                if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
+                    continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
-                        continue
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.SYLLABLES_WORDS:
             for dat_i in dataset_dict:
+                if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
+                    continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
-                        continue
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.SYLLABLES_WORDS_ENDS:
             for dat_i in dataset_dict:
+                if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
+                    continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
-                    if dataset_dict[dat_i]['line_keywords'][lin_i] == '':
-                        continue
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
         elif dataset_type == DatasetType.UNRHYMED_LEN:
@@ -128,7 +128,7 @@ class WholeLyricsDataset(Dataset):
 
         if dataset_type == DatasetType.BASELINE:
             for i in dataset_dict:
-                self.lyrics_list.append('\n'.join(dataset_dict[i]['lyrics']))
+                self.lyrics_list.append('\n'.join(dataset_dict[i]['lyrics']) + "\n")
 
         elif dataset_type == DatasetType.SYLLABLES:
             for dat_i in dataset_dict:
