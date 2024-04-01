@@ -9,11 +9,11 @@ from torch.optim import AdamW
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--batch_size", default=64, type=int, help="Batch size")
-parser.add_argument("--model", default="GPT2_oscar", type=str, help="tinyLlama # GPT2_oscar # GPT2_czech_XL # Mistral_czech # ") 
+parser.add_argument("--model", default="OSCAR_GPT2", type=str, help="tinyLlama # GPT2_oscar # GPT2_czech_XL # Mistral_czech # ") 
 parser.add_argument("--model_path", default="./trained_models", type=str, help="./trained_models # ./ #  CODE/LLMExperiments/trained_models")
 parser.add_argument("--epochs", default=5, type=int, help="Number of epochs")
 parser.add_argument("--starting_epoch", default=0, type=int, help="epoch to load, 0 for not loading")
+parser.add_argument("--batch_size", default=64, type=int, help="Batch size")
 parser.add_argument("--learning_rate", default=5e-4, type=float, help="Learning rate")
 parser.add_argument("--warmup_steps", default=200, type=int, help="Warmup steps")
 parser.add_argument("--generation_method", default="whole", type=str, help="whole, lines")
@@ -121,6 +121,7 @@ for epoch in range(args.starting_epoch, args.epochs):
         optimizer.zero_grad()
         model.zero_grad()
 
-        print(f"Epoch {epoch}, Batch {idx + 1}, Average Loss: {(sum_loss/(idx + 1)):.4f}")
+        if (idx + 1) % 100 == 0:
+            print(f"Epoch {epoch}, Batch {idx + 1}, Average Loss: {(sum_loss/(idx + 1)):.4f}")
 
     torch.save(model.state_dict(), os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{epoch}.pt"))
