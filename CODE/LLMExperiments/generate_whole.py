@@ -33,6 +33,9 @@ class StoppingSequenceCriteria(StoppingCriteria):
 
 
 def generate_whole(args, input_sections):
+    """
+    input section can be either string or sectionStucture
+    """
     
     dataset_type = DatasetType(args.dataset_type)
     
@@ -41,23 +44,32 @@ def generate_whole(args, input_sections):
         print("cuda available.")
         device = 'cuda'
 
-    if args.model == "GPT2_oscar":
+    if args.model == "OSCAR_GPT2":
         tokenizer = AutoTokenizer.from_pretrained("lchaloupsky/czech-gpt2-oscar")
         model = AutoModelForCausalLM.from_pretrained("lchaloupsky/czech-gpt2-oscar")
-        tokenizer.model_max_length=1024
 
-    elif args.model == "GPT2_czech_XL":
+    elif args.model == "VUT_GPT2":
         tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
         model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
-        tokenizer.model_max_length=1024
 
-    elif args.model == "tinyLlama":
+    elif args.model == "TINYLLAMA":
         tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
-        tokenizer.model_max_length=1024
     
+    elif args.model == "VUT_TINYLLAMA":
+        tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/CSTinyLlama-1.2B")
+        model = AutoModelForCausalLM.from_pretrained("BUT-FIT/CSTinyLlama-1.2B")
+
     else:
         raise ValueError(f"Model {args.model} is not supported with generation mode 'whole'.")
+
+    # Set special tokens if they are not already set
+    if tokenizer.sep_token is None:
+        tokenizer.add_special_tokens({'sep_token': '[SEP]'})
+    if tokenizer.cls_token is None:
+        tokenizer.add_special_tokens({'cls_token': '[CLS]'})
+    if tokenizer.mask_token is None:
+        tokenizer.add_special_tokens({'mask_token': '[MASK]'})
 
     model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
 
@@ -73,7 +85,10 @@ def generate_whole(args, input_sections):
     for input_section in input_sections:
         print("before structure filling")
         # Load the structure of the english text
-        structure.fill(input_section) 
+        if isinstance(input_section, SectionStructure):
+            structure = input_section
+        else:
+            structure.fill(input_section) 
 
         print("after structure filling")
 

@@ -46,16 +46,26 @@ def fewshot_and_generate(args, input_sections):
         print("cuda available.")
         device = 'cuda'
 
-    if args.model == "GPT2_oscar":
+    if args.model == "OSCAR_GPT2":
         args.model = "lchaloupsky/czech-gpt2-oscar"
-    elif args.model == "GPT2_czech_XL":
+    elif args.model == "VUT_GPT2":
         args.model = "BUT-FIT/Czech-GPT-2-XL-133k"
-    elif args.model == "tinyLlama":
+    elif args.model == "TINYLLAMA":
         args.model = "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+    elif args.model == "VUT_TINYLLAMA":
+        args.model = "BUT-FIT/CSTinyLlama-1.2B"
 
     model, tokenizer = AutoModelForCausalLM.from_pretrained(args.model), AutoTokenizer.from_pretrained(args.model)
     model.to(device)
     print(f"loaded model: {args.model}")
+
+    # Set special tokens if they are not already set
+    if tokenizer.sep_token is None:
+        tokenizer.add_special_tokens({'sep_token': '[SEP]'})
+    if tokenizer.cls_token is None:
+        tokenizer.add_special_tokens({'cls_token': '[CLS]'})
+    if tokenizer.mask_token is None:
+        tokenizer.add_special_tokens({'mask_token': '[MASK]'})
 
     n_examples = get_n_examples(args.dataset_path, dataset_type, args.nshot)
     print(n_examples)
@@ -68,8 +78,10 @@ def fewshot_and_generate(args, input_sections):
     for input_section in input_sections:
         print("before structure filling")
         # Load the structure of the english text
-        structure.fill(input_section) 
-
+        if isinstance(input_section, SectionStructure):
+            structure = input_section
+        else:
+            structure.fill(input_section) 
         print("after structure filling")
 
         prompt = prepare_prompt_whole(dataset_type, structure)

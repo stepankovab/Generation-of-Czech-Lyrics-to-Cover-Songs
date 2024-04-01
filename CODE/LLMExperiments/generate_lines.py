@@ -72,7 +72,6 @@ def extract_model_out(model_out, prompt):
     if len(model_out) <= len(prompt):
         return ""
     
-    assert model_out[:len(prompt)] == prompt
     model_out = model_out[len(prompt):]
     out_lines = model_out.strip().split("\n")
     return re.sub(',', '', out_lines[0])
@@ -97,26 +96,36 @@ def generate_lines(args, input_sections):
         print("cuda available.")
         device = 'cuda'
 
-    if args.model == "GPT2_oscar":
+    if args.model == "OSCAR_GPT2":
         tokenizer = AutoTokenizer.from_pretrained("lchaloupsky/czech-gpt2-oscar")
         wout_model = AutoModelForCausalLM.from_pretrained("lchaloupsky/czech-gpt2-oscar")
         w_model = AutoModelForCausalLM.from_pretrained("lchaloupsky/czech-gpt2-oscar")
-        tokenizer.model_max_length=1024
 
-    elif args.model == "GPT2_czech_XL":
+    elif args.model == "VUT_GPT2":
         tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
         wout_model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
         w_model = AutoModelForCausalLM.from_pretrained("BUT-FIT/Czech-GPT-2-XL-133k")
-        tokenizer.model_max_length=1024
 
-    elif args.model == "tinyLlama":
+    elif args.model == "TINYLLAMA":
         tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         wout_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
         w_model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T")
-        tokenizer.model_max_length=1024
-    
+
+    elif args.model == "VUT_TINYLLAMA":
+        tokenizer = AutoTokenizer.from_pretrained("BUT-FIT/CSTinyLlama-1.2B")
+        wout_model = AutoModelForCausalLM.from_pretrained("BUT-FIT/CSTinyLlama-1.2B")
+        w_model = AutoModelForCausalLM.from_pretrained("BUT-FIT/CSTinyLlama-1.2B")
+            
     else:
         raise ValueError(f"Model {args.model} is not supported with generation mode 'lines'.")
+
+    # Set special tokens if they are not already set
+    if tokenizer.sep_token is None:
+        tokenizer.add_special_tokens({'sep_token': '[SEP]'})
+    if tokenizer.cls_token is None:
+        tokenizer.add_special_tokens({'cls_token': '[CLS]'})
+    if tokenizer.mask_token is None:
+        tokenizer.add_special_tokens({'mask_token': '[MASK]'})
 
     wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
@@ -135,8 +144,11 @@ def generate_lines(args, input_sections):
 
     for input_section in input_sections:
         # Load the structure of the english text
-        structure.fill(input_section) 
-
+        if isinstance(input_section, SectionStructure):
+            structure = input_section
+        else:
+            structure.fill(input_section) 
+            
         result = []
 
         known_endings = {}
@@ -164,7 +176,7 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)
@@ -190,7 +202,7 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], keywords_in=structure.en_line_keywords[line_i], keywords_in_en=True, text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)
