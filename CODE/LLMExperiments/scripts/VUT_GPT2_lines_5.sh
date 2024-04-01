@@ -1,8 +1,8 @@
 #!/bin/bash
 #PBS -q gpu@meta-pbs.metacentrum.cz
 #PBS -l walltime=24:0:0
-#PBS -l select=1:ncpus=1:ngpus=1:mem=15gb:scratch_local=30gb:cl_galdor=True:brno=True
-#PBS -N OSCAR_GPT2_whole_0
+#PBS -l select=1:ncpus=1:ngpus=1:mem=45gb:scratch_local=100gb:cl_galdor=True:brno=True
+#PBS -N VUT_GPT2_lines_5
 DATADIR=/storage/brno2/home/stepanb2
 module add py-pip/21.3.1-gcc-10.2.1-mjt74tn
 pip install nvidia-nccl-cu12==2.19.3
@@ -18,5 +18,5 @@ pip install triton==2.2.0
 pip install torch
 pip install transformers
 pip install argparse
-python $DATADIR/train_model.py --model 'OSCAR_GPT2' --model_path $DATADIR/trained_models --generation_method 'whole' --dataset_path $DATADIR --dataset_type 0  >> $DATADIR/Out_file_OSCAR_GPT2_whole_0.out
+python $DATADIR/train_model.py --model 'VUT_GPT2' --model_path $DATADIR/trained_models --generation_method 'lines' --dataset_path $DATADIR --dataset_type 5  >> $DATADIR/Out_file_VUT_GPT2_lines_5.out
 clean_scratch
