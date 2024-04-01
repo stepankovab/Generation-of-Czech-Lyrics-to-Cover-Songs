@@ -30,14 +30,9 @@ def HT_loader(dataset_path, language = "en", without_repetition = False, shuffle
 def _extract_lyrics(dataset_dict, language):
     list_of_sections = []
 
-    for mov in dataset_dict[language]:
-        if mov == "num_sections":
-            continue
-        for song in dataset_dict[language][mov]:
-            if song == "num_sections":
-                continue
-            for section in dataset_dict[language][mov][song]:
-                list_of_sections.append(','.join(dataset_dict[language][mov][song][section]["lyrics"]))
+    for song in dataset_dict[language]:
+        for section in dataset_dict[language][song]:
+            list_of_sections.append(','.join(dataset_dict[language][song][section]))
 
     return list_of_sections
 
@@ -53,25 +48,13 @@ def avg_line_len(language):
     line_lens_dict = {}
     values = []
 
-    c_a = 0
-    c_b = 0
-    c_c = 0
-
-    for mov in dataset_dict[language]:
-        if mov == "num_sections":
-            continue
-        c_a += 1
-        for song in dataset_dict[language][mov]:
-            if song == "num_sections":
-                continue
-            c_b += 1
-            for section in dataset_dict[language][mov][song]:
-                c_c += 1
-                for line in dataset_dict[language][mov][song][section]["lyrics"]:
-                    if len(line) not in line_lens_dict:
-                        line_lens_dict[len(line)] = 0
-                    line_lens_dict[len(line)] += 1
-                    values.append(len(line))
+    for song in dataset_dict[language]:
+        for section in dataset_dict[language][song]:
+            for line in dataset_dict[language][song][section]:
+                if len(line) not in line_lens_dict:
+                    line_lens_dict[len(line)] = 0
+                line_lens_dict[len(line)] += 1
+                values.append(len(line))
 
     x = numpy.quantile(values, [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1])
     print(x)
