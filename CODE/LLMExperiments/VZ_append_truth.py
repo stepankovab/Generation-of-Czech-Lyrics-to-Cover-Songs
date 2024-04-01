@@ -1,12 +1,13 @@
-import requests
+# import requests
 import json
 # from sentence_transformers import SentenceTransformer
 # import Imports.tagger as tagger
 # from syllabator import syllabify
-import re
-from keybert import KeyBERT
+# import re
+# from keybert import KeyBERT
 import argparse
 import os
+from eval.same_word_tagger import SameWordRhymeTagger
 
 
 
@@ -56,10 +57,11 @@ with open(os.path.join(args.dataset_path, "VZ.json"), "r", encoding="utf-8") as 
 
 # rt = tagger.RhymeTagger()
 # rt.load_model("cs", verbose=False)
+rt = SameWordRhymeTagger("cs")
 
 # model = SentenceTransformer('all-MiniLM-L12-v2') 
 
-kw_model = KeyBERT()
+# kw_model = KeyBERT()
 
 for dat_i in dataset_dict:
 
@@ -109,35 +111,35 @@ for dat_i in dataset_dict:
     # dataset_dict[dat_i]["keywords"] = cs_keywords
 
 
-    # Per line keywords
-    temp = []
-    for i in range(len(lyrics_section)):
-        if len(en_lyrics_section) > i:
-            keywords = kw_model.extract_keywords(en_lyrics_section[i])
-        else:
-            keywords = ["X"]
-        temp.append(' '.join([x[0] for x in keywords[:min(len(keywords), 2)]]))
+    # # Per line keywords
+    # temp = []
+    # for i in range(len(lyrics_section)):
+    #     if len(en_lyrics_section) > i:
+    #         keywords = kw_model.extract_keywords(en_lyrics_section[i])
+    #     else:
+    #         keywords = ["X"]
+    #     temp.append(' '.join([x[0] for x in keywords[:min(len(keywords), 2)]]))
 
-    temp_len = len(temp)
-    assert temp_len == len(lyrics_section)
+    # temp_len = len(temp)
+    # assert temp_len == len(lyrics_section)
 
-    keywords_joined = ",\n".join(temp)    
-    url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-    response = requests.post(url, data = {"input_text": keywords_joined})
-    response.encoding='utf8'
-    cs_keywords_joined = response.text[:-1]
-    cs_keywords = re.split(r"[\.,]\n", cs_keywords_joined)
-    if temp_len == len(cs_keywords):
-        cs_keywords = ["" if x=="X" else x for x in cs_keywords]
-        dataset_dict[dat_i]["line_keywords"] = cs_keywords
-    else:
-        dataset_dict[dat_i]["line_keywords"] = ['' for x in range(temp_len)]
-        print(dat_i)
+    # keywords_joined = ",\n".join(temp)    
+    # url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+    # response = requests.post(url, data = {"input_text": keywords_joined})
+    # response.encoding='utf8'
+    # cs_keywords_joined = response.text[:-1]
+    # cs_keywords = re.split(r"[\.,]\n", cs_keywords_joined)
+    # if temp_len == len(cs_keywords):
+    #     cs_keywords = ["" if x=="X" else x for x in cs_keywords]
+    #     dataset_dict[dat_i]["line_keywords"] = cs_keywords
+    # else:
+    #     dataset_dict[dat_i]["line_keywords"] = ['' for x in range(temp_len)]
+    #     print(dat_i)
 
-    # # rhyme scheme
-    # rhymes = rt.tag(poem=lyrics_section, output_format=3)
-    # rhymes = fill_in_none_rhymes(rhymes)
-    # dataset_dict[dat_i]["rhymes"] = rhymes
+    # rhyme scheme
+    rhymes = rt.tag(poem=lyrics_section, output_format=3)
+    if dataset_dict[dat_i]["rhymes"] != rhymes:
+        dataset_dict[dat_i]["rhymes"] = rhymes
 
     # # line endings
     # sylls_on_line = [syllabify(lyrics_section[sec_i], "cs")for sec_i in range(lines_count)]
