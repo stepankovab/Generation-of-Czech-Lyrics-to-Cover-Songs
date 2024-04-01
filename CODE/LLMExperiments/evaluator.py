@@ -44,7 +44,7 @@ class Evaluator():
         if isinstance(self.rt, SameWordRhymeTagger):
             self.rt.load_model("cs")
 
-    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]]):
+    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]], evaluate_keywords=False, evaluate_line_keywords=False):
         """
 
         outputs_w_structures: list(str, SectionStructure)
@@ -127,17 +127,21 @@ class Evaluator():
             results_dict["semantic_sim"].append(semantic_similarity)
 
             # keyword similarity
-            if len(structure.en_keywords) > 0:
-                keyword_similarity = self.get_keyword_semantic_similarity(structure.en_keywords, output, keywords_in_en=True, output_in_en = False)
-            else:
-                keyword_similarity = self.get_keyword_semantic_similarity(structure.keywords, output, keywords_in_en=False, output_in_en = False)
+            keyword_similarity = 0
+            if evaluate_keywords == True:
+                if len(structure.en_keywords) > 0:
+                    keyword_similarity = self.get_keyword_semantic_similarity(structure.en_keywords, output, keywords_in_en=True, output_in_en = False)
+                else:
+                    keyword_similarity = self.get_keyword_semantic_similarity(structure.keywords, output, keywords_in_en=False, output_in_en = False)
             results_dict["keyword_sim"].append(keyword_similarity)
 
             # line keyword similarity
-            if len(structure.en_line_keywords) == structure.num_lines:
-                line_keywords_similarity = self.get_line_keyword_semantic_similarity(structure.en_line_keywords, output, keywords_in_en=True, output_in_en = False)
-            else:
-                line_keywords_similarity = self.get_line_keyword_semantic_similarity(structure.line_keywords, output, keywords_in_en=False, output_in_en = False)
+            line_keywords_similarity = 0
+            if evaluate_line_keywords == True:
+                if len(structure.en_line_keywords) == structure.num_lines:
+                    line_keywords_similarity = self.get_line_keyword_semantic_similarity(structure.en_line_keywords, output, keywords_in_en=True, output_in_en = False)
+                else:
+                    line_keywords_similarity = self.get_line_keyword_semantic_similarity(structure.line_keywords, output, keywords_in_en=False, output_in_en = False)
             results_dict["line_keyword_sim"].append(line_keywords_similarity)
 
         return results_dict

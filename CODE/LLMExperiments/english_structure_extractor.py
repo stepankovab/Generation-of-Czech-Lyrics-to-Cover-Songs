@@ -17,9 +17,20 @@ class SectionStructure:
     line_keywords = []
     en_line_keywords = []
     num_lines: int
+    fill_keywords: bool
+    fill_line_keywords: bool
 
-    def __init__(self, section = None, kw_model = KeyBERT(), rt = SameWordRhymeTagger()) -> None:
+    def __init__(self, 
+                 section = None, 
+                 kw_model = KeyBERT(), 
+                 rt = SameWordRhymeTagger(),
+                 fill_keywords = True,
+                 fill_line_keywords = True,
+                 ) -> None:
+        
         self.kw_model = kw_model
+        self.fill_keywords = fill_keywords
+        self.fill_line_keywords = fill_line_keywords
 
         if isinstance(rt, RhymerType):
             if rt == RhymerType.RHYMETAGGER:
@@ -71,28 +82,30 @@ class SectionStructure:
         self.num_lines = len(section_list)
 
         # Keywords
-        keywords = self.kw_model.extract_keywords(section)
-        self.en_keywords = [x[0] for x in keywords]
+        if self.fill_keywords == True:
+            keywords = self.kw_model.extract_keywords(section)
+            self.en_keywords = [x[0] for x in keywords]
 
-        keywords_joined = ", ".join(self.en_keywords)    
-        url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-        response = requests.post(url, data = {"input_text": keywords_joined})
-        response.encoding='utf8'
-        cs_keywords_joined = response.text[:-1]
-        self.keywords = cs_keywords_joined.split(", ")
+            keywords_joined = ", ".join(self.en_keywords)    
+            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+            response = requests.post(url, data = {"input_text": keywords_joined})
+            response.encoding='utf8'
+            cs_keywords_joined = response.text[:-1]
+            self.keywords = cs_keywords_joined.split(", ")
 
         # Line keywords
-        for i in range(len(section_list)):
-            keywords = self.kw_model.extract_keywords(section_list[i])
-            if keywords == []:
-                self.line_keywords.append("")
-                self.en_line_keywords.append("")
-                continue
-            self.en_line_keywords.append(' '.join([x[0] for x in keywords[:min(len(keywords), 2)]]))
-            response = requests.post(url, data = {"input_text": self.en_line_keywords[-1]})
-            response.encoding='utf8'
-            cs_keywords_line = response.text[:-1]
-            self.line_keywords.append(cs_keywords_line)
+        if self.fill_line_keywords == True:
+            for i in range(len(section_list)):
+                keywords = self.kw_model.extract_keywords(section_list[i])
+                if keywords == []:
+                    self.line_keywords.append("")
+                    self.en_line_keywords.append("")
+                    continue
+                self.en_line_keywords.append(' '.join([x[0] for x in keywords[:min(len(keywords), 2)]]))
+                response = requests.post(url, data = {"input_text": self.en_line_keywords[-1]})
+                response.encoding='utf8'
+                cs_keywords_line = response.text[:-1]
+                self.line_keywords.append(cs_keywords_line)
 
         # rhyme scheme
         self.rhyme_scheme = self.rt.tag(poem=section_list, output_format=3)

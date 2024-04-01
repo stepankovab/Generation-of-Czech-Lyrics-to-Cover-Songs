@@ -30,7 +30,7 @@ for i in range(len(en_lyrics)):
 
     HT_pairs.append((cs_lyrics[i], SectionStructure(section=en_lyrics[i], kw_model=evaluator.kw_model, rt=evaluator.rt)))
     
-results_dict = evaluator.evaluate_outputs_structure(HT_pairs)
+results_dict = evaluator.evaluate_outputs_structure(HT_pairs, evaluate_keywords=True, evaluate_line_keywords=True)
 
 for cat in results_dict:
     print(f"{cat} -> {sum(results_dict[cat]) / len(results_dict[cat])}")
