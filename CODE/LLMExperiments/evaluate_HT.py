@@ -2,17 +2,18 @@ from HT_loader import HT_loader
 from evaluator import Evaluator
 from english_structure_extractor import SectionStructure
 # from eval.rhyme_finder import RhymeFinder
-from eval.tagger import RhymeTagger
-# from eval.same_word_tagger import SameWordRhymeTagger
+# from eval.tagger import RhymeTagger
+from eval.same_word_tagger import SameWordRhymeTagger
 import matplotlib.pyplot as plt
 import random
 
-RANDOM_BASELINE = True
 
-evaluator = Evaluator(rt=RhymeTagger())
+RANDOM_BASELINE = False
 
-cs_lyrics = HT_loader("DATA", "cs")
-en_lyrics = HT_loader("DATA", "en")
+evaluator = Evaluator(rt=SameWordRhymeTagger())
+
+cs_lyrics = HT_loader("./", "cs")
+en_lyrics = HT_loader("./", "en")
 
 if RANDOM_BASELINE:
     random.shuffle(en_lyrics)
@@ -35,7 +36,7 @@ results_dict = evaluator.evaluate_outputs_structure(HT_pairs, evaluate_keywords=
 for cat in results_dict:
     print(f"{cat} -> {sum(results_dict[cat]) / len(results_dict[cat])}")
 
-    plt.hist(results_dict[cat], bins=30, color="blue")
+    plt.hist(results_dict[cat], bins=30, color="blue", range=(0,1))
     
     # Adding labels and title
     plt.xlabel('Values')
@@ -43,7 +44,10 @@ for cat in results_dict:
     plt.title(cat)
     
     # Display the plot
-    plt.savefig(f"random_baseline_{cat}.png")
+    if RANDOM_BASELINE == True:
+        plt.savefig(f"random_baseline_{cat}.png")
+    else:
+        plt.savefig(f"HT_{cat}.png")
 
 
 # True alignment:
