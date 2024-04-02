@@ -82,7 +82,8 @@ class Postprocesser():
         for line_i in range(len(lyrics_list)):
             scores[line_i] += syll_multip_factor * scores_dict["syll_dist"][line_i]
             scores[line_i] += rhyme_multip_factor * (1 - scores_dict["rhyme_scheme_agree"][line_i])
-            scores[line_i] += (1 - scores_dict["semantic_sim"][line_i])
+            scores[line_i] += 5 * (1 - scores_dict["semantic_sim"][line_i])
+            scores[line_i] += 10 * scores_dict["phon_rep_dif"][line_i]
 
         ordered_indicies = [i for i, x in sorted(enumerate(scores), key=lambda x: x[1])]
 

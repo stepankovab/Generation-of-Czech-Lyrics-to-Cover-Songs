@@ -9,6 +9,9 @@ from eval.tagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
 from eval.same_word_tagger import SameWordRhymeTagger
 from rhymer_types import RhymerType
+from eval.phon_czech import ipa_czech
+import eng_to_ipa as ipa
+from nltk.translate.bleu_score import sentence_bleu
 
 class Evaluator():
 
@@ -44,9 +47,8 @@ class Evaluator():
         if isinstance(self.rt, SameWordRhymeTagger):
             self.rt.load_model("cs")
 
-    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]], evaluate_keywords=False, evaluate_line_keywords=False):
+    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]], evaluate_keywords=False, evaluate_line_keywords=False, evaluate_bleu = False):
         """
-
         outputs_w_structures: list(str, SectionStructure)
         
         syllables: The expected syllables counts for each line
@@ -60,16 +62,18 @@ class Evaluator():
                         "rhyme_scheme_agree" : [],
                         "semantic_sim" : [],
                         "keyword_sim" : [],
-                        "line_keyword_sim" : []}
-
-
+                        "line_keyword_sim" : [],
+                        "phon_rep_dif" : [],
+                        "bleu" : []}
         """
         results_dict = {"syll_dist" : [],
                         "syll_acc" : [],
                         "rhyme_scheme_agree" : [],
                         "semantic_sim" : [],
                         "keyword_sim" : [],
-                        "line_keyword_sim" : []}
+                        "line_keyword_sim" : [],
+                        "phon_rep_dif" : [],
+                        "bleu" : []}
 
         for output, structure in outputs_w_structures:
             if self.verbose:
@@ -143,6 +147,22 @@ class Evaluator():
                 else:
                     line_keywords_similarity = self.get_line_keyword_semantic_similarity(structure.line_keywords, output, keywords_in_en=False, output_in_en = False)
             results_dict["line_keyword_sim"].append(line_keywords_similarity)
+
+            # phoneme repetition difference
+            cs_dist2 = self.get_phoneme_distinct2(output, "cs")
+            en_dist2 = self.get_phoneme_distinct2(structure.original_lyrics, "en")
+            results_dict["phon_rep_dif"].append(abs(en_dist2 - cs_dist2))
+
+            # bleu score
+            bleu = 0
+            if evaluate_bleu == True:
+                url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
+                response = requests.post(url, data = {"input_text": ' '.join(structure.original_lyrics)})
+                response.encoding='utf8'
+                reference = [response.text[:-1].replace(',', '').split()]
+                candidate = ' '.join(output).split()
+                bleu = sentence_bleu(reference, candidate, weights=(0.5,0.5))
+            results_dict["bleu"].append(bleu)
 
         return results_dict
     
@@ -239,6 +259,11 @@ class Evaluator():
             response = requests.post(url, data = {"input_text": ' '.join(text2)})
             response.encoding='utf8'
             text2 = response.text[:-1]
+        
+        if not isinstance(text1, str):
+            text1 = ' '.join(text1)
+        if not isinstance(text2, str):
+            text2 = ' '.join(text2)
 
         embedding1 = self.embed_model.encode(text1, convert_to_tensor=False)
         embedding2 = self.embed_model.encode(text2, convert_to_tensor=False)
@@ -260,6 +285,31 @@ class Evaluator():
         distance /= (2 * len(out_syllables))
         return distance
     
+
+    def get_phoneme_distinct2(self, section : list[str], language : str) -> float:
+        """
+        language: the language of the section ['cs', 'en']
+        """
+        bigram_dict = {}
+        bigram_count = 0
+
+        for i in range(len(section)):
+            if language == "cs":
+                phonemes = ipa_czech(section[i]).split() + ["^"]
+            if language == "en":
+                phonemes = re.sub('[ˈ\s]', '', ipa.convert(section[i], stress_marks='primary')) + "^"
+
+            for p in range(len(phonemes) - 1):
+                bigram = phonemes[p] + phonemes[p + 1]
+                bigram_count += 1
+
+                if bigram not in bigram_dict:
+                    bigram_dict[bigram] = 0
+                
+                bigram_dict[bigram] += 1
+
+        return len(bigram_dict)/ max(bigram_count,1)
+ 
 
     def get_rhyme_scheme_agreement(self, desired_scheme, new_scheme, alpha = 0.5):
         """

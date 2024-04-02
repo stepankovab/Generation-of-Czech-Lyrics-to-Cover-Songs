@@ -47,7 +47,7 @@ gen_end_stamp = time.time()
 ########### evaluate outputs ##############
 eval_start_stamp = time.time()
 evaluator = Evaluator(verbose=False, rt=RhymerType(args.rhymer))
-results_dict = evaluator.evaluate_outputs_structure(result_pairs, evaluate_keywords=True, evaluate_line_keywords=True)
+results_dict = evaluator.evaluate_outputs_structure(result_pairs, evaluate_keywords=True, evaluate_line_keywords=True, evaluate_bleu=True)
 eval_stop_stamp = time.time()
 
 ########### print results ###############
@@ -65,9 +65,9 @@ for cat in results_dict:
 print()
 print("=" * 30)
 print()
-print(f"eval time: {(eval_stop_stamp - eval_start_stamp)} s")
+print(f"eval time: {(eval_stop_stamp - eval_start_stamp) / 60:2f}min")
 if len(input_sections) > 0:
-    print(f"generation time: {(gen_end_stamp - gen_start_stamp)} s, with {((gen_end_stamp - gen_start_stamp)) / len(input_sections)} s per lyrics section")
+    print(f"generation time: {(gen_end_stamp - gen_start_stamp)/60:2f}min, with {((gen_end_stamp - gen_start_stamp)) / len(input_sections):2f}s per lyrics section")
 
 if args.from_dict == True:
     lyric_pairs = []
