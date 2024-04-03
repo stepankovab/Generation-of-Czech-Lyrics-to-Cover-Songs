@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import random
 
 
-RANDOM_BASELINE = False
+RANDOM_BASELINE = True
 
 evaluator = Evaluator(rt=SameWordRhymeTagger())
 
@@ -48,6 +48,42 @@ for cat in results_dict:
         plt.savefig(f"random_baseline_{cat}.png")
     else:
         plt.savefig(f"HT_{cat}.png")
+
+
+# True alignment - new
+
+# syll_dist -> 0.031397304724096894
+# syll_acc -> 0.8262192139310786
+# rhyme_scheme_agree -> 0.6379081370606793 SWRT
+# semantic_sim -> 0.6004684052856292
+# keyword_sim -> 0.49629239412813875
+# line_keyword_sim -> 0.5003293137231976
+# phon_rep_dif -> 0.0661192632056612
+# bleu -> 0.0
+        
+# random
+        
+# syll_dist -> 0.6560583994295848
+# syll_acc -> 0.08977181011079323
+# rhyme_scheme_agree -> 0.5440164355418593 SWRT
+# semantic_sim -> 0.20998964708109022
+# keyword_sim -> 0.13740818885310002
+# line_keyword_sim -> 0.2658511946233171
+# phon_rep_dif -> 0.11356770014443346
+# bleu -> 0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # True alignment:
