@@ -75,6 +75,7 @@ def generate_whole(args, input_sections):
 
     print("="*10 + "  " + model_path + " " + "="*10)
     model.load_state_dict(state_dict=torch.load(model_path, map_location=torch.device(device)))
+    model.to(device)
     model.eval()
 
     structure = SectionStructure(rt=RhymerType(args.rhymer))
@@ -95,8 +96,7 @@ def generate_whole(args, input_sections):
         prompt = prepare_prompt_whole(dataset_type, structure)
         print(prompt)
 
-        inputs = tokenizer(prompt, return_tensors="pt") 
-        tokenizer.encode(prompt, return_tensors="pt") #directly for input_ids
+        inputs = tokenizer([prompt],return_token_type_ids=False, return_tensors="pt").to(device)
 
         print("before generation")
 

@@ -14,7 +14,7 @@ parser.add_argument("--model", default="OSCAR_GPT2", type=str, help="OSCAR_GPT2 
 parser.add_argument("--model_path", default="./trained_models", type=str, help="./ #  CODE/LLMExperiments/trained_models")
 parser.add_argument("--input_section", default="why is it not working,i am sad,this is so bad", type=str, help="Input section in English, lines divided by comma ',' and sections divided by semicolon ';' -> eg: let it go,let it go,can't hold it back anymore,turn away and slam the door")
 parser.add_argument("--dataset_type", default=5, type=int, help="Dataset type: BASELINE = 1, SYLLABLES = 2, END_OF_LINES = 3, CHARACTERISTIC_WORDS = 4, UNRHYMED = 5, SYLLABLES_AND_WORDS = 6, SYLLABLES_AND_ENDS = 7, ENDS_AND_WORDS = 8")
-parser.add_argument("--from_dict", default=True, type=bool, help="Take testing data from HT dict")
+parser.add_argument("--from_dict", default=False, type=bool, help="Take testing data from HT dict")
 parser.add_argument("--test_set_size", default=10, type=int, help="How many samples from test set to take, 0 means all")
 parser.add_argument("--dataset_path", default="./", type=str, help="./ # DATA/Velky_zpevnik ")
 parser.add_argument("--epoch", default=0, type=int, help="Epoch of the trained model")
@@ -80,5 +80,6 @@ if args.from_dict == True:
     if not os.path.exists(args.results_path):
         os.mkdir(args.results_path)
 
+    print("==================== dumping results into json =====================")
     with open(os.path.join(args.results_path, f"{args.model}_{args.generation_method}_dataset_type_{args.dataset_type}_epoch_{args.epoch}_samples_{args.test_set_size}_out_per_generation_{args.out_per_gerenation}_stopwords_{args.postprocess_stopwords}_rhymer_{args.rhymer}_fewshot_{args.nshot}.json"), "w", encoding='utf-8') as json_file:
         json.dump(results_dict, json_file, ensure_ascii=False)

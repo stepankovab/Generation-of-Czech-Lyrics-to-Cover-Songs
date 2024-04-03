@@ -132,8 +132,10 @@ def generate_lines(args, input_sections):
     
     print("="*10 + "  " + wout_model_path + " " + "="*10)
     wout_model.load_state_dict(state_dict=torch.load(wout_model_path, map_location=torch.device(device)))
+    wout_model.to(device)
     print("="*10 + "  " + w_model_path + " " + "="*10)
     w_model.load_state_dict(state_dict=torch.load(w_model_path, map_location=torch.device(device)))
+    w_model.to(device)
     wout_model.eval()
     w_model.eval()
 
@@ -159,8 +161,8 @@ def generate_lines(args, input_sections):
                 prompt = prepare_prompt(w_dataset_type, structure, line_i, known_endings[structure.rhyme_scheme[line_i]])
 
                 print(prompt)
-                inputs = tokenizer(prompt, return_tensors="pt") 
-                tokenizer.encode(prompt, return_tensors="pt")
+                
+                inputs = tokenizer([prompt],return_token_type_ids=False, return_tensors="pt").to(device)
         
                 # model output using Top-k sampling text generation method
                 sample_outputs = w_model.generate(**inputs,
@@ -184,9 +186,7 @@ def generate_lines(args, input_sections):
             else:
                 prompt = prepare_prompt(wout_dataset_type, structure, line_i)
 
-                print(prompt)
-                inputs = tokenizer(prompt, return_tensors="pt") 
-                tokenizer.encode(prompt, return_tensors="pt")
+                inputs = tokenizer([prompt],return_token_type_ids=False, return_tensors="pt").to(device)
         
                 # model output using Top-k sampling text generation method
                 sample_outputs = wout_model.generate(**inputs,
