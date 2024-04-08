@@ -11,6 +11,7 @@ from eval.same_word_tagger import SameWordRhymeTagger
 from rhymer_types import RhymerType
 from eval.phon_czech import ipa_czech
 import eng_to_ipa as ipa
+from eval.chrF import computeChrF
 from nltk.translate.bleu_score import sentence_bleu
 
 class Evaluator():
@@ -47,7 +48,7 @@ class Evaluator():
         if isinstance(self.rt, SameWordRhymeTagger):
             self.rt.load_model("cs")
 
-    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]], evaluate_keywords=False, evaluate_line_keywords=False, evaluate_bleu = False):
+    def evaluate_outputs_structure(self, outputs_w_structures: list[tuple[str, SectionStructure]], evaluate_keywords=False, evaluate_line_keywords=False, evaluate_translations = False):
         """
         outputs_w_structures: list(str, SectionStructure)
         
@@ -64,7 +65,8 @@ class Evaluator():
                         "keyword_sim" : [],
                         "line_keyword_sim" : [],
                         "phon_rep_dif" : [],
-                        "bleu" : []}
+                        "bleu" : [],
+                        "chrf" : []}
         """
         results_dict = {"syll_dist" : [],
                         "syll_acc" : [],
@@ -73,7 +75,8 @@ class Evaluator():
                         "keyword_sim" : [],
                         "line_keyword_sim" : [],
                         "phon_rep_dif" : [],
-                        "bleu" : []}
+                        "bleu" : [],
+                        "chrf" : []}
 
         for output, structure in outputs_w_structures:
             if self.verbose:
@@ -82,25 +85,21 @@ class Evaluator():
             output = output.split(",")         
 
             out_syllables = []
-            out_endings = []
 
             for line_i in range(len(output)):
                 line = output[line_i]
 
                 if not line.strip():
                     out_syllables.append(0)
-                    out_endings.append("")
                     continue
 
                 syllabified_line = syllabify(line)
 
                 if len(syllabified_line) == 0:
                     out_syllables.append(0)
-                    out_endings.append("")
                     continue
 
                 out_syllables.append(len(syllabified_line))
-                out_endings.append(syllabified_line[-1][-min(len(syllabified_line[-1]), 3):])
 
             ##################### metrics ####################
 
@@ -153,24 +152,29 @@ class Evaluator():
             en_dist2 = self.get_phoneme_distinct2(structure.original_lyrics, "en")
             results_dict["phon_rep_dif"].append(abs(en_dist2 - cs_dist2))
 
-            # bleu score
+            # bleu score and chrf score
             bleu = 0
-            if evaluate_bleu == True:
+            totalF = 0
+            if evaluate_translations == True:
                 url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
                 response = requests.post(url, data = {"input_text": ' '.join(structure.original_lyrics)})
                 response.encoding='utf8'
                 reference = [response.text[:-1].replace(',', '').split()]
                 candidate = ' '.join(output).split()
                 bleu = sentence_bleu(reference, candidate, weights=(0.5,0.5))
+                totalF, _, _, _ = computeChrF([response.text[:-1]], [' '.join(output)], nworder=2, ncorder=6, beta=2)
+            results_dict["chrf"].append(totalF)
             results_dict["bleu"].append(bleu)
+
 
         return results_dict
     
-    def get_line_keyword_semantic_similarity(self, keywords, output, keywords_in_en = True, output_in_en = True):
+    def get_line_keyword_semantic_similarity(self, keywords, output_lines, keywords_in_en = True, output_in_en = True):
         """
         returns average similarity of a line to keywords
         
         """
+        translated_keywords = keywords.copy()
         if not keywords_in_en:
             # Keywords to english
             for i in range(len(keywords)):
@@ -179,37 +183,38 @@ class Evaluator():
                 url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
                 response = requests.post(url, data = {"input_text": keywords[i]})
                 response.encoding='utf8'
-                keywords[i] = response.text[:-1]
+                translated_keywords[i] = response.text[:-1]
 
+        translated_output_lines = output_lines.copy()
         if not output_in_en:
             # output to english
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            for i in range(len(output)):
-                if not output[i].strip():
+            for i in range(len(translated_output_lines)):
+                if not translated_output_lines[i].strip():
                     continue
-                response = requests.post(url, data = {"input_text": output[i]})
+                response = requests.post(url, data = {"input_text": translated_output_lines[i]})
                 response.encoding='utf8'
-                output[i] = response.text[:-1]
+                translated_output_lines[i] = response.text[:-1]
 
         # Extract new keywords
         out_keywords = []
-        for i in range(len(output)):
-            line_keywords = [x[0] for x in self.kw_model.extract_keywords(output[i])]
+        for i in range(len(translated_output_lines)):
+            line_keywords = [x[0] for x in self.kw_model.extract_keywords(translated_output_lines[i])]
             out_keywords.append(' '.join(line_keywords[:min(len(line_keywords), 2)]))
 
         if self.verbose:
-            print(keywords)
+            print(translated_keywords)
             print(out_keywords)
             print()
 
-        if len(out_keywords) != len(keywords):
+        if len(out_keywords) != len(translated_keywords):
             if self.verbose:
                 print("keywords error")
             return 0
 
         similarities_per_line = []
-        for i in range(len(keywords)):
-            similarities_per_line.append(self.get_semantic_similarity(keywords[i], out_keywords[i]))
+        for i in range(len(translated_keywords)):
+            similarities_per_line.append(self.get_semantic_similarity(translated_keywords[i], out_keywords[i]))
 
         return sum(similarities_per_line) / len(similarities_per_line)
 

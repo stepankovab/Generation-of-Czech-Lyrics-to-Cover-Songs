@@ -31,7 +31,7 @@ for i in range(len(en_lyrics)):
 
     HT_pairs.append((cs_lyrics[i], SectionStructure(section=en_lyrics[i], kw_model=evaluator.kw_model, rt=evaluator.rt)))
     
-results_dict = evaluator.evaluate_outputs_structure(HT_pairs, evaluate_keywords=True, evaluate_line_keywords=True)
+results_dict = evaluator.evaluate_outputs_structure(HT_pairs, evaluate_keywords=True, evaluate_line_keywords=True, evaluate_translations=True)
 
 for cat in results_dict:
     print(f"{cat} -> {sum(results_dict[cat]) / len(results_dict[cat])}")
@@ -48,6 +48,39 @@ for cat in results_dict:
         plt.savefig(f"random_baseline_{cat}.png")
     else:
         plt.savefig(f"HT_{cat}.png")
+
+
+##########################
+# Correct thingy Aligned #
+##########################
+
+# syll_dist -> 0.031397304724096894
+# syll_acc -> 0.8262192139310786
+# rhyme_scheme_agree -> 0.6379081370606793 SWRT
+# semantic_sim -> 0.6004684052856292
+# keyword_sim -> 0.49629239412813875
+# line_keyword_sim -> 0.5003293137231976
+# phon_rep_dif -> 0.08314464719285819
+# bleu -> 0.03911828525782059
+# chrf -> 0.1670763720679358
+
+#########################
+# Correct thingy Random #
+#########################
+
+# syll_dist -> 0.664016752610145
+# syll_acc -> 0.10378237581627422
+# rhyme_scheme_agree -> 0.5207150194438329
+# semantic_sim -> 0.2142703992979047
+# keyword_sim -> 0.13133081679127662
+# line_keyword_sim -> 0.2606570512207164
+# phon_rep_dif -> 0.12695510999946247
+# bleu -> 0.0007215634926773624
+# chrf -> 0.09278634330189597
+
+
+
+
 
 
 # True alignment - new

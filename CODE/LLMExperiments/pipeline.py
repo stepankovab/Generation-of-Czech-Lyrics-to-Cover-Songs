@@ -47,7 +47,7 @@ gen_end_stamp = time.time()
 ########### evaluate outputs ##############
 eval_start_stamp = time.time()
 evaluator = Evaluator(verbose=False, rt=RhymerType(args.rhymer))
-results_dict = evaluator.evaluate_outputs_structure(result_pairs, evaluate_keywords=True, evaluate_line_keywords=True, evaluate_bleu=True)
+results_dict = evaluator.evaluate_outputs_structure(result_pairs, evaluate_keywords=True, evaluate_line_keywords=True, evaluate_translations=True)
 eval_stop_stamp = time.time()
 
 ########### print results ###############
