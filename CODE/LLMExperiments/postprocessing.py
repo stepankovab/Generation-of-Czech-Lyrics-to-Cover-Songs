@@ -35,7 +35,7 @@ class Postprocesser():
                     scores_dict["endings"].append(0)
                     continue
                 ending_out = sylls[-1]
-                scheme = self.evaluator.rt.tag([ending_in, ending_out])
+                scheme = self.evaluator.czech_rhyme_detector.tag([ending_in, ending_out])
                 if scheme[0] == scheme[1] and scheme[0] != None:
                     scores_dict["endings"].append(0)
                 else:
@@ -63,7 +63,15 @@ class Postprocesser():
 
         return lines_list[ordered_indicies[0]]
 
-    def choose_best_section(self, lyrics_list, structure : SectionStructure, syll_dist_tollerance = 0.2, rhyme_scheme_agree_tollerance = 0.5, remove_add_stopwords=False):
+    def choose_best_section(self,
+                            lyrics_list,
+                            structure : SectionStructure,
+                            syll_dist_tolerance=0.1,
+                            rhyme_scheme_agree_tolerance=0.4,
+                            sem_sim_tolerance=0.6,
+                            phon_rep_dif_tolerance=0.15,
+                            remove_add_stopwords=False):
+        
         if isinstance(lyrics_list, str):
             lyrics_list = [lyrics_list]
             
@@ -73,22 +81,25 @@ class Postprocesser():
                 lyrics_list[i] = self.correct_length_remove_add_stopwords(lyrics_list[i], structure.syllables)
             print("stop words removed")
 
-        scores_dict = self.evaluator.evaluate_outputs_structure([(','.join(lyrics[:min(len(lyrics), structure.num_lines * 2)]), structure) for lyrics in lyrics_list])
+        scores_dict = self.evaluator.evaluate_outputs_structure([(','.join(lyrics[:min(len(lyrics), structure.num_lines * 2)]), structure) for lyrics in lyrics_list], evaluate_keywords=False, evaluate_line_keywords=False, evaluate_translations=False)
         scores = [0 for _ in range(len(lyrics_list))]
 
         # pick the best match
-        syll_multip_factor = 10 / max(syll_dist_tollerance, 0.0001)
-        rhyme_multip_factor = 10 / (1 - min(rhyme_scheme_agree_tollerance, 0.9999))
         for line_i in range(len(lyrics_list)):
-            scores[line_i] += syll_multip_factor * scores_dict["syll_dist"][line_i]
-            scores[line_i] += rhyme_multip_factor * (1 - scores_dict["rhyme_scheme_agree"][line_i])
-            scores[line_i] += 5 * (1 - scores_dict["semantic_sim"][line_i])
-            scores[line_i] += 10 * scores_dict["phon_rep_dif"][line_i]
+            scores[line_i] += scores_dict["syll_dist"][line_i] / max(syll_dist_tolerance, 0.0001)
+            scores[line_i] += (1 - scores_dict["rhyme_scheme_agree"][line_i]) / (1 - min(rhyme_scheme_agree_tolerance, 0.9999))
+            scores[line_i] += (1 - scores_dict["semantic_sim"][line_i]) / (1 - min(sem_sim_tolerance, 0.9999))
+            scores[line_i] += scores_dict["phon_rep_dif"][line_i] / max(phon_rep_dif_tolerance, 0.0001)
 
         ordered_indicies = [i for i, x in sorted(enumerate(scores), key=lambda x: x[1])]
 
         for i in ordered_indicies:
             print(lyrics_list[i])
+            print("score:", scores[i])
+            print("syll:", scores_dict["syll_dist"][i] / max(syll_dist_tolerance, 0.0001), "|", scores_dict["syll_dist"][i])
+            print("rhyme:", (1 - scores_dict["rhyme_scheme_agree"][i]) / (1 - min(rhyme_scheme_agree_tolerance, 0.9999)), "|", scores_dict["rhyme_scheme_agree"][i])
+            print("sem:", (1 - scores_dict["semantic_sim"][i]) / (1 - min(sem_sim_tolerance, 0.9999)), "|", scores_dict["semantic_sim"][i])
+            print("repet:", scores_dict["phon_rep_dif"][i] / max(phon_rep_dif_tolerance, 0.0001), "|", scores_dict["phon_rep_dif"][i])
             print()
 
         return lyrics_list[ordered_indicies[0]]
