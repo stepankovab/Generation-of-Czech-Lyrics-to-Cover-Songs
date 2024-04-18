@@ -8,6 +8,7 @@ from rhymer_types import RhymerType
 from english_structure_extractor import SectionStructure
 from postprocessing import Postprocesser
 from evaluator import Evaluator
+import json
 
 
 class StoppingSequenceCriteria(StoppingCriteria):
@@ -70,18 +71,30 @@ def fewshot_and_generate(args, input_sections):
     n_examples = get_n_examples(args.dataset_path, dataset_type, args.nshot)
     print(n_examples)
     
-    structure = SectionStructure(rt=RhymerType(args.rhymer))
-    postprocesser = Postprocesser(evaluator=Evaluator(rt=RhymerType(args.rhymer)))
+    structure = SectionStructure(english_rhyme_detector=RhymerType(args.rhymer))
+    postprocesser = Postprocesser(evaluator=Evaluator(czech_rhyme_detector=RhymerType(args.rhymer)))
 
     result_pairs = []
 
-    for input_section in input_sections:
+    if args.outsource_rhyme_schemes and args.from_dict:
+        with open("english_HT_rhymes_espeak.json", "r", encoding="utf-8") as json_file:
+            espeak_rhymes = json.load(json_file)
+
+        assert len(espeak_rhymes) == len(input_sections)
+
+    for in_sec_id in range(len(input_sections)):
+        input_section = input_sections[in_sec_id]
+
         print("before structure filling")
         # Load the structure of the english text
         if isinstance(input_section, SectionStructure):
             structure = input_section
         else:
             structure.fill(input_section) 
+
+        if args.outsource_rhyme_schemes and args.from_dict:
+            structure.rhyme_scheme = espeak_rhymes[in_sec_id]
+
         print("after structure filling")
 
         prompt = prepare_prompt_whole(dataset_type, structure)

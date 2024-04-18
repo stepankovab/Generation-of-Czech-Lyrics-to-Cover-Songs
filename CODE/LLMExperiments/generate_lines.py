@@ -9,6 +9,7 @@ from eval.syllabator import syllabify
 import os
 import re
 import requests
+import json
 
 
 class StoppingSequenceCriteria(StoppingCriteria):
@@ -47,13 +48,13 @@ def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = N
         prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # {ending} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-        response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
+        response = requests.post(url, data = {"input_text": structure.original_lyrics_list[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         prompt = f"{len(syllabify(translated_output))} # {translated_output}\n{structure.syllables[line_i]} # "
     elif dataset_type == DatasetType.UNRHYMED_LEN_END:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-        response = requests.post(url, data = {"input_text": structure.original_lyrics[line_i]})
+        response = requests.post(url, data = {"input_text": structure.original_lyrics_list[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         translated_output_sylls = syllabify(translated_output)
@@ -139,17 +140,26 @@ def generate_lines(args, input_sections):
     wout_model.eval()
     w_model.eval()
 
-    structure = SectionStructure(rt=RhymerType(args.rhymer))
-    postprocesser = Postprocesser(evaluator=Evaluator(rt=RhymerType(args.rhymer)))
+    structure = SectionStructure(english_rhyme_detector=RhymerType(args.rhymer))
+    postprocesser = Postprocesser(evaluator=Evaluator(czech_rhyme_detector=RhymerType(args.rhymer)))
 
     result_pairs = []
+    if args.outsource_rhyme_schemes and args.from_dict:
+        with open("english_HT_rhymes_espeak.json", "r", encoding="utf-8") as json_file:
+            espeak_rhymes = json.load(json_file)
 
-    for input_section in input_sections:
+        assert len(espeak_rhymes) == len(input_sections)
+
+    for in_sec_id in range(len(input_sections)):
+        input_section = input_sections[in_sec_id]
         # Load the structure of the english text
         if isinstance(input_section, SectionStructure):
             structure = input_section
         else:
             structure.fill(input_section) 
+
+        if args.outsource_rhyme_schemes and args.from_dict:
+            structure.rhyme_scheme = espeak_rhymes[in_sec_id]
             
         result = []
 
@@ -178,7 +188,7 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], text_in=structure.original_lyrics_list[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)
@@ -202,7 +212,7 @@ def generate_lines(args, input_sections):
                     )
                 
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
-                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], text_in=structure.original_lyrics[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
+                model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], text_in=structure.original_lyrics_list[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
                 print(f"\n{model_out}\n")
                 result.append(model_out)

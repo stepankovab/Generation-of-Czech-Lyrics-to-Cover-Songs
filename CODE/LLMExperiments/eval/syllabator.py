@@ -65,7 +65,9 @@ def _create_word_mask(word : str) -> str:
 
     replacements = [
         # osm
-        ('osm', 'osu'),
+        (r'\bosm(náct|desát|krát|\b)', r'osu\1'),
+        # sedm
+        (r'\bsedm(náct|desát|krát|\b)', r'sedu\1'),
 
         #double letters
 		('ch', 'c0'),

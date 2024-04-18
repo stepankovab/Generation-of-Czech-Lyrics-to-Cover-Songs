@@ -45,9 +45,9 @@ def english_to_czech_pron(english):
 
 
 def syllabify(text : str):
-    text = english_to_czech_pron(text)
+    pronounced_text = english_to_czech_pron(text)
 
-    words = re.findall(r"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžAÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽäöüÄÜÖ]+", text)
+    words = re.findall(r"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžAÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYÝZŽäöüÄÜÖ]+", pronounced_text)
     syllables = []
 
     i = 0

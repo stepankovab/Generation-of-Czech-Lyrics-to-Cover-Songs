@@ -38,7 +38,7 @@ kauth
 
 pipeline run
 ```sh
-python pipeline.py --model OSCAR_GPT2 --model_path trained_models --input_section x --dataset_type 5 --from_dict False --test_set_size 10 --dataset_path ./ --epoch 0 --generation_method whole --out_per_gerenation 10 --nshot 10 --rhymer 3 --postprocess_stopwords False --results_path results_dicts
+python pipeline.py --model OSCAR_GPT2 --model_path trained_models --input_section x --dataset_type 5 --from_dict False --test_set_size 10 --dataset_path ./ --epoch 0 --generation_method whole --out_per_gerenation 10 --nshot 10 --rhymer 3 --postprocess_stopwords False --results_path results_dicts --outsource_rhyme_schemes True
 ```
 
 

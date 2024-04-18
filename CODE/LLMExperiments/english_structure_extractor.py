@@ -9,7 +9,7 @@ from keybert import KeyBERT
 
 
 class SectionStructure:
-    original_lyrics = []
+    original_lyrics_list = []
     syllables = []
     rhyme_scheme = []
     keywords = []
@@ -23,7 +23,7 @@ class SectionStructure:
     def __init__(self, 
                  section = None, 
                  kw_model = KeyBERT(), 
-                 rt = SameWordRhymeTagger(),
+                 english_rhyme_detector = SameWordRhymeTagger(),
                  fill_keywords = True,
                  fill_line_keywords = True,
                  ) -> None:
@@ -32,23 +32,23 @@ class SectionStructure:
         self.fill_keywords = fill_keywords
         self.fill_line_keywords = fill_line_keywords
 
-        if isinstance(rt, RhymerType):
-            if rt == RhymerType.RHYMETAGGER:
-                rt = RhymeTagger()
-            elif rt == RhymerType.RHYMEFINDER:
-                rt = RhymeFinder()
-            elif rt == RhymerType.SAME_WORD_RHYMETAGGER:
-                rt = SameWordRhymeTagger()
+        if isinstance(english_rhyme_detector, RhymerType):
+            if english_rhyme_detector == RhymerType.RHYMETAGGER:
+                english_rhyme_detector = RhymeTagger()
+            elif english_rhyme_detector == RhymerType.RHYMEFINDER:
+                english_rhyme_detector = RhymeFinder()
+            elif english_rhyme_detector == RhymerType.SAME_WORD_RHYMETAGGER:
+                english_rhyme_detector = SameWordRhymeTagger()
 
-        self.rt = rt
-        if isinstance(self.rt, RhymeTagger):
-            self.rt.load_model("en", verbose=False)
+        self.english_rhyme_detector = english_rhyme_detector
+        if isinstance(self.english_rhyme_detector, RhymeTagger):
+            self.english_rhyme_detector.load_model("en", verbose=False)
 
-        if isinstance(self.rt, RhymeFinder):
-            self.rt.lang = "en"
+        if isinstance(self.english_rhyme_detector, RhymeFinder):
+            self.english_rhyme_detector.lang = "en"
         
-        if isinstance(self.rt, SameWordRhymeTagger):
-            self.rt.load_model("en")
+        if isinstance(self.english_rhyme_detector, SameWordRhymeTagger):
+            self.english_rhyme_detector.load_model("en")
 
         if section != None:
             self.fill(section)
@@ -57,8 +57,8 @@ class SectionStructure:
         """
         copy section structure as a new instance
         """
-        new_section = SectionStructure(kw_model=self.kw_model, rt=self.rt)
-        new_section.original_lyrics = self.original_lyrics.copy()
+        new_section = SectionStructure(kw_model=self.kw_model, english_rhyme_detector=self.english_rhyme_detector)
+        new_section.original_lyrics_list = self.original_lyrics_list.copy()
         new_section.syllables = self.syllables.copy()
         new_section.rhyme_scheme = self.rhyme_scheme.copy()
         new_section.keywords = self.keywords.copy()
@@ -75,28 +75,28 @@ class SectionStructure:
         """
         self.reset()
 
-        section_list = section.strip().split(",")
-        self.original_lyrics = section_list
+        self.original_lyrics_list = section.strip().split(",")
+        self.original_lyrics_list = self.original_lyrics_list
         
         # lines count
-        self.num_lines = len(section_list)
+        self.num_lines = len(self.original_lyrics_list)
 
         # Keywords
         if self.fill_keywords == True:
             keywords = self.kw_model.extract_keywords(section)
             self.en_keywords = [x[0] for x in keywords]
 
-            keywords_joined = ", ".join(self.en_keywords)    
+            en_keywords_joined = ", ".join(self.en_keywords)    
             url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-            response = requests.post(url, data = {"input_text": keywords_joined})
+            response = requests.post(url, data = {"input_text": en_keywords_joined})
             response.encoding='utf8'
             cs_keywords_joined = response.text[:-1]
             self.keywords = cs_keywords_joined.split(", ")
 
         # Line keywords
         if self.fill_line_keywords == True:
-            for i in range(len(section_list)):
-                keywords = self.kw_model.extract_keywords(section_list[i])
+            for i in range(len(self.original_lyrics_list)):
+                keywords = self.kw_model.extract_keywords(self.original_lyrics_list[i])
                 if keywords == []:
                     self.line_keywords.append("")
                     self.en_line_keywords.append("")
@@ -108,15 +108,15 @@ class SectionStructure:
                 self.line_keywords.append(cs_keywords_line)
 
         # rhyme scheme
-        self.rhyme_scheme = self.rt.tag(poem=section_list, output_format=3)
-        if isinstance(self.rt, RhymeTagger):
+        self.rhyme_scheme = self.english_rhyme_detector.tag(poem=self.original_lyrics_list, output_format=3)
+        if isinstance(self.english_rhyme_detector, RhymeTagger):
             self.rhyme_scheme = self._fill_in_none_rhymes(self.rhyme_scheme)
 
         # syllables count
-        self.syllables = [len(syllabify(sec)) for sec in section_list]
+        self.syllables = [len(syllabify(sec)) for sec in self.original_lyrics_list]
 
     def reset(self):
-        self.original_lyrics = []
+        self.original_lyrics_list = []
         self.syllables = []
         self.rhyme_scheme = []
         self.keywords = []
