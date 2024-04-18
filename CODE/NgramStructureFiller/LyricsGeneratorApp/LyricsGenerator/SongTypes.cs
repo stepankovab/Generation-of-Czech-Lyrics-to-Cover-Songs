@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace LyricsGeneratorApp.LyricsGenerator
 {
@@ -42,92 +43,27 @@ namespace LyricsGeneratorApp.LyricsGenerator
         /// <returns>Custom lyrics in a list, each item represents one line.</returns>
         public static List<string> WriteCustomLyrics(string[]? structure, string? prompt)
         {
-            Console.WriteLine("Writing lyrics with a custom scheme...");
-            Console.WriteLine();
 
-            // inits
-            NGramModel model = new NGramModel(4, 3, Directory.GetCurrentDirectory() + Constants.PathToTexts);
-            Dictionary<string, string> symbolToRhyme = new();
-            List<string> result = new();
-            string line = "";
-            bool firstLine = true;
 
-            // null safe
-            if (prompt == null) { prompt = ""; }
-            if (structure == null) { structure = Array.Empty<string>(); }
+            string fileName = @"C:/Users/barca/MOJE/BAKALARKA/CODE/LLMExperiments/pipeline.py";
 
-            // iterate over each line of structure
-            foreach (string lineStructure in structure)
+            Process p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"C:/Users/barca/AppData/Local/Programs/Python/Python311/python.exe", fileName)
             {
-                // empty line
-                if (lineStructure == null)
-                {
-                    result.Add("");
-                    line = "---";
-                    continue;
-                }
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            p.Start();
 
-                // parse line structure
-                Regex rg = new Regex(@"[\w]+");
-                MatchCollection matchedParts = rg.Matches(lineStructure);
+            string output = p.StandardError.ReadToEnd();
+            p.WaitForExit();
 
-                // empty line
-                if (matchedParts.Count == 0)
-                {
-                    result.Add("");
-                    line = "---";
-                    continue;
-                }
+            Console.WriteLine(output);
 
-                // generate line if the line structure is correct (first is number of syllables, and has at most 2 parts)
-                if (int.TryParse(matchedParts[0].Value, out int syllablesOnLine) && matchedParts.Count() < 3)
-                {
-                    // Continue with the prompt if it is short enough
-                    if (firstLine)
-                    {
-                        PromptWork promptWork = new();
-                        if (Syllabytor.CountSyllables(prompt) <= syllablesOnLine)
-                        {
-                            promptWork = PromptWork.Use;
-                        }
-                        else
-                        {
-                            promptWork = PromptWork.DontUse;
-                        }
-
-                        line = model.GenerateLineWithLength(prompt, syllablesOnLine, promptWork);
-                        result.Add(line);
-                        firstLine = false;
-                    }
-                    // if there is specified rhyme schema and the rhyme is known
-                    else if (matchedParts.Count() == 2 && symbolToRhyme.ContainsKey(matchedParts[1].Value))
-                    {
-                        line = model.GenerateLineWithLengthAndRhyme(line, symbolToRhyme[matchedParts[1].Value], syllablesOnLine, PromptWork.DontUse);
-                        result.Add(line);
-                    }
-                    // if the rhyme is unknown or there is no rhyme
-                    else
-                    {
-                        line = model.GenerateLineWithLength(line, syllablesOnLine, PromptWork.DontUse);
-                        result.Add(line);
-                    }
-
-                    // if there is specified rhyme schema and the rhyme is unknown, define the rhyme
-                    if (matchedParts.Count() == 2 && !symbolToRhyme.ContainsKey(matchedParts[1].Value))
-                    {
-                        MatchCollection matchedWords = rg.Matches(line);
-                        var lastWord = matchedWords[matchedWords.Count - 1].Value;
-                        symbolToRhyme[matchedParts[1].Value] = lastWord;
-                    }
-                }
-                // the structure is incorrect
-                else
-                {
-                    line = "    > incorrect formatting: " + lineStructure;
-                    result.Add(line);
-                    line = "";
-                }
-            }
+            List<string> result = new List<string> { output };
+                        
 
             return result;
         }
