@@ -1,0 +1,856 @@
+# Ceka vas 28 uryvku originalnich pisnicek a jejich dvou moznych cover verzi (~15 min)
+#
+#
+# Urcete lepsi cover!
+# Prioritne:
+#     1. je mozne ho zazpivat na stejnou melodii jako original (neznate-li melodii nejakou si vymyslete) 
+#     2. je napsany prirozene (slova na sebe navazuji) 
+#     3. uryvek zni jako slova k pisni (zni zpevne, ne 100% smysluplne nebo verne originalu)
+#
+#
+# Jak na to?
+#    - prectete si original a obe moznosti
+#    - !!Vzdy!! zvolte lepsi cover (1 nebo 2)
+#    - Napiste cislo favorita do kolonky "Lepsi :"
+#    ... jako v nasledujici ukazce
+#
+#
+#  !!!! KROME KOLONKY LEPSI NIC NEPREPISUJTE, NEMENTE !!!!!
+#
+# Priklad spravneho vyplneni:
+#
+##################################################
+# Lyrics 0 (ukazka)
+#
+# Original:
+#
+# Mama take this badge from me
+# I can't use it anymore
+# It's getting dark too dark to see
+# Feels like I'm knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+#
+#
+# 1.)
+# Mámo sundej kytku z kabátu
+# Za chvíli nebude k ničemu
+# Můj kabát a kudlu vem pro tátu
+# Já už stojím před bránou s klíčem
+# Cejtím že zaklepu na nebeskou bránu
+# Cejtím že zaklepu na nebeskou bránu
+#
+#
+# 2.)
+# mámo vem si věci mý
+# já už vím, že půjdu tmou
+# zkus ztratit slovo, slovo jediný
+# a na nebi dvůr jistě mi otevřou
+# Na, na, na nebi otevřou
+# Na, na, na nebi otevřou
+#
+#
+# Lepsi: 2
+#
+##################################################
+Lyrics 1
+
+Original:
+
+Who am I if I can't
+run with the ball
+If I fall to
+
+
+1.)
+běží mi po nohách
+běžím se mnou
+dál když padá
+
+
+2.)
+a pak ťa už nejsem
+řeci míču
+ňa je to pád
+
+
+Lepsi: 1
+
+==============================
+Lyrics 2
+
+Original:
+
+I just made something unexpected
+Something sharp
+Something new
+It's not symmetrical or perfect
+But it's beautiful
+And it's mine
+What else can I do
+
+
+1.)
+jak snadno symetrické budou
+co dělat
+jestli jim
+že kdy budou ty tvoje máti
+tak jim to všechno
+tak co jim
+co je jenom tvá
+
+
+2.)
+Ta zvláštní kytka se mi líbí
+Píchá to
+nevoní
+Nic dokonalého a stejně
+svoje kouzlo má
+jako já
+Vždyť já umím víc
+
+
+Lepsi: 2
+
+==============================
+Lyrics 3
+
+Original:
+
+Poor men rich men leaders of the land
+See them with their trousers off they're never quite as grand
+All it takes is money in your hand
+
+
+1.)
+chudí muži bohatí živí
+všichni si to jen chválí když jsou dobří živí
+chudí muži bohatí živí
+
+
+2.)
+bohatí chudí muži ženy
+ti všichni mají své kalhoty v jedné řadě
+na na na na na na bohatí
+
+
+Lepsi: 1
+
+==============================
+Lyrics 4
+
+Original:
+
+Well Tamatoa hasn't always been this glam
+I was a drab little crab once
+Now I know I can be happy as a clam
+Because I'm beautiful baby
+
+
+1.)
+na na na tamatoa to je pakárna
+když narodil tamatoa
+kde byl před léty byl jsem tamatoa
+kde vyrůstal tamatoa
+
+
+2.)
+No Tamatoa nebyla vždycky taková glam
+Kdysi jsem byl nevýrazný krab
+Teď vím že můžu být šťastný jako škeble
+Protože jsem krásné dítě
+
+
+Lepsi: 1 
+
+==============================
+Lyrics 5
+
+Original:
+
+Sometimes the world seems against you
+The journey may leave a scar
+But scars can heal and reveal just
+Where you are
+
+
+1.)
+jak si jizvy v očích prohlídnout
+tak a jak na cestě žít
+kudy se dát a kudy jít
+kudy jít
+
+
+2.)
+a ňák se mi zdá svět proti mně
+óó já jizvu zanechal
+ím jizvy se však zahojí
+tak óóh hal
+
+
+Lepsi: 1  
+
+==============================
+Lyrics 6
+
+Original:
+
+Bruiser knits
+Killer sews
+Fang does little puppet shows
+And Vladimir collects ceramic unicorns
+
+
+1.)
+co máš rád
+co máš rád
+dál jednorožci hmm hmm
+copak a to už je tvoje poslední sloka
+
+
+2.)
+je to tak
+není tak
+dál je to tak nebo tak
+jednorožci a pohádky od vladimíry
+
+
+Lepsi: 1
+
+==============================
+Lyrics 7
+
+Original:
+
+This tradition is our mission
+And Moana there's so much to do
+Don't trip on the taro root that's all you need
+We share everything we make
+We joke and we weave our baskets
+The fishermen come back from the sea
+
+
+1.)
+taroty v moři dávno nestaví
+tak ani když moře má jméno
+na na na ten rybář za pasem je vtom
+tak když tu rybu chytíš
+tak tě jako vatra zmoní
+na na na ale ty nejsi ten
+
+
+2.)
+že prý moana je země
+tak země tradic a zvyklostí
+na na na kde se život našíka má
+moana jediný ostrov
+oslavují roky život
+na na na na na na na ostrov
+
+
+Lepsi: 1
+
+==============================
+Lyrics 8
+
+Original:
+
+Hakuna Matata
+What a wonderful phrase
+Hakuna Matata
+Ain´t no passing craze
+It means no worries
+for the rest of your days
+It´s our problem-free philosophy
+Hakuna Matata
+
+
+1.)
+a tak ňa hakuna
+ňále báječný fráz
+že 30 let máš hajina
+ďábel má tě kouř ráz
+ňákej má starost
+ďiky z dní vzlétne ráz
+že ňákej bez filozofíí
+ťukat je hajina
+
+
+2.)
+Hakuna Matata
+ta dvě slovíčka zněj
+Hakuna Matata
+není nápad zlej
+Vše co tě trápí
+rychle za hlavu dej
+Tohle učení tě odmění
+Hakuna Matata
+
+
+Lepsi: 2
+
+==============================
+Lyrics 9
+
+Original:
+
+Residents are more than welcome
+Bridal suite is occupied
+Reasonable charges Plus some little extras on the side
+
+
+1.)
+že prý ňák vítáno vítá
+co ťu si ztratím svatbu
+dál ňovou přiměření poplatky a už se z obu
+
+
+2.)
+rezidenti jsou v pohodě
+a pak je to v pořádku
+jenom na svatby se nepřiplácí a nevracejí
+
+
+Lepsi: 2
+
+==============================
+Lyrics 10
+
+Original:
+
+Mother knows best
+Take it from your mumsy
+On your own you won't survive
+Sloppy underdressed Immature clumsy
+Please they'll eat you up alive
+Gullible naive
+Positively grubby
+Ditzy and a bit well hmm vague
+
+
+1.)
+ňám nejlepší
+řeka vlastní mumsy
+ťáknu nebude přežít
+ďábel lajdak to neohrabaný sy
+řeka je mi už jíst žít
+ďábelům naivní
+že ťa se zmounela
+na na na ďašo za digaum
+
+
+2.)
+Matka to ví nejlépe
+Vem si to od maminky
+Sám o sobě nepřežiješ
+Sloppy underdressed Immature nemotory
+Prosím sežerou tě zaživa
+Naivní důvěřivci
+Pozitivně umouněný
+Ditzy a trochu dobře hmm vágní
+
+
+Lepsi: 2
+
+==============================
+Lyrics 11
+
+Original:
+
+How your world may be changed
+In just one burst of light
+And what was right seems wrong
+And what was wrong seems right
+
+
+1.)
+tak ňákej vem ještě svět
+tak ňu prsku světla
+na na na ňa špatně
+ďábel špatně vystla
+
+
+2.)
+dál ťa svět může změnit
+ťa jediné světlo
+a áá správný se zdá
+ňák zdá se špatný tlo
+
+
+Lepsi: 2
+
+==============================
+Lyrics 12
+
+Original:
+
+Oh Fantine our time is running out
+But Fantine I swear this on my life
+Look M'sieur where all the children play
+Be at peace be at peace evermore
+
+
+1.)
+že ňák jsem nikdo na ní fantinu
+dál ťáp nemá život kde je fanta
+ťasně dětíme v každý svý síly
+ňák se navěky mám mít můj mír
+
+
+2.)
+fantine v životě nezapomenu
+tak nikdy jsem netušil že ten pán
+na na na na mě bude tak hodný
+to když mi bylo smutno dětem
+
+
+Lepsi: 2
+
+==============================
+Lyrics 13
+
+Original:
+
+See the light as it shines on the sea
+It's blinding
+But no one knows
+How deep it goes
+
+
+1.)
+ňa moře se na plout mořský světlo
+tak ňujem
+tak ťi a ví
+copak ďak ví
+
+
+2.)
+na na na na na na moře mlčí
+svítí však
+na dně moře
+mnohem hlubší
+
+
+Lepsi: 2
+
+==============================
+Lyrics 14
+
+Original:
+
+One day more
+Tomorrow you'll be worlds away
+And yet with you my world has started
+
+
+1.)
+Další den
+Jen chvíli znám tě lásko má
+tak proč už vzápětí tě ztrácím
+
+
+2.)
+a světu
+co že se s námi loučíš s ránem
+až přijde den tvůj odvede nás
+
+
+Lepsi: 2
+
+==============================
+Lyrics 15
+
+Original:
+
+Show yourself
+Step into your power
+Throw yourself
+into something new
+You are the one you've been waiting for all of your life
+
+
+1.)
+Ukaž se
+Věř moci svých kouzel
+Přeroď se
+v dívku ze svých snů
+Ženou jsi tou kterou chtělas být Tou chci být dál
+
+
+2.)
+Ukaž se
+Vstupte do své moci
+Hoď sebou
+do něčeho nového
+Ty jsi ta na kterou čekáš celý život
+
+
+Lepsi: 1
+
+==============================
+Lyrics 16
+
+Original:
+
+There comes a day
+When you're gonna look around
+And realize happiness is where you are
+
+
+1.)
+Čas přijde sám
+kdy kolem se podíváš
+tak šťastná že to co máš je Úděl Tvůj
+
+
+2.)
+ťa přijde den
+že prý ťa když uvidí
+na na na óó to štěstí je tam kde jsi
+
+
+Lepsi: 1
+
+==============================
+Lyrics 17
+
+Original:
+
+Into the unknown
+Into the unknown
+Into the unknown
+
+
+1.)
+do neznáma dál
+Do neznáma dál
+Do neznáma dál
+
+
+2.)
+co jsem neznámej
+dál jsem neznámej
+co jsem neznámej
+
+
+Lepsi: 1
+
+==============================
+Lyrics 18
+
+Original:
+
+Go greased lightnin' you're burning up the quarter mile
+Greased lightnin' go greased lightnin'
+Go greased lightnin' you're coasting through the heat lap trials
+Greased lightnin' go greased lightnin'
+You are supreme the chicks'll cream for greased lightnin'
+
+
+1.)
+Jó náš auťák ten bude mistrem na dráze
+Náš auťák jo náš auťák
+Já říkám jó náš auťák i v soše vzbudí extáze
+Náš auťák jó náš auťák
+Jet dvoustovkou ať holky řvou ty jsi náš auťák
+
+
+2.)
+na na na něco máš já nikdy nic nemám
+co máš já taky nemám
+na na na na na na na co máš já nic nedám
+na na na na já nic dám
+na na na na na na že máš já nic žádám
+
+
+Lepsi: 1
+
+==============================
+Lyrics 19
+
+Original:
+
+One way or another Something will go wrong I swear
+Ruffians thugs
+Poison ivy quicksand
+Cannibals and snakes
+The plague
+
+
+1.)
+mor a kanibalové jsou jenom pohádky
+kdo by to bral
+vždyť jsem to já a ty
+a kdo to žere
+bolí
+
+
+2.)
+Tak či onak něco se pokazí přísahám
+Zločinci z Ruffians
+Jedovatý břečťanový pohyblivý písek
+Kanibalové a hadi
+Mor
+
+
+Lepsi: 1
+
+==============================
+Lyrics 20
+
+Original:
+
+The future is littered with prizes
+And though I'm the main addressee
+The point htat I must emphasize is
+You won't get a sniff without me
+
+
+1.)
+na koho adresuje cenu
+na na na za co vlastně je
+to co se lidem zdá v budoucnosti
+to lidem zdá v budoucnosti
+
+
+2.)
+co ťa čeká budoucnost bez cen
+óó však já hlavní adresát
+a pak ách kterou musím zdůraznit
+áchtáky do očí dýchat
+
+
+Lepsi: 1
+
+==============================
+Lyrics 21
+
+Original:
+
+The leaves are already falling
+Sven it feels like the future is calling
+Are you telling me tonight you're gonna get down on one knee
+Yep but I'm really bad at planning these things out
+Like candlelight and pulling of rings out
+Maybe you should
+leave all the romantic stuff to me
+
+
+1.)
+co já dnes večer budu mít
+už brzy svenova romantika
+dál za svitu svíček a za zvuků prastaře znělky
+tak jak to má rád a proto jsem se vrátil
+že a tak jak to má rád a proto
+večer budu
+na na na na na tak jak to má
+
+
+2.)
+dneska večer romantika
+a už svítá a z listí mráz mrazí
+no tak tak si zapal svíčku a ustel si na klíně
+že prý ty seš ta holka s kterou bych chtěl být
+jestli tě můžu něčím okouzlit
+a tak tak si
+na chvíli se posaď zapal si
+
+
+Lepsi: 2
+
+==============================
+Lyrics 22
+
+Original:
+
+Everyone's a bit of a fixer upper
+But when push comes to shove
+The only fixer upper fixer That can fix a fixer upper is
+
+
+1.)
+tak to se stává upper fixujeme
+když nás tlačí bota
+dál když fixujeme na pravou stranu fixujeme na levou
+
+
+2.)
+na na na fixer upper fix push shove
+co jak se nám líbí
+na na na na na na na na na na na na řekl jsem děvčátko
+
+
+Lepsi: 1
+
+==============================
+Lyrics 23
+
+Original:
+
+I know everybody on this island
+Seems so happy on this island
+Everything is by design
+
+
+1.)
+Znám každého na tomto ostrově
+Na tomhle ostrově vypadá tak šťastně
+Všechno je podle plánu
+
+
+2.)
+copak ťa znám po celém ostrově
+ňák tak šťastně na ostrově
+óó všechno podle plánu
+
+
+Lepsi: 2
+
+==============================
+Lyrics 24
+
+Original:
+
+Easy money
+Lying on a bed
+Just as well they never see The hate that's in your head
+Don't they know they're making love To one already dead
+
+
+1.)
+Snadné peníze
+Leží na posteli
+Je dobře že nikdy nevidí nenávist která je v tvé hlavě
+Copak nevědí že se milují s jedním již mrtvým
+
+
+2.)
+že láska je
+nenávist je
+když mě prachy rozpláčou a postel je malá
+no tak jsem jenom pro prachy a nesnáším lež
+
+
+Lepsi: 2
+
+==============================
+Lyrics 25
+
+Original:
+
+I have crossed the horizon to find you
+I know your name
+They have stolen the heart from inside you
+But this does not define you
+This is not who you are
+You know who you are
+
+
+1.)
+Přešel jsem obzor abych tě našel
+Znám tvé jméno
+Ukradli srdce z tvého nitra
+Ale tohle tě nedefinuje
+Tohle nejsi ty
+Víš kdo jsi
+
+
+2.)
+na na na na horizont překřížený
+ukradené srdce
+na na na na na na na je v srdci
+na na na na pod zemí
+na na na neuvnitř
+dál ale v hrudi
+
+
+Lepsi: 1
+
+==============================
+Lyrics 26
+
+Original:
+
+I've delivered us to where we are
+I have journeyed farther
+I am everything I've learned and more
+Still it calls me
+
+
+1.)
+ťa dovedl jsem až k nám tam kde jsme
+ťa jsem dálovala
+na na na ťa všechno naučil jsem se
+ťa zavolám
+
+
+2.)
+no tak než mi zavolal a já jel
+a že se za tebou
+a tak vrátím zpátky a pak jsem šel
+jako poutník
+
+
+Lepsi: 2
+
+==============================
+Lyrics 27
+
+Original:
+
+A seven-foot frame rats along his back
+When he calls your name it all fades to black
+Yeah he sees your dreams
+and feasts on your screams
+
+
+1.)
+ťa na zádech dva metry vysokú
+že prý óó když volá óó to je na kú
+ťa vidí svý sny
+že rát vaše sny
+
+
+2.)
+na na na na na na na na já sny
+na na na na na na na já výkřiky
+co řekla sedm
+na na na na na 5
+
+
+Lepsi: 1
+
+==============================
+Lyrics 28
+
+Original:
+
+I have crossed the horizon to find you
+I know your name
+They have stolen the heart from inside you
+But this does not define you
+This is not who you are
+You know who you are
+
+
+1.)
+proč jsi mi tu zůstal a já tě už znám
+já tě už znám
+tak jsem to já s křížem uvnitř srdce
+jsi s křížem uvnitř srdce
+že prý já tě už znám
+na na na na já
+
+
+2.)
+na na na na horizont překřížený
+ukradené srdce
+na na na na na na na je v srdci
+na na na na pod zemí
+na na na neuvnitř
+dál ale v hrudi
+
+
+Lepsi: 1
+
+==============================

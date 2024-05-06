@@ -1,7 +1,5 @@
-from eval.tagger import RhymeTagger
-# from rhymetagger import RhymeTagger
+from rhymetagger import RhymeTagger
 import re
-
 
 class SameWordRhymeTagger():
     def __init__(self, lang = "cs") -> None:

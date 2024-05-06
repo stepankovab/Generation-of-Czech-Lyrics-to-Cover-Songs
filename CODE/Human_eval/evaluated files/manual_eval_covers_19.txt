@@ -1,0 +1,856 @@
+# Ceka vas 28 uryvku originalnich pisnicek a jejich dvou moznych cover verzi (~15 min)
+#
+#
+# Urcete lepsi cover!
+# Prioritne:
+#     1. je mozne ho zazpivat na stejnou melodii jako original (neznate-li melodii nejakou si vymyslete) 
+#     2. je napsany prirozene (slova na sebe navazuji) 
+#     3. uryvek zni jako slova k pisni (zni zpevne, ne 100% smysluplne nebo verne originalu)
+#
+#
+# Jak na to?
+#    - prectete si original a obe moznosti
+#    - !!Vzdy!! zvolte lepsi cover (1 nebo 2)
+#    - Napiste cislo favorita do kolonky "Lepsi :"
+#    ... jako v nasledujici ukazce
+#
+#
+#  !!!! KROME KOLONKY LEPSI NIC NEPREPISUJTE, NEMENTE !!!!!
+#
+# Priklad spravneho vyplneni:
+#
+##################################################
+# Lyrics 0 (ukazka)
+#
+# Original:
+#
+# Mama take this badge from me
+# I can't use it anymore
+# It's getting dark too dark to see
+# Feels like I'm knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+#
+#
+# 1.)
+# Mámo sundej kytku z kabátu
+# Za chvíli nebude k ničemu
+# Můj kabát a kudlu vem pro tátu
+# Já už stojím před bránou s klíčem
+# Cejtím že zaklepu na nebeskou bránu
+# Cejtím že zaklepu na nebeskou bránu
+#
+#
+# 2.)
+# mámo vem si věci mý
+# já už vím, že půjdu tmou
+# zkus ztratit slovo, slovo jediný
+# a na nebi dvůr jistě mi otevřou
+# Na, na, na nebi otevřou
+# Na, na, na nebi otevřou
+#
+#
+# Lepsi: 2
+#
+##################################################
+Lyrics 1/28
+
+Original:
+
+let's go
+The stars don't shine
+they burn
+The constellations glow
+The seasons change in turn
+
+
+1.)
+hvězdy
+co se vlní
+měsíc
+září jako hvězda
+když hvězdy jsou zkroušený
+
+
+2.)
+ťáme
+ťahá hvězdy
+dál ňám
+ňáká souhvězdí z me
+řeď dlouho střevou střídňám
+
+
+Lepsi: 1
+
+==============================
+Lyrics 2/28
+
+Original:
+
+This is the morning report
+Gives you the long and the short
+Every grunt roar and snort
+Not a tale I distort
+On the morning report
+
+
+1.)
+ráno slyším jen řeči
+co jak všichni řvou v dešti
+jim někdo napoví
+že někdo napoví
+jim někdo napoví
+
+
+2.)
+Tak ranní hlášení zní
+Je o celém území
+o každém hemžení
+povím vám vážení
+Při ranním hlášení
+
+
+Lepsi: 1
+
+==============================
+Lyrics 3/28
+
+Original:
+
+Flipping your fins you don't get to far
+Legs are required for jumping dancing
+strolling along down the
+What's that word again
+street
+
+
+1.)
+když tě zastaví a uskočí
+a tak a tak se ti nohy krouží
+na nohou ti tančí
+nikdo nevěří
+že
+
+
+2.)
+no tak nohy mi uhýbají
+tak v tanci se převalím po zemi
+a s ploutví na rukou
+co pak se smeknu
+hop
+
+
+Lepsi: 2
+
+==============================
+Lyrics 4/28
+
+Original:
+
+All those days
+Chasing down a daydream
+All those years
+Living in a blur
+
+
+1.)
+co se zdá
+tak že se nám to zdá
+tak vstávej
+vstávej a řekni
+
+
+2.)
+Všechny ty dny
+Chasing down a daydream
+Všechny ty roky
+Život v mlze
+
+
+Lepsi: 1
+
+==============================
+Lyrics 5/28
+
+Original:
+
+What's the matter with you Cosette
+Have you been too much on your own
+So many things unclear
+So many things unknown
+
+
+1.)
+co cosette mě zajímá
+a ty zatím nevím co vím
+že jsem tě nenašel
+dál že tě nenašel
+
+
+2.)
+co óó cosetto co jsi zač
+na na na ťa byla škoda
+co ťa tolik věcí
+ňák tak málo věcí
+
+
+Lepsi: 1
+
+==============================
+Lyrics 6/28
+
+Original:
+
+I am the master of hundreds of workers They all look to me
+How can I abandon them
+How would they live
+If I am not free
+
+
+1.)
+na na na když jste s dělníky odešli do práce na polích
+co až jednou přijdeš k nám
+co nám zbylo
+když jste opustil
+
+
+2.)
+a pak my dělníci kteří se nikdy nepodíváme k vám
+že a už je to tady
+a už tady
+na na na my se
+
+
+Lepsi: 2
+
+==============================
+Lyrics 7/28
+
+Original:
+
+Now when you pick a pawpaw
+Or a prickly pear
+And you prick a raw paw
+Next time beware
+
+
+1.)
+a pak packa z krabičky
+to byla hruška
+a na tu si packa
+na tu packa
+
+
+2.)
+copak packa pichlavá
+hruška pichlavá
+tak rozděl se vždycky
+a tak vždycky
+
+
+Lepsi: 2
+
+==============================
+Lyrics 8/28
+
+Original:
+
+Then after lunch it's puzzles and darts and baking
+Paper mache a bit of ballet and chess
+Pottery and ventriloquy
+candle making
+Then I'll stretch
+maybe sketch
+take a climb Sew a dress
+
+
+1.)
+ňákej oběd už nepřece se mi přesmí
+na na na ňákej bálhý šach zvednul
+ňákej keramční břichoje
+ťem svíček mí
+mít štíček
+ťoha ček
+ťíži mi z šaty nul
+
+
+2.)
+Hlavu si lámu když trefím terč tak peču
+a v masce skrytá hravě si dávám mat
+s Pascalem dřem a svíčkama
+zpestřím véču
+cvičím pak
+tělo zrak
+ušiju pidi-frak
+
+
+Lepsi: 1
+
+==============================
+Lyrics 9/28
+
+Original:
+
+For years I've roamed these empty halls
+Why have a ballroom with no balls
+Finally they're opening up the gates
+
+
+1.)
+ňákejch sálů se tu potul
+dál ňáký sál srdce má s tul
+na na na ňákej šlo načte můj bran
+
+
+2.)
+a pak na plesích se tančí
+tak ve všech sálech se tančí
+v sále hosty dveře otvírají
+
+
+Lepsi: 2
+
+==============================
+Lyrics 10/28
+
+Original:
+
+Yes my teeth and ambitions are bared
+Be prepared
+Yes our teeth
+and ambitions are bared
+Be prepared
+
+
+1.)
+že ňkám se vemat svou ambici
+dál ňaci
+ňa zuby
+a ňákou ambici
+tak ňákci
+
+
+2.)
+Ano mé zuby a ambice jsou vyceněné
+Buďte připraveni
+Ano naše zuby
+a ambice jsou odhaleny
+Buďte připraveni
+
+
+Lepsi: 1
+
+==============================
+Lyrics 11/28
+
+Original:
+
+He knows his way in the dark
+Mine is the way of the Law
+Those who follow the path of the righteous
+Shall have their reward
+
+
+1.)
+na na na na ňa z tmy ví
+dál ťa na cestu měl práv
+ťábel houká na cestu spraveslým
+a ňa bude mám
+
+
+2.)
+na na na na ťa zná tmou
+a pak ááááá můj je zákon
+ťa kdo cestu spravedlivou zvolí
+že ťa odmění
+
+
+Lepsi: 2
+
+==============================
+Lyrics 12/28
+
+Original:
+
+Are you out there
+Do you know me
+Can you feel me
+Can you show me
+
+
+1.)
+co ťu a já
+a tak ťa vím
+ěj si já vím
+copak že vím
+
+
+2.)
+tak jen cítím
+že prý že víš
+tak jen cítím
+no tak že víš
+
+
+Lepsi: 1
+
+==============================
+Lyrics 13/28
+
+Original:
+
+In my life
+Ever so many questions
+and answers
+That somehow seems wrong
+In my life
+There are times when I catch in the silence The sigh of the faraway song
+
+
+1.)
+ňu život
+tak ťa se otázeky
+a čtyři
+copak ťu špatně
+ťá život
+na na na na na na na na ďáký ticho a odmítání vzdušně
+
+
+2.)
+dálka je
+na na na na ticho je
+píseň je
+a tak život je
+povzdech je
+na na na na na na na na na na na na na na stále se mi zdá
+
+
+Lepsi: 2
+
+==============================
+Lyrics 14/28
+
+Original:
+
+If the wind in my sail on the sea stays behind me
+One day I'll know
+How far I'll go
+
+
+1.)
+Když mi dá vítr plout nad vodou s lodí útlou
+Snad rozeznám
+kam doplout mám
+
+
+2.)
+a pak v dáli už se větrem točí plachetnice
+vítr je blíž
+co moře blíž
+
+
+Lepsi: 1
+
+==============================
+Lyrics 15/28
+
+Original:
+
+This is why he's here
+Don't let him deceive you
+Give it to him watch you'll see
+
+
+1.)
+Vím proč s tebou je
+Jenom kvůli tomu
+Dáš mu to a adieu
+
+
+2.)
+Proto je tady
+Nenech se jím oklamat
+Dej mu to uvidíš
+
+
+Lepsi: 2
+
+==============================
+Lyrics 16/28
+
+Original:
+
+So what can I say except you're welcome
+For the islands I pulled from the sea
+There's no need to pray it's okay
+you're welcome
+I guess it's just my way of being me
+You're welcome you're welcome
+Well come to think of it
+
+
+1.)
+Však Ty to víš že jsem Vždy k službám
+Vždyť jsem vám vaše ostrovy dal
+Já říkám jen "Hej jen hej
+Vždy k službám
+Jen Maui ten tvůj božský ideál
+Vždy k službám Vždy k službám
+No jen se podívej
+
+
+2.)
+tak óó co můžeš říct kromě toho
+óó pro ostrovy vytáhl z moře
+ťa není třeba pomodlit
+dál óóho ho
+ňák je mi asi moje vlastní řeč
+ňák není zač není
+ťa když tak přemýšlím
+
+
+Lepsi: 2
+
+==============================
+Lyrics 17/28
+
+Original:
+
+I've got scars and lumps and bruises
+Plus something here that oozes
+And let's not even mention my complexion
+But despite my extra toes
+And my goiter and my nose
+
+
+1.)
+Já jsem marod každým coulem
+mám modřiny a boule
+a nepřejte si vidět ten můj ekzém
+I když rostu sem a tam
+nádor a nos neschovám
+
+
+2.)
+tak jizvy po těle se hojí
+dál modřiny se hojí
+copak v duši jen bolest ze zklamání
+dál na duši jen bolest
+dál na duši jen bolest
+
+
+Lepsi: 1
+
+==============================
+Lyrics 18/28
+
+Original:
+
+He's here
+Don't talk about Bruno
+Why did I talk
+about Bruno
+Not a word about Bruno
+I never shoulda brought up Bruno
+
+
+1.)
+Jde sem
+Dej pokoj s tím Brunem
+Tak teď už vím
+kdo je Bruno
+Nezačínej s tím Brunem
+Ten tajuplný tío Bruno
+
+
+2.)
+mlčí
+a protože mlčí
+a tak mlčíš
+že a mlčíš
+tak sebrat písničky pár
+na na na na na na pár tu máš
+
+
+Lepsi: 1
+
+==============================
+Lyrics 19/28
+
+Original:
+
+No more words
+No more words it's a time that is dead
+There are words
+That are better unheard
+better unsaid
+
+
+1.)
+jen tak si říct
+co se jen slovy bez konce stalo
+jen tak si říct
+copak jen tak si říct
+na na na říct
+
+
+2.)
+Už žádná slova
+Už žádná slova. Je to čas který je mrtvý
+Jsou slova
+To je lepší neslyšet
+lépe nevyřčeno
+
+
+Lepsi: 1
+
+==============================
+Lyrics 20/28
+
+Original:
+
+Each little snail here
+Know how to wail here
+That's why it's hotter
+Under the water
+Ya we in luck here
+Down in the muck here Under the sea
+
+
+1.)
+co hlemýždíci
+dál hlemýždíci
+že prý vodníci
+mořští koníci
+že hlemýždíci
+už se zahřívaj a čekají
+
+
+2.)
+co ťa malý šnek
+žím si tu smutek
+ťa je víc horko
+dál ý nad vodou
+ťa tu máme nek
+ťa tam dole v bahně pod mořem
+
+
+Lepsi: 1
+
+==============================
+Lyrics 21/28
+
+Original:
+
+Each little slug here
+Cuttin' a rug here
+Under the sea
+
+
+1.)
+co koberec mám
+dál jen kousek mám
+tak já jdu spát
+
+
+2.)
+že to byl slimák
+tak co se tam cpal
+že prý a tak
+
+
+Lepsi: 1
+
+==============================
+Lyrics 22/28
+
+Original:
+
+If the wind in my sail on the sea stays behind me
+One day I'll know
+If I go there's just no telling how far I'll go
+
+
+1.)
+vím že vítr mě dohoní a moře se bojím
+vítr fouká
+a pak a kam fouká z moře vítr fouká
+
+
+2.)
+na na na na na na na na na na chcem za moře
+a tak a já
+na na na na na na na na na na a já
+
+
+Lepsi: 1
+
+==============================
+Lyrics 23/28
+
+Original:
+
+We only have each other
+It's just you and me
+What are we gonna do
+Do you want to build a snowman
+
+
+1.)
+Máme jen jeden druhého
+Jen ty a já
+Co budeme dělat
+Chceš si postavit sněhuláka
+
+
+2.)
+tak ťa máme jen jeden
+tak ťa jen já já
+co ťa budem dělat
+ťa postavit sněhuláka
+
+
+Lepsi: 1
+
+==============================
+Lyrics 24/28
+
+Original:
+
+He told me my fish would die
+the next day dead
+He told me I'd grow a gut and just like he said
+He said that all my hair would disappear
+now look at my head
+Your fate is sealed when your prophecy is read
+
+
+1.)
+Řekl mi že moje ryba zemře
+další den mrtvý
+Řekl mi že mi naroste střevo a přesně jak řekl
+Říkal že mi zmizí všechny vlasy
+Teď se podívej na mou hlavu
+Tvůj osud je zpečetěn když je tvé proroctví přečteno
+
+
+2.)
+smrtka ryby vyloví
+ale já nic
+o proroctví nikdy neslyšel přesto tak
+já si svůj osud musím protrpět
+a osud to tak
+že já si svůj osud musím protrpět
+
+
+Lepsi: 2
+
+==============================
+Lyrics 25/28
+
+Original:
+
+One day more
+Watch 'em run amuck
+Catch 'em as they fall Never know your luck
+When there's a free-for-all
+
+
+1.)
+Ještě jeden den
+Sleduj jak se zblázní
+Chyťte je jak padají Nikdy nepoznáte své štěstí
+Když je volno pro všechny
+
+
+2.)
+a chytí
+copak pobaví
+na na na na na na na utíkám
+a pak štěstí získám
+
+
+Lepsi: 1
+
+==============================
+Lyrics 26/28
+
+Original:
+
+Pressure like a drip
+drip
+drip
+that'll never stop
+
+
+1.)
+ťa tlak jak kapky
+ňa
+ááá
+ťa nezastaví
+
+
+2.)
+když jsem zastavil
+tlak
+tlak
+když jsem zastavil
+
+
+Lepsi: 2
+
+==============================
+Lyrics 27/28
+
+Original:
+
+Lovely ladies
+Waiting in the dark
+Ready for a thick one
+Or a quick one in the park
+
+
+1.)
+co óó dámy
+ťa čekání tmou
+ťa čekají dobrý
+co ňák rychlé v parku mou
+
+
+2.)
+dámy čekejte
+že zaparkujte
+copak připravené
+na na na na je krásné
+
+
+Lepsi: 1
+
+==============================
+Lyrics 28/28
+
+Original:
+
+You could try try try
+But you can't expect a demigod
+To beat a decapod
+Look it up
+
+
+1.)
+co ať se dívám
+co jak se s decapod rozcházím
+a pak ať se dívám
+a jak se
+
+
+2.)
+decapod demigod
+na na na na try beat look
+na na na na řekl
+já žiju
+
+
+Lepsi: 1
+
+==============================
