@@ -2,13 +2,11 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
 from rhymer_types import RhymerType
-from english_structure_extractor import SectionStructure
+from english_structure_extractor import SectionStructureExtractor, SectionStructure
 from postprocessing import Postprocesser
 from evaluator import Evaluator
 from lyrics_datasets import prepare_prompt_whole, extract_output_whole
 import os
-import re
-import json
 
 
 class StoppingSequenceCriteria(StoppingCriteria):
@@ -32,7 +30,7 @@ class StoppingSequenceCriteria(StoppingCriteria):
         yield self
 
 
-def generate_whole(args, input_sections):
+def generate_whole(args, input_sections, verbose=False):
     """
     input section can be either string or sectionStucture
     """
@@ -41,7 +39,8 @@ def generate_whole(args, input_sections):
     
     device = 'cpu'
     if torch.cuda.is_available():
-        print("cuda available.")
+        if verbose:
+            print("cuda available.")
         device = 'cuda'
 
     if args.model == "OSCAR_GPT2":
@@ -73,44 +72,27 @@ def generate_whole(args, input_sections):
 
     model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
 
-    print("="*10 + "  " + model_path + " " + "="*10)
+    if verbose:
+        print("="*10 + "  " + model_path + " " + "="*10)
     model.load_state_dict(state_dict=torch.load(model_path, map_location=torch.device(device)))
     model.to(device)
     model.eval()
 
-    structure = SectionStructure(english_rhyme_detector=RhymerType(args.rhymer))
+    structure_extractor = SectionStructureExtractor(english_rhyme_detector=RhymerType(args.rhymer))
     postprocesser = Postprocesser(evaluator=Evaluator(czech_rhyme_detector=RhymerType(args.rhymer)))
 
     result_pairs = []
 
-    if args.outsource_rhyme_schemes and args.from_dict:
-        with open("english_HT_rhymes_espeak.json", "r", encoding="utf-8") as json_file:
-            espeak_rhymes = json.load(json_file)
-
-        assert len(espeak_rhymes) == len(input_sections)
-
     for in_sec_id in range(len(input_sections)):
         input_section = input_sections[in_sec_id]
 
-        print("before structure filling")
-
-        # Load the structure of the english text
         if isinstance(input_section, SectionStructure):
             structure = input_section
         else:
-            structure.fill(input_section) 
-
-        if args.outsource_rhyme_schemes and args.from_dict:
-            structure.rhyme_scheme = espeak_rhymes[in_sec_id]
-
-        print("after structure filling")
+            structure = structure_extractor.create_section_structure(input_section) 
 
         prompt = prepare_prompt_whole(dataset_type, structure)
-        print(prompt)
-
         inputs = tokenizer([prompt],return_token_type_ids=False, return_tensors="pt").to(device)
-
-        print("before generation")
 
         sample_outputs = model.generate(**inputs,
             do_sample=True,
@@ -118,27 +100,21 @@ def generate_whole(args, input_sections):
             repetition_penalty=1.0,
             temperature=0.8,
             max_new_tokens=256,
-            num_return_sequences=args.out_per_gerenation,
+            num_return_sequences=args.out_per_generation,
             pad_token_id=tokenizer.eos_token_id,
             penalty_alpha=0.6,
             stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer, structure.num_lines),
             )
         
-        print("after generation")
-        
         out_lyrics = []
         for sample_output in sample_outputs:
             out_lyrics.append(extract_output_whole(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt, dataset_type, structure))
         
-        print("before postprocessing")
         model_out = postprocesser.choose_best_section(out_lyrics, structure, remove_add_stopwords=args.postprocess_stopwords)
-        print("after postprocessing")
-        
-        print(f"\n{', '.join(model_out)}\n")
 
-        result_pairs.append((','.join(model_out), structure.copy()))
-        for line in model_out:
-            print(line)
-        print()
+        if verbose:
+            print(f"\n{', '.join(model_out)}\n")
+
+        result_pairs.append((','.join(model_out), structure))
 
     return result_pairs

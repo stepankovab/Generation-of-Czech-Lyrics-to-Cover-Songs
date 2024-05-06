@@ -1,11 +1,9 @@
 from eval.syllabator import syllabify
-import requests
 from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer, util
 from english_structure_extractor import SectionStructure
 import re
-from eval.tagger import RhymeTagger
-# from rhymetagger import RhymeTagger
+from rhymetagger import RhymeTagger
 from eval.rhyme_finder import RhymeFinder
 from eval.same_word_tagger import SameWordRhymeTagger
 from rhymer_types import RhymerType
@@ -13,10 +11,11 @@ from eval.phon_czech import ipa_czech
 import eng_to_ipa as ipa
 from eval.chrF import computeChrF
 from nltk.translate.bleu_score import sentence_bleu
+from translate import lindat_translate
 
 class Evaluator():
 
-    def __init__(self, czech_rhyme_detector = RhymeFinder(), kw_model = KeyBERT(), embed_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2'), verbose = False) -> None:
+    def __init__(self, czech_rhyme_detector = RhymeFinder(), kw_model = KeyBERT(), embed_model = SentenceTransformer('all-MiniLM-L6-v2'), verbose = False) -> None:
         """
         Parameters
         ---------------
@@ -34,7 +33,7 @@ class Evaluator():
             elif czech_rhyme_detector == RhymerType.RHYMEFINDER:
                 czech_rhyme_detector = RhymeFinder()
             elif czech_rhyme_detector == RhymerType.SAME_WORD_RHYMETAGGER:
-                czech_rhyme_detector = SameWordRhymeTagger()
+                czech_rhyme_detector = SameWordRhymeTagger("cs")
 
         self.czech_rhyme_detector = czech_rhyme_detector
         self.verbose = verbose
@@ -66,7 +65,6 @@ class Evaluator():
                         "keyword_sim" : [],
                         "line_keyword_sim" : [],
                         "phon_rep_dif" : [],
-                        "bleu4gram" : [],
                         "bleu2gram" : [],
                         "chrf" : []}
         """
@@ -78,14 +76,10 @@ class Evaluator():
                         "keyword_sim" : [],
                         "line_keyword_sim" : [],
                         "phon_rep_dif" : [],
-                        "bleu4gram" : [],
                         "bleu2gram" : [],
                         "chrf" : []}
 
         for output, structure in outputs_w_structures:
-            if self.verbose:
-                print("=" * 30 + "\n")
-
             output_list = output.split(",")         
             out_syllables = []
 
@@ -159,20 +153,18 @@ class Evaluator():
             results_dict["phon_rep_dif"].append(abs(en_dist2 - cs_dist2))
 
             # bleu score and chrf score
-            bleu4gram = 0
             bleu2gram = 0
             totalF = 0
             if evaluate_translations == True:
-                url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
-                response = requests.post(url, data = {"input_text": ', '.join(structure.original_lyrics_list)})
-                response.encoding='utf8'
-                reference = [response.text[:-1].replace(',', '').split()]
+                cs_lyrics = lindat_translate(structure.original_lyrics_list, "en", "cs", ", ")
+                reference = [cs_lyrics.replace(',', '').split()]
                 candidate = ' '.join(output_list).split()
-                bleu4gram = sentence_bleu(reference, candidate)
                 bleu2gram = sentence_bleu(reference, candidate, weights=(0.5, 0.5))
-                totalF, _, _, _ = computeChrF([response.text[:-1]], [' '.join(output_list)], nworder=2, ncorder=6, beta=2)
+                try:
+                    totalF, _, _, _ = computeChrF([cs_lyrics], [' '.join(output_list)], nworder=2, ncorder=6, beta=2)
+                except:
+                    pass
             results_dict["chrf"].append(totalF)
-            results_dict["bleu4gram"].append(bleu4gram)
             results_dict["bleu2gram"].append(bleu2gram)
         return results_dict
     
@@ -187,21 +179,15 @@ class Evaluator():
             for i in range(len(keywords)):
                 if not keywords[i].strip():
                     continue
-                url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-                response = requests.post(url, data = {"input_text": keywords[i]})
-                response.encoding='utf8'
-                translated_keywords[i] = response.text[:-1]
+                translated_keywords[i] = lindat_translate([keywords[i]], "cs", "en", " ")
 
         translated_output_lines = output_lines.copy()
         if not output_in_en:
             # output to english
-            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
             for i in range(len(translated_output_lines)):
                 if not translated_output_lines[i].strip():
                     continue
-                response = requests.post(url, data = {"input_text": translated_output_lines[i]})
-                response.encoding='utf8'
-                translated_output_lines[i] = response.text[:-1]
+                translated_output_lines[i] = lindat_translate([translated_output_lines[i]], "cs", "en", " ")
 
         # Extract new keywords
         out_keywords = []
@@ -209,14 +195,7 @@ class Evaluator():
             line_keywords = [x[0] for x in self.kw_model.extract_keywords(translated_output_lines[i])]
             out_keywords.append(' '.join(line_keywords[:min(len(line_keywords), 2)]))
 
-        if self.verbose:
-            print(translated_keywords)
-            print(out_keywords)
-            print()
-
         if len(out_keywords) != len(translated_keywords):
-            if self.verbose:
-                print("keywords error")
             return 0
 
         similarities_per_line = []
@@ -229,31 +208,15 @@ class Evaluator():
     def get_keyword_semantic_similarity(self, keywords, output_lines, keywords_in_en = True, output_in_en = True):
         translated_keywords = keywords.copy()
         if not keywords_in_en and ', '.join(translated_keywords).strip():
-            # Keywords to english  
-            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": ', '.join(translated_keywords)})
-            response.encoding='utf8'
-            en_keywords_joined = response.text[:-1]
-            translated_keywords = en_keywords_joined.split(", ")
+            translated_keywords = lindat_translate(translated_keywords, "cs", "en", ", ")
 
         translated_output_lines = output_lines.copy()
         if not output_in_en and ', '.join(translated_output_lines).strip():
-            # output to english
-            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": ', '.join(translated_output_lines)})
-            response.encoding='utf8'
-            translated_output_lines = response.text[:-1]
+            translated_output_lines = lindat_translate(translated_output_lines, "cs", "en", ", ")
 
         # Extract new keywords
-        out_keywords = [x[0] for x in self.kw_model.extract_keywords(translated_output_lines)]
-        if out_keywords == []:
-            out_keywords = [""]
+        out_keywords = ", ".join([x[0] for x in self.kw_model.extract_keywords(translated_output_lines)])
             
-        if self.verbose:
-            print(translated_keywords)
-            print(out_keywords)
-            print()
-
         return self.get_semantic_similarity(out_keywords, translated_keywords)
 
 
@@ -272,16 +235,10 @@ class Evaluator():
             return 0
 
         if not text1_in_en and ' '.join(text1).strip():
-            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": text1})
-            response.encoding='utf8'
-            text1 = response.text[:-1]
+            text1 = lindat_translate([text1], "cs", "en", " ")
 
         if not text2_in_en and ' '.join(text2).strip():
-            url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/cs-en'
-            response = requests.post(url, data = {"input_text": text2})
-            response.encoding='utf8'
-            text2 = response.text[:-1]
+            text2 = lindat_translate([text2], "cs", "en", " ")
 
         embedding1 = self.embed_model.encode(text1, convert_to_tensor=False)
         embedding2 = self.embed_model.encode(text2, convert_to_tensor=False)
@@ -294,8 +251,6 @@ class Evaluator():
         distance = 0
         
         if len(syllables) != len(out_syllables):
-            if self.verbose:
-                print("syll error")
             return 10
 
         for i in range(len(out_syllables)):
@@ -350,8 +305,6 @@ class Evaluator():
             assert len(desired_scheme) == len(new_scheme)
             assert len(desired_scheme) > 0
         except:
-            if self.verbose:
-                print("rhyme error")
             return 0
 
         desired_edges = set()
@@ -366,11 +319,6 @@ class Evaluator():
 
         edge_agreement = desired_edges.intersection(new_edges)
 
-        if self.verbose:
-            print(desired_scheme)
-            print(new_scheme)
-            print()
-
         if len(desired_edges) == 0:
             return 1
 
@@ -381,8 +329,6 @@ class Evaluator():
             assert len(desired_scheme) == len(new_scheme)
             assert len(desired_scheme) > 0
         except:
-            if self.verbose:
-                print("rhyme error")
             return 0
 
         desired_edges = set()

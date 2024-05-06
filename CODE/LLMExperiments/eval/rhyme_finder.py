@@ -2,7 +2,6 @@ import re
 from eval.syllabator import syllabify
 import requests
 
-
 class RhymeFinder:
     def __init__(self, lang = "cs") -> None:
         self.lang = lang

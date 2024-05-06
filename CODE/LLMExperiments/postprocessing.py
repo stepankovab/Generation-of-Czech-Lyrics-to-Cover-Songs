@@ -8,58 +8,48 @@ import random
 class Postprocesser():
     def __init__(self, evaluator = Evaluator()) -> None:
         self.evaluator = evaluator
-        self.stopwords = {"a","ačkoli","ahoj","ale","anebo","ano","asi","aspoň","během","bez","beze","blízko","bohužel","brzo","bude","budeme","budeš","budete","budou","budu","byl","byla","byli","bylo","byly","bys","čau","chce","chceme","chceš","chcete","chci","chtějí","chtít","chut'","chuti","co","čtrnáct","čtyři","dál","dále","daleko","děkovat","děkujeme","děkuji","den","deset","devatenáct","devět","do","dobrý","docela","dva","dvacet","dvanáct","dvě","hodně","já","jak","jde","je","jeden","jedenáct","jedna","jedno","jednou","jedou","jeho","její","jejich","jemu","jen","jenom","ještě","jestli","jestliže","jí","jich","jím","jimi","jinak","jsem","jsi","jsme","jsou","jste","kam","kde","kdo","kdy","když","kolik","kromě","která","které","kteří","který","kvůli","má","mají","málo","mám","máme","máš","máte","mé","mě","mezi","mí","mít","mně","mnou","moc","mohl","mohou","moje","moji","možná","můj","musí","může","my","na","nad","nade","nám","námi","naproti","nás","náš","naše","naši","ne","ně","nebo","nebyl","nebyla","nebyli","nebyly","něco","nedělá","nedělají","nedělám","neděláme","neděláš","neděláte","nějak","nejsi","někde","někdo","nemají","nemáme","nemáte","neměl","němu","není","nestačí","nevadí","než","nic","nich","ním","nimi","nula","od","ode","on","ona","oni","ono","ony","osm","osmnáct","pak","patnáct","pět","po","pořád","potom","pozdě","před","přes","přese","pro","proč","prosím","prostě","proti","protože","rovně","se","sedm","sedmnáct","šest","šestnáct","skoro","smějí","smí","snad","spolu","sta","sté","sto","ta","tady","tak","takhle","taky","tam","tamhle","tamhleto","tamto","tě","tebe","tebou","ted'","tedy","ten","ti","tisíc","tisíce","to","tobě","tohle","toto","třeba","tři","třináct","trošku","tvá","tvé","tvoje","tvůj","ty","určitě","už","vám","vámi","vás","váš","vaše","vaši","večer","vedle","vlastně","všechno","všichni","vůbec","vy","vždy","za","zač","zatímco","ze","že","aby","aj","ani","az","budem","budes","by","byt","ci","clanek","clanku","clanky","coz","cz","dalsi","design","dnes","email","ho","jako","jej","jeji","jeste","ji","jine","jiz","jses","kdyz","ktera","ktere","kteri","kterou","ktery","ma","mate","mi","mit","muj","muze","nam","napiste","nas","nasi","nejsou","neni","nez","nove","novy","pod","podle","pokud","pouze","prave","pred","pres","pri","proc","proto","protoze","prvni","pta","re","si","strana","sve","svych","svym","svymi","take","takze","tato","tema","tento","teto","tim","timto","tipy","toho","tohoto","tom","tomto","tomuto","tu","tuto","tyto","uz","vam","vas","vase","vice","vsak","zda","zde","zpet","zpravy","a","aniž","až","být","což","či","článek","článku","články","další","i","jenž","jiné","již","jseš","jšte","každý","kteři","ku","me","ná","napište","nechť","ní","nové","nový","o","práve","první","přede","při","sice","své","svůj","svých","svým","svými","také","takže","te","těma","této","tím","tímto","u","více","však","všechen","z","zpět","zprávy"}
+        self.stopwords = {"a","ačkoli","ahoj","ale","anebo","ano","asi","aspoň","během","bez","beze","blízko","bohužel","brzo","bude","budeme","budeš","budete","budou","budu","byl","byla","byli","bylo","byly","bys","čau","chce","chceme","chceš","chcete","chci","chtějí","chtít","chut'","chuti","co","čtrnáct","čtyři","dál","dále","daleko","děkovat","děkujeme","děkuji","den","deset","devatenáct","devět","do","dobrý","docela","dva","dvacet","dvanáct","dvě","hodně","já","jak","jde","je","jeden","jedenáct","jedna","jedno","jednou","jedou","jeho","její","jejich","jemu","jen","jenom","ještě","jestli","jestliže","jí","jich","jím","jimi","jinak","jsem","jsi","jsme","jsou","jste","kam","kde","kdo","kdy","když","kolik","kromě","která","které","kteří","který","kvůli","má","mají","málo","mám","máme","máš","máte","mé","mě","mezi","mí","mít","mně","mffjeez","mnou","moc","mohl","mohou","moje","moji","možná","můj","musí","může","my","na","nad","nade","nám","námi","naproti","nás","náš","naše","naši","ne","ně","nebo","nebyl","nebyla","nebyli","nebyly","něco","nedělá","nedělají","nedělám","neděláme","neděláš","neděláte","nějak","nejsi","někde","někdo","nemají","nemáme","nemáte","neměl","němu","není","nestačí","nevadí","než","nic","nich","ním","nimi","nula","od","ode","on","ona","oni","ono","ony","osm","osmnáct","pak","patnáct","pět","po","pořád","potom","pozdě","před","přes","přese","pro","proč","prosím","prostě","proti","protože","rovně","se","sedm","sedmnáct","šest","šestnáct","skoro","smějí","smí","snad","spolu","sta","sté","sto","ta","tady","tak","takhle","taky","tam","tamhle","tamhleto","tamto","tě","tebe","tebou","ted'","tedy","ten","ti","tisíc","tisíce","to","tobě","tohle","toto","třeba","tři","třináct","trošku","tvá","tvé","tvoje","tvůj","ty","určitě","už","vám","vámi","vás","váš","vaše","vaši","večer","vedle","vlastně","všechno","všichni","vůbec","vy","vždy","za","zač","zatímco","ze","že","aby","aj","ani","az","budem","budes","by","byt","ci","clanek","clanku","clanky","coz","cz","dalsi","design","dnes","email","ho","jako","jej","jeji","jeste","ji","jine","jiz","jses","kdyz","ktera","ktere","kteri","kterou","ktery","ma","mate","mi","mit","muj","muze","nam","napiste","nas","nasi","nejsou","neni","nez","nove","novy","pod","podle","pokud","pouze","prave","pred","pres","pri","proc","proto","protoze","prvni","pta","re","si","strana","sve","svych","svym","svymi","take","takze","tato","tema","tento","teto","tim","timto","tipy","toho","tohoto","tom","tomto","tomuto","tu","tuto","tyto","uz","vam","vas","vase","vice","vsak","zda","zde","zpet","zpravy","a","aniž","až","být","což","či","článek","článku","články","další","i","jenž","jiné","již","jseš","jšte","každý","kteři","ku","me","ná","napište","nechť","ní","nové","nový","o","práve","první","přede","při","sice","své","svůj","svých","svým","svými","také","takže","te","těma","této","tím","tímto","u","více","však","všechen","z","zpět","zprávy"}
 
-    def choose_best_line(self, lines_list, syll_dist_tollerance = 0.2, syllables_in = None, ending_in = None, text_in = None, text_in_english=False, remove_add_stopwords=False):
+    def choose_best_line(self, lines_list, syll_dist_tolerance=0.1, sem_sim_tolerance=0.6, syllables_in = None, ending_in = None, text_in = None, text_in_english=False, remove_add_stopwords=False):
         if len(lines_list) == 0:
             return ""
+        
+        if remove_add_stopwords and syllables_in != None:
+            lines_list = self.correct_length_remove_add_stopwords(lines_list, [syllables_in for _ in range(len(lines_list))], ending_in != None)
+
+        if len(lines_list) == 1:
+            return lines_list[0]
         if syllables_in == None and ending_in == None and text_in == None:
             return lines_list[0]
             
-        scores_dict = {"syllables" : [], "endings" : [], "similarity" : []}
         scores = [0 for _ in range(len(lines_list))]
 
-        if remove_add_stopwords and syllables_in != None:
-            lines_list = self.correct_length_remove_add_stopwords(lines_list, [syllables_in for _ in range(len(lines_list))], ending_in != None)
-        
         # fill in scores dict
         for line_i in range(len(lines_list)):
             sylls = syllabify(lines_list[line_i])
             
             if syllables_in != None:
                 syllables_out = len(sylls)
-                scores_dict["syllables"].append(self.evaluator.get_section_syllable_distance([syllables_in], [syllables_out]))
+                syll_dist = self.evaluator.get_section_syllable_distance([syllables_in], [syllables_out])
+                scores[line_i] += syll_dist / max(syll_dist_tolerance, 0.0001)
             
             if ending_in != None:
                 if len(sylls) == 0:
-                    scores_dict["endings"].append(0)
-                    continue
-                ending_out = sylls[-1]
-                scheme = self.evaluator.czech_rhyme_detector.tag([ending_in, ending_out])
-                if scheme[0] == scheme[1] and scheme[0] != None:
-                    scores_dict["endings"].append(0)
+                    rhyme_score = 0
                 else:
-                    scores_dict["endings"].append(1)
+                    ending_out = sylls[-1]
+                    scheme = self.evaluator.czech_rhyme_detector.tag([ending_in, ending_out])
+                    if scheme[0] == scheme[1] and scheme[0] != None:
+                        rhyme_score = 0
+                    else:
+                        rhyme_score = 1
+                scores[line_i] += rhyme_score
 
             if text_in != None:
                 similarity = self.evaluator.get_semantic_similarity(lines_list[line_i], text_in, text1_in_en=False, text2_in_en=text_in_english)
-                scores_dict["similarity"].append(similarity)
-
-        # pick the best match
-        syll_multip_factor = 10 / max(syll_dist_tollerance, 0.0001)
-        for line_i in range(len(lines_list)):
-            if syllables_in != None:
-                scores[line_i] += syll_multip_factor * scores_dict["syllables"][line_i]
-            if ending_in != None:
-                scores[line_i] += 10 * scores_dict["endings"][line_i]
-            if text_in != None:
-                scores[line_i] += (1 - scores_dict["similarity"][line_i])
+                scores[line_i] += (1 - similarity) / (1 - min(sem_sim_tolerance, 0.9999))
 
         ordered_indicies = [i for i, x in sorted(enumerate(scores), key=lambda x: x[1])]
-
-        for i in ordered_indicies:
-            print(lines_list[i])
-            print()
 
         return lines_list[ordered_indicies[0]]
 
@@ -77,9 +67,12 @@ class Postprocesser():
             
         if remove_add_stopwords:
             for i in range(len(lyrics_list)):
-                print(i)
                 lyrics_list[i] = self.correct_length_remove_add_stopwords(lyrics_list[i], structure.syllables)
-            print("stop words removed")
+
+        if len(lyrics_list) == 0:
+            return ""
+        if len(lyrics_list) == 1:
+            return lyrics_list[0]
 
         scores_dict = self.evaluator.evaluate_outputs_structure([(','.join(lyrics[:min(len(lyrics), structure.num_lines * 2)]), structure) for lyrics in lyrics_list], evaluate_keywords=False, evaluate_line_keywords=False, evaluate_translations=False)
         scores = [0 for _ in range(len(lyrics_list))]
@@ -93,15 +86,6 @@ class Postprocesser():
 
         ordered_indicies = [i for i, x in sorted(enumerate(scores), key=lambda x: x[1])]
 
-        for i in ordered_indicies:
-            print(lyrics_list[i])
-            print("score:", scores[i])
-            print("syll:", scores_dict["syll_dist"][i] / max(syll_dist_tolerance, 0.0001), "|", scores_dict["syll_dist"][i])
-            print("rhyme:", (1 - scores_dict["rhyme_scheme_agree"][i]) / (1 - min(rhyme_scheme_agree_tolerance, 0.9999)), "|", scores_dict["rhyme_scheme_agree"][i])
-            print("sem:", (1 - scores_dict["semantic_sim"][i]) / (1 - min(sem_sim_tolerance, 0.9999)), "|", scores_dict["semantic_sim"][i])
-            print("repet:", scores_dict["phon_rep_dif"][i] / max(phon_rep_dif_tolerance, 0.0001), "|", scores_dict["phon_rep_dif"][i])
-            print()
-
         return lyrics_list[ordered_indicies[0]]
 
     def correct_length_remove_add_stopwords(self, lines, lengths, keep_last_word=True):
@@ -113,8 +97,6 @@ class Postprocesser():
         
         for line_i in range(len(lines)):
             
-            print(lines[line_i])
-
             line = lines[line_i].lower()
             line_len = lengths[line_i]
             difference = len(syllabify(line)) - line_len
@@ -130,7 +112,7 @@ class Postprocesser():
                         words_to_remove.append(word)
                 if not keep_last_word:
                     if words[-1] in self.stopwords:
-                        words_to_remove.append(word)
+                        words_to_remove.append(words[-1])
                 line, difference = self._find_best_removal(line, words_to_remove, difference)
 
             if difference < 0 and line.strip():
@@ -141,9 +123,6 @@ class Postprocesser():
                 if difference <= -3:
                     prefix = "na" + " na"*(-difference - 1)
                 line = prefix + " " + line
-
-            print(line)
-            print()
 
             lines[line_i] = line
 

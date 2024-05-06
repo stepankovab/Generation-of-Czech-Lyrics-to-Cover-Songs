@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
 from dataset_types import DatasetType
-from english_structure_extractor import SectionStructure
+from english_structure_extractor import SectionStructureExtractor, SectionStructure
 from postprocessing import Postprocesser
 from evaluator import Evaluator
 from rhymer_types import RhymerType
@@ -9,7 +9,6 @@ from eval.syllabator import syllabify
 import os
 import re
 import requests
-import json
 
 
 class StoppingSequenceCriteria(StoppingCriteria):
@@ -78,10 +77,13 @@ def extract_model_out(model_out, prompt):
     return re.sub(',', '', out_lines[0])
 
 
-def generate_lines(args, input_sections):
+def generate_lines(args, input_sections, verbose=False):
     wout_dataset_type = DatasetType(args.dataset_type)
 
-    if wout_dataset_type == DatasetType.WORDS:
+    
+    if wout_dataset_type == DatasetType.BASELINE:
+        w_dataset_type = DatasetType.BASELINE
+    elif wout_dataset_type == DatasetType.WORDS:
         w_dataset_type = DatasetType.WORDS_ENDS
     elif wout_dataset_type == DatasetType.SYLLABLES:
         w_dataset_type = DatasetType.SYLLABLES_ENDS
@@ -89,12 +91,15 @@ def generate_lines(args, input_sections):
         w_dataset_type = DatasetType.SYLLABLES_WORDS_ENDS
     elif wout_dataset_type == DatasetType.UNRHYMED_LEN:
         w_dataset_type = DatasetType.UNRHYMED_LEN_END
+    elif wout_dataset_type == DatasetType.FORCED_SYLLABLES:
+        w_dataset_type = DatasetType.FORCED_SYLLABLES_ENDS
     else:
         raise Exception(f"We don't support a Dataset type {wout_dataset_type}")
 
     device = 'cpu'
     if torch.cuda.is_available():
-        print("cuda available.")
+        if verbose:
+            print("cuda available.")
         device = 'cuda'
 
     if args.model == "OSCAR_GPT2":
@@ -131,57 +136,47 @@ def generate_lines(args, input_sections):
     wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
     
-    print("="*10 + "  " + wout_model_path + " " + "="*10)
+    if verbose:
+        print("="*10 + "  " + wout_model_path + " " + "="*10)
     wout_model.load_state_dict(state_dict=torch.load(wout_model_path, map_location=torch.device(device)))
     wout_model.to(device)
-    print("="*10 + "  " + w_model_path + " " + "="*10)
+    if verbose:
+        print("="*10 + "  " + w_model_path + " " + "="*10)
     w_model.load_state_dict(state_dict=torch.load(w_model_path, map_location=torch.device(device)))
     w_model.to(device)
     wout_model.eval()
     w_model.eval()
 
-    structure = SectionStructure(english_rhyme_detector=RhymerType(args.rhymer))
+    structure_extractor = SectionStructureExtractor(english_rhyme_detector=RhymerType(args.rhymer))
     postprocesser = Postprocesser(evaluator=Evaluator(czech_rhyme_detector=RhymerType(args.rhymer)))
 
     result_pairs = []
-    if args.outsource_rhyme_schemes and args.from_dict:
-        with open("english_HT_rhymes_espeak.json", "r", encoding="utf-8") as json_file:
-            espeak_rhymes = json.load(json_file)
-
-        assert len(espeak_rhymes) == len(input_sections)
 
     for in_sec_id in range(len(input_sections)):
         input_section = input_sections[in_sec_id]
-        # Load the structure of the english text
+        
         if isinstance(input_section, SectionStructure):
             structure = input_section
         else:
-            structure.fill(input_section) 
-
-        if args.outsource_rhyme_schemes and args.from_dict:
-            structure.rhyme_scheme = espeak_rhymes[in_sec_id]
+            structure = structure_extractor.create_section_structure(input_section) 
             
         result = []
-
         known_endings = {}
 
         for line_i in range(structure.num_lines):
 
             if structure.rhyme_scheme[line_i] in known_endings:
                 prompt = prepare_prompt(w_dataset_type, structure, line_i, known_endings[structure.rhyme_scheme[line_i]])
-
-                print(prompt)
                 
                 inputs = tokenizer([prompt],return_token_type_ids=False, return_tensors="pt").to(device)
-        
-                # model output using Top-k sampling text generation method
+
                 sample_outputs = w_model.generate(**inputs,
                     do_sample=True,
                     top_p=0.95,
                     repetition_penalty=1.0,
                     temperature=0.8,
                     max_new_tokens=256,
-                    num_return_sequences=args.out_per_gerenation,
+                    num_return_sequences=args.out_per_generation,
                     pad_token_id=tokenizer.eos_token_id,
                     penalty_alpha=0.6,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
@@ -190,7 +185,6 @@ def generate_lines(args, input_sections):
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
                 model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], ending_in=known_endings[structure.rhyme_scheme[line_i]], text_in=structure.original_lyrics_list[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
-                print(f"\n{model_out}\n")
                 result.append(model_out)
 
             else:
@@ -205,7 +199,7 @@ def generate_lines(args, input_sections):
                     repetition_penalty=1.0,
                     temperature=0.8,
                     max_new_tokens=256,
-                    num_return_sequences=args.out_per_gerenation,
+                    num_return_sequences=args.out_per_generation,
                     pad_token_id=tokenizer.eos_token_id,
                     penalty_alpha=0.6,
                     stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer),
@@ -214,17 +208,19 @@ def generate_lines(args, input_sections):
                 out_lines = [extract_model_out(tokenizer.decode(sample_output.tolist(), skip_special_tokens=True), prompt) for sample_output in sample_outputs]
                 model_out = postprocesser.choose_best_line(out_lines, syllables_in=structure.syllables[line_i], text_in=structure.original_lyrics_list[line_i], text_in_english=True, remove_add_stopwords=args.postprocess_stopwords)
                 
-                print(f"\n{model_out}\n")
                 result.append(model_out)
 
                 syll_output = syllabify(model_out)
                 if len(syll_output) > 0:
                     known_endings[structure.rhyme_scheme[line_i]] = syll_output[-1][-min(len(syll_output[-1]), 3):]
 
-        result_pairs.append((','.join(result), structure.copy()))
-        for line in result:
-            print(line)
-        print()
+        result_pairs.append((','.join(result), structure))
+
+        if verbose:
+            print("lyrics: \n\n")
+            for line in result:
+                print(line)
+            print()
 
     return result_pairs
 

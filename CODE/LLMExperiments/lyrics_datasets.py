@@ -214,10 +214,6 @@ def prepare_prompt_whole(dataset_type, structure):
 
 def extract_output_whole(out_lines, prompt, dataset_type, structure):
     
-    print("+++++++++++++++++++++++++\ndetokenized text: ")
-    print(out_lines.replace(prompt,''))
-    print()
-
     out_lines = out_lines.strip().split("\n")
     start_of_text = len(prompt.strip().split("\n"))
     if not prompt.strip():
