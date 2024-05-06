@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2loIviNCzFOeHlCS3u519HMenkhUfhp+fPkLrlwbz3PzlZAVyClbnVSN/LWT0S8Z2zhnTMMh4/yvUVTouodN6Q==",
+  "dgSpecHash": "deT3M4RYJkUZMYh94GNT45/22Hlp/ACEoUxrnmzo8Kk4q5fbtiAbhvpwxGMW7IHrWVLQojFhtzjloCJr8Rn3WA==",
   "success": true,
   "projectFilePath": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGeneratorApp.csproj",
   "expectedPackageFiles": [
@@ -190,11 +190,7 @@
     "C:\\Users\\barca\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\barca\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\barca\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\barca\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\barca\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\barca\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\barca\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\barca\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
+    "C:\\Users\\barca\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

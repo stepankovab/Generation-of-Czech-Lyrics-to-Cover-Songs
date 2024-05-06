@@ -1,0 +1,846 @@
+----------------- tinyLlama ------ DatasetType.SYLLABLES_AND_ENDS ----------------
+cuda available.
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+----------------- tinyLlama ------ DatasetType.SYLLABLES_AND_ENDS ----------------
+cuda available.
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # dívka mívá
+6 # nám # ví, že na ní znám
+4 # ní # ztrat
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # každý ví
+6 # nám # že hudba odrážděj
+4 # ní #
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # třeba někdo ví
+6 # nám # že všechno se zdá nám
+4 # n
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # náz na to ví
+6 # nám # že to dávno znám
+4 # ní # snad i
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # tichovej bí
+6 # nám # psi kouká k zemi k nám
+4 # n
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # už víš co ví
+6 # nám # kámen, který zní nám
+4 # ní #
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_1_32.pt ==========
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jak ví svět ví
+6 # nám # jak ví,že to znám
+4 # ní # černou
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # nade vší tváři
+6 # nám # když sní si dává nám
+4 # n
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdybys tu ví
+6 # nám # že tě dceru daru nám
+4 # ní #
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo přichá ví
+6 # nám # že život už znám
+4 # ní # dnes
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # lásko to ví
+6 # nám # že to je velký nám
+4 # ní # vrátil
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jak tají ví
+6 # nám # všechno je ve vztahu
+4 # ní # jen
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_2_32.pt ==========
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # oni to ví
+6 # nám # o tom kdo se znám
+4 # ní # on má hran
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # už to není ví
+6 # nám # že jsme na tom přečinám
+4 # ní
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo pochoví
+6 # nám # ví všechno, ty znám
+4 # ní # h
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # přece neví
+6 # nám # že dva jsou to znám
+4 # ní # že práv
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # přísloví
+6 # nám # přísloví to, kdo nám
+4 # ní # to
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # všechno přece ví
+6 # nám # hlavní hudba už znám
+4 # n
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_3_32.pt ==========
+----------------- tinyLlama ------ DatasetType.SYLLABLES_AND_ENDS ----------------
+cuda available.
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_0_32.pt ==========
+
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # pane, už ví
+6 # nám # kdo ti dát koukánám
+4 # ní # kdo ti dát není
+6 # ky # kdo ti dát koukánky
+4 # ky # kdo ti dát koukánky
+4 # ky # kdo ti d
+
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # tam, kde stojí
+6 # nám # střechy se přivázám
+4 # ní # přec hrob není
+6 # ky # ale smrt je krásky
+8 # ky # smrti je pěkně vrásky
+4 # ní # hrobní hnání
+
+
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # uzení ví
+6 # nám # že ty zvyšuj k nám
+4 # ní # všechno změní
+6 # ky # já, jsem tvůj kroky
+4 # ní # změní v není
+6 # ky # já, jsem tvůj kroky
+4 # ví
+
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # bílé skrýví
+6 # nám # hodinky dál k nám
+4 # ní # stromy mlání
+6 # ky # vlaky a tramvaje
+6 # ní # stromy mlání
+4 # ky # tramvaje
+6 # ní # pě
+
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # na co ví, ví
+6 # nám # ten, kdo vám přísnám
+4 # ní # v tom bude ní
+6 # ky # tak dál větví jíky
+4 # náš # všichni znáš
+6 # nám # ten, kdo vám přísnám
+4
+
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # vím, než ti tvé ví
+6 # nám # já mohu s tebou vyznám
+4 # ní # je tím poznání
+6 # ky # jakou je v nich zpátky k roštitky.květky
+4 # ky # j,vím, že jsem ztrat
+
+7
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo jó ví kdo ví
+6 # nám # že nás to nemání
+4 # ní # nebe i vění
+6 # ky # zkoušíme i zpátky ky
+4 # ví # kdo jó ví kdo ví
+6 # nám # že nás to nemění
+4 # ní
+
+8
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # děti, to ví
+6 # nám # kouž, kouž, to nám
+4 # ní # svět je město
+6 # ky # človění lidu
+4 # ky # krám a lidy
+9 # ká # krám na vídání není možná
+9
+
+9
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # o co praví
+6 # nám # říkají,že znám
+4 # ní # a nevadí
+6 # ky # že to v kapsách
+4 # ní # hned dává
+6 # ky # že to v kapsách
+4 # ví # o co praví
+6 # nám
+
+10
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když jsem tě ví
+6 # nám # co ti říkám jenám
+4 # ní # že je není
+6 # ky # a že ti vždy patříky
+4 # ví # když jsem tě ví
+6 # nám # když jsem tě říkám jenám
+
+
+11
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # páni, kdo to ví
+6 # nám # kdy hlasy budou přinám
+4 # ní # kdy všichni
+6 # ky # je všichni hřející ky
+6 # vy # že jdou do páni hnavení v návy
+4 # nám # kdy
+
+12
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když jen praví
+6 # nám # že přál bych ti dávat nám
+4 # ní # vrána zpřísní
+6 # ky # jen jednou za všichni ky
+4 # nás # pak spánek znás
+4 # ní # způsobání
+6 #
+
+13
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # člověk to ví
+6 # nám # že vždy něco povinám
+4 # ní # že nevinní
+6 # ky # vrátil se možky
+4 # ty # z člověka ty
+6 # ní # s hledem k nám převiní
+4 # ky
+
+14
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když dostat ví
+6 # nám # co nikdo nedá nám
+4 # ní # nikdy není
+6 # ky # když se to taky čeky
+4 # ní # nikdy není
+6 # ky # když se to taky dlekty
+4 # ví #
+
+15
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # nikdo neví
+6 # nám # kdo přijde k nám
+4 # ní # že přijde ní
+6 # ky # kdo přijde k nám křídly.
+4 # ní # že přijde ní
+6 # ky # kdo přijde k nám k
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_1_32.pt ==========
+
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # dávno je to ví
+6 # nám # že dávno mě přivínám
+4 # ní # že dávno není
+6 # ky # mně napadá, lásky
+4 # ví # dávno je to ví
+6 # nám # že dávno mě přivínám
+4 # n
+
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # je to praví
+6 # nám # že kdo zůstal s nám
+4 # ní # pojedou k ní
+6 # ky # kde je to tváříky
+4 # nám # že kdo zůstal s nám
+4 # nní # vše nenechá nní
+6 # k
+
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # že mám poví
+6 # nám # a přitom znám jej
+4 # ní # že to hnání
+6 # ky # v ní všichni vyprávíky
+4 # nám # že mám poví
+6 # ní # že to není dětní
+4 # ky # v
+
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když to ví
+6 # nám # když to ví slaví k nám
+4 # ní # slaví, slaví
+6 # ky # kamarády patří ky
+4 # nám # když to ví nám
+4 # důvěry # když to v důvě
+
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # už to ví
+6 # nám # že tvá tón pošt nám
+4 # ní # ať si zpříjemní
+6 # ky # že si něco skočíčky
+4 # ní # ať i když niční
+6 # ky # jenom čekne na černou
+
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # tady to ví
+6 # nám # když ztijou šlapu k nám
+4 # ní # více není
+6 # ky # hmm, hlavu zalezí ky
+4 # ví # tady to ví
+6 # nám # když ztijou šlapu k nám
+
+7
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # mám z tebe ví
+6 # nám # že tu všechno znám
+4 # ní # že tu všechní
+6 # ky # včerejšek co včetřky
+4 # ví # co tam nemá ví
+4 # nám # že tu všechno znám
+6 # ky #
+
+8
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # člověk tě poví
+6 # nám # že svůj život vyznám
+4 # ní # to je praví
+6 # ky # že je to pravíky
+4 # tě # to je můj tě
+4 # poví # když někdo poví
+
+Svižně
+
+9
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # v černé chvíji ví
+6 # nám # že včerejšek dávno znám
+4 # ní # je včerejšní
+6 # ky # t.c.z.t.n. a o.k.y.p.ky.
+4 # mlha # je to vlha
+
+10
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # pětkrát neví
+6 # nám # ví co když všechno znám
+4 # ní # ví o tom stání
+6 # ky # víc lidských síly
+4 # ní # ví o tom stení
+6 # ky # víc lidských síly
+6 # ní # ví o tom st
+
+11
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # víš, jak chvíli ví
+6 # nám # život tě vydržení nám
+4 # ní # není čas třeba
+6 # ky # ale bůh dobrýky
+4 # ním # ať dobrý kymy
+6 # ní # nebude to
+
+12
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # názor to ví
+6 # nám # málo věcí znám
+4 # ní # když si zpívá
+6 # ky # jak se je tu máky
+8 # ny # mizí ve stínu už ráno
+8 # ky # vím snad páni jsou většinou
+
+13
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # dědečku ví
+6 # nám # že tě nechaj k nám
+4 # ní # tak jak to není
+6 # ky # je to přejíštěky
+4 # ny # život je hlíny
+4 # ky # jako dýleky
+6 # dík # neod
+
+14
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo je zůstaví
+6 # nám # že nikde ví co k nám
+4 # ní # nikde k ní
+6 # ky # k ní nemám vráskačky
+4 # ný # kdo by se sný
+4 # ky # víš, co na ky
+6
+
+15
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # člověk člověk ví
+6 # nám # že dlouho v tom činu, nám
+4 # ní # příslovník není
+6 # ky # naše dík došli vyšliky
+4 # náš # neznává všichni náš ty jsi náš
+
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_2_32.pt ==========
+
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # těžko to ví
+6 # nám # co je dřív než nám
+4 # ní # ještě nebyní
+6 # ky # všem básníkům šlápky
+4 # ní # ještě nebyní
+6 # ky # všem básníkům šlápky
+1
+
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # mám ráda tvůj
+6 # nám # když ho nečekáš k nám
+4 # ní # číst mě nemá
+6 # ky # jen o své šaty
+4 # ný # tvé pořádný
+6 # ky # já ožívám chvály
+4 #
+
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # teď už to ví
+6 # nám # dnes je představenej tónám
+4 # ní # už hraješ ní
+6 # ky # na tonadělé zpátky
+4 # nám # dnes je představenej tónám
+6 # ní # na tonad
+
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # víc víc ví
+6 # nám # máš jen sbohem tě znám
+4 # ní # jen křížem lížení
+6 # ky # žálou zlá vráti vícky
+4 # dámy víc # víc víc do dámy víc
+6 # k
+
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # vždyť každý ví
+6 # nám # že táto jmenuje nám
+4 # ní # ať je všechno
+6 # ky # že jsi všechno škvírky
+4 # nty # převčírem
+4 # nám # když táto nám
+
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # noc je víc ví
+6 # nám # zlé časy před nám
+4 # ní # dědečko tání
+6 # ky # dědečku vzmečky
+4 # vy # jméno vy
+6 # ky # život je příčky
+4 # ví # noc je
+
+7
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # a přijde ví
+6 # nám # že jste tě vnímá nám
+4 # ní # zůstanou ní
+6 # ky # po všech dočkáváciky
+4 # nám # že jste vnímá nám
+10 # ní # bude mít jen jí
+
+8
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # ví, kdo to ví
+6 # nám # já zní nepoznám
+4 # ní # můj čas je sní
+6 # ky # můj děti je lásky
+4 # ný # zničený
+6 # ky # mám tu svou malou lásky
+12 #
+
+9
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # neudoví
+6 # nám # že tyhle vrány znám
+4 # ní # ty z nás nemění
+6 # ky # že jiná nežlutá šípky
+4 # ní # vyžlutání
+4 # ky # je nás koupí
+6 # ky
+
+10
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo je nejlíp ví
+6 # nám # ty nechce nás zprávnám
+4 # ní # klikuje není
+6 # ky # není šíličky
+4 # nypáký # než tak čerňáky
+4 # níký # není v zr
+
+11
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # ten tvůj velík ví
+6 # nám # jak je to možná k nám
+4 # ní # čekáš zpět
+6 # ky # lásko lásko šípký
+4 # ním # tři vzorky sním
+4 # ník # čekáš z neštěkník
+
+
+12
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jak je to ví
+6 # nám # když jen neřekneš nám
+4 # ní # když není
+6 # ky # co dělat vícky
+4 # ví # jak to ví
+6 # nám # když nikdy neřekneš nám
+4 # ní # kdy
+
+13
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # dává všichni ví
+6 # nám # že se všichni vídá
+4 # ní # je to škání
+6 # ky # je to buchání děti
+4 # ví # dává všichni ví
+6 # nám # že se všichni vídá
+4 # ní
+
+14
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # o, o, o, vím
+6 # nám # že ti vrátil svojí
+4 # ní # hledání
+6 # ky # hledání nežli zpátky
+4 # nk # hledání
+6 # času # a hledání času
+4 # náš # hled
+
+15
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když je ví
+6 # nám # když dým co vycháznám
+4 # ní # když vůni
+6 # ky # když ožívám zpátky
+4 # nny # napsá mi nny
+4 # ní # co je nní
+6 # ky # kdo mě
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_3_32.pt ==========
+
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # už to nestaví
+6 # nám # co tady se staví nám
+4 # ní # nevyplní
+6 # ky # o čé hořílákyky kykykykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jó, kdo ví
+6 # nám # ten se tak trochu znám
+4 # ní # nepohledí
+6 # ky # jó, jó, jó, láskyykykylafkysagrykylafkysagrykylafkysagrykylelélélélé
+
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # a já už ví
+6 # nám # co všechno dělat znám
+4 # ní # kdo není strení
+6 # ky # a já krásné pěkyykykykazkyykykazkyykykazkyykykazkyykykazkyykykazkyykykazkyyky
+
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # tma jak mlý ví
+6 # nám # ať si to nehnám
+4 # ní # mně to bolní
+6 # ky # ať slzy a kleky ky ky ky ky ky ky ky ky ky ky ky ky ky ky ky ky k
+
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # ty se stmývaj
+6 # nám # a jen dál ti dávnám
+4 # ní # než jen zbraní
+6 # ky # a když měli vlakykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když se díviv
+6 # nám # jak to všechno znám
+4 # ní # dřív než změní
+6 # ky # dřív než změní zábky.ky #
+4 # ní # dřív než změní
+6 # ky # dřív než změní
+
+7
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # to ho bůh ví
+6 # nám # toho bůh ví, kdo to znám
+4 # ní # i sví svobodní
+6 # ky # svítáme do hračkykyy kykyy kykyy kykyy kykyy kykyy kyky
+
+8
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jak v nás se zdvi
+6 # nám # vždycky vyprávím
+4 # ní # kdo ti brání
+6 # ky # i když jsou vlastičky kyčky kučkykyčkykyčkykyčky kyčkyký kučkykyčky
+
+9
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # nikdo neví
+6 # nám # že se přes holt dnes znám
+4 # ní # tóny zvonící
+6 # ky # hlasy dávno vzrokyčkyky . kykytykyčky . kykytykyčky . kykytykyčkyky
+
+10
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jen pytlík ví
+6 # nám # co vám přiznání snám
+4 # ní # kdepak zasní
+6 # ky # a to ti řát jukkykykkyky # kypá kypá kypá kypá kypá kypá kypá kypá k
+
+11
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # to nikdo neví
+6 # nám # ten má co přiznit nám
+4 # ní # není k smání
+6 # ky # to jsou písně slokyky.kykykykykycykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+12
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdosi to ví
+6 # nám # jak mám teda nám
+4 # ní # je pohání
+6 # ky # ale jen ty řádky ky.ky.ky ky.ky.ky ky ky.ky.ky ky ky.ky.ky ky ky.ky.ky
+
+13
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # tak se diví
+6 # nám # když ti srdce znám
+4 # ní # nevěsta není
+6 # ky # co mám zbytečnékykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+14
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # až na to ví
+6 # nám # že to ví každý mám
+4 # ní # snad nejhezčí
+6 # ky # až na to miláčkykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+15
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # i kdo sis ví
+6 # nám # každej už dobře znám
+4 # ní # každej přáteli
+6 # ky # každej ví každéky zločky kéky zločky kéky zločky kéky kéky zločky kéky
+==========  tinyLlama_SYLLABLES_AND_ENDS_lyricist_4_32.pt ==========
+
+1
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # je to špat ví
+6 # nám # já přísahám, přísahám
+4 # ní # jsou to není
+6 # ky # a ty znějí dýky kykykykyky kykykykykykykykykykykykykykykykykykykykykykykyky
+
+2
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # a ty to ví
+6 # nám # tak ještě rád i nám
+4 # ní # hvězdy voní
+6 # ky # zlaté básnířkykykykykyky kykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+3
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # a čert to ví
+6 # nám # kdo kašle na nám
+4 # ní # když jsme vdaní
+6 # ky # a je nám hodinky kroky. 4 # ný # číst, je to sný
+6 # ky # jsem se táhle v
+
+4
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo to zdá ví
+6 # nám # vzpomínky dávno znám
+4 # ní # dávno není
+6 # ky # kdo bydlely v šatkykykýkykýkykykykýkykykykykykykykykykykykykykykykyky
+
+5
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když to zdá ví
+6 # nám # když si někdo představ
+4 # ný # ostatním stejný
+6 # ky # jako jsem nevykdokykyyky kykyykykyky kykyykykyky kykyykykyky kykyykyky
+
+6
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # nikdo nemluví
+6 # nám # a každej střevíc v ním znám
+4 # ní # jen máš bolící
+6 # ky # i o lákáníkyky.lkkykykylkykykylkykykykykykyylkykykylkyky
+
+7
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # kdo má zdraví
+6 # nám # a všechni mu dřít nám
+4 # ní # sotva vstaní
+6 # ky # jak jen trošíkykykykykýkykykykýkykykykykykykykykykykykykykykykykykykyky
+
+8
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # nikdo to ví
+6 # nám # to to nepřidržnám
+4 # ní # nikdy nezklání
+6 # ky # že jsme na všechno takkykyykykyykyykykyykyykyykyye ka štívka jezdky ka ští
+
+9
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # a článek ví
+6 # nám # ten není k toomám
+4 # ní # všechno stejní
+6 # ky # to jsou všechny krokyky...kykykkykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+10
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # jen pánbůh ví
+6 # nám # všechno všechno znám
+4 # ní # všechno zkání
+6 # ky # lásku krásné díkyyky,ky,ky,ky,ky,ky,ky,ky,ky,ky,ky,ky,ky,ky,ky
+
+11
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # když vám spraví
+6 # nám # když vás dobře znám
+4 # ní # v tom, co není
+6 # ky # já řeknu vám díkykyykykyykyykykyykyykyykyykyykyykyykyykyykyykyy
+
+12
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # i když to ví
+6 # nám # tak přišlo přijít k nám
+4 # ní # tajemství není
+6 # ky # jen čáruvzimkykykykykykykykykykykykykykykykykykykykykykykykykykykykykyky
+
+13
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # to každý ví
+6 # nám # ty, co ho děláš nám
+4 # ní # to každý zní
+6 # ky # to každý znikyky .ky .ky .ky .ky .ky .ky .ky .ky .ky .ky . nikam mohou n
+
+14
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # už odpraví
+6 # nám # odměnit se nám
+4 # ní # za něv není
+6 # ky # tak není vítáky. tak není vítáky. tak není vítáky. tak není vítáky. tak není vítáky. tak
+
+15
+
+<s> 4 6 4 6 # ví nám ní ky #
+4 # ví # není bůh ví
+6 # nám # co taky děje nám
+4 # ní # že jsme splašní
+6 # ky # kráčíme kašpyrky. kyrky. kyrky. kyrky. kyrky. kyrky. kyrky. kyrky

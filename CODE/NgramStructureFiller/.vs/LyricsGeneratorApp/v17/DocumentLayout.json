@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\views\\generator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\views\\generator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\lyricsgenerator\\songtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\lyricsgenerator\\songtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\lyricsgenerator\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\lyricsgenerator\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\lyricsgenerator\\structureextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\lyricsgenerator\\structureextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\controllers\\generatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\controllers\\generatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\service\\lyricsgeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\service\\lyricsgeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\views\\generator\\rewritelyricsgpt2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\views\\generator\\rewritelyricsgpt2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|c:\\users\\barca\\moje\\bakalarka\\code\\ngramstructurefiller\\lyricsgeneratorapp\\views\\generator\\rewritelyrics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{211CFC14-61F5-476A-9759-A459D75BD0EF}|LyricsGeneratorApp\\LyricsGeneratorApp.csproj|solutionrelative:lyricsgeneratorapp\\views\\generator\\rewritelyrics.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +50,138 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "LyricsGeneratorService.cs",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Service\\LyricsGeneratorService.cs",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Service\\LyricsGeneratorService.cs",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Service\\LyricsGeneratorService.cs",
+              "RelativeToolTip": "LyricsGeneratorApp\\Service\\LyricsGeneratorService.cs",
+              "ViewState": "AQIAAHsAAAAAzszMzAwvwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T14:43:53.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\Constants.cs",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\LyricsGenerator\\Constants.cs",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\Constants.cs",
+              "RelativeToolTip": "LyricsGeneratorApp\\LyricsGenerator\\Constants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T11:38:28.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SongTypes.cs",
               "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\SongTypes.cs",
               "RelativeDocumentMoniker": "LyricsGeneratorApp\\LyricsGenerator\\SongTypes.cs",
               "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\SongTypes.cs",
               "RelativeToolTip": "LyricsGeneratorApp\\LyricsGenerator\\SongTypes.cs",
-              "ViewState": "AQIAAC8AAAAAxszMzMzsv0QAAAAIAAAA",
+              "ViewState": "AQIAANsAAAAA8P////8NwOsAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T19:35:38.642Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RewriteLyricsGPT2.cshtml",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\RewriteLyricsGPT2.cshtml",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Views\\Generator\\RewriteLyricsGPT2.cshtml",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\RewriteLyricsGPT2.cshtml",
+              "RelativeToolTip": "LyricsGeneratorApp\\Views\\Generator\\RewriteLyricsGPT2.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T16:45:51.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GeneratorController.cs",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Controllers\\GeneratorController.cs",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Controllers\\GeneratorController.cs",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Controllers\\GeneratorController.cs",
+              "RelativeToolTip": "LyricsGeneratorApp\\Controllers\\GeneratorController.cs",
+              "ViewState": "AQIAAGQAAACAAAAAAAAuwD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T14:48:00.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StructureExtractor.cs",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\StructureExtractor.cs",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\LyricsGenerator\\StructureExtractor.cs",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\LyricsGenerator\\StructureExtractor.cs",
+              "RelativeToolTip": "LyricsGeneratorApp\\LyricsGenerator\\StructureExtractor.cs",
+              "ViewState": "AQIAABkAAACgzMzMzEwswEYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T17:36:00.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Program.cs",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Program.cs",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Program.cs",
+              "RelativeToolTip": "LyricsGeneratorApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T14:52:27.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\Index.cshtml",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Views\\Generator\\Index.cshtml",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\Index.cshtml",
+              "RelativeToolTip": "LyricsGeneratorApp\\Views\\Generator\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T14:52:53.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LyricsGeneratorApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAABAPR4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T17:52:09.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RewriteLyrics.cshtml",
+              "DocumentMoniker": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\RewriteLyrics.cshtml",
+              "RelativeDocumentMoniker": "LyricsGeneratorApp\\Views\\Generator\\RewriteLyrics.cshtml",
+              "ToolTip": "C:\\Users\\barca\\MOJE\\BAKALARKA\\CODE\\NgramStructureFiller\\LyricsGeneratorApp\\Views\\Generator\\RewriteLyrics.cshtml",
+              "RelativeToolTip": "LyricsGeneratorApp\\Views\\Generator\\RewriteLyrics.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T16:45:38.58Z"
             }
           ]
         }

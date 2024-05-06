@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LyricsGeneratorApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff161ef6f0dbeb01cfd14a5a87afee5116d0e99f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10fe73465d8c475828f8ee03452ed532f1e528a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("LyricsGeneratorApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LyricsGeneratorApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

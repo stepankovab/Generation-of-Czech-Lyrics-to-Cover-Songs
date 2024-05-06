@@ -1,0 +1,9 @@
+torch
+transformers
+argparse
+keybert
+eng_to_ipa
+ujson
+nltk
+rhymetagger
+requests

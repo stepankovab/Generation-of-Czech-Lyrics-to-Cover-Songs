@@ -1,0 +1,67 @@
+----------------- VUT_TINYLLAMA ------ BASELINE ----------------
+cuda available.
+============================== EPOCH 0 started ==============================
+Epoch 0, Batch 100, Average Loss: 269.3912
+Epoch 0, Batch 200, Average Loss: 268.2097
+Epoch 0, Batch 300, Average Loss: 268.4878
+Epoch 0, Batch 400, Average Loss: 268.8989
+Epoch 0, Batch 500, Average Loss: 268.7968
+Epoch 0, Batch 600, Average Loss: 269.0034
+Epoch 0, Batch 700, Average Loss: 268.9273
+Epoch 0, Batch 800, Average Loss: 268.9930
+Epoch 0, Batch 900, Average Loss: 268.9907
+Epoch 0, Batch 1000, Average Loss: 269.0446
+Epoch 0, Batch 1100, Average Loss: 269.0155
+Epoch 0, Batch 1200, Average Loss: 269.0174
+============================== EPOCH 1 started ==============================
+Epoch 1, Batch 100, Average Loss: 259.1035
+Epoch 1, Batch 200, Average Loss: 259.2208
+Epoch 1, Batch 300, Average Loss: 259.1235
+Epoch 1, Batch 400, Average Loss: 259.1466
+Epoch 1, Batch 500, Average Loss: 259.1960
+Epoch 1, Batch 600, Average Loss: 258.9696
+Epoch 1, Batch 700, Average Loss: 258.8631
+Epoch 1, Batch 800, Average Loss: 258.9019
+Epoch 1, Batch 900, Average Loss: 258.9133
+Epoch 1, Batch 1000, Average Loss: 258.8676
+Epoch 1, Batch 1100, Average Loss: 258.9224
+Epoch 1, Batch 1200, Average Loss: 258.9225
+============================== EPOCH 2 started ==============================
+Epoch 2, Batch 100, Average Loss: 258.7054
+Epoch 2, Batch 200, Average Loss: 258.6367
+Epoch 2, Batch 300, Average Loss: 258.5788
+Epoch 2, Batch 400, Average Loss: 258.5829
+Epoch 2, Batch 500, Average Loss: 258.6993
+Epoch 2, Batch 600, Average Loss: 258.7985
+Epoch 2, Batch 700, Average Loss: 258.8988
+Epoch 2, Batch 800, Average Loss: 259.0040
+Epoch 2, Batch 900, Average Loss: 259.0871
+Epoch 2, Batch 1000, Average Loss: 259.1390
+Epoch 2, Batch 1100, Average Loss: 259.0148
+Epoch 2, Batch 1200, Average Loss: 258.9200
+============================== EPOCH 3 started ==============================
+Epoch 3, Batch 100, Average Loss: 259.2393
+Epoch 3, Batch 200, Average Loss: 258.5106
+Epoch 3, Batch 300, Average Loss: 258.7443
+Epoch 3, Batch 400, Average Loss: 258.5230
+Epoch 3, Batch 500, Average Loss: 258.8331
+Epoch 3, Batch 600, Average Loss: 258.8835
+Epoch 3, Batch 700, Average Loss: 258.9207
+Epoch 3, Batch 800, Average Loss: 258.9443
+Epoch 3, Batch 900, Average Loss: 258.9178
+Epoch 3, Batch 1000, Average Loss: 258.9403
+Epoch 3, Batch 1100, Average Loss: 258.8318
+Epoch 3, Batch 1200, Average Loss: 258.8846
+============================== EPOCH 4 started ==============================
+Epoch 4, Batch 100, Average Loss: 259.6251
+Epoch 4, Batch 200, Average Loss: 259.6796
+Epoch 4, Batch 300, Average Loss: 259.0770
+Epoch 4, Batch 400, Average Loss: 258.9231
+Epoch 4, Batch 500, Average Loss: 258.8069
+Epoch 4, Batch 600, Average Loss: 258.8311
+Epoch 4, Batch 700, Average Loss: 258.9051
+Epoch 4, Batch 800, Average Loss: 259.0018
+Epoch 4, Batch 900, Average Loss: 258.8959
+Epoch 4, Batch 1000, Average Loss: 258.9631
+Epoch 4, Batch 1100, Average Loss: 258.9762
+Epoch 4, Batch 1200, Average Loss: 258.8969

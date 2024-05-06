@@ -23,43 +23,6 @@ namespace LyricsGeneratorApp.Service
         }
 
         /// <summary>
-        /// Supplies a Sonet.
-        /// </summary>
-        /// <param name="prompt">Prompt to continue with</param>
-        /// <returns>LyricsResponse containing a sonet.</returns>
-        public LyricsResponse GetSonet(string prompt)
-        {
-            var finalLyrics = SongTypes.WriteSonet(prompt);
-            return formatLyricsResponse(finalLyrics);
-        }
-
-        /// <summary>
-        /// Supplies lyrics with ABAB rhyme sheme.
-        /// </summary>
-        /// <param name="prompt">Prompt to continue with</param>
-        /// <param name="syllablesOnLine">Number of syllables on each line.</param>
-        /// <param name="lines">NUmber of lines.</param>
-        /// <returns>LyricsResponse containing lyrics with ABAB rhyme sheme.</returns>
-        public LyricsResponse GetABABLyrics(string prompt, int syllablesOnLine, int lines)
-        {
-            var finalLyrics = SongTypes.WriteABABLyrics(prompt, syllablesOnLine, lines);
-            return formatLyricsResponse(finalLyrics);
-        }
-
-        /// <summary>
-        /// Supplies lyrics with AABB rhyme sheme.
-        /// </summary>
-        /// <param name="prompt">Prompt to continue with</param>
-        /// <param name="syllablesOnLine">Number of syllables on each line.</param>
-        /// <param name="lines">NUmber of lines.</param>
-        /// <returns>LyricsResponse containing lyrics with AABB rhyme sheme.</returns>
-        public LyricsResponse GetAABBLyrics(string prompt, int syllablesOnLine, int lines)
-        {
-            var finalLyrics = SongTypes.WriteAABBLyrics(prompt, syllablesOnLine, lines);
-            return formatLyricsResponse(finalLyrics);
-        }
-
-        /// <summary>
         /// Changes one line of the supplied lyrics.
         /// </summary>
         /// <param name="regenerateLyrics">Verse to regenerate.</param>
@@ -141,6 +104,32 @@ namespace LyricsGeneratorApp.Service
             }
 
             var newLyrics = SongTypes.GetRewrittenLyrics(originalLyrics);
+
+            return formatLyricsResponse(newLyrics);
+        }
+
+
+        /// <summary>
+        /// Calls the extractor and custom lyrics generator on the extracted structure.
+        /// </summary>
+        /// <param name="originalLyrics">Lyrics which structure we want to replicate.</param>
+        /// <returns>LyricsResponse containing  the supplied lyrics.</returns>
+        public LyricsResponse GetRewrittenLyricsGPT2(string originalLyrics)
+        {
+            if (originalLyrics == null)
+            {
+                originalLyrics = "";
+            }
+
+            originalLyrics = originalLyrics.Replace('.', ',');
+
+
+            while (!Regex.IsMatch(originalLyrics[originalLyrics.Length - 1].ToString(), @"\w"))
+            {
+                originalLyrics = originalLyrics.Remove(originalLyrics.Length - 1);
+            }
+
+            var newLyrics = SongTypes.GetRewrittenLyricsGPT2(originalLyrics);
 
             return formatLyricsResponse(newLyrics);
         }

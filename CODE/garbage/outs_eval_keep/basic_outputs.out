@@ -1,0 +1,35 @@
+cuda available.
+
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading checkpoint shards:  17%|█▋        | 1/6 [01:33<07:47, 93.53s/it]
+Loading checkpoint shards:  33%|███▎      | 2/6 [03:31<07:11, 107.78s/it]
+Loading checkpoint shards:  50%|█████     | 3/6 [10:14<12:08, 242.81s/it]
+Loading checkpoint shards:  67%|██████▋   | 4/6 [11:42<06:02, 181.39s/it]
+Loading checkpoint shards:  83%|████████▎ | 5/6 [12:59<02:24, 144.01s/it]
+Loading checkpoint shards: 100%|██████████| 6/6 [17:21<00:00, 183.91s/it]
+Loading checkpoint shards: 100%|██████████| 6/6 [17:21<00:00, 173.52s/it]
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+loaded model: ../models/csmpt7b
+Zapadající slunce se třpytilo na jejich čelech, a to je jen jeden z mnoha nádherných detailů, které se v této knize skrývají.
+A co víc, najdete zde i tři bonusové povídky, které se vám budou rozhodně zamlouvat!
+Napsala Sylva Daníčková
+Přeložila: Michaela Krýslová
+Vazba: vázaná
+ISBN: 978-80-7252-616-8
+Doporučená cena: 349 Kč
+Knihu Klan vydalo nakladatelství Slovart.
+O autorovi
+Sylva Daníčková (1919–2003) byla česká filmová a televizní herečka. Studovala
+
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [02:41<02:41, 161.39s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [04:14<00:00, 121.15s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [04:14<00:00, 127.19s/it]
+loaded model: ../models/cswikimistral_0.1
+Zapadající slunce (v anglickém originále Setting Sun) je epizoda seriálu Star Trek: Vesmírná loď Voyager. V originále se původně vysílala 8. ledna 1998.
+
+Děj
+
+Tato epizoda se zabývá výsledkem poslední půl hodiny na Voyageru. Přesněji, jaké povinnosti jsou přiděleny členům posádky, aby se posádka mohla
+

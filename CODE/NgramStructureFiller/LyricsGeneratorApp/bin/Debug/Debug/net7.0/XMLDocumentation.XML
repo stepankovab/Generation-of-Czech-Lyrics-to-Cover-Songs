@@ -32,40 +32,18 @@
             <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
             <returns>ViewResult containing LyricsResponse containing lyrics with custom structure.</returns>
         </member>
-        <member name="M:LyricsGeneratorApp.Controllers.GeneratorController.Sonet(System.String,System.String,System.String)">
-            <summary>
-            Supplies generated sonet.
-            </summary>
-            <param name="prompt">Prompt to continue with.</param>
-            <param name="regenerateLyrics">Verse to regenerate.</param>
-            <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
-            <returns>ViewResult containing LyricsResponse containing Sonet.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.Controllers.GeneratorController.ABABLyrics(System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
-            <summary>
-            Supplies generated lyrics with the ABAB rhyme scheme.
-            </summary>
-            <param name="prompt">Prompt to continue with.</param>
-            <param name="lines">Number of lines of the lyrics.</param>
-            <param name="syllables">Number of syllables on the line of the regenerated verse.</param>
-            <param name="regenerateLyrics">Verse to regenerate.</param>
-            <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
-            <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
-            <returns>ViewResult containing LyricsResponse containing lyrics with ABAB rhyme scheme.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.Controllers.GeneratorController.AABBLyrics(System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
-            <summary>
-            Supplies generated lyrics with the AABB rhyme scheme.
-            </summary>
-            <param name="prompt">Prompt to continue with.</param>
-            <param name="lines">Number of lines of the lyrics.</param>
-            <param name="syllables">Number of syllables on the line of the regenerated verse.</param>
-            <param name="regenerateLyrics">Verse to regenerate.</param>
-            <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
-            <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
-            <returns>ViewResult containing LyricsResponse containing lyrics with AABB rhyme scheme.</returns>
-        </member>
         <member name="M:LyricsGeneratorApp.Controllers.GeneratorController.RewriteLyrics(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Supplies new lyrics that should be song-compatible with the inputted original lyrics.
+            </summary>
+            <param name="originalLyrics">The original lyrics of which we take the structure.</param>
+            <param name="regenerateLyrics">Verse to regenerate.</param>
+            <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
+            <param name="syllables">Number of syllables on the line of the regenerated verse.</param>
+            <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
+            <returns>ViewResult containing LyricsResponse containing rewritten lyrics.</returns>
+        </member>
+        <member name="M:LyricsGeneratorApp.Controllers.GeneratorController.RewriteLyricsGPT2(System.String,System.String,System.String,System.Int32,System.String)">
             <summary>
             Supplies new lyrics that should be song-compatible with the inputted original lyrics.
             </summary>
@@ -292,31 +270,6 @@
             <param name="prompt">Prompt to bein with.</param>
             <returns>Custom lyrics in a list, each item represents one line.</returns>
         </member>
-        <member name="M:LyricsGeneratorApp.LyricsGenerator.SongTypes.WriteABABLyrics(System.String,System.Int32,System.Int32)">
-            <summary>
-            Writes lyrics with an ABAB rhyme scheme.
-            </summary>
-            <param name="prompt">Prompt to bein with</param>
-            <param name="syllablesOnLine">Number of syllables per each line.</param>
-            <param name="lines">Number of lines in the lyrics.</param>
-            <returns>Lyrics with an ABAB rhyme scheme in a list, each item represents one line.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.LyricsGenerator.SongTypes.WriteAABBLyrics(System.String,System.Int32,System.Int32)">
-            <summary>
-            Writes lyrics with an AABB rhyme scheme.
-            </summary>
-            <param name="prompt">Prompt to bein with</param>
-            <param name="syllablesOnLine">Number of syllables per each line.</param>
-            <param name="lines">Number of lines in the lyrics.</param>
-            <returns>Lyrics with an AABB rhyme scheme in a list, each item represents one line.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.LyricsGenerator.SongTypes.WriteSonet(System.String)">
-            <summary>
-            Write a Sonet.
-            </summary>
-            <param name="prompt">Prompt to begin with.</param>
-            <returns>Sonet as a list, each item represents one line.</returns>
-        </member>
         <member name="T:LyricsGeneratorApp.LyricsGenerator.StructureExtractor">
             <summary>
             Class containing static methods for extracting the structure of lyrics.
@@ -441,31 +394,6 @@
             <param name="prompt">Prompt to continue with</param>
             <returns>LyricsResponse containing custom lyrics.</returns>
         </member>
-        <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetSonet(System.String)">
-            <summary>
-            Supplies a Sonet.
-            </summary>
-            <param name="prompt">Prompt to continue with</param>
-            <returns>LyricsResponse containing a sonet.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetABABLyrics(System.String,System.Int32,System.Int32)">
-            <summary>
-            Supplies lyrics with ABAB rhyme sheme.
-            </summary>
-            <param name="prompt">Prompt to continue with</param>
-            <param name="syllablesOnLine">Number of syllables on each line.</param>
-            <param name="lines">NUmber of lines.</param>
-            <returns>LyricsResponse containing lyrics with ABAB rhyme sheme.</returns>
-        </member>
-        <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetAABBLyrics(System.String,System.Int32,System.Int32)">
-            <summary>
-            Supplies lyrics with AABB rhyme sheme.
-            </summary>
-            <param name="prompt">Prompt to continue with</param>
-            <param name="syllablesOnLine">Number of syllables on each line.</param>
-            <param name="lines">NUmber of lines.</param>
-            <returns>LyricsResponse containing lyrics with AABB rhyme sheme.</returns>
-        </member>
         <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetLyricsFix(System.String,System.String,System.Int32,System.String)">
             <summary>
             Changes one line of the supplied lyrics.
@@ -477,6 +405,13 @@
             <returns>LyricsResponse containing  the supplied lyrics with changed line.</returns>
         </member>
         <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetRewrittenLyrics(System.String)">
+            <summary>
+            Calls the extractor and custom lyrics generator on the extracted structure.
+            </summary>
+            <param name="originalLyrics">Lyrics which structure we want to replicate.</param>
+            <returns>LyricsResponse containing  the supplied lyrics.</returns>
+        </member>
+        <member name="M:LyricsGeneratorApp.Service.LyricsGeneratorService.GetRewrittenLyricsGPT2(System.String)">
             <summary>
             Calls the extractor and custom lyrics generator on the extracted structure.
             </summary>

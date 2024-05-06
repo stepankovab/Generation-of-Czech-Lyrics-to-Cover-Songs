@@ -59,74 +59,23 @@ namespace LyricsGeneratorApp.Controllers
             return View(response);
         }
 
+
         /// <summary>
-        /// Supplies generated sonet.
+        /// Supplies new lyrics that should be song-compatible with the inputted original lyrics.
         /// </summary>
-        /// <param name="prompt">Prompt to continue with.</param>
+        /// <param name="originalLyrics">The original lyrics of which we take the structure.</param>
         /// <param name="regenerateLyrics">Verse to regenerate.</param>
         /// <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
-        /// <returns>ViewResult containing LyricsResponse containing Sonet.</returns>
-        [HttpPost]
-        public IActionResult Sonet(string prompt, string regenerateLyrics, string lyrics)
-        {
-            LyricsResponse response;
-            if (regenerateLyrics == null)
-            {
-                response = lyricsGeneratorService.GetSonet(prompt);
-            }
-            else
-            {
-                response = lyricsGeneratorService.GetLyricsFix(regenerateLyrics, lyrics, 0, null);
-            }
-
-            return View(response);
-        }
-
-
-        /// <summary>
-        /// Supplies generated lyrics with the ABAB rhyme scheme.
-        /// </summary>
-        /// <param name="prompt">Prompt to continue with.</param>
-        /// <param name="lines">Number of lines of the lyrics.</param>
         /// <param name="syllables">Number of syllables on the line of the regenerated verse.</param>
-        /// <param name="regenerateLyrics">Verse to regenerate.</param>
-        /// <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
         /// <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
-        /// <returns>ViewResult containing LyricsResponse containing lyrics with ABAB rhyme scheme.</returns>
+        /// <returns>ViewResult containing LyricsResponse containing rewritten lyrics.</returns>
         [HttpPost]
-        public IActionResult ABABLyrics(string prompt, int lines, int syllables, string regenerateLyrics, string lyrics, string rhyme)
+        public IActionResult RewriteLyrics(string originalLyrics, string regenerateLyrics, string lyrics, int syllables, string rhyme)
         {
             LyricsResponse response;
             if (regenerateLyrics == null)
             {
-                response = lyricsGeneratorService.GetABABLyrics(prompt, syllables, lines);
-            }
-            else
-            {
-                response = lyricsGeneratorService.GetLyricsFix(regenerateLyrics, lyrics, syllables, rhyme);
-            }
-
-            return View(response);
-        }
-
-
-        /// <summary>
-        /// Supplies generated lyrics with the AABB rhyme scheme.
-        /// </summary>
-        /// <param name="prompt">Prompt to continue with.</param>
-        /// <param name="lines">Number of lines of the lyrics.</param>
-        /// <param name="syllables">Number of syllables on the line of the regenerated verse.</param>
-        /// <param name="regenerateLyrics">Verse to regenerate.</param>
-        /// <param name="lyrics">The whole lyrics from which the verse is being regenerated.</param>
-        /// <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
-        /// <returns>ViewResult containing LyricsResponse containing lyrics with AABB rhyme scheme.</returns>
-        [HttpPost]
-        public IActionResult AABBLyrics(string prompt, int lines, int syllables, string regenerateLyrics, string lyrics, string rhyme)
-        {
-            LyricsResponse response;
-            if (regenerateLyrics == null)
-            {
-                response = lyricsGeneratorService.GetAABBLyrics(prompt, syllables, lines);
+                response = lyricsGeneratorService.GetRewrittenLyrics(originalLyrics);
             }
             else
             {
@@ -146,12 +95,12 @@ namespace LyricsGeneratorApp.Controllers
         /// <param name="rhyme">Rhyme that will rhyme with the regenerated line.</param>
         /// <returns>ViewResult containing LyricsResponse containing rewritten lyrics.</returns>
         [HttpPost]
-        public IActionResult RewriteLyrics(string originalLyrics, string regenerateLyrics, string lyrics, int syllables, string rhyme)
+        public IActionResult RewriteLyricsGPT2(string originalLyrics, string regenerateLyrics, string lyrics, int syllables, string rhyme)
         {
             LyricsResponse response;
             if (regenerateLyrics == null)
             {
-                response = lyricsGeneratorService.GetRewrittenLyrics(originalLyrics);
+                response = lyricsGeneratorService.GetRewrittenLyricsGPT2(originalLyrics);
             }
             else
             {
