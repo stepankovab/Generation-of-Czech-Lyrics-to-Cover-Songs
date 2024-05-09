@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\barca\MOJE\4SEM\C#\LyricsGeneratorApp\LyricsGeneratorApp\bin\Release\net7.0\publish\</_PublishTargetUrl>
-    <History>True|2023-08-09T13:43:59.3115968Z;True|2023-08-09T14:37:54.0945340+02:00;True|2023-08-09T13:25:01.5058296+02:00;</History>
+    <_PublishTargetUrl>C:\Users\barca\MOJE\BAKALARKA\WebApp</_PublishTargetUrl>
+    <History>True|2024-05-09T16:36:27.6609511Z;True|2024-05-09T17:33:38.1608421+02:00;True|2024-05-09T16:50:40.8242163+02:00;True|2024-05-06T21:27:21.9858329+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

@@ -18,6 +18,11 @@ namespace LyricsGeneratorApp.Service
         /// <returns>LyricsResponse containing custom lyrics.</returns>
         public LyricsResponse GetCustomLyrics(string[] structure, string prompt)
         {
+            if (structure.Length == 0)
+            {
+                return formatLyricsResponse(new List<string> { "" });
+            }
+
             var finalLyrics = SongTypes.WriteCustomLyrics(structure, prompt);
             return formatLyricsResponse(finalLyrics);
         }
@@ -32,6 +37,14 @@ namespace LyricsGeneratorApp.Service
         /// <returns>LyricsResponse containing  the supplied lyrics with changed line.</returns>
         public LyricsResponse GetLyricsFix(string regenerateLyrics, string allLyrics, int syllables, string rhyme)
         {
+            if (allLyrics is null || allLyrics == "")
+            {
+
+                var line = SongTypes.RewriteLine(syllables, rhyme, "");
+
+                return formatLyricsResponse(new List<string> { line });
+            }
+
             List<string> listLyrics = new List<string>(allLyrics.Split(','));
             string[] structure = StructureExtractor.Extract(allLyrics);
 
@@ -122,6 +135,11 @@ namespace LyricsGeneratorApp.Service
             }
 
             originalLyrics = originalLyrics.Replace('.', ',');
+
+            if (originalLyrics.Length == 0)
+            {
+                return formatLyricsResponse(new List<string> { "" });
+            } 
 
 
             while (!Regex.IsMatch(originalLyrics[originalLyrics.Length - 1].ToString(), @"\w"))

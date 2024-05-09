@@ -106,6 +106,11 @@ namespace LyricsGeneratorApp.LyricsGenerator
         /// <returns>The generated line as string.</returns>
         public string GenerateLineWithLength(string context, int lineSyllables, PromptWork continueWithPrompt)
         {
+            if (lineSyllables == 0)
+            {
+                return "";
+            }
+
             prepareContext(context);
 
             // create line, add context if needed
@@ -159,6 +164,11 @@ namespace LyricsGeneratorApp.LyricsGenerator
         /// <returns>The generated line as string.</returns>
         public string GenerateLineWithLengthAndRhyme(string context, string rhyme, int lineSyllables, PromptWork continueWithPrompt)
         {
+            if (lineSyllables == 0)
+            {
+                return "";
+            }
+
             prepareContext(context);
 
             // create line, add context if needed

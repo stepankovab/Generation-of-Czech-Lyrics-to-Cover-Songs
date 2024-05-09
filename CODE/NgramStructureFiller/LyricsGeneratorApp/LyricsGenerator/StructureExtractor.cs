@@ -18,7 +18,12 @@ namespace LyricsGeneratorApp.LyricsGenerator
 
             Regex rg = new Regex(@"[aábcčdďeéěfghiíjklmnňoópqrřsštťuúůvwxyýzžäöü]+");
             MatchCollection matchedWords = rg.Matches(line.ToLower());
-            var lastWord = matchedWords[matchedWords.Count - 1].Value;
+
+            var lastWord = "";
+            if (line.Length > 0)
+            {
+                lastWord = matchedWords[matchedWords.Count - 1].Value;
+            }
 
             return rhymer.GetRhymeKey(lastWord);
         }

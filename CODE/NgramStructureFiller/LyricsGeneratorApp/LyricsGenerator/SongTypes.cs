@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Diagnostics;
-using System.Text.Encodings;
+using System.Text.Json;
 using System.Text;
+using Newtonsoft.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LyricsGeneratorApp.LyricsGenerator
 {
@@ -25,7 +25,10 @@ namespace LyricsGeneratorApp.LyricsGenerator
             Console.WriteLine("Rewriting a line...");
             Console.WriteLine();
 
-            NGramModel model = new NGramModel(4, 3, Directory.GetCurrentDirectory() + Constants.PathToTexts);
+            var x = File.ReadAllText("config.json");
+            (string _, string _, string _, string ngram_training_data_folder) = parseJsonResponse(x);
+
+            NGramModel model = new NGramModel(4, 3, ngram_training_data_folder);
 
             if (rhyme == null)
             {
@@ -49,9 +52,11 @@ namespace LyricsGeneratorApp.LyricsGenerator
             Console.WriteLine("Writing lyrics with a custom scheme...");
             Console.WriteLine();
 
-            
+            var x = File.ReadAllText("config.json");
+            (string _, string _, string _, string ngram_training_data_folder) = parseJsonResponse(x);
+
             // inits
-            NGramModel model = new NGramModel(4, 3, Directory.GetCurrentDirectory() + Constants.PathToTexts);
+            NGramModel model = new NGramModel(4, 3, ngram_training_data_folder);
             Dictionary<string, string> symbolToRhyme = new();
             List<string> result = new();
             string line = "";
@@ -154,29 +159,14 @@ namespace LyricsGeneratorApp.LyricsGenerator
 
             for (int i = 0; i < listLyrics.Count; i++)
             {
-                var lyricLine = listLyrics[i];
-
-                List<string> promptCandidates = new();
-
-                foreach (Match m in rg.Matches(lyricLine))
-                {
-                    if (! Constants.Stopwords.Contains(m.Value))
-                    {
-                        promptCandidates.Add(m.Value);
-                    }
-                }
-
                 prompts[i] = "";
-
-                if (promptCandidates.Count > 1)
-                {
-                    prompts[i] = promptCandidates[random.Next(promptCandidates.Count)];
-                }
-
             }
 
+            var x = File.ReadAllText("config.json");
+            (string _, string _, string _, string ngram_training_data_folder) = parseJsonResponse(x);
+
             // inits
-            NGramModel model = new NGramModel(4, 3, Directory.GetCurrentDirectory() + Constants.PathToTexts);
+            NGramModel model = new NGramModel(4, 3, ngram_training_data_folder);
             Dictionary<string, string> symbolToRhyme = new();
             List<string> result = new();
             string line = "";
@@ -262,11 +252,15 @@ namespace LyricsGeneratorApp.LyricsGenerator
             Console.WriteLine("Writing lyrics with a copied structure...");
             Console.WriteLine();
 
+            var x = File.ReadAllText("config.json");
+            (string GPT2_model_folder, string python_exe, string python_scripts_folder, string _) = parseJsonResponse(x);
 
-            string fileName = @"C:/Users/barca/MOJE/BAKALARKA/CODE/LLMExperiments/webapp_generate.py --input_section " + "\"" + originalLyrics + "\"";
+
+
+            string fileName = python_scripts_folder + "webapp_generate.py --input_section " + "\"" + originalLyrics + "\"" + " --model_path " + GPT2_model_folder;
 
             Process p = new Process();
-            p.StartInfo = new ProcessStartInfo(@"C:/Users/barca/AppData/Local/Programs/Python/Python311/python.exe", fileName)
+            p.StartInfo = new ProcessStartInfo(python_exe, fileName)
             {
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
@@ -293,6 +287,21 @@ namespace LyricsGeneratorApp.LyricsGenerator
 
             return result;
 
+        }
+
+        private static (string, string, string, string) parseJsonResponse(string json_response)
+        {
+            // Parse Json response
+            var acrDefinition = new
+            {
+                path_to_GPT2_model_folder = "",
+                path_to_python_exe = "",
+                path_to_python_scripts_folder = "",
+                path_to_ngram_training_data_folder = ""
+            };
+            var acrObj = JsonConvert.DeserializeAnonymousType(json_response, acrDefinition);
+
+            return (acrObj.path_to_GPT2_model_folder, acrObj.path_to_python_exe, acrObj.path_to_python_scripts_folder, acrObj.path_to_ngram_training_data_folder);
         }
     }
 }
