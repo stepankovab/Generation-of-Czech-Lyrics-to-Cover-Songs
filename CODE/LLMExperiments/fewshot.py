@@ -3,7 +3,7 @@ import logging
 import random
 from lyrics_datasets import WholeLyricsDataset, prepare_prompt_whole, extract_output_whole
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
-from dataset_types import DatasetType
+from CODE.LLMExperiments.prompt_types import PromptType
 from rhymer_types import RhymerType
 from english_structure_extractor import SectionStructureExtractor, SectionStructure
 from postprocessing import Postprocesser
@@ -36,7 +36,7 @@ def get_n_examples(dataset_path, dataset_type, n):
     return '\n'.join(a.lyrics_list[:min(n, len(a.lyrics_list))]) + "\n"
 
 def fewshot_and_generate(args, input_sections, verbose=False):
-    dataset_type = DatasetType(args.dataset_type)
+    dataset_type = PromptType(args.prompt_type)
     
     device = 'cpu'
     if torch.cuda.is_available():
@@ -94,7 +94,7 @@ def fewshot_and_generate(args, input_sections, verbose=False):
             repetition_penalty=1.0,
             temperature=0.8,
             max_new_tokens=256,
-            num_return_sequences=args.out_per_generation,
+            num_return_sequences=args.choose_best,
             pad_token_id=tokenizer.eos_token_id,
             penalty_alpha=0.6,
             stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer, structure.num_lines),

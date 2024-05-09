@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
-from dataset_types import DatasetType
+from dataset_types import PromptType
 from english_structure_extractor import SectionStructureExtractor, SectionStructure
 from postprocessing import Postprocesser
 from evaluator import Evaluator
@@ -31,36 +31,36 @@ class StoppingSequenceCriteria(StoppingCriteria):
         yield self
 
 def prepare_prompt(dataset_type, structure: SectionStructure, line_i, ending = None):
-    if dataset_type == DatasetType.BASELINE:
+    if dataset_type == PromptType.baseline:
         prompt = " "
-    elif dataset_type == DatasetType.SYLLABLES:
+    elif dataset_type == PromptType.syllables:
         prompt = f"{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.SYLLABLES_ENDS:
+    elif dataset_type == PromptType.syllables_ends:
         prompt = f"{structure.syllables[line_i]} # {ending} # "
-    elif dataset_type == DatasetType.WORDS:
+    elif dataset_type == PromptType.keywords:
         prompt = f"{structure.line_keywords[line_i]} # "
-    elif dataset_type == DatasetType.WORDS_ENDS:
+    elif dataset_type == PromptType.keywords_ends:
         prompt = f"{structure.line_keywords[line_i]}\n{ending} # "
-    elif dataset_type == DatasetType.SYLLABLES_WORDS:
+    elif dataset_type == PromptType.syllables_keywords:
         prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.SYLLABLES_WORDS_ENDS:
+    elif dataset_type == PromptType.syllables_keywords_ends:
         prompt = f"{structure.line_keywords[line_i]}\n{structure.syllables[line_i]} # {ending} # "
-    elif dataset_type == DatasetType.UNRHYMED_LEN:
+    elif dataset_type == PromptType.syllables_unrhymed:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics_list[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         prompt = f"{len(syllabify(translated_output))} # {translated_output}\n{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.UNRHYMED_LEN_END:
+    elif dataset_type == PromptType.syllables_unrhymed_ends:
         url = 'http://lindat.mff.cuni.cz/services/translation/api/v2/models/en-cs'
         response = requests.post(url, data = {"input_text": structure.original_lyrics_list[line_i]})
         response.encoding='utf8'
         translated_output = ''.join([x for x in response.text if x.isalpha() or x.isspace()]).strip()
         translated_output_sylls = syllabify(translated_output)
         prompt = f"{len(translated_output_sylls)} # {translated_output_sylls[-1][-min(len(translated_output_sylls[-1]), 3):]} # {translated_output}\n{structure.syllables[line_i]} # {ending} # "
-    elif dataset_type == DatasetType.FORCED_SYLLABLES:
+    elif dataset_type == PromptType.syllables_forced:
         prompt = f"{structure.syllables[line_i]} # "
-    elif dataset_type == DatasetType.FORCED_SYLLABLES_ENDS:
+    elif dataset_type == PromptType.syllables_forced_ends:
         prompt = f"{structure.syllables[line_i]} # {ending} # "
     else:
         raise Exception(f"We don't support a Dataset type {dataset_type}")
@@ -78,21 +78,21 @@ def extract_model_out(model_out, prompt):
 
 
 def generate_lines(args, input_sections, verbose=False):
-    wout_dataset_type = DatasetType(args.dataset_type)
+    wout_dataset_type = PromptType(args.dataset_type)
 
     
-    if wout_dataset_type == DatasetType.BASELINE:
-        w_dataset_type = DatasetType.BASELINE
-    elif wout_dataset_type == DatasetType.WORDS:
-        w_dataset_type = DatasetType.WORDS_ENDS
-    elif wout_dataset_type == DatasetType.SYLLABLES:
-        w_dataset_type = DatasetType.SYLLABLES_ENDS
-    elif wout_dataset_type == DatasetType.SYLLABLES_WORDS:
-        w_dataset_type = DatasetType.SYLLABLES_WORDS_ENDS
-    elif wout_dataset_type == DatasetType.UNRHYMED_LEN:
-        w_dataset_type = DatasetType.UNRHYMED_LEN_END
-    elif wout_dataset_type == DatasetType.FORCED_SYLLABLES:
-        w_dataset_type = DatasetType.FORCED_SYLLABLES_ENDS
+    if wout_dataset_type == PromptType.baseline:
+        w_dataset_type = PromptType.baseline
+    elif wout_dataset_type == PromptType.keywords:
+        w_dataset_type = PromptType.keywords_ends
+    elif wout_dataset_type == PromptType.syllables:
+        w_dataset_type = PromptType.syllables_ends
+    elif wout_dataset_type == PromptType.syllables_keywords:
+        w_dataset_type = PromptType.syllables_keywords_ends
+    elif wout_dataset_type == PromptType.syllables_unrhymed:
+        w_dataset_type = PromptType.syllables_unrhymed_ends
+    elif wout_dataset_type == PromptType.syllables_forced:
+        w_dataset_type = PromptType.syllables_forced_ends
     else:
         raise Exception(f"We don't support a Dataset type {wout_dataset_type}")
 
@@ -133,8 +133,8 @@ def generate_lines(args, input_sections, verbose=False):
     if tokenizer.mask_token is None:
         tokenizer.add_special_tokens({'mask_token': '[MASK]'})
 
-    wout_model_path = os.path.join(args.model_path, f"{args.model}_{wout_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
-    w_model_path = os.path.join(args.model_path, f"{args.model}_{w_dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
+    wout_model_path = os.path.join(args.model_path, f"{args.model}_{args.generation_method}_{wout_dataset_type.name}.pt")
+    w_model_path = os.path.join(args.model_path, f"{args.model}_{args.generation_method}_{w_dataset_type.name}.pt")
     
     if verbose:
         print("="*10 + "  " + wout_model_path + " " + "="*10)

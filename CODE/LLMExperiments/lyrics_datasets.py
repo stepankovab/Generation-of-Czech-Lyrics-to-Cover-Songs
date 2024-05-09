@@ -1,12 +1,12 @@
 import os
 import json
 import re
-from dataset_types import DatasetType
+from CODE.LLMExperiments.prompt_types import PromptType
 from torch.utils.data import Dataset
 from eval.syllabator import dashed_syllabified_line, syllabify
 
 class LinesLyricsDataset(Dataset):
-    def __init__(self, lyrics_dataset_path, dataset_type):
+    def __init__(self, lyrics_dataset_path, prompt_type):
         super().__init__()
 
         lyrics_path = os.path.join(lyrics_dataset_path, 'VZ.json')
@@ -16,50 +16,50 @@ class LinesLyricsDataset(Dataset):
         with open(lyrics_path, "r", encoding="utf-8") as json_file:
             dataset_dict = json.load(json_file)
 
-        if dataset_type == DatasetType.BASELINE:
+        if prompt_type == PromptType.baseline:
             for dat_i in dataset_dict:
                 for line in dataset_dict[dat_i]['lyrics']:
                     self.lines_list.append(line + "\n")
 
-        elif dataset_type == DatasetType.SYLLABLES:
+        elif prompt_type == PromptType.syllables:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
         
-        elif dataset_type == DatasetType.SYLLABLES_ENDS:
+        elif prompt_type == PromptType.syllables_ends:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
                    
-        elif dataset_type == DatasetType.WORDS:
+        elif prompt_type == PromptType.keywords:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
                     continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
-        elif dataset_type == DatasetType.WORDS_ENDS:
+        elif prompt_type == PromptType.keywords_ends:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
                     continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
-        elif dataset_type == DatasetType.SYLLABLES_WORDS:
+        elif prompt_type == PromptType.syllables_keywords:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
                     continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
-        elif dataset_type == DatasetType.SYLLABLES_WORDS_ENDS:
+        elif prompt_type == PromptType.syllables_keywords_ends:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]['en_lyrics']) != len(dataset_dict[dat_i]["lyrics"]):
                     continue
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['line_keywords'][lin_i]}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}\n")
 
-        elif dataset_type == DatasetType.UNRHYMED_LEN:
+        elif prompt_type == PromptType.syllables_unrhymed:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]["lyrics"]) != len(dataset_dict[dat_i]["unrhymed"]):
                     continue
@@ -74,7 +74,7 @@ class LinesLyricsDataset(Dataset):
 
                     self.lines_list.append(f"{unrhymed_len} # {unrhymed}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {original}\n")
 
-        elif dataset_type == DatasetType.UNRHYMED_LEN_END:
+        elif prompt_type == PromptType.syllables_unrhymed_ends:
             for dat_i in dataset_dict:
                 if len(dataset_dict[dat_i]["lyrics"]) != len(dataset_dict[dat_i]["unrhymed"]):
                     continue
@@ -94,18 +94,18 @@ class LinesLyricsDataset(Dataset):
 
                     self.lines_list.append(f"{unrhymed_len} # {unrhymed_end} # {unrhymed}\n{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {original}\n")
 
-        elif dataset_type == DatasetType.FORCED_SYLLABLES:
+        elif prompt_type == PromptType.syllables_forced:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}\n")
 
-        elif dataset_type == DatasetType.FORCED_SYLLABLES_ENDS:
+        elif prompt_type == PromptType.syllables_forced_ends:
             for dat_i in dataset_dict:
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     self.lines_list.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['line_endings'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}\n")
 
         else:
-            raise Exception(f"We don't support a Dataset type {dataset_type}")
+            raise Exception(f"We don't support a Dataset type {prompt_type}")
         
     def __len__(self):
         return len(self.lines_list)
@@ -126,53 +126,53 @@ class WholeLyricsDataset(Dataset):
         with open(lyrics_path, "r", encoding="utf-8") as json_file:
             dataset_dict = json.load(json_file)
 
-        if dataset_type == DatasetType.BASELINE:
+        if dataset_type == PromptType.baseline:
             for i in dataset_dict:
                 self.lyrics_list.append('\n'.join(dataset_dict[i]['lyrics']) + "\n")
 
-        elif dataset_type == DatasetType.SYLLABLES:
+        elif dataset_type == PromptType.syllables:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
                     
-        elif dataset_type == DatasetType.WORDS:
+        elif dataset_type == PromptType.keywords:
             for dat_i in dataset_dict:
                 temp = [f"{dataset_dict[dat_i]['len']} # {' '.join(dataset_dict[dat_i]['keywords'])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
 
-        elif dataset_type == DatasetType.SYLLABLES_WORDS:
+        elif dataset_type == PromptType.syllables_keywords:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} # {' '.join(dataset_dict[dat_i]['keywords'])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
 
-        elif dataset_type == DatasetType.FORCED_SYLLABLES:
+        elif dataset_type == PromptType.syllables_forced:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dashed_syllabified_line(dataset_dict[dat_i]['lyrics'][lin_i])}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
 
-        elif dataset_type == DatasetType.RHYME_SCHEME:
+        elif dataset_type == PromptType.rhymes:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['rhymes']])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['rhymes'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
 
-        elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME:
+        elif dataset_type == PromptType.syllables_rhymes:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} # {' '.join([str(x) for x in dataset_dict[dat_i]['rhymes']])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
                     temp.append(f"{dataset_dict[dat_i]['syllables'][lin_i]} # {dataset_dict[dat_i]['rhymes'][lin_i]} # {dataset_dict[dat_i]['lyrics'][lin_i]}")
                 self.lyrics_list.append("\n".join(temp) + "\n")
 
-        elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME_WORDS:
+        elif dataset_type == PromptType.syllables_keywords_rhymes:
             for dat_i in dataset_dict:
                 temp = [f"{' '.join([str(x) for x in dataset_dict[dat_i]['syllables']])} # {' '.join([str(x) for x in dataset_dict[dat_i]['rhymes']])} # {' '.join(dataset_dict[dat_i]['keywords'])} #"]
                 for lin_i in range(len(dataset_dict[dat_i]['lyrics'])):
@@ -190,21 +190,21 @@ class WholeLyricsDataset(Dataset):
     
 
 def prepare_prompt_whole(dataset_type, structure):
-    if dataset_type == DatasetType.BASELINE:
+    if dataset_type == PromptType.baseline:
             prompt = " "
-    elif dataset_type == DatasetType.SYLLABLES:
+    elif dataset_type == PromptType.syllables:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
-    elif dataset_type == DatasetType.WORDS:
+    elif dataset_type == PromptType.keywords:
         prompt = f"{structure.num_lines} # {' '.join(structure.keywords)} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_WORDS:
+    elif dataset_type == PromptType.syllables_keywords:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join(structure.keywords)} #\n"
-    elif dataset_type == DatasetType.FORCED_SYLLABLES:
+    elif dataset_type == PromptType.syllables_forced:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} #\n"
-    elif dataset_type == DatasetType.RHYME_SCHEME:
+    elif dataset_type == PromptType.rhymes:
         prompt = f"{' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME:
+    elif dataset_type == PromptType.syllables_rhymes:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} #\n"
-    elif dataset_type == DatasetType.SYLLABLES_RHYME_SCHEME_WORDS:
+    elif dataset_type == PromptType.syllables_keywords_rhymes:
         prompt = f"{' '.join([str(x) for x in structure.syllables])} # {' '.join([str(x) for x in structure.rhyme_scheme])} # {' '.join(structure.keywords)} #\n"
     else:
         raise Exception(f"We don't support a Dataset type {dataset_type}")
@@ -228,10 +228,10 @@ def extract_output_whole(out_lines, prompt, dataset_type, structure):
             continue
     
         line_sections = line.strip().split("#")
-        if dataset_type in [DatasetType.SYLLABLES, DatasetType.SYLLABLES_WORDS, DatasetType.FORCED_SYLLABLES, DatasetType.RHYME_SCHEME]:
+        if dataset_type in [PromptType.syllables, PromptType.syllables_keywords, PromptType.syllables_forced, PromptType.rhymes]:
             if len(line_sections) > 1:
                 line = ' # '.join([x.strip() for x in line_sections[1:]])
-        if dataset_type in [DatasetType.SYLLABLES_RHYME_SCHEME, DatasetType.SYLLABLES_RHYME_SCHEME_WORDS]:
+        if dataset_type in [PromptType.syllables_rhymes, PromptType.syllables_keywords_rhymes]:
             if len(line_sections) > 2:
                 line = ' # '.join([x.strip() for x in line_sections[2:]])
             elif len(line_sections) > 1:

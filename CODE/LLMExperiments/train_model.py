@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from dataset_types import DatasetType
+from CODE.LLMExperiments.prompt_types import PromptType
 from torch.utils.data import DataLoader
 import os
 from lyrics_datasets import LinesLyricsDataset, WholeLyricsDataset
@@ -36,9 +36,9 @@ parser.add_argument("--dataset_type", default=0, type=int, help="""Dataset type:
 args = parser.parse_args([] if "__file__" not in globals() else None)
 
 try:
-    DATASET_TYPE = DatasetType(args.dataset_type)
+    dataset_type = PromptType(args.prompt_type)
 except:
-    raise ValueError(f"""{args.dataset_type} does not map onto any Dataset type.\n\nBASELINE = 0
+    raise ValueError(f"""{args.prompt_type} does not map onto any Dataset type.\n\nBASELINE = 0
     SYLLABLES = 1
     SYLLABLES_ENDS = 2
     WORDS = 3
@@ -55,15 +55,15 @@ except:
 
 
 if args.generation_method == "lines":
-    dataset = LinesLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
+    dataset = LinesLyricsDataset(lyrics_dataset_path=args.dataset_path, prompt_type=dataset_type)
 elif args.generation_method == "whole":
-    dataset = WholeLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=DATASET_TYPE)
+    dataset = WholeLyricsDataset(lyrics_dataset_path=args.dataset_path, dataset_type=dataset_type)
 else:
     raise ValueError(f"Unsupported method: {args.generation_method}")
 
 lyrics_loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
 
-print(f"----------------- {args.model} ------ {DATASET_TYPE.name} ----------------")
+print(f"----------------- {args.model} ------ {dataset_type.name} ----------------")
 
 device = 'cpu'
 if torch.cuda.is_available():
@@ -95,7 +95,7 @@ if tokenizer.mask_token is None:
 model = model.to(device)
 
 if args.starting_epoch != 0:
-    model.load_state_dict(state_dict=torch.load(os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{args.starting_epoch - 1}.pt"), map_location=torch.device(device)))
+    model.load_state_dict(state_dict=torch.load(os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.starting_epoch - 1}.pt"), map_location=torch.device(device)))
 
 model.train()
 optimizer = AdamW(model.parameters(), lr=args.learning_rate)
@@ -124,4 +124,4 @@ for epoch in range(args.starting_epoch, args.epochs):
         if (idx + 1) % 100 == 0:
             print(f"Epoch {epoch}, Batch {idx + 1}, Average Loss: {(sum_loss/(idx + 1)):.4f}")
 
-    torch.save(model.state_dict(), os.path.join(args.model_path, f"{args.model}_{DATASET_TYPE.name}_{args.generation_method}_{epoch}.pt"))
+    torch.save(model.state_dict(), os.path.join(args.model_path, f"{args.model}_{args.generation_method}_{dataset_type.name}_{epoch}.pt"))

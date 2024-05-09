@@ -10,7 +10,7 @@ parser.add_argument("--dataset_type", default=5, type=int, help="Dataset type: B
 parser.add_argument("--epoch", default=0, type=int, help="Epoch of the trained model")
 parser.add_argument("--generation_method", default="whole", type=str, help="whole, lines, fewshot")
 parser.add_argument("--out_per_generation", default=10, type=int, help="number of generated outputs to choose the best from")
-parser.add_argument("--rhymer", default=3, type=int, help="Rhymer type: RHYMETAGGER = 1, RHYMEFINDER = 2, SAME_WORD_RHYMETAGGER = 3")
+parser.add_argument("--rhymer", default=2, type=int, help="Rhymer type: RHYMETAGGER = 1, RHYMEFINDER = 2, SAME_WORD_RHYMETAGGER = 3")
 parser.add_argument("--postprocess_stopwords", default=True, type=bool, help="Posrprocess each output by trying to correct the length by removing/adding stopwords")
 args = parser.parse_args([] if "__file__" not in globals() else None)
 

@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, StoppingCriteria
-from dataset_types import DatasetType
+from CODE.LLMExperiments.prompt_types import PromptType
 from rhymer_types import RhymerType
 from english_structure_extractor import SectionStructureExtractor, SectionStructure
 from postprocessing import Postprocesser
@@ -35,7 +35,7 @@ def generate_whole(args, input_sections, verbose=False):
     input section can be either string or sectionStucture
     """
     
-    dataset_type = DatasetType(args.dataset_type)
+    dataset_type = PromptType(args.prompt_type)
     
     device = 'cpu'
     if torch.cuda.is_available():
@@ -70,7 +70,7 @@ def generate_whole(args, input_sections, verbose=False):
     if tokenizer.mask_token is None:
         tokenizer.add_special_tokens({'mask_token': '[MASK]'})
 
-    model_path = os.path.join(args.model_path, f"{args.model}_{dataset_type.name}_{args.generation_method}_{args.epoch}.pt")
+    model_path = os.path.join(args.model_path, f"{args.model}_{args.generation_method}_{dataset_type.name}.pt")
 
     if verbose:
         print("="*10 + "  " + model_path + " " + "="*10)
@@ -100,7 +100,7 @@ def generate_whole(args, input_sections, verbose=False):
             repetition_penalty=1.0,
             temperature=0.8,
             max_new_tokens=256,
-            num_return_sequences=args.out_per_generation,
+            num_return_sequences=args.choose_best,
             pad_token_id=tokenizer.eos_token_id,
             penalty_alpha=0.6,
             stopping_criteria=StoppingSequenceCriteria(prompt, tokenizer, structure.num_lines),
