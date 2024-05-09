@@ -37,14 +37,21 @@ def evalUate_HE(filename, winner = ""):
 
     return winner
 
-winner = {"ogpt2_wsk":0, "tl_lsk":0, "btl_wskr":0, "btl_lst":0, "bgpt2_wsk":0, "cs_lyrics":0, "translation":0,"mistral":0}
+total = 0
+winner = {"cs_lyrics":0, "translation":0, "btl_wskr":0, "ogpt2_wsk":0, "tl_lsk":0,"btl_lst":0, "bgpt2_wsk":0, "mistral":0}
 for file in os.listdir("CODE\\Human_eval\\evaluated files"):
     a = evalUate_HE(os.path.join("CODE\\Human_eval\\evaluated files",file))
-    for k in a:
-        winner[k] += a[k]
-total = len(os.listdir('CODE/Human_eval/evaluated files'))
+    if a["translation"] <= 5:  # not (a["btl_wskr"] >= 4 and a["bgpt2_wsk"] >= 3 and a["translation"] <= 5):
+        total += 1
+        for k in a:
+            winner[k] += a[k]
+# total = len(os.listdir('CODE/Human_eval/evaluated files'))
 
-# winner = evalUate_HE(os.path.join("CODE\\Human_eval\\evaluated files", "human_eval_covers_2.txt"))
+# for file in os.listdir("CODE\\Human_eval\\evaluated files"):
+#     print()
+#     print(file)
+
+# winner = evalUate_HE(os.path.join("CODE\\Human_eval\\evaluated files", "manual_eval_covers_14.txt"))
 # total = 1
 
 # model_outs_to_evaluate = {0:"ogpt2_wsk", 1:"tl_lsk", 3:"btl_wskr", 5:"btl_lst", 6:"bgpt2_wsk", 2:"cs_lyrics", 4:"translation", 7:"mistral"}
@@ -52,9 +59,12 @@ total = len(os.listdir('CODE/Human_eval/evaluated files'))
 # for file in os.listdir("CODE\\Human_eval\\evaluated files"):
 #     winner = evalUate_HE(os.path.join("CODE\\Human_eval\\evaluated files",file), winner)
 
-print(f"Evaluated by {len(os.listdir('CODE/Human_eval/evaluated files'))} people:")
+print(f"Evaluated by {total} people: -> {total/len(os.listdir('CODE/Human_eval/evaluated files'))}")
 
 sorted_winner = sorted(winner, key=lambda x: winner[x], reverse=True)
+# if sorted_winner[0] == "translation":
+#     pass
+# else:
 for x in sorted_winner:
     print(f"{x} {round(winner[x] / total, 2)}/{7} = {round(winner[x]/ (total * 7),2)}")
 

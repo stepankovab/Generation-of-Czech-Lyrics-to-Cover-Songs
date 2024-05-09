@@ -1,0 +1,898 @@
+# Ceka vas 28 uryvku originalnich pisnicek a jejich dvou moznych cover verzi (~15 min)
+#
+#
+# Urcete lepsi cover!
+# Prioritne:
+#     1. je mozne ho zazpivat na stejnou melodii jako original (neznate-li melodii nejakou si vymyslete)
+#     2. je napsany prirozene (slova na sebe navazuji)
+#     3. uryvek zni jako slova k pisni (zni zpevne, ne nutne 100% smysluplne)
+#
+#
+# Jak na to?
+#    - prectete si original a obe moznosti
+#    - !!Vzdy!! zvolte lepsi cover (1 nebo 2)
+#    - Napiste cislo favorita do kolonky "Lepsi :"
+#    ... jako v nasledujici ukazce
+#
+#
+#  !!!! KROME KOLONKY LEPSI NIC NEPREPISUJTE, NEMENTE !!!!!
+#
+# Priklad spravneho vyplneni:
+#
+##################################################
+# Lyrics 0 (ukazka)
+#
+# Original:
+#
+# Mama take this badge from me
+# I can't use it anymore
+# It's getting dark too dark to see
+# Feels like I'm knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+# Knock-knock-knockin' on Heaven's door
+#
+#
+# 1.)
+# Mámo sundej kytku z kabátu
+# Za chvíli nebude k ničemu
+# Můj kabát a kudlu vem pro tátu
+# Já už stojím před bránou s klíčem
+# Cejtím že zaklepu na nebeskou bránu
+# Cejtím že zaklepu na nebeskou bránu
+#
+#
+# 2.)
+# mámo vem si věci mý
+# já už vím, že půjdu tmou
+# zkus ztratit slovo, slovo jediný
+# a na nebi dvůr jistě mi otevřou
+# Na, na, na nebi otevřou
+# Na, na, na nebi otevřou
+#
+#
+# Lepsi: 2
+#
+##################################################
+Lyrics 1/28
+
+Original:
+
+Have you asked of yourselves
+What's the price you might pay
+Is this simply a game
+For a rich young boy to play
+The colours of the world
+Are changing day by day
+
+
+1.)
+že jestlipak mi chceš hrát
+tak já dám peníze
+na který se nemrač
+až řeknu nemám žádný
+že už se neplatím
+že už se neplatím
+
+
+2.)
+že prý ďábel se zptáme
+tak ňu pro mzdy s tebe
+a ťa je jedná hra
+ťá hra a bohatá be
+co ňu svět do bálky
+řeka má dne změbe
+
+
+Lepsi: 1
+
+==============================
+Lyrics 2/28
+
+Original:
+
+In my life
+I'm no longer a child
+And I yearn for the truth that you know
+Of the years Years ago
+
+
+1.)
+a ty víš
+život bude jiný
+že už nevrátí zpátky zemi
+na na na na věky
+
+
+2.)
+Život můj
+je už konečně můj
+nejsem dítě snad uznáš to sám
+pravdu znát právo mám
+
+
+Lepsi: 2
+
+==============================
+Lyrics 3/28
+
+Original:
+
+That's why I rely on certain certainties
+Yes some things never change
+Like the feel of your hand in mine
+Some things stay the same
+Like how we get along just fine
+
+
+1.)
+když člověk nemá jistotu že není
+no tak v duchu si šeptá
+a není na tom nic zlého
+všechno teď v tahu
+nic není na tom nic zlého
+
+
+2.)
+a jenže já se bojím změn jistotu
+tak jak se to může stát
+tak mám teď ale dojem že
+co jsem tu dříve
+na na na se změnilo že
+
+
+Lepsi: 1
+
+==============================
+Lyrics 4/28
+
+Original:
+
+Now I'm the king of the swingers
+Oh the jungle VIP
+I've reached the
+top and had to stop
+And that's what botherin' me
+
+
+1.)
+že jó už to má svý jméno
+já za dávno utíkám
+a koukej
+tak na co tě mám
+tak jak se tu u nás mám
+
+
+2.)
+Teď jsem králem swingers
+Ó džungle VIP
+Dovolal jsem se
+a musel přestat
+A to mě trápí
+
+
+Lepsi: 2
+
+==============================
+Lyrics 5/28
+
+Original:
+
+Damned if I'll live in the debt of a thief
+Damned if I'll yield at the end of the chase
+I am the Law and the Law is not mocked
+I'll spit his pity right back in his face
+There is nothing on earth that we share
+It is either Valjean or Javert
+
+
+1.)
+tak a když jsem tady já byl a já
+a tak byl jsem tu a javert byl můj
+pak mě někdo vzal a svou pamětí
+na na na a hned se stal mým synem
+pak mě vzal a já svou pamětí
+dál a já se svou pamětí na dluh
+
+
+2.)
+ťa dám budu žít v dluhu zloděje
+óó já se na konec honičky vzdám
+óó zákon nikomu nevysmívá
+ňa tváře mu jeho lítost vložím
+že ťa na zemi nemáme co
+ťa je to buď valjean či javert
+
+
+Lepsi: 1
+
+==============================
+Lyrics 6/28
+
+Original:
+
+I never meant this to
+get autobiographical
+So just to review the Family Madrigal Let's go
+
+
+1.)
+v rodině madriga
+madrig je biografie
+je to rodinný fotky příběhy se táhnou dál
+
+
+2.)
+tak madrigalové
+a o nichž jsem psal recenzi
+rodina se mnou už nechce mít nic společného
+
+
+Lepsi: 1
+
+==============================
+Lyrics 7/28
+
+Original:
+
+One more day all on my own
+Will we ever meet again
+One more day with him not caring
+I was born to be with you
+What a life I might have known
+And I swear I will be true
+But he never saw me there
+
+
+1.)
+okamžiku život zdál
+já jako blbec zůstal
+já ve svém náručí zůstal
+teď se už se mnou jen rval
+že jsem se narodil něho
+co neměl nikdy otce
+že prý teď se už se mnou
+
+
+2.)
+na na na na na řekl
+na na na na na potkal
+na na na na na na na den
+na na na na na na se
+na na na na na pohřeb
+na na na na na na už
+na na na na na na nic
+
+
+Lepsi: 1
+
+==============================
+Lyrics 8/28
+
+Original:
+
+Conceal
+Don't feel
+Put on a show
+Make one wrong move
+And everyone will know
+But it's only for today
+
+
+1.)
+co skrýv
+ťách rýv
+jdem dál a dál
+a ňa za chyb
+ňou tak nevědí dál
+a ťa dneska se nedá
+
+
+2.)
+Skrývej
+city
+je to jen hra
+Jen chybný krok
+a hra by propadla
+Ale bude to jen dnes
+
+
+Lepsi: 2
+
+==============================
+Lyrics 9/28
+
+Original:
+
+What else can I do
+Can I deliver us a river of sundew
+Careful it's carnivorous
+a little just won't do
+I wanna feel the shiver of something new
+I'm so sick of pretty
+I want something true
+don't you
+
+
+1.)
+copak ňa za mě
+řeka je přece svou koule mi neslyší mě
+že prý ťáp má dobrý
+dál ťu něco jen mě
+ďábel nám z novej noční hřeb v noci mě
+ňákej pěkně nežlí
+ťou si chce mi mě
+ůj mě
+
+
+2.)
+kdopak tě dostal
+a kdo tě teď odváží domů z divočiny
+ten si teď libuje
+masožravec mračí
+a kdo ho má v hrsti zase libuje
+kdo je tady pánem
+co kdo tě dostal
+a tak 2
+
+
+Lepsi: 2
+
+==============================
+Lyrics 10/28
+
+Original:
+
+Look for the bare necessities
+The simple bare necessities
+Forget about your worries and your strife
+I mean the bare necessities
+Old Mother Nature's recipes
+That brings the bare necessities of life
+
+
+1.)
+tak ňa holý a nezbylo
+a ňáký nezbytní holo
+ďábel mě sváry bílý starosti
+řeka má je holá holo
+ťáta z recepty přírody
+tak ťí život nesla už jak kosti
+
+
+2.)
+Hledej jen to nejnutnější
+Prosté prosté nezbytnosti
+Zapomeň na starosti a sváry
+Myslím ty nejnutnější věci
+Recepty staré matky přírody
+To přináší holé životní potřeby
+
+
+Lepsi: 2
+
+==============================
+Lyrics 11/28
+
+Original:
+
+Hey
+grew to live in fear of Bruno stuttering or stumbling
+I can always hear him sort of muttering and mumbling
+I associate him with the sound of falling sand
+It's a heavy lift with a gift so humbling
+Always left Abuela and the family fumbling
+Grappling with prophecies they couldn't understand
+Do you understand
+
+
+1.)
+éah
+a ňák klopýtám vlastní klopý těžce nezbyl bruno
+na na na ďábel kdo z nás taky neslyší mumla no
+a ňákej čas mám a já mi někdo písek znám
+ďábelské je dnem hlání mé zlatý hladno
+ťiky dlouho mám svou rodnou mocy za abelo no
+na na na ňáké proroktikon nás chytí k nám
+řeci ti neznám
+
+
+2.)
+óó
+na na na ťa vychoval v strach z bruna koktajícího
+a ňák ho slyším mumlat a z ničeho nic slyším ho
+na na na ťa spojím si s ním zvuk padajch písek
+ňák těžký výtah s dar pokořujícího
+na na na na ňák si vzal rodinu a nechal tápat
+rát se s proroctvími kterým nerozumněli
+ňák ti rozumím
+
+
+Lepsi: 2
+
+==============================
+Lyrics 12/28
+
+Original:
+
+I know everybody on this island
+Has a role on this island
+So maybe I can roll with mine
+
+
+1.)
+ňákej ostrý káž v každém ostrově
+řešť a svou ostrovu vě
+a ňákej možná rolová
+
+
+2.)
+dál možná jsem na tom ostrově sám
+co možná tu někdo je
+a pak možná tu někdo je
+
+
+Lepsi: 2
+
+==============================
+Lyrics 13/28
+
+Original:
+
+Don't know if I'm elated or gassy
+But I'm somewhere in that zone
+'Cause for the first time in forever
+I won't be alone
+
+
+1.)
+že prý ňák pár těla jenom plynu
+že prý ňu zónu už mám
+ňu příští příčiny se navždy
+ďádat se na mám
+
+
+2.)
+na na na tohle je gassy zone
+tady dostatek větru
+na na na je tu hodně lidí
+na na na a ka
+
+
+Lepsi: 1
+
+==============================
+Lyrics 14/28
+
+Original:
+
+Come here my dear Let's see this trinket you wear
+This bagatelle
+Madame I'll sell it to you
+I'll give you four
+That wouldn't pay for the chain
+
+
+1.)
+Pojď dcerko blíž ten plíšek copak to máš
+Jen brak a krám
+Madam já prodala bych
+Dám čtyři chceš
+Má větší cenu madam
+
+
+2.)
+a tak bazaliček je na řetízku
+mademoiselle
+že já se jen hloupě ptám
+bazaličku
+pro co tu jsi mi přišel
+
+
+Lepsi: 1
+
+==============================
+Lyrics 15/28
+
+Original:
+
+We only have each other
+It's just you and me
+What are we gonna do
+Do you want to build a snowman
+
+
+1.)
+Vždyť máme jedna druhou
+samy jsme my dvě
+čeká nás spousta dnů
+Ráda sněhuláky stavíš
+
+
+2.)
+Máme jen jeden druhého
+Jen ty a já
+Co budeme dělat
+Chceš si postavit sněhuláka
+
+
+Lepsi: 1
+
+==============================
+Lyrics 16/28
+
+Original:
+
+Don't let them in don't let them see
+Be the good girl you always have to be
+Conceal don't feel
+don't let them know
+Well now they know
+
+
+1.)
+Já byla v zámku vězněná
+Skrývej city buď skříňka zamčená
+To táta chtěl
+ty dny pryč jsou
+Svět zná tvář mou
+
+
+2.)
+óó ne dovnitř ať nevidí
+áchtej holka každou dívku chodí
+ťa necítí
+a ťa ať zná
+óó teď to zná
+
+
+Lepsi: 1
+
+==============================
+Lyrics 17/28
+
+Original:
+
+So she's a bit of a fixer upper
+Her brain's a bit betwixt
+Get the fiance out of the way
+And the whole thing will be fixed
+
+
+1.)
+I prima slečinka má svý mouchy
+a váhá koho chtít
+Zbav se rychle toho snoubence
+ať je všechno jak má být
+
+
+2.)
+na na na můj mozek je v prdeli
+a tak a tak se ptám vás
+tak kdo z vás by mě chtěl za svoji
+a pak a tak se ptám vás
+
+
+Lepsi: 1
+
+==============================
+Lyrics 18/28
+
+Original:
+
+See her lie
+with the night
+in the sea
+she calls me
+And yes I know
+that I can go
+
+
+1.)
+Jasný svit
+jako nit
+vede tmou
+a vábí
+A já už vím
+že můžu jít
+
+
+2.)
+moře lež
+dál noc lež
+vědět vím
+jak lež noc
+na na na lež
+a pak jak noc
+
+
+Lepsi: 1
+
+==============================
+Lyrics 19/28
+
+Original:
+
+I'll just dream about a time
+When I'm in my aged prime
+'Cause when you're older
+Absolutely everything makes sense
+This is fine
+
+
+1.)
+stáří je krásné to rád
+a je to tak i když víš
+že už nejsi sám
+jen když se s někým bavíš když sám
+na na na 3
+
+
+2.)
+Budu jen snít o čase
+Když jsem v nejlepších letech
+Protože až budeš starší
+Naprosto všechno dává smysl
+To je v pořádku
+
+
+Lepsi: 1
+
+==============================
+Lyrics 20/28
+
+Original:
+
+Up till now
+the next step was a question of how
+I never thought it
+was a question of whether
+
+
+1.)
+dál co dál
+copak až se mě zeptej znova
+a co dál co dál
+dál já na krok krok jdu dál
+
+
+2.)
+ťa do teď
+ňák jsme udělali krok dál teď
+ťa jsem si myslel
+óóh byla otázka zda
+
+
+Lepsi: 1
+
+==============================
+Lyrics 21/28
+
+Original:
+
+I am reaching but I fall
+And the stars are black and cold
+As I stare into the void
+Of a world that cannot hold
+
+
+1.)
+že padá hvězda na zem
+copak a já mám slzy
+a a ty jsi má hvězda
+dál a já mám tvý oči
+
+
+2.)
+jako když se podrazí
+hvězdy letí na prázdno
+je to jako podrazí
+hvězdy letí na prázdno
+
+
+Lepsi: 1
+
+==============================
+Lyrics 22/28
+
+Original:
+
+North is south
+right is left
+when you're gone
+I'm the one who sees you home
+But now I'm lost in the woods
+And I don't know what path you are on
+I'm lost in the woods
+
+
+1.)
+tak po ní
+dál hledám
+copak jih
+no tak kde jsou lesy mý
+co mý srdce mý srdce
+dál ztracenou stezkou se vkrádám
+co na sever k vám
+
+
+2.)
+lesy sever
+a pak jih
+ztracený
+co ale jsem na cestě
+na na na a já s tebou
+na na na na na na na stezka
+na na na na jsem
+
+
+Lepsi: 1
+
+==============================
+Lyrics 23/28
+
+Original:
+
+I will carry you here in my heart
+You'll remind me
+That come what may
+I know the way
+I am Moana
+
+
+1.)
+Ponesu tě sem ve svém srdci
+Připomeneš mi to
+To přijde co přijde
+Znám cestu
+Já jsem Moana
+
+
+2.)
+ťa ponesu sem ve svém srdci
+a ťa připomeň
+a ťa přijde
+ňák cestu zná
+ťa jsem Moana
+
+
+Lepsi: 1
+
+==============================
+Lyrics 24/28
+
+Original:
+
+Do you hear the people sing
+Singing the song of angry men
+It is the music of the people Who will not be slaves again
+
+
+1.)
+Slyšíte jak lidé zpívají
+Zpívám píseň rozzlobených mužů
+Je to hudba lidu který už nebude otrokem
+
+
+2.)
+když se tak dívám na to
+jak se lidé k sobě mají
+copak a jak si pospolu zpívají píseň otroků
+
+
+Lepsi: 2
+
+==============================
+Lyrics 25/28
+
+Original:
+
+He's holding back he's hiding
+But what I can't decide
+Why won't he be the king
+I know he is
+The king I see inside
+
+
+1.)
+Schovává se
+Ale co nemohu rozhodnout
+Proč by nemohl být králem
+Vím že je
+Král kterého vidím uvnitř
+
+
+2.)
+copak král skrývání se
+co je držení se
+vnitřní rozhodnutí
+je svým stínem
+tak je držení se
+
+
+Lepsi: 2
+
+==============================
+Lyrics 26/28
+
+Original:
+
+This tradition is our mission
+And Moana there's so much to do
+Don't trip on the taro root that's all you need
+We share everything we make
+We joke and we weave our baskets
+The fishermen come back from the sea
+
+
+1.)
+tak ťa naše poslání je
+moana je tolik co dělat
+óó ty kořen taro vše potřebuješ
+na na na ťa sdílíme
+ťa pletáme si košáky
+ťa rybáři vrátili z moře
+
+
+2.)
+z dálky se blíží moana
+a všichni rybáři volají
+a my na hlavě plstěné klobouky
+v ruce taro a nohou
+že máme boty do písku
+na na na na na na a je nám
+
+
+Lepsi: 2
+
+==============================
+Lyrics 27/28
+
+Original:
+
+What do you want
+'Cause you've been keeping me awake
+Are you here to distract me so I make a big mistake
+
+
+1.)
+óóh vot co chceš
+tak óó jak jsem tě nechal spát
+ňák jsem přišel rozptýlit abych udělal velkej pát
+
+
+2.)
+dál já chtěl bych
+copak rozptýlit svou lásku
+na na na na na na na na na s písničkou chtěl bych
+
+
+Lepsi: 2
+
+==============================
+Lyrics 28/28
+
+Original:
+
+What's the matter with you Cosette
+Have you been too much on your own
+So many things unclear
+So many things unknown
+
+
+1.)
+co nevím odkud mě to zná
+tak kdepak v tomhle světě se
+co kdopak jsem já ta
+nevím odkud mě to
+
+
+2.)
+tak cosette je hmotná věc
+na na na na prý neznámá
+a co je se slovy
+a tak nikdo neví
+
+
+Lepsi: 1
+
+==============================
