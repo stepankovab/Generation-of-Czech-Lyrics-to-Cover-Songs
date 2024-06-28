@@ -27,9 +27,7 @@ point of view.
 - Scripts
     - Python scripts used both for training and testing the models.
     - To run inference, run the script `covermaker.py`.
-
-- WebApp
-    - Web aplication written in C#
+    - Models are downloadable from [here](http://hdl.handle.net/11234/1-5507)
 
 ## Usage
 
