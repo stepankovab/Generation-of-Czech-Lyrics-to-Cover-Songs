@@ -159,8 +159,15 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+# ignore C#
+bin
+obj
+
 # vscode
 .vscode
+vscode
+.vs
+vs
 
 # ignore large models
 BPE_validator_1697833311028
@@ -175,4 +182,4 @@ VZ_prompted_sections
 # ignore depredated files
 trained_models_dep
 Deprecated
-WebApp
+WebAppExe

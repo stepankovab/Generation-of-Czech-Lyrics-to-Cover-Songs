@@ -1,0 +1,60 @@
+﻿
+<div>
+    <h2>From English to Czech using GPT2 small model</h2>
+    @using (Html.BeginForm("RewriteLyricsGPT2", "Generator", FormMethod.Post))
+    {
+        <p>
+            Paste existing English lyrics, lines divided by commas. <br />
+            The program makes a Czech cover!
+        </p>
+        @Html.TextBox("originalLyrics")
+        <br />
+        <br />
+        <input type="submit" value="Generate Lyrics" />
+    }
+</div>
+
+<br />
+<hr>
+<br />
+
+
+
+<div>
+    <h2>From structure to Czech using N-gram language model</h2>
+    @using (Html.BeginForm("CustomLyrics", "Generator", FormMethod.Post))
+    {
+        <p>Each textbox represents one line. <br />
+            First write a number of syllables you want to have on the line. <br />
+            Then write any symbol to represent a rhyme. <br />
+            By repeating these symbols on different lines, create the desired rhyme scheme.
+        </p>
+        <p>
+            Example: <br />
+            8 A <br />
+            8 B <br />
+            8 A <br />
+            8 B <br />
+            10 C <br />
+            10 C <br />
+        </p>
+
+        <input type="button" value="Add new line" onclick="AddTextBox()" />
+        <br />
+        <br />
+
+        <div id="TextBoxContainer"></div>
+
+        <br />
+        <p>
+            Write a prompt to start your lyrics:
+        </p>
+        @Html.TextBox("prompt")
+        <br />
+        <br />
+        <input type="submit" value="Generate Lyrics" />
+    }
+    
+    <script src="~/js/dynamicBoxes.js" asp-append-version="true"></script>
+
+</div>

@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Rewritten Lyrics";
+}
+@model LyricsGeneratorApp.Models.LyricsResponse;
+<h2>Generated Lyrics</h2>
+<p>
+    @foreach (var a in Model.Lyrics)
+    {
+    <p>@a</p>
+    }
+</p>
+
+
